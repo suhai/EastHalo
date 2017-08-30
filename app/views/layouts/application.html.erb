@@ -7,6 +7,17 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
 		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+<%
+=begin %>
+		<script type="text/javascript">
+      <% if logged_in? %>
+        window.currentUser =
+          <%= render("/api/users/user.json.jbuilder", user: current_user).html_safe %>
+      <% end %>
+    </script>
+		<%
+=end %>
   </head>
 
   <body>

@@ -1,5 +1,7 @@
 class Api::UsersController < ApplicationController
-  # before_action :is_verified_admin, only: [:index]
+	# before_action :is_verified_admin, only: [:index]
+	before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_type
 
   def index
     if params[:search] != nil
@@ -9,8 +11,8 @@ class Api::UsersController < ApplicationController
 
       render :index
     else
-      @users = User.all
-      render json: @users
+			@users = type_class.all
+			render :index
     end
   end
 
@@ -41,11 +43,28 @@ class Api::UsersController < ApplicationController
   end
 	
 	def destroy
+		@user.destroy
 	end
 
-  private
 
+  private
   def user_params
     params.require(:user).permit(:fname, :lname, :dob, :username, :email, :password, :profile_image_url, :bio)
   end
+	
+	def set_type
+		@type = type
+	end
+
+	def type
+		["Student", "Professor"].include?(params[:type]) ? params[:type] : "User"
+	end
+
+	def type_class
+		type.constantize
+	end
+
+	def set_user
+		@user = type_class.find(params[:id])
+	end
 end

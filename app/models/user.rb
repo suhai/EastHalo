@@ -11,7 +11,9 @@ class User < ApplicationRecord
 
 	# after_initialize :ensure_session_token
 	
-	has_many :posts
+
+	### Only students can create posts. I had to work around this by altering the user_id column in my databse via postico. I added changed the user_id column  and index name fields to student_id. Then I uncommented out the has_many :posts  below, and instead moving it to the student model but not the professors model.###
+	# has_many :posts
 	
 	scope :students, -> { where(type: 'Student') }
 	scope :professors, -> { where(type: 'Professor') }

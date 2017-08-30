@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20170830203201) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.bigint "user_id"
+    t.bigint "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_posts_on_user_id"
+    t.index ["student_id"], name: "index_posts_on_student_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -42,5 +42,5 @@ ActiveRecord::Schema.define(version: 20170830203201) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "posts", "users"
+  add_foreign_key "posts", "users", column: "student_id"
 end

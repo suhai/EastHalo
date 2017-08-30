@@ -8,8 +8,8 @@ class Footer extends React.Component {
       <div className="footer">
         <div className="container">
           <ul>
-            <li><a href='#' target='_blank'>Campus Map</a></li>
-            <li><a href='#' target='_blank'>Jobs</a></li>
+            <li><a href='#'>Campus Map</a></li>
+            <li><a href='#'>Jobs</a></li>
           </ul>
           <ul>
             <li><a href="mailto:swy@tikldmonkey.com"><img src="https://res.cloudinary.com/swy/image/upload/v1500279538/images/mail.svg" /></a></li>

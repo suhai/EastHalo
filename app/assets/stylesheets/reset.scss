@@ -1,0 +1,30 @@
+@import 'variables';
+
+@font-face {
+  font-family: "Interstate Light";
+  src: url('fonts/Interstate-Light-2.ttf') format("truetype");
+}
+
+@font-face {
+  font-family: "Interstate Regular";
+  src: url('fonts/Interstate-Regular.ttf') format("truetype");
+}
+
+html, body, h1, h2, h3, h4, h5, h6, p, span, ul, li, a, div, main,
+section, aside, header, footer, nav {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+
+
+  font-family: Open Sans;
+}
+
+ul, li {
+  list-style: none;
+}
+
+body {
+  background: $abl;
+}

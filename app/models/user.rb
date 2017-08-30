@@ -11,6 +11,8 @@ class User < ApplicationRecord
 
 	# after_initialize :ensure_session_token
 	
+	has_many :posts
+	
 	scope :students, -> { where(type: 'Student') }
 	scope :professors, -> { where(type: 'Professor') }
 

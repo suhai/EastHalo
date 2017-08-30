@@ -9,7 +9,11 @@ class User < ApplicationRecord
 
   # attr_reader :password
 
-  # after_initialize :ensure_session_token
+	# after_initialize :ensure_session_token
+	
+	scope :students, -> { where(type: 'Student') }
+	scope :professors, -> { where(type: 'Professor') }
+
   
   def password=(password)
     @password = password

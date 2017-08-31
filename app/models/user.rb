@@ -19,7 +19,10 @@ class User < ApplicationRecord
 	scope :professors, -> { where(type: 'Professor') }
 
 	has_many :friendships
-  has_many :friends, through: :friendships, dependent: :destroy
+	has_many :friends, through: :friendships, dependent: :destroy
+	
+	has_many :course_enrollments
+  has_many :courses, through: :course_enrollments, dependent: :destroy
 
 	has_many :courses
   

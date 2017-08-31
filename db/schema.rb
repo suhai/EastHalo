@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831055318) do
+ActiveRecord::Schema.define(version: 20170831081806) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "course_enrollments", force: :cascade do |t|
+    t.bigint "course_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_course_enrollments_on_course_id"
+    t.index ["user_id"], name: "index_course_enrollments_on_user_id"
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string "title"
@@ -23,6 +32,8 @@ ActiveRecord::Schema.define(version: 20170831055318) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "professor_id"
+    t.bigint "student_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
@@ -61,7 +72,11 @@ ActiveRecord::Schema.define(version: 20170831055318) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "course_enrollments", "courses"
+  add_foreign_key "course_enrollments", "users"
   add_foreign_key "courses", "users"
+  add_foreign_key "courses", "users", column: "professor_id", name: "professor_id"
+  add_foreign_key "courses", "users", column: "student_id", name: "student_id"
   add_foreign_key "friendships", "users"
   add_foreign_key "friendships", "users", column: "friend_id", name: "friend_id"
   add_foreign_key "posts", "users", column: "student_id"

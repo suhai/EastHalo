@@ -1,22 +1,11 @@
 class Api::PostsController < ApplicationController
-  def index
-  end
+	def index
+    if params[:search]
+      @posts = Post.search(params[:search]).order('title ASC')
+    else
+			@posts = Post.all
+			render :index
+    end
+	end
 
-  def new
-  end
-
-  def create
-  end
-
-  def show
-  end
-
-  def edit
-  end
-
-  def update
-  end
-
-  def destroy
-  end
 end

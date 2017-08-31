@@ -14,5 +14,7 @@
 		json.is_admin user.is_admin
 		json.created_at user.created_at
 		json.updated_at user.updated_at
+		json.posts Post.where(student_id: user.id)
   end
 end
+

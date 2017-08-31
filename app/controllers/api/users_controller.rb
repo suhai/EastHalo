@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
         .where("UPPER(users.username) LIKE UPPER(?)", "%#{params[:search]}%")
 
       render :index
-    else
+		else
 			@users = type_class.all
 			render :index
     end
@@ -38,7 +38,8 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(username: params[:id])
+		@user = User.find_by(username: params[:id])
+		@post = @user.posts
     render :show
   end
 	

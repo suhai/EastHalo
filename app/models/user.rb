@@ -18,6 +18,9 @@ class User < ApplicationRecord
 	scope :students, -> { where(type: 'Student') }
 	scope :professors, -> { where(type: 'Professor') }
 
+	has_many :friendships
+  has_many :friends, through: :friendships, dependent: :destroy
+
   
   def password=(password)
     @password = password

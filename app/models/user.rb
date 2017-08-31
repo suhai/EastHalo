@@ -21,6 +21,7 @@ class User < ApplicationRecord
 	has_many :friendships
   has_many :friends, through: :friendships, dependent: :destroy
 
+	has_many :courses
   
   def password=(password)
     @password = password

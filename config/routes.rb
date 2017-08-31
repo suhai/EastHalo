@@ -1,6 +1,34 @@
 Rails.application.routes.draw do
 
 	
+  namespace :api do
+    get 'courses/index'
+  end
+
+  namespace :api do
+    get 'courses/new'
+  end
+
+  namespace :api do
+    get 'courses/create'
+  end
+
+  namespace :api do
+    get 'courses/show'
+  end
+
+  namespace :api do
+    get 'courses/edit'
+  end
+
+  namespace :api do
+    get 'courses/update'
+  end
+
+  namespace :api do
+    get 'courses/destroy'
+  end
+
 	namespace :api, defaults: { format: :json } do
 		resource :session, only: [:create, :destroy]
 		resources :users, except: [:new, :edit]

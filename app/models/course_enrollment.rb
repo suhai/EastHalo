@@ -3,26 +3,29 @@ class CourseEnrollment < ApplicationRecord
 	belongs_to :student, class_name: "User", :foreign_key => "user_id"
 	
 
-	after_create :create_reciprocal, unless: :already_created?
-  after_destroy :remove_reciprocal, if: :already_created?
+	# after_create :create_reciprocal
+	# after_destroy :remove_reciprocal
+	
+	# def professor
+	# 	@professor = Professor.find((Course.find(self.course_id)).professor_id)
+	# end
 
-	def create_reciprocal
-		if self.class == 'Course'
-			Student.find(self.students.last.student_id).courses << self
-		elsif self.class == 'Student'
-			Course.find(self.courses.last.course_id).students << self
-		end
-	end
+	# def student
+	# 	@student = Student.find_by(student_id: self.user_id)
+	# end
 
-	def remove_reciprocal
-		# if self.class == 'Course'
-		# 	Student.find(self.students.last.student_id).courses.delete(self)
-		# elsif self.class == 'Student'
-		# 	Course.find(self.courses.last.course_id).students.delete(self)
-		# end
-	end
 
-	def already_created?
-		# Professor.find(self.professor_id).courses.include?(self)
-	end
+	# def create_reciprocal
+	# 	prof_students = self.professor.students
+	# 	student_profs = self.student.professors
+	# 	prof_students << @student unless prof_students.include?(@student)
+	# 	student_profs << @professor unless student_profs.include?(@professor)
+	# end
+
+	# def remove_reciprocal
+	# 	prof_students = self.professor.students
+	# 	student_profs = self.student.professors
+	# 	prof_students.delete(@student) if exists?
+	# 	student_profs.delete(@professor) if exists?
+	# end
 end

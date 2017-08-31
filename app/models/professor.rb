@@ -1,13 +1,15 @@
 class Professor < User
 
 	def students
-		studs = []
-		self.courses.each do |course|
-			course.students.each do |student|
-				studs << student
-			end
+		result = []
+		Course.where(professor_id: self.id).each do |course|
+			result += course.students
 		end
-		
-		studs.uniq
+
+		result.uniq
+	end
+
+	def courses
+		Course.where(professor_id: self.id)
 	end
 end

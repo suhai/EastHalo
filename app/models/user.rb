@@ -25,6 +25,29 @@ class User < ApplicationRecord
   has_many :courses, through: :course_enrollments, dependent: :destroy
 
 	has_many :courses
+	has_many :posts
+
+
+	def is_friends_with(friend)
+		self.friends.include?(friend)
+	end
+
+	def add_friend(friend)
+		friends = self.friends
+		their_friends = friend.friends
+		friends << friend unless self.is_friends_with(friend)
+		their_friends << self unless friend.is_friends_with(self)
+	end
+
+	def unfriend(friend)
+		self.friends.delete(friend)
+		friend.friends.delete(self)
+	end
+
+
+
+
+
   
   def password=(password)
     @password = password

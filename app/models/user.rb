@@ -27,6 +27,8 @@ class User < ApplicationRecord
 	has_many :courses
 	has_many :posts
 	has_many :comments
+	has_many :books
+	has_many :meals
 
 
 	def is_friends_with(friend)

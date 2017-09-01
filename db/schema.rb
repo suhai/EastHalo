@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831181042) do
+ActiveRecord::Schema.define(version: 20170901030303) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "publisher"
+    t.text "description"
+    t.decimal "price"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "bookstores", force: :cascade do |t|
+    t.decimal "account"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cafetaria", force: :cascade do |t|
+    t.decimal "account"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
@@ -30,7 +53,6 @@ ActiveRecord::Schema.define(version: 20170831181042) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "student_id"
     t.index ["course_id"], name: "index_course_enrollments_on_course_id"
     t.index ["user_id"], name: "index_course_enrollments_on_user_id"
   end
@@ -43,8 +65,6 @@ ActiveRecord::Schema.define(version: 20170831181042) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "professor_id"
-    t.bigint "student_id"
     t.index ["user_id"], name: "index_courses_on_user_id"
   end
 
@@ -52,8 +72,15 @@ ActiveRecord::Schema.define(version: 20170831181042) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "friend_id"
     t.index ["user_id"], name: "index_friendships_on_user_id"
+  end
+
+  create_table "meals", force: :cascade do |t|
+    t.string "name"
+    t.text "ingredients"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -63,6 +90,13 @@ ActiveRecord::Schema.define(version: 20170831181042) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -87,11 +121,8 @@ ActiveRecord::Schema.define(version: 20170831181042) do
   add_foreign_key "comments", "users"
   add_foreign_key "course_enrollments", "courses"
   add_foreign_key "course_enrollments", "users"
-  add_foreign_key "course_enrollments", "users", column: "student_id", name: "student_id"
   add_foreign_key "courses", "users"
-  add_foreign_key "courses", "users", column: "professor_id", name: "professor_id"
-  add_foreign_key "courses", "users", column: "student_id", name: "student_id"
   add_foreign_key "friendships", "users"
-  add_foreign_key "friendships", "users", column: "friend_id", name: "friend_id"
   add_foreign_key "posts", "users"
+  add_foreign_key "schedules", "users"
 end

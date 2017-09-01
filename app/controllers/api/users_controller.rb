@@ -28,7 +28,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
 
     if @user.update_attributes(user_params)
       render :show
@@ -38,7 +38,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-		@user = User.find_by(username: params[:id])
+		# @user = User.find(params[:id])
 		@post = @user.posts
     render :show
   end
@@ -66,6 +66,7 @@ class Api::UsersController < ApplicationController
 	end
 
 	def set_user
-		@user = type_class.find(params[:id])
+		@user = User.find(params[:id])
+		# @user = type_class.find(params[:id])
 	end
 end

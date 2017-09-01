@@ -1,16 +1,33 @@
 class Api::FriendshipsController < ApplicationController
-  def index
-  end
+	before_action :set_friendship, only: [:show, :destroy]
+	def index
+		@friendships = Friendship.all
+		render :index
+	end
 
-  def create
-  end
+	def create
+		@friendship = Friendship.new(frienship_params)
+		if @friendship.save
+			render json: @friendship
+		else
+			render json: @friendship.errors.full_messages, status: 422
+		end
+	end
 
-  def show
-  end
+	def show
+		render :show
+	end
 
-  def update
-  end
+	def destroy
+		@friendship.destroy
+	end
+	
+	private
+	def friendship_params
+		params.require(:friendship).permit(:id)
+	end
 
-  def destroy
-  end
+	def set_friendship
+		@friendship = Friendship.find(params[:id])
+	end
 end

@@ -1,4 +1,6 @@
 class Api::PostsController < ApplicationController
+	before_action :set_post, only: [:show, :edit, :update, :destroy]
+	
 	def index
     if params[:search]
       @posts = Post.search(params[:search]).order('title ASC')
@@ -7,7 +9,6 @@ class Api::PostsController < ApplicationController
 			render :index
     end
 	end
-
 
 	def create
 		@post = Post.new(post_params)	
@@ -44,4 +45,7 @@ class Api::PostsController < ApplicationController
     params.require(:post).permit(:body, :user_id, :post_id)
   end
 
+	def set_post
+		@post = Post.find(params[:id])
+	end
 end

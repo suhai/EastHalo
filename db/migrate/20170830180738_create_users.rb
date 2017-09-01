@@ -11,7 +11,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :profile_image_url
       t.text :bio
       t.integer :course_credit
-      t.integer :cash_balance
+      t.decimal :cash_balance
       t.boolean :is_admin
       t.string :type
 

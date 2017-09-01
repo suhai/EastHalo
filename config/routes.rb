@@ -1,5 +1,25 @@
 Rails.application.routes.draw do
 
+  namespace :api do
+    get 'transcript/index'
+  end
+
+  namespace :api do
+    get 'transcript/create'
+  end
+
+  namespace :api do
+    get 'transcript/show'
+  end
+
+  namespace :api do
+    get 'transcript/update'
+  end
+
+  namespace :api do
+    get 'transcript/destroy'
+  end
+
 	namespace :api, defaults: { format: :json } do
 		resource :session, only: [:create, :destroy]
 		resources :users, except: [:new, :edit]

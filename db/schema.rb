@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170901030303) do
+ActiveRecord::Schema.define(version: 20170901032956) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -99,6 +99,13 @@ ActiveRecord::Schema.define(version: 20170901030303) do
     t.index ["user_id"], name: "index_schedules_on_user_id"
   end
 
+  create_table "transcripts", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_transcripts_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "fname"
     t.string "lname"
@@ -110,7 +117,7 @@ ActiveRecord::Schema.define(version: 20170901030303) do
     t.string "profile_image_url"
     t.text "bio"
     t.integer "course_credit"
-    t.integer "cash_balance"
+    t.decimal "cash_balance"
     t.boolean "is_admin"
     t.string "type"
     t.datetime "created_at", null: false
@@ -125,4 +132,5 @@ ActiveRecord::Schema.define(version: 20170901030303) do
   add_foreign_key "friendships", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "schedules", "users"
+  add_foreign_key "transcripts", "users"
 end

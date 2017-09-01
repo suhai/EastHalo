@@ -29,6 +29,8 @@ class User < ApplicationRecord
 	has_many :comments
 	has_many :books
 	has_many :meals
+	has_one :transcript
+	has_one :schedule
 
 
 	def is_friends_with(friend)
@@ -49,9 +51,7 @@ class User < ApplicationRecord
 
 
 
-
-
-  
+#---------------------------------------------------------------------------
   def password=(password)
     @password = password
     self.password_digest = BCrypt::Password.create(password)

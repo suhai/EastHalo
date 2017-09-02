@@ -32,10 +32,9 @@ class User < ApplicationRecord
   # attr_reader :password
 
 	# after_initialize :ensure_session_token
+	# attr_accessor :cash_balance
+	after_initialize :set_defaults, unless: :persisted?
 	
-
-	### Only students can create posts. I had to work around this by altering the user_id column in my databse via postico. I added changed the user_id column  and index name fields to student_id. Then I uncommented out the has_many :posts  below, and instead moving it to the student model but not the professors model.###
-	# has_many :posts
 	
 	scope :students, -> { where(type: 'Student') }
 	scope :professors, -> { where(type: 'Professor') }
@@ -100,4 +99,9 @@ class User < ApplicationRecord
   def ensure_session_token
     self.session_token ||= SecureRandom::urlsafe_base64(16)
   end
+	
+	def set_defaults
+		self.cash_balance  ||= 0
+		self.course_credit  ||= 0
+	end	
 end

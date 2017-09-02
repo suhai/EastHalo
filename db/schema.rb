@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20170901032956) do
     t.bigint "course_id"
     t.bigint "student_id"
     t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_course_enrollments_on_course_id"
     t.index ["student_id"], name: "index_course_enrollments_on_student_id"
   end
@@ -115,7 +116,7 @@ ActiveRecord::Schema.define(version: 20170901032956) do
     t.string "session_token"
     t.string "profile_image_url"
     t.text "bio"
-    t.integer "course_credit"
+    t.decimal "course_credit"
     t.decimal "cash_balance"
     t.boolean "is_admin"
     t.string "type"

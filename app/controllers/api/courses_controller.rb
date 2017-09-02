@@ -35,7 +35,7 @@ class Api::CoursesController < ApplicationController
 	#----------------------------------------------------------------------------
 	private
 	def course_params
-		params.require(:course).permit(:title, :user_id, :course_credit, :start_time, :end_time)
+		params.require(:course).permit(:title, :professor_id, :course_credit, :start_time, :end_time)
 	end
 
 	def set_course

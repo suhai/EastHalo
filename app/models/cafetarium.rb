@@ -9,5 +9,11 @@
 #
 
 class Cafetarium < ApplicationRecord
+	after_initialize :set_defaults, unless: :persisted?
 	has_many :meals
+
+  def set_defaults
+    self.account  ||= 0
+  end	
 end
+

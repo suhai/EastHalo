@@ -25,6 +25,32 @@ $.ajax({
 	},
 })
 The above will create a new user with fname 'Rich'
+
+
+$.ajax({
+	method: 'POST',
+	url: 'api/friendships',
+	data: {
+		friendship: {
+		user_id: 3,
+		friend_id: 4
+		}
+	},
+})
+The above will create a friendship between users with ids 3 and 4. This is a mutual action
+
+
+$.ajax({
+	method: 'POST',
+	url: 'api/course_enrollments',
+	data: {
+		course_enrollment: {
+		course_id: 1,
+		student_id: 3
+		}
+	},
+})
+The above will enroll the student with id 3 into the course with id 1
 #------------------------------------------------------------------------------
 
 

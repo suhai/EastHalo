@@ -1,6 +1,7 @@
 class Api::UsersController < ApplicationController
 	# before_action :is_verified_admin, only: [:index]
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
+	before_action :require_admin_privilege, only: [:destroy]
   before_action :set_type
 
   def index
@@ -28,13 +29,15 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-
-    if @user.update_attributes(user_params)
+		@user = User.find(params[:id])
+		
+		if current_user.is_admin
+			render :show if @user.update(user_params2)
+		elsif @user.update(user_params)
       render :show
     else
-      render json: @user.errors.full_messages, status: 422
-    end
+			render json: @user.errors.full_messages, status: 422
+		end
   end
 
   def show
@@ -53,6 +56,10 @@ class Api::UsersController < ApplicationController
     params.require(:user).permit(:fname, :lname, :dob, :username, :email, :password, :profile_image_url, :bio)
   end
 	
+	def user_params2
+    params.require(:user).permit(:fname, :lname, :dob, :username, :email, :password, :profile_image_url, :bio, :cash_balance, :course_credit)
+	end
+	
 	def set_type
 		@type = type
 	end
@@ -68,5 +75,9 @@ class Api::UsersController < ApplicationController
 	def set_user
 		@user = User.find(params[:id])
 		# @user = type_class.find(params[:id])
+	end
+
+	def require_admin_privilege
+		@user.is_admin
 	end
 end

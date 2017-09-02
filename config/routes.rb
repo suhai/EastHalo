@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 		resources :comments, only: [:index, :destroy]
 		resources :courses, except: [:new, :edit]
 		resources :friendships, except: [:new, :edit]
-		resources :course_enrollments, only: [:index, :show]
+		resources :course_enrollments, only: [:index, :create, :show, :destroy]
 
 		resources :transcripts, except: [:new, :edit]
 		resources :meals, except: [:new, :edit]

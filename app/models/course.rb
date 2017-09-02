@@ -13,6 +13,7 @@
 #
 
 class Course < ApplicationRecord
+	after_initialize :set_defaults, unless: :persisted?
 	belongs_to :professor, :class_name => :User, :foreign_key => "professor_id"
 
 	has_many :course_enrollments
@@ -29,5 +30,9 @@ class Course < ApplicationRecord
 		self.students.delete(student) 
 		student.courses.delete(self)
 	end
+
+	def set_defaults
+    self.course_credit  ||= 1
+	end	
 
 end

@@ -20,15 +20,12 @@ class Api::PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find_by(id: params[:id])
 		@comments = @post.comments
     render :show
 	end
 
-	def update
-		@post = Post.find_by(id: params[:id])
-		
-		if @post.update_attributes(post_params)
+	def update	
+		if @post.update(post_params)
 			render :show
 		else
 			render json: @post.errors.full_messages, status: 422
@@ -40,6 +37,7 @@ class Api::PostsController < ApplicationController
 	end
 
 
+	#----------------------------------------------------------------------------
 	private
   def post_params
     params.require(:post).permit(:body, :user_id, :post_id)

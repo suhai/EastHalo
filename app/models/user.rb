@@ -21,33 +21,35 @@ class User < ApplicationRecord
 	has_many :friendships
 	has_many :friends, through: :friendships, dependent: :destroy
 	
-	has_many :course_enrollments
-  has_many :courses, through: :course_enrollments, dependent: :destroy
+	# has_many :course_enrollments
+  # has_many :courses, through: :course_enrollments, dependent: :destroy
 
-	has_many :courses
+	# has_many :courses
 	has_many :posts
 	has_many :comments
 	has_many :books
 	has_many :meals
-	has_one :transcript
 	has_one :schedule
 
 
-	def is_friends_with(friend)
-		self.friends.include?(friend)
+	def devoid_of_conflict(friend)
+		(friend != self) && !self.friends.include?(friend)
 	end
 
-	def add_friend(friend)
+	def befriend(friend)
 		friends = self.friends
 		their_friends = friend.friends
-		friends << friend unless self.is_friends_with(friend)
-		their_friends << self unless friend.is_friends_with(self)
+		friends << friend if devoid_of_conflict(friend)
+		their_friends << self if friend.devoid_of_conflict(self)
 	end
 
 	def unfriend(friend)
 		self.friends.delete(friend)
 		friend.friends.delete(self)
 	end
+
+
+	
 
 
 

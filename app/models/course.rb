@@ -7,7 +7,7 @@ class Course < ApplicationRecord
 	def enroll(student)
 		students = self.students
 		courses = student.courses
-		students << student unless students.include?(student)
+		students << student if student.type == 'Student' && !students.include?(student)
 		courses << self unless courses.include?(self)
 	end
 

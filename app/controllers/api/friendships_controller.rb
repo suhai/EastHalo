@@ -1,5 +1,6 @@
 class Api::FriendshipsController < ApplicationController
 	before_action :set_friendship, only: [:show, :destroy]
+
 	def index
 		@friendships = Friendship.all
 		render :index
@@ -22,9 +23,11 @@ class Api::FriendshipsController < ApplicationController
 		@friendship.destroy
 	end
 	
+
+	#----------------------------------------------------------------------------
 	private
 	def friendship_params
-		params.require(:friendship).permit(:id)
+		params.require(:friendship).permit(:user_id, :friend_id)
 	end
 
 	def set_friendship

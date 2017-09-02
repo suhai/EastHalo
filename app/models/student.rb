@@ -1,4 +1,8 @@
 class Student < User
+	has_many :course_enrollments
+  has_many :courses, through: :course_enrollments, dependent: :destroy
+	has_one :transcript
+
 	def professors
 		profs = []
 		self.courses.each do |course|

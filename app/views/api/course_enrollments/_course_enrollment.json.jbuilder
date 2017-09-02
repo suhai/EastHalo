@@ -1,2 +1,7 @@
-<h1>Api::CourseEnrollments#create</h1>
-<p>Find me in app/views/api/course_enrollments/create.html.erb</p>
+json.set! course_enrollment.id do
+	json.id course_enrollment.id
+	json.course_id course_enrollment.course_id
+	json.student_id course_enrollment.student_id
+	json.created_at course_enrollment.created_at
+	json.updated_at course_enrollment.updated_at
+end

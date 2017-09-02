@@ -1,2 +1,7 @@
-<h1>Api::Friendships#create</h1>
-<p>Find me in app/views/api/friendships/create.html.erb</p>
+json.set! friendship.id do
+	json.id friendship.id
+	json.user_id friendship.user_id
+	json.friend_id friendship.friend_id
+	json.created_at friendship.created_at
+	json.updated_at friendship.updated_at
+end

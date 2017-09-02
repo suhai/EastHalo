@@ -19,14 +19,20 @@ class Api::CoursesController < ApplicationController
 		render :show
 	end
 
-  def update
-  end
+	def update
+		if @course.update(course_params)
+			render :show
+		else
+			render json: @course.errors.full_messages, status: 422
+		end
+	end
 
 	def destroy
 		@course.destroy
 	end
 	
 
+	#----------------------------------------------------------------------------
 	private
 	def course_params
 		params.require(:course).permit(:title, :user_id, :course_credit, :start_time, :end_time)

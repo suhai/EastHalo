@@ -9,12 +9,20 @@
 		json.email user.email
 		json.bio user.bio
 		json.profile_image_url user.profile_image_url
-		json.course_credit user.course_credit
+		json.friends user.friends
+		json.posts user.posts
+		json.comments user.comments
+		json.courses user.courses if user.type == 'Student'
+		json.professors user.professors if user.type == 'Student'
+		json.course_enrollments user.course_enrollments if user.type == 'Student'
+		json.students user.students if user.type == 'Professor'
+		json.course_credit user.course_credit if user.type == 'Professor'
+		json.schedule user.schedule
+		json.transcript user.transcript if user.type == 'Student'
 		json.cash_balance user.cash_balance
 		json.is_admin user.is_admin
 		json.created_at user.created_at
 		json.updated_at user.updated_at
-		json.posts Post.where(student_id: user.id)
   end
 end
 

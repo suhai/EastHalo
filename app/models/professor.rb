@@ -1,4 +1,5 @@
 class Professor < User
+	has_many :courses
 
 	def students
 		result = []

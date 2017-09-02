@@ -2,18 +2,18 @@ class Friendship < ApplicationRecord
   belongs_to :user
 	belongs_to :friend, class_name: "User"
 	
-	after_create :create_inverse, unless: :has_inverse?
-  after_destroy :destroy_inverse, if: :has_inverse?
+	after_create :reciprocate, unless: :already_friends?
+  after_destroy :disreciprocate, if: :already_friends?
 
-  def create_inverse
+  def reciprocate
     self.class.create(inverse_friendship_data)
   end
 
-  def destroy_inverse
+  def disreciprocate
     inverse.destroy_all
   end
 
-  def has_inverse?
+  def already_friends?
     self.class.exists?(inverse_friendship_data)
   end
 

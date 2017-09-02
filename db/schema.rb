@@ -50,11 +50,10 @@ ActiveRecord::Schema.define(version: 20170901032956) do
 
   create_table "course_enrollments", force: :cascade do |t|
     t.bigint "course_id"
-    t.bigint "user_id"
+    t.bigint "student_id"
     t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.index ["course_id"], name: "index_course_enrollments_on_course_id"
-    t.index ["user_id"], name: "index_course_enrollments_on_user_id"
+    t.index ["student_id"], name: "index_course_enrollments_on_student_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -62,16 +61,16 @@ ActiveRecord::Schema.define(version: 20170901032956) do
     t.decimal "course_credit"
     t.integer "start_time"
     t.integer "end_time"
-    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_courses_on_user_id"
+    t.bigint "professor_id"
   end
 
   create_table "friendships", force: :cascade do |t|
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "friend_id"
     t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
@@ -100,10 +99,10 @@ ActiveRecord::Schema.define(version: 20170901032956) do
   end
 
   create_table "transcripts", force: :cascade do |t|
-    t.bigint "user_id"
+    t.bigint "student_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_transcripts_on_user_id"
+    t.index ["student_id"], name: "index_transcripts_on_student_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -127,10 +126,11 @@ ActiveRecord::Schema.define(version: 20170901032956) do
   add_foreign_key "comments", "posts"
   add_foreign_key "comments", "users"
   add_foreign_key "course_enrollments", "courses"
-  add_foreign_key "course_enrollments", "users"
-  add_foreign_key "courses", "users"
+  add_foreign_key "course_enrollments", "users", column: "student_id"
+  add_foreign_key "courses", "users", column: "professor_id", name: "professor_id"
   add_foreign_key "friendships", "users"
+  add_foreign_key "friendships", "users", column: "friend_id", name: "friend_id"
   add_foreign_key "posts", "users"
   add_foreign_key "schedules", "users"
-  add_foreign_key "transcripts", "users"
+  add_foreign_key "transcripts", "users", column: "student_id"
 end

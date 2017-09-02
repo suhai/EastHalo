@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: course_enrollments
+#
+#  id         :integer          not null, primary key
+#  course_id  :integer
+#  student_id :integer
+#  created_at :datetime         not null
+#
+
 class CourseEnrollment < ApplicationRecord
   belongs_to :course
 	belongs_to :student, class_name: "User", :foreign_key => "student_id"

@@ -1,24 +1,102 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SAMPLE BACKEND OUTPUT FROM API CALLS
 
-Things you may want to cover:
+POST REQUESTS
+$.ajax({
+	method: 'POST',
+	url: 'api/transcripts',
+	data: {
+		transcript: {
+		student_id: 7
+		}
+	},
+})
+The above will create a new stranscript for student with id 7
 
-* Ruby version
 
-* System dependencies
+$.ajax({
+	method: 'POST',
+	url: 'api/users',
+	data: {
+		user: {
+		fname: 'Rich'
+		}
+	},
+})
+The above will create a new user with fname 'Rich'
+#------------------------------------------------------------------------------
 
-* Configuration
 
-* Database creation
+GET REQUESTS
+$.ajax({
+  type: 'GET',
+  url: 'api/users'
+})
+The above will retrieve all users from the database
 
-* Database initialization
+GET REQUESTS
+$.ajax({
+  type: 'GET',
+  url: 'api/students'
+})
+The above will retrieve all users who are of type 'Student' from the database
 
-* How to run the test suite
+GET REQUESTS
+$.ajax({
+  type: 'GET',
+  url: 'api/professors'
+})
+The above will retrieve all users who are of type 'Professor' from the database
 
-* Services (job queues, cache servers, search engines, etc.)
+GET REQUESTS
+$.ajax({
+  type: 'GET',
+  url: 'api/users/3'
+})
+The above will retrieve the user with user_id 3 from the database
 
-* Deployment instructions
+GET REQUESTS
+$.ajax({
+  type: 'GET',
+  url: 'api/students/5'
+})
+The above will retrieve the student with student_id 5 from the database
 
-* ...
+GET REQUESTS
+$.ajax({
+  type: 'GET',
+  url: 'api/professors/7'
+})
+The above will retrieve the professor with professor_id 5 from the database
+#------------------------------------------------------------------------------
+
+
+PATCH REQUESTS
+$.ajax({
+	method: 'PATCH',
+	url: 'api/users/7',
+	data: {
+		user: {
+		fname: "Karla",
+		}
+	},
+})
+The above will update the fname of user with id 7 to 'Karla' 
+#------------------------------------------------------------------------------
+
+
+
+PUT REQUESTS
+similar to PATCH but you'd have to pass in all the data for the particular instance even if some of the parameters don't need to be updated.
+#------------------------------------------------------------------------------
+
+
+
+DELETE REQUESTS
+$.ajax({
+  method: 'DELETE',
+  url: 'api/users/8'
+})
+The above will delete user with user_id 8 from the database
+#------------------------------------------------------------------------------

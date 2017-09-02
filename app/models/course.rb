@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: courses
+#
+#  id            :integer          not null, primary key
+#  title         :string
+#  course_credit :decimal(, )
+#  start_time    :integer
+#  end_time      :integer
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  professor_id  :integer
+#
+
 class Course < ApplicationRecord
 	belongs_to :professor, :class_name => :User, :foreign_key => "professor_id"
 

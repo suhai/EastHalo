@@ -18,6 +18,12 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'cloudinary'
+gem 'figaro'
+gem 'bcrypt'
+# gem "paperclip", '~> 5.0.0'
+gem 'aws-sdk', '>=2.0'
+# gem 'seed_dump'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -27,7 +33,11 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-
+# Use jquery as the JavaScript library
+gem 'jquery-rails'
+# gem 'will_paginate', '~> 3.1.0'
+# gem "wysiwyg-rails"
+# gem "font-awesome-rails"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -36,7 +46,11 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-  gem 'selenium-webdriver'
+	gem 'selenium-webdriver'
+	gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'annotate'
+  gem 'pry-rails'
 end
 
 group :development do

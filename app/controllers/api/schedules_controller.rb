@@ -15,8 +15,8 @@ class Api::SchedulesController < ApplicationController
 	end
 
 	def create
-		@schedule = Schedule.new(schedule_params)	
-		if @schedule.save
+		@schedule = Schedule.find_or_create_by(user_id: schedule_params[:user_id])
+		if @schedule 
 			render json: @schedule
 		else
 			render json: @schedule.errors.full_messages, status: 422

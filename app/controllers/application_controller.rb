@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-	
 	helper_method :current_user, :logged_in?, 
-	# :is_verified_admin
 
 	def current_user
 		@current_user ||= User.find_by(session_token: session[:session_token])
@@ -22,11 +20,6 @@ class ApplicationController < ActionController::Base
 		session[:session_token] = nil
 		@current_user = nil
 	end
-
-	def is_verified_admin
-		current_user.is_admin?
-	end
-
 
 	private
 	def cloudinary_auth

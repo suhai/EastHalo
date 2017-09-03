@@ -21,31 +21,24 @@
 #
 
 class User < ApplicationRecord
-	# validates :username, :password_digest, :session_token, presence: true
-  # validates :username, :session_token, uniqueness: true
-  # validates :password, length: { minimum: 6, message: 'must be at least 6 characters'}, allow_nil: true
+	validates :username, :password_digest, :session_token, presence: true
+  validates :username, :session_token, uniqueness: true
+  validates :password, length: { minimum: 6, message: 'must be at least 6 characters'}, allow_nil: true
 
   # has_attached_file :profile_image_url,
-  #   default_url: "http://res.cloudinary.com/swy/image/upload/v1499673174/images/monkey.svg",
+  #   default_url: "https://res.cloudinary.com/swy/image/upload/v1499673174/images/monkey.svg",
   #   s3_protocol: :https
-
-  # attr_reader :password
-
-	# after_initialize :ensure_session_token
-	# attr_accessor :cash_balance
+  attr_reader :password
+	after_initialize :ensure_session_token
 	after_initialize :set_defaults, unless: :persisted?
-	
 	
 	scope :students, -> { where(type: 'Student') }
 	scope :professors, -> { where(type: 'Professor') }
 
 	has_many :friendships
 	has_many :friends, through: :friendships, dependent: :destroy
-	
-	# has_many :course_enrollments
-  # has_many :courses, through: :course_enrollments, dependent: :destroy
-
-	# has_many :courses
+	# has_many :course_enrollments  #reserved only for type: Student
+	# has_many :courses #reserved only for types: Student or Professor
 	has_many :posts
 	has_many :comments
 	has_many :books
@@ -68,10 +61,6 @@ class User < ApplicationRecord
 		self.friends.delete(friend)
 		friend.friends.delete(self)
 	end
-
-
-	
-
 
 
 #---------------------------------------------------------------------------

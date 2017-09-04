@@ -1,0 +1,115 @@
+@import 'variables';
+
+header {
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    padding: 5px;
+  }
+
+  ul {
+    display: flex;
+
+    li {
+      padding: 5px;
+      margin: 5px;
+    }
+  }
+}
+
+header.shared-header {
+  height: 45px;
+  width: 100%;
+  background: #444;
+  color: white;
+  font-size: 14px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+  nav.navigation {
+    width: 99.5%;
+    margin: 0 auto;
+    align-items: flex-start;
+    display: flex;
+    justify-content: center;
+    font-weight: 300;
+
+    ul li a {
+      text-decoration: none;
+      color: white;
+      margin: 0;
+      padding: 0.5em;
+
+      &.active {
+        border-bottom: none;
+      }
+
+      &:hover {
+        text-shadow: 0 0 3px aqua;
+        cursor: pointer;
+        border-bottom: 0;
+      }
+    }
+
+    ul {
+      &:first-child li {
+        text-align: center;
+      }
+    }
+
+    li {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      width: 94px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    ul:last-child {
+      li {
+          border: none;
+          width: 100%;
+          display: flex;
+          flex-direction: inherit;
+
+        a {
+          margin: 0;
+          padding: 13px 20px;
+        }
+      }
+    }
+
+    li.loggedhome-logo {
+      height: 65%;
+      width: 70px;
+      margin-top: 20px;
+      margin-right: 10px;
+      padding: 0;
+
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    ul.searchbar {
+      display: flex;
+      justify-content: center;
+      flex: 1;
+      height: 45px;
+      align-items: center;
+      margin: 0px 5px 5px 10px;
+    }
+  }
+
+  .active {
+    // background: tomato;
+  }
+}

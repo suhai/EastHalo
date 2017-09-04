@@ -1,7 +1,7 @@
 import React from 'react';
 import { values } from 'lodash';
 import { Route, Switch } from 'react-router-dom';
-import Navigation from './navigation';
+import PrivateNavigation from './private_navigation';
 import UserPageContainer from '../user/user_page_container';
 import UserEditFormContainer from '../user/user_edit_form_container';
 import SearchContainer from '../search/search_container';
@@ -16,9 +16,7 @@ class LoggedHome extends React.Component {
   render() {
     return (
       <div className='loggedhome'>
-        <header className='loggedhome-header'>
-          <Navigation logout={this.props.logout} currentUser={this.props.currentUser}/>
-        </header>
+        <PrivateNavigation logout={this.props.logout} currentUser={this.props.currentUser}/>
 
         <div className='nav-space' />
         <Switch>

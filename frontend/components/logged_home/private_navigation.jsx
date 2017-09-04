@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 
-class Navigation extends React.Component {
+class PrivateNavigation extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isActive: ''};
@@ -45,21 +45,20 @@ class Navigation extends React.Component {
 
   render() {
     return (
-      <nav className='navigation'>
-        <ul>
-          <li className='loggedhome-logo'><img src='https://res.cloudinary.com/swy/image/upload/v1499673174/images/monkey.svg'/></li>
-          <li><NavLink to='/'>Home</NavLink></li>
-          <li><NavLink to='/'>Categories</NavLink></li>
-          <li><NavLink to='/'>Users</NavLink></li>
-          <li><NavLink to='/'>JobApps</NavLink></li>
-          <li><NavLink to='/'>Trivia</NavLink></li>
-          <li><NavLink to='/'>Projects</NavLink></li>
-          <li><NavLink to='/'>Games</NavLink></li>  
-        </ul>
-        <ul className='searchbar'>
-          <input onKeyPress={this.toSearch} className='home-search'></input>
-        </ul>
-        <ul>
+			<header className='shared-header'>
+				<nav className='navigation'>
+					<ul>
+					<li><NavLink exact to='/H'>Home</NavLink></li>
+					<li><NavLink to='/one'>Nav One</NavLink></li>
+					<li><NavLink to='/two'>Nav Two</NavLink></li>
+					<li><NavLink to='/three'>Nav Three</NavLink></li>
+					<li><NavLink to='/four'>Nav Four</NavLink></li>
+					<li><NavLink to='/five'>Nav Five</NavLink></li>
+					</ul>
+					<ul className='searchbar'>
+						<input onKeyPress={this.toSearch} className='search'></input>
+					</ul>
+					<ul>
           <li className={`nav-user`}>
             <p tabIndex='0' onBlur={this.closeSettings}
               onClick={this.toggleSettings}
@@ -69,21 +68,19 @@ class Navigation extends React.Component {
                 <Link to={`/${this.props.currentUser.username}`}>Profile</Link>
               </li>
               <li>
-                <Link to={`/profile/favorites`}>Favorites</Link>
+                <Link to={`/${this.props.currentUser.friends}`}>Friends</Link>
               </li>
               <li>
-                <Link to={`/profile/activities`}>Activities</Link>
-              </li>
-              <li>
-                <Link to={`/profile/stories`}>Stories</Link>
+                <Link to={`/${this.props.currentUser.posts}`}>Posts</Link>
               </li>
               <li id='signout' onClick={this.logout}>Sign out</li>
             </ul>
           </li>
         </ul>
-      </nav>
+				</nav>
+			</header>
     );
   }
 }
 
-export default Navigation;
+export default PrivateNavigation;

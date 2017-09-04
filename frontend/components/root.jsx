@@ -9,12 +9,11 @@ import Footer from './footer/Footer';
 
 const Root = () =>(
   <div>
-		<h1 style={{textAlign: 'center' }}>Welcome to EastHalo University</h1>
     <Switch>
       <AuthRoute exact path="/" component={HomePageContainer} />
       <Route path="/swy_info" component={SwyInfo} />
-      <ProtectedRoute exact path="/courses" component={LoggedHomeContainer} />
-      <ProtectedRoute exact path="/users" component={LoggedHomeContainer} />
+      <ProtectedRoute exact path="/some_route" component={LoggedHomeContainer} />
+      <ProtectedRoute exact path="/some_other_route" component={LoggedHomeContainer} />
       <ProtectedRoute path="/:username" component={LoggedHomeContainer} />
     </Switch>
     <Footer />

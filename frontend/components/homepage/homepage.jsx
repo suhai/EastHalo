@@ -59,9 +59,7 @@ class HomePage extends React.Component {
 
     return (
       <div className='homepage'>
-        <header className='loggedhome-header'>
-          <PublicNavigation />
-        </header>
+        <PublicNavigation />
         <Modal overlayClassName="homepage-modal-overlay"
           className='homepage-modal'
           onRequestClose={this.closeModal}
@@ -69,36 +67,32 @@ class HomePage extends React.Component {
           contentLabel="Modal">
             {authRoute}
         </Modal>
+
+				<div className='home-page-button'>
+					<ul>
+						<li>
+							<button onClick={this.openSignUp} className='signup'>Create Account</button>
+						</li> 
+						<li>
+							<button onClick={this.openSignIn} className='login'>Demo LogIn</button>
+						</li> 
+					</ul>
+				</div>
+
         <main className='homepage-info'>
-          <div className='homepage-overlay'>
-          </div>
-          <header>
-            <div className='homepage-logo'></div>
-            <ul>
-              <li>
-                <button onClick={this.swy_info} className='swyinfo'>About Me</button>
-              </li>
-               <li>
-                <button onClick={this.openSignUp} className='signup'>Guest Pass</button>
-              </li> 
-              <li>
-                <button onClick={this.openSignIn} className='login'>User LogIn</button>
-              </li> 
-            </ul>
-          </header>
+					<button onClick={this.swy_info} className='swyinfo'>Some Info</button>
           <div className='homepage-description'>
-            <h2 className="billabong">tikLdMonkey</h2>
-            <div className='here'>
-              <h3>FULL CONTENT COMING SOON</h3>
-              <p>This is a Content Management Application. Please feel free to sign in as a guest and mess around with the 'Categories' and 'JobApp' or 'User' sections. Additional features are being added weekly. You may also check out my other projects by visiting the Portfolio section above.</p>
-            </div>
-            
+            <h2 className="">EastHalo University</h2>
+            <div className='placeholder-text'>
+              <h3>SITE UNDER CONSTRUCTION</h3>
+              <p>Welcome to the University of EastHalo</p>
+            </div> 
           </div>
         </main>
         
         <section className="homepage-bottom">
           <div>
-
+					<h3>I AM YET TO DECIDE WHAT TO PUT IN THIS AREA.</h3>
           </div>
         </section>
       </div>

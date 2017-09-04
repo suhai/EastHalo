@@ -31,13 +31,9 @@ class Signup extends React.Component {
     return (
       <ul className='homepage-auth'>
         <li>
-          <h3>Enter a username and password</h3>
+          <h3>create a username and password</h3>
         </li>
-        <ul>
-          <div></div>
-          <p>tM</p>
-          <div></div>
-        </ul>
+				<hr className='my-hr' />
         <li>
           {errors}
           <input onKeyPress={this.handleKey} onChange={this.update('username')} placeholder='Username'></input>

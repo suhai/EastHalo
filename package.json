@@ -11,7 +11,7 @@
 		"expose-loader": "^0.7.3",
 		"lodash": "^4.17.4",
 		"lodash.merge": "^4.6.0",
-		"material-ui": "^0.19.0",
+		"material-ui": "^0.19.1",
 		"moment": "^2.18.1",
 		"react": "^15.6.1",
 		"react-addons-css-transition-group": "^15.6.0",

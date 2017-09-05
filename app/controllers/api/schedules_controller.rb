@@ -2,12 +2,14 @@ class Api::SchedulesController < ApplicationController
 	before_action :set_schedule, only: [:show, :update, :destroy]
 
 	def index
-		if params[:search]
-      @schedules = Schedule.search(params[:search]).order('title ASC')
-    else
-			@schedules = Schedule.all
-			render :index
-		end
+		# if params[:search]
+    #   @schedules = Schedule.search(params[:search]).order('title ASC')
+    # else
+		# 	@schedules = Schedule.all
+		# 	render :index
+		# end
+		@schedules = Schedule.all
+		render :index
 	end
 
 	def show

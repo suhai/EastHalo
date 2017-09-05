@@ -2,12 +2,14 @@ class Api::MealsController < ApplicationController
   before_action :set_meal, only: [:show, :update, :destroy]
 	
 	def index
-		if params[:search]
-			@meals = Meal.search(params[:search]).order('title ASC')
-		else
-			@meals = Meal.all
-			render :index
-		end
+		# if params[:search]
+		# 	@meals = Meal.search(params[:search]).order('title ASC')
+		# else
+		# 	@meals = Meal.all
+		# 	render :index
+		# end
+		@meals = Meal.all
+		render :index
 	end
 
 	def show

@@ -2,12 +2,14 @@ class Api::PostsController < ApplicationController
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
 	
 	def index
-    if params[:search]
-      @posts = Post.search(params[:search]).order('title ASC')
-    else
-			@posts = Post.all
-			render :index
-    end
+    # if params[:search]
+    #   @posts = Post.search(params[:search]).order('title ASC')
+    # else
+		# 	@posts = Post.all
+		# 	render :index
+		# end
+		@posts = Post.all
+		render :index
 	end
 
 	def create

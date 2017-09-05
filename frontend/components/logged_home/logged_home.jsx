@@ -19,12 +19,13 @@ class LoggedHome extends React.Component {
         <PrivateNavigation logout={this.props.logout} currentUser={this.props.currentUser}/>
 
         <div className='nav-space' />
-        <Switch>
+				<h1>HELLO WORLD</h1>
+        {/* <Switch>
           <Route exact path="/users" render={(props) => <UserHome {...props} /> } />
           <Route path="/search" render={(props) => <SearchContainer {...props} /> } />
           <Route path="/:username/edit" render={(props) => <UserEditFormContainer {...props} /> } />
           <Route path="/:username" render={(props) => <UserPageContainer {...props} /> } />
-        </Switch>
+        </Switch> */}
       </div>
     );
   }

@@ -14,7 +14,6 @@ class HomePage extends React.Component {
     this.openSignIn = this.openSignIn.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.swy_info = this.swy_info.bind(this);
-    this.monkey_page = this.monkey_page.bind(this);
   }
 
   componentWillMount() {
@@ -42,10 +41,6 @@ class HomePage extends React.Component {
     this.setState({ isOpen: false, authRoute: '' });
   }
 
-  monkey_page(e) {
-    e.preventDefault();
-    window.location.hash = 'monkeys'
-  }
 
   render() {
     let authRoute;
@@ -65,7 +60,7 @@ class HomePage extends React.Component {
           onRequestClose={this.closeModal}
           isOpen={this.state.isOpen}
           contentLabel="Modal">
-            {authRoute}
+          {authRoute}
         </Modal>
 
 				<div className='home-page-button'>

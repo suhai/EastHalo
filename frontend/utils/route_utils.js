@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+// renders the login / sign up modal if not logged in, otherwise renders the users home page
 const Auth = ({component: Component, path, loggedIn}) => (
   <Route path={path} render={(props) => (
     !loggedIn ? (
@@ -12,7 +13,7 @@ const Auth = ({component: Component, path, loggedIn}) => (
   )}/>
 );
 
-// renders component if logged in, otherwise redirects to the login page
+// renders component if logged in, otherwise redirects to the public homepage
 const Protected = ({component: Component, path, loggedIn}) => (
   <Route path={path} render={(props) => (
      loggedIn ? (

@@ -21,30 +21,30 @@
   background: rgba(230, 230, 230, 0.8);
   width: 100%;
   height: 100%;
-  transition: background 0.5s;
+	transition: background 0.5s;
+	
 
   .homepage-modal {
-    width: 350px;
-		height: 430px;
-		width: 500px;
-    height: 450px;
+		width: 25em;
+    height: 30em;
     background: $military-green;
     margin: auto;
-    margin-top: 50px;
-    margin-bottom: 60px;
-    border-radius: 5px;
+    margin: 4em auto;
+		border-radius: .25em;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    justify-content: space-around;
-
-    transition: transform 1s;
+		transition: transform 1s;
+		// justify-content: space-around;
+		// justify-content: center;
+		// justify-content: flex-start;
+		// align-items: center;
 
     ul.homepage-auth {
       display: flex;
-      align-items: center;
       flex-direction: column;
-      margin-top: -25px;
+			margin: auto;
+			box-sizing: border-box;
+			// align-items: center;
 
       // ul {
       //   display: flex;
@@ -63,55 +63,59 @@
       //   //   margin: 0 10px;
       //   //   flex-grow: 1;
       //   // }
-      // }
-
-      li {
-        width: 100%;
-        text-align: center;
-			}
-			
+			// }
 			p {
         width: 100%;
 				text-align: left;
 				margin-top: 5px !important;
 			}
+
+      // li {
+      //   width: 100%;
+      //   text-align: center;
+			// }
+			
+			
 			
 
-      h1 {
-        margin-bottom: 20px;
-        font-weight: 300;
-      }
+      // h1 {
+      //   margin-bottom: 20px;
+      //   font-weight: 300;
+      // }
 
       button {
-        margin-top: 20px;
+        margin-top: 2em;
         width: 100%;
-        background: $abh;
+				background: $abh;
+				height: 3em;
         color: white;
-        border-radius: 5px;
+				border-radius: 3px;
+				border: 2px solid #442E06;
         font-weight: 300;
-        padding: 7px 15px 8px 15px;
         font-size: 14px;
-        transition: text-shadow 0.3s;
+				transition: text-shadow 0.3s;
+				box-sizing: border-box;
       }
 
       button:hover {
-        text-shadow: 0 0 3px white;
+        text-shadow: 0 0 5px #442E06;
       }
 
       input {
-        margin-top: 10px;
-        width: 280px;
-        height: 20px;
-        font-size: 16px;
-        border: 1px solid lightgray;
-        padding: 6px;
+        margin-top: 1em;
+        width: 100%;
+        height: 2em;
+        font-size: 14px;
+        border: 1px solid #442E06;
         border-radius: 3px;
         box-shadow: none;
-        transition: border 0.3s;
+				transition: border 0.3s;
+				padding: .5em;
+				box-sizing: border-box;
       }
 
       input:focus {
-        border: 1px solid gray;
+        border: 3px solid #442E06;
         outline: none;
       }
 
@@ -134,7 +138,7 @@ div.ReactModal_Content--after-open {
 .homepage-modal:focus { outline: 0 }
 
 .my-hr {
-	width: 90%;
+	width: 95%;
 	margin: auto;
 }
 

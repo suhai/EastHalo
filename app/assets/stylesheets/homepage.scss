@@ -1,9 +1,5 @@
 @import 'variables';
 
-div.loggedhome {
-  position: relative;
-}
-
 p.auth-errors {
   color: red;
 }
@@ -71,7 +67,9 @@ main.homepage-info {
 
 .placeholder-text {
 	h3 {
-		color: $salmon;
+		color: seagreen;
+		text-align: center !important;
+		margin: 2em;
 	}
 
 	p {

@@ -1,5 +1,10 @@
 @import 'variables';
 
-.loggedhome {
-	// width: 65%;
+div.loggedhome {
+	position: relative;
+	
+	div.h3 {
+		text-align: center;
+		margin-top: 50px;
+	}
 }

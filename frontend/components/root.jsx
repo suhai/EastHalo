@@ -14,7 +14,7 @@ const Root = () =>(
       <Route path="/swy_info" component={SwyInfo} />
       <ProtectedRoute exact path="/home" component={LoggedHomeContainer} />
       <ProtectedRoute exact path="/some_other_route" component={LoggedHomeContainer} />
-      <ProtectedRoute path="/:username" component={LoggedHomeContainer} />
+      <ProtectedRoute exact path="/:username" component={LoggedHomeContainer} />
     </Switch>
     <Footer />
   </div>

@@ -6,7 +6,7 @@ li.nav-user {
   p.user {
     position: relative;
 		width: 100%;
-		margin-top: -1em;
+		margin: -1em 1em 0 3em;
     z-index: 999;
     color: white;
     padding: 13px 20px;
@@ -34,14 +34,14 @@ li.nav-user {
 ul#user-settings {
   position: absolute;
   z-index: -10;
-	left: -5px;
-	top: -295px;
-  flex-direction: column;
+	top: -11em;
+	flex-direction: column;
+	margin-left: 3em;
 
-  width: 100%;
-	height: 200px;
+  width: 51%;
+	height: 10em;
   justify-content: flex-end;
-  background: #444;
+	background: #444;
   display: hidden;
 
   transition: transform 0.3s;
@@ -49,17 +49,18 @@ ul#user-settings {
   &.active {
     display: flex;
     position: absolute;
-    transform: translateY(219px);
+		transform: translateY(12.5em);
     z-index: -100;
   }
 
   li {
-    padding: 10px 10px 5px 5px;
+    padding: 1em .5em;
     text-shadow: 0 0 0;
     text-align: left;
-    font-size: 13px;
-    height: 10px;
-    width: initial;
+    font-size: .8em;
+		height: .8em;
+		margin-left: -1em;
+    // width: initial;
 
     a {
       padding: 0;
@@ -72,6 +73,6 @@ ul#user-settings {
 	}
 	
 	li#signout {
-		padding-bottom: 10px;
+		padding-bottom: 1.5em;
 	}
 }

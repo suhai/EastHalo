@@ -1,10 +1,10 @@
 @import 'variables';
 
-div.modal-test {
-  height: 300px;
-  width: 300px;
-  background: white;
-}
+// div.modal-test {
+//   height: 300px;
+//   width: 300px;
+//   background: white;
+// }
 
 .ReactModal__Overlay {
   display: hidden;
@@ -25,7 +25,9 @@ div.modal-test {
 
   .homepage-modal {
     width: 350px;
-    height: 430px;
+		height: 430px;
+		width: 500px;
+    height: 450px;
     background: $military-green;
     margin: auto;
     margin-top: 50px;
@@ -44,29 +46,36 @@ div.modal-test {
       flex-direction: column;
       margin-top: -25px;
 
-      ul {
-        display: flex;
-        width: 100%;
-        align-items: center;
-        margin: 30px 0 15px 0;
+      // ul {
+      //   display: flex;
+      //   width: 100%;
+      //   align-items: center;
+      //   margin: 30px 0 15px 0;
 
-        p {
-          color: gray;
-        }
+      //   p {
+      //     color: gray;
+      //   }
 
-        div {
-          height: 1px;
-          width: 100%;
-          background: gray;
-          margin: 0 10px;
-          flex-grow: 1;
-        }
-      }
+      //   // div {
+      //   //   height: 1px;
+      //   //   width: 100%;
+      //   //   background: gray;
+      //   //   margin: 0 10px;
+      //   //   flex-grow: 1;
+      //   // }
+      // }
 
       li {
         width: 100%;
         text-align: center;
-      }
+			}
+			
+			p {
+        width: 100%;
+				text-align: left;
+				margin-top: 5px !important;
+			}
+			
 
       h1 {
         margin-bottom: 20px;
@@ -127,4 +136,10 @@ div.ReactModal_Content--after-open {
 .my-hr {
 	width: 90%;
 	margin: auto;
+}
+
+.demo-username {
+	font-family: Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 18px;
+	background: navajowhite
 }

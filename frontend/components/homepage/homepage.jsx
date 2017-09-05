@@ -75,7 +75,7 @@ class HomePage extends React.Component {
 				</div>
 
         <main className='homepage-info'>
-					<button onClick={this.swy_info} className='swyinfo'>Some Info</button>
+					{/* <button onClick={this.swy_info} className='swyinfo'>Some Info</button> */}
           <div className='homepage-description'>
             <h2 className="">EastHalo University</h2>
             <div className='placeholder-text'>

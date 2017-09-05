@@ -28,12 +28,12 @@ class Login extends React.Component {
     let errors = this.props.errors.join('');
     return (
       <ul className='homepage-auth'>
-        <li><h3>Welcome</h3></li>
-				<p>username To Login as : </p>
-				<p>a Professor = adam </p>
-				<p>a Student = anna</p>
-				<p>an admin = bella</p>
-				<p>a normal user = brad</p> 
+				<p className='demo-username'>Pick a demo username below to login:</p>
+				<p>username 'student' to login as a Student</p>
+				<p>username 'professor' to login as a Professor</p>
+				<p>username 'admin' to login as an Admin</p>
+				<p>username 'alex' to login as none of the above</p>
+				<p className='demo-username'>Use 'password' as the password</p>
 				<hr className='my-hr' />
         <li>
           <p className='auth-errors'>{errors}</p>

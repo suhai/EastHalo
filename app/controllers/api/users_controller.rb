@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-	before_action :set_user, only: [:show, :edit, :update, :destroy]
+	before_action :set_user, only: [:destroy]
   before_action :set_type
 
   def index
@@ -27,19 +27,25 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-		@user = User.find(params[:id])
+		# @user = User.find(params[:id])
 		
-		if current_user.is_admin
-			render :show if @user.update(user_params2)
-		elsif @user.update(user_params)
-      render :show
-    else
+		# if current_user.is_admin
+		# 	render :show if @user.update(user_params2)
+		# elsif @user.update(user_params)
+    #   render :show
+    # else
+		# 	render json: @user.errors.full_messages, status: 422
+		# end
+		@user = User.find_by(id: params[:id])
+		if @user.update_attributes(user_params)
+			render :show
+		else
 			render json: @user.errors.full_messages, status: 422
 		end
   end
 
   def show
-		@post = @user.posts
+    @user = User.find_by(username: params[:id])
     render :show
   end
 	

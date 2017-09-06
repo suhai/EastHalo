@@ -18,7 +18,7 @@ class Api::TranscriptsController < ApplicationController
 	
 		def create
 			@transcript = Transcript.new(transcript_params)	
-			if @transcript.save
+			if !Transcript.find_by_student_id(transcript_params[:student_id]) && @transcript.save
 				render json: @transcript
 			else
 				render json: @transcript.errors.full_messages, status: 422

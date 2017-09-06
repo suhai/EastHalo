@@ -1,10 +1,9 @@
 # == Schema Information
 #
-# Table name: course_enrollments
+# Table name: grade_letters
 #
 #  id         :integer          not null, primary key
-#  course_id  :integer
-#  student_id :integer
+#  letter     :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
@@ -12,9 +11,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  course: one
-  user: one
+  letter: MyString
 
 two:
-  course: two
-  user: two
+  letter: MyString

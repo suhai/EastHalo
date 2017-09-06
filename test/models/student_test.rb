@@ -12,7 +12,7 @@
 #  session_token     :string
 #  profile_image_url :string
 #  bio               :text
-#  course_credit     :integer
+#  course_credit     :decimal(, )
 #  cash_balance      :decimal(, )
 #  is_admin          :boolean
 #  type              :string

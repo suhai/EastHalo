@@ -9,5 +9,11 @@
 #
 
 class Schedule < ApplicationRecord
-  belongs_to :user
+	validates :user_id, :presence => true, :uniqueness => true
+	belongs_to :user
+	before_create :ensure_no_duplicate
+	
+	def ensure_no_duplicate
+		!User.find(self.user_id).schedule
+	end
 end

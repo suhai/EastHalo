@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
 	namespace :api, defaults: { format: :json } do
 		resource :session, only: [:create, :destroy]
 		resources :users, except: [:new, :edit] do
@@ -14,14 +15,14 @@ Rails.application.routes.draw do
 		resources :courses, except: [:new, :edit]
 		resources :friendships, except: [:new, :edit]
 		resources :course_enrollments, only: [:index, :create, :show, :destroy]
-
 		resources :transcripts, except: [:new, :edit]
-		resources :meals, except: [:new, :edit]
-		resources :cafetaria, except: [:new, :edit]
 		resources :books, except: [:new, :edit]
 		resources :bookstore, except: [:new, :edit]
 		resources :schedules, except: [:new, :edit]
 		resources :cafetaria, except: [:new, :edit]
+		resources :meals, except: [:new, :edit]
+		resources :grade_letters, except: [:new, :edit]
+		resources :grades, except: [:new, :edit]
   end
 
   root 'static_pages#root'

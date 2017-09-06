@@ -1,0 +1,1 @@
+json.partial! 'api/grade_letters/grade_letter', grade_letter: @grade_letter

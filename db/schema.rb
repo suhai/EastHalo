@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170902200055) do
+ActiveRecord::Schema.define(version: 20170905230507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,23 @@ ActiveRecord::Schema.define(version: 20170902200055) do
     t.index ["user_id"], name: "index_friendships_on_user_id"
   end
 
+  create_table "grade_letters", force: :cascade do |t|
+    t.string "letter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "grades", force: :cascade do |t|
+    t.bigint "course_id"
+    t.bigint "user_id"
+    t.bigint "grade_letter_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_grades_on_course_id"
+    t.index ["grade_letter_id"], name: "index_grades_on_grade_letter_id"
+    t.index ["user_id"], name: "index_grades_on_user_id"
+  end
+
   create_table "meals", force: :cascade do |t|
     t.string "name"
     t.text "ingredients"
@@ -134,6 +151,9 @@ ActiveRecord::Schema.define(version: 20170902200055) do
   add_foreign_key "courses", "users", column: "professor_id", name: "professor_id"
   add_foreign_key "friendships", "users"
   add_foreign_key "friendships", "users", column: "friend_id", name: "friend_id"
+  add_foreign_key "grades", "courses"
+  add_foreign_key "grades", "grade_letters"
+  add_foreign_key "grades", "users"
   add_foreign_key "posts", "users"
   add_foreign_key "schedules", "users"
   add_foreign_key "transcripts", "users", column: "student_id"

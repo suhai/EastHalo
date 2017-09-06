@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: grades
+#
+#  id              :integer          not null, primary key
+#  course_id       :integer
+#  student_id      :integer
+#  grade_letter_id :integer
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  course: one
+  user: one
+  grade_letter: one
+
+two:
+  course: two
+  user: two
+  grade_letter: two

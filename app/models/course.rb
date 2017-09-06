@@ -13,9 +13,11 @@
 #
 
 class Course < ApplicationRecord
+	validates :professor_id, :presence => true
 	after_initialize :set_defaults, unless: :persisted?
+	before_create :ensure_is_professor
 	belongs_to :professor, :class_name => :User, :foreign_key => "professor_id"
-
+	has_many :grades
 	has_many :course_enrollments
   has_many :students, through: :course_enrollments, :class_name => :User,dependent: :destroy
 	
@@ -34,5 +36,8 @@ class Course < ApplicationRecord
 	def set_defaults
     self.course_credit  ||= 1
 	end	
-
+		
+	def ensure_is_professor
+		!!Professor.find(self.professor_id)
+	end
 end

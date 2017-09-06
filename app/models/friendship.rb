@@ -10,29 +10,30 @@
 #
 
 class Friendship < ApplicationRecord
+	validates :user_id, :presence => true, uniqueness: { scope: :friend_id }
+	validate :no_self_friending
+	after_create :reciprocate
+  after_destroy :disreciprocate
   belongs_to :user
 	belongs_to :friend, class_name: "User"
 	
-	after_create :reciprocate, unless: :already_friends?
-  after_destroy :disreciprocate, if: :already_friends?
+
+  def no_self_friending
+    if self.friend_id == self.user_id
+      errors.add(:friend, "Find Some Real Friends")
+    end
+  end
 
   def reciprocate
-    self.class.create(inverse_friendship_data)
+		self.class.create(reciprocal_friendship_data)
   end
 
   def disreciprocate
-    inverse.destroy_all
+		Friendship.where(reciprocal_friendship_data).delete_all 
   end
+	#----------------------------------------------------------------------------
 
-  def already_friends?
-    self.class.exists?(inverse_friendship_data)
-  end
-
-  def inverse
-    self.class.where(inverse_friendship_data)
-  end
-
-  def inverse_friendship_data
+  def reciprocal_friendship_data
     { friend_id: user_id, user_id: friend_id }
   end
 end

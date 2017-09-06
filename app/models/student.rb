@@ -12,7 +12,7 @@
 #  session_token     :string
 #  profile_image_url :string
 #  bio               :text
-#  course_credit     :integer
+#  course_credit     :decimal(, )
 #  cash_balance      :decimal(, )
 #  is_admin          :boolean
 #  type              :string
@@ -24,6 +24,7 @@ class Student < User
 	has_many :course_enrollments
   has_many :courses, through: :course_enrollments, dependent: :destroy
 	has_one :transcript
+	has_many :grades
 
 	def professors
 		profs = []

@@ -8,7 +8,15 @@ class Api::UsersController < ApplicationController
         .select('*')
         .where("UPPER(users.username) LIKE UPPER(?)", "%#{params[:search]}%")
 
-      render @users
+			render :index
+		# elsif params[:query] != nil
+    #   @users = User.includes(:users)
+    #     .select('*')
+    #     .where("users.id != ?", params[:query].to_i)
+    #     .order('RANDOM()')
+    #     .limit(3)
+
+    #   render :index
 		else
 			@users = type.constantize.all
 			render :index

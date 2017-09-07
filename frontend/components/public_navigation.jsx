@@ -28,7 +28,7 @@ class PublicNavigation extends React.Component {
 				<nav className='navigation'>
 					<ul>
 						<li className='home-logo'><img src='https://res.cloudinary.com/swy/image/upload/v1499673174/images/monkey.svg'/></li>
-						<li><NavLink exact to='/H'>Home</NavLink></li>
+						<li><NavLink exact to='/'>Home</NavLink></li>
 						<li><NavLink to='/A'>Nav A</NavLink></li>
 						<li><NavLink to='/B'>Nav B</NavLink></li>
 						<li><NavLink to='/C'>Nav C</NavLink></li>

@@ -48,7 +48,7 @@ class PrivateNavigation extends React.Component {
 			<header className='shared-header'>
 				<nav className='navigation'>
 					<ul>
-						<li><NavLink exact to='/home'>Home</NavLink></li>
+						<li><NavLink exact to='/loggedhome'>Home</NavLink></li>
 						<li><NavLink to='/one'>Nav One</NavLink></li>
 						<li><NavLink to='/two'>Nav Two</NavLink></li>
 						<li><NavLink to='/three'>Nav Three</NavLink></li>

@@ -25,18 +25,17 @@ class Search extends React.Component {
       <UserShow user={user} key={user.id} />
     ));
 
-    let results = <p className='nothing'>We couldn't find anything :(</p>;
+    let results = <p className='nothing'>Sorry, No Matches Were Found.</p>;
     if (users.length !== 0 ) {
       results = (
         <ul className='search-results'>
-       
           {users}
         </ul>
       );
     }
     return (
       <div className='search-page'>
-        <h1>Search results for {`"${this.props.location.search.slice(3)}"`}</h1>
+        <h3>Search results for {`"${this.props.location.search.slice(3)}"`}</h3>
         {results}
       </div>
     );

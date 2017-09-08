@@ -1,5 +1,5 @@
 import React from 'react';
-import UserShow from '../user/user_show';
+import UserShow from '../user/user_search_display';
 import { values } from 'lodash';
 
 class Search extends React.Component {

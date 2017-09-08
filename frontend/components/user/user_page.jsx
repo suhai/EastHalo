@@ -1,6 +1,6 @@
 import React from 'react';
-import { values } from 'lodash';
-import UserPageBottomContainer from './user_page_bottom_container';
+import { values, merge } from 'lodash';
+import { NavLink, Route, Switch } from 'react-router-dom';
 import Dropzone from 'react-dropzone';
 
 var superagent = require('superagent');
@@ -12,22 +12,21 @@ class UserPage extends React.Component {
     this.state = {
       profileImage: ''
     };
-    this.uploadProfile = this.uploadProfile.bind(this);
-  }
-
-  uploadProfile(files) {
-    let profile = files[0];
-
-    let image = new FormData();
-    image.append('user[profile_image_url]', profile);
-
-    this.props.editUser(image, this.props.user.id);
+		this.uploadProfile = this.uploadProfile.bind(this);
+		this.editUser = this.editUser.bind(this);
+    this.deleteUser = this.deleteUser.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
-    let user = this.props.user || {};
+		let user = this.props.user || {};
+		let l = nextProps.location.pathname.length;
     if (nextProps.match.params.username != user.username) {
       window.scrollTo(0, 0)
+		}
+		
+    if (nextProps.location.pathname !== this.props.location.pathname) {
+      let username = nextProps.match.params.username;
+      this.props.fetchUser(username);
     }
   }
 
@@ -35,9 +34,27 @@ class UserPage extends React.Component {
     window.scrollTo(0, 0)
     let username = this.props.match.params.username;
     this.props.fetchUser(username);
+	}
+	
+	editUser() {
+		let user = this.props.currentUser;
+    this.props.history.push(`/${user.username}/edit`);
+  }
+
+  deleteUser() {
+    
+	}
+	
+	uploadProfile(files) {
+    let profile = files[0];
+    let image = new FormData();
+    image.append('user[profile_image_url]', profile);
+
+    this.props.editUser(image, this.props.user.id);
   }
 
   render() {
+		let user = this.props.user || { user: { username: '' }, title: '', image_url: '' };
     let image = '';
     let header = '';
     if (this.props.user.id === this.props.currentUser.id) {
@@ -45,7 +62,7 @@ class UserPage extends React.Component {
                 <span>Upload image</span>
               </Dropzone>);
     }
-    let user = this.props.user || { user: { username: '' }, title: '', image_url: '' };
+    
     return (
       <main className='user-page'>
         <section className='user-content'>
@@ -60,7 +77,14 @@ class UserPage extends React.Component {
             {header}
           </ul>
         </section>
-        <UserPageBottomContainer currentUser={this.props.currentUser} />
+        <section className='user-page-bottom'>
+					<ul className='user-page-nav'>
+						<li className='user-page-options'>
+						<button onClick={this.editUser} className='user-page-edit'>Edit</button>
+						<button className='user-page-delete'>Delete</button>
+						</li>
+					</ul>
+      	</section>
       </main>
     );
   }

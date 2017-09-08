@@ -49,12 +49,12 @@ class PrivateNavigation extends React.Component {
 				<nav className='navigation'>
 					<ul>
 						<li><NavLink exact to='/loggedhome'>Home</NavLink></li>
-						<li><NavLink to='/zero'>Registrar</NavLink></li>
-						<li><NavLink to='/one'>Schedule</NavLink></li>
-						<li><NavLink to='/two'>Friends</NavLink></li>
-						<li><NavLink to='/three'>Posts</NavLink></li>
-						<li><NavLink to='/four'>Cafetaria</NavLink></li>
-						<li><NavLink to='/five'>BookStore</NavLink></li>
+						<li><NavLink to='/registrar'>Registrar</NavLink></li>
+						<li><NavLink to='/schedule'>Schedule</NavLink></li>
+						<li><NavLink to='/amigos'>Friends</NavLink></li>
+						<li><NavLink to='/postz'>Posts</NavLink></li>
+						<li><NavLink to='/cafetaria'>Cafetaria</NavLink></li>
+						<li><NavLink to='/bookstore'>BookStore</NavLink></li>
 					</ul>
 					<ul className='searchbar'>
 						<input onKeyPress={this.toSearch} className='search'></input>
@@ -71,7 +71,7 @@ class PrivateNavigation extends React.Component {
 									<Link to={`/${this.props.currentUser.username}`}>Profile</Link>
 								</li>
 								<li>
-									<Link to={`/${this.props.currentUser.friends}`}>Transcript</Link>
+									<Link to='/transcript'>Transcript</Link>
 								</li>
 								<li id='signout' onClick={this.logout}>Sign out</li>
 							</ul>

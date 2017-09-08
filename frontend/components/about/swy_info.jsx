@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import PublicNavigation from '../public_navigation';
+import PublicNavigation from '../PublicNavigation';
 
 const SwyInfo = () => (
   <div className="">

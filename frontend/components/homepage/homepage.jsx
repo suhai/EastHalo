@@ -1,10 +1,10 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import Modal from 'react-modal';
-import Login from './login';
-import Signup from './signup';
+import Login from './Login';
+import Signup from './Signup';
 import { values } from 'lodash';
-import PublicNavigation from '../public_navigation';
+import PublicNavigation from '../PublicNavigation';
 
 class HomePage extends React.Component {
   constructor(props) {

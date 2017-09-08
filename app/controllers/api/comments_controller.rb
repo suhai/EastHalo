@@ -2,12 +2,6 @@ class Api::CommentsController < ApplicationController
 	before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
 	def index
-		# if params[:search]
-		# 	@comments = Comment.search(params[:search]).order('title ASC')
-		# else
-		# 	@comments = Comment.all
-		# 	render :index
-		# end
 		@comments = Comment.all
 		render :index
 	end

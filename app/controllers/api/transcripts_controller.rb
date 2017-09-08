@@ -2,12 +2,6 @@ class Api::TranscriptsController < ApplicationController
   before_action :set_transcript, only: [:show, :edit, :update, :destroy]
 	
 		def index
-			# if params[:search]
-			# 	@transcripts = Transcript.search(params[:search]).order('title ASC')
-			# else
-			# 	@transcripts = Transcript.all
-			# 	render :index
-			# end
 			@transcripts = Transcript.all
 			render :index
 		end

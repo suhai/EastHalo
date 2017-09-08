@@ -44,6 +44,5 @@ class Student < User
 	def disenroll_from(course)
 		self.courses.delete(course)
 		course.students.delete(self)
-	end
-	
+	end	
 end

@@ -38,10 +38,10 @@ ul#user-settings {
 	flex-direction: column;
 	margin-left: 3em;
 
-  width: 51%;
-	height: 10em;
+  width: 55%;
+	height: 7.5em;
   justify-content: flex-end;
-	background: #444;
+	background: $bgcolor;
   display: hidden;
 
   transition: transform 0.3s;

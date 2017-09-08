@@ -1,6 +1,5 @@
 class Api::CourseEnrollmentsController < ApplicationController
 	before_action :set_course_enrollment, only: [:show, :destroy]
-	# require uniqueness of student_id when creating new CourseEnrollments
 	
 	def index
 		@course_enrollments = CourseEnrollment.all

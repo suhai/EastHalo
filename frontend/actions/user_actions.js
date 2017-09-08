@@ -13,10 +13,10 @@ export const receiveUsers = users => ({
   users
 });
 
-// export const receiveRandomUsers = users => ({
-//   type: RANDOM_USERS,
-//   users
-// });
+export const receiveRandomUsers = users => ({
+  type: RANDOM_USERS,
+  users
+});
 //-----------------------------------------------------------------------------
 
 
@@ -25,10 +25,10 @@ export const fetchUsers = () => dispatch => (
     .then(users => dispatch(receiveUsers(users)))
 );
 
-// export const fetchRandomUsers = query => dispatch => (
-//   APIUtil.fetchUsers(query)
-//     .then(users => dispatch(receiveUsers(users)))
-// );
+export const fetchRandomUsers = query => dispatch => (
+  APIUtil.fetchUsers(query)
+    .then(users => dispatch(receiveUsers(users)))
+);
 
 export const fetchUser = id => dispatch => (
   APIUtil.fetchUser(id)

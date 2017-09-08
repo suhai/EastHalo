@@ -19,9 +19,10 @@ header {
 }
 
 header.shared-header {
+	display: flex;
   height: 45px;
   width: 100%;
-  background: #444;
+  background: $bgcolor;
   color: white;
   font-size: 14px;
 
@@ -36,13 +37,15 @@ header.shared-header {
     align-items: flex-start;
     display: flex;
     justify-content: center;
-    font-weight: 300;
+		font-weight: 300;
+		display: flex;
 
     ul li a {
       text-decoration: none;
       color: white;
       margin: 0;
-      padding: 0.5em;
+			padding: 0.5em;
+			flex: 1;
 
       &.active {
         border-bottom: none;

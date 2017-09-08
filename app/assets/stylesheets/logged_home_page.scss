@@ -1,10 +1,25 @@
 @import 'variables';
 
 div.loggedhome {
-	position: relative;
+  display: flex;
+  position: relative;
+	background: white;
+	margin: 1.5em auto 4em;
 	
-	div.h3 {
-		text-align: center;
-		margin-top: 50px;
+	.placeholder-text2 {
+		flex: 3;
+
+		h3 {
+			color: seagreen;
+			text-align: center !important;
+			text-align: center;
+			margin-top: 5em;
+		}
+	}
+
+	.sidebar-div {
+		flex: 1;
+		border-left: 3px solid lavender;
+		border-left: 3px solid $gray;
 	}
 }

@@ -27,17 +27,17 @@ class PublicNavigation extends React.Component {
 			<header className='shared-header'>
 				<nav className='navigation'>
 					<ul>
-						<li className='home-logo'><img src='https://res.cloudinary.com/swy/image/upload/v1499673174/images/monkey.svg'/></li>
 						<li><NavLink exact to='/'>Home</NavLink></li>
-						<li><NavLink to='/A'>Nav A</NavLink></li>
-						<li><NavLink to='/B'>Nav B</NavLink></li>
-						<li><NavLink to='/C'>Nav C</NavLink></li>
-						<li><NavLink to='/D'>Nav D</NavLink></li>
-						<li><NavLink to='/E'>Nav E</NavLink></li>
+						<li><NavLink to='/admission'>Admission</NavLink></li>
+						<li><NavLink to='/academics'>Academics</NavLink></li>
+						<li><NavLink to='/campus'>Campus</NavLink></li>
+						<li><NavLink to='/athletics'>Athletics</NavLink></li>
+						<li><NavLink to='/events'>Events</NavLink></li>
 					</ul>
 					<ul className='searchbar'>
 						<input onKeyPress={this.toSearch} className='search'></input>
-						<li><NavLink to='/X'>Nav X</NavLink></li>
+						<li><NavLink to='/alumni'>Alumni</NavLink></li>
+						<li><NavLink to='/X'>Parents</NavLink></li>
 					</ul>
 				</nav>
 			</header>

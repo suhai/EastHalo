@@ -2,7 +2,7 @@ import React from 'react';
 import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
 
-class Friend extends React.Component {
+class Account extends React.Component {
   constructor(props) {
     super(props);
 
@@ -12,10 +12,10 @@ class Friend extends React.Component {
  
     return (
       <main className='user-page'>
-        <h3>THIS IS THE FRIENDS PAGE</h3>
+        <h3>THIS IS THE ACCOUNTS PAGE</h3>
       </main>
     );
   }
 }
 
-export default Friend;
+export default Account;

@@ -12,7 +12,7 @@ class Course extends React.Component {
  
     return (
       <main className='user-page'>
-        <h3>THIS IS THE COURSE PAGE</h3>
+        <h3>THIS IS THE COURSE REGISTRATIONS PAGE</h3>
       </main>
     );
   }

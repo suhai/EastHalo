@@ -75,7 +75,7 @@ class UserEditForm extends React.Component {
         <div className='upload-info' />
         <div className='upload-box active user-edit'>
           <ul>
-            <h2>User Details</h2>
+            <h4>User Details</h4>
           </ul>
           <ul className='upload-prop active'>
             <ul className='upload-prop-description'>

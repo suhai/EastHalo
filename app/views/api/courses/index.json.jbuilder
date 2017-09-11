@@ -3,9 +3,9 @@
 		json.id course.id
 		json.title course.id
 		json.course_credit course.id
-		json.start_time course.id
-		json.end_time course.id
-		json.professor_id course.id
+		json.start_time course.start_time
+		json.end_time course.end_time
+		json.professor_id course.professor_id
 		json.students course.students
 		json.created_at course.created_at
 		json.updated_at course.updated_at

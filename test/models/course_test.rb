@@ -10,6 +10,7 @@
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
 #  professor_id  :integer
+#  course_code   :string
 #
 
 require 'test_helper'

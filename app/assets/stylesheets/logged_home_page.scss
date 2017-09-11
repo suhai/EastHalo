@@ -4,16 +4,15 @@ div.loggedhome {
   display: flex;
   position: relative;
 	background: white;
-	margin: 1.5em auto 4em;
+	margin: 3.1em auto 4em;
 	
 	.placeholder-text2 {
 		flex: 3;
 
 		h3 {
-			color: seagreen;
+			color: $aed;
 			text-align: center !important;
 			text-align: center;
-			margin-top: 5em;
 		}
 	}
 

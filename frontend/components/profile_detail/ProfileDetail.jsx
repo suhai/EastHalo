@@ -20,15 +20,14 @@ class ProfileDetail extends React.Component {
  
     return (
       <main className='user-page'>
-				<h3>THIS IS THE PROFILE DETAIL PAGE</h3>
-				<nav className='navigation'>
+				<nav className='profile-nav'>
 					<ul>
+					<li><NavLink to='/:username/page/accounts'>Account</NavLink></li>
+					<li><NavLink to='/:username/page/friends'>Friends</NavLink></li>
 						<li><NavLink to='/:username/page/posts'>Posts</NavLink></li>
-						<li><NavLink to='/:username/page/comments'>Comments</NavLink></li>
-						<li><NavLink to='/:username/page/friends'>Friends</NavLink></li>
+						<li><NavLink to='/:username/page/comments'>Comments</NavLink></li>	
 						<li><NavLink to='/:username/page/schedule'>Schedule</NavLink></li>
-						<li><NavLink to='/:username/page/assignments'>Assignements</NavLink></li>
-						<li><NavLink to='/:username/page/accounts'>Accounts</NavLink></li>
+						<li><NavLink to='/:username/page/assignments'>Assignments</NavLink></li>
 						<li><NavLink to='/:username/page/transcript'>Transcript</NavLink></li>
 					</ul>
 				</nav>

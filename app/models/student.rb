@@ -22,27 +22,13 @@
 
 class Student < User
 	has_many :course_enrollments
-  has_many :courses, through: :course_enrollments, dependent: :destroy
-	has_one :transcript
-	has_many :grades
+	has_many :courses, through: :course_enrollments, dependent: :destroy
+	has_many :professors, through: :courses, dependent: :destroy
+	has_one :transcript, dependent: :destroy
+	has_many :grades, dependent: :destroy
+	after_create :instantiate_student_transcript
 
-	def professors
-		profs = []
-		self.courses.each do |course|
-			profs << course.professor
-		end	
-		profs.uniq
+	def instantiate_student_transcript
+		Transcript.create(student_id: self.id)
 	end
-
-	def enroll_in(course)
-		courses = self.courses
-		students = course.students
-		courses << course unless courses.include?(course)
-		students << self unless students.include?(self)
-	end
-
-	def disenroll_from(course)
-		self.courses.delete(course)
-		course.students.delete(self)
-	end	
 end

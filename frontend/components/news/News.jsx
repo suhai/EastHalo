@@ -12,7 +12,7 @@ class News extends React.Component {
  
     return (
       <main className='user-page'>
-        <h3>THIS IS THE NEWS PAGE</h3>
+        <h3>THIS IS THE CAMPUS NEWS PAGE</h3>
       </main>
     );
   }

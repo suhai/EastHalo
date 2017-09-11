@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170911001942) do
+ActiveRecord::Schema.define(version: 20170911002241) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20170911001942) do
     t.bigint "professor_id"
     t.string "course_code"
     t.text "course_description"
+    t.integer "course_cap"
   end
 
   create_table "friendships", force: :cascade do |t|

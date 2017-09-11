@@ -14,6 +14,8 @@ import SideBarContainer from '../sidebar/sidebar_container';
 import TranscriptPageContainer from '../transcript/transcript_page_container';
 import UserPageContainer from '../user/user_page_container';
 import UserEditFormContainer from '../user/user_edit_form_container';
+import CourseShowContainer from '../course/course_show_container';
+import UserShow from '../user/UserShow';
 
 
 class LoggedHome extends React.Component {
@@ -37,7 +39,9 @@ class LoggedHome extends React.Component {
 						<Route path="/:username/settings" render={(props) => <SettingPageContainer {...props} /> } />
 						<Route exact path="/:username/profile" render={(props) => <UserPageContainer {...props} /> } />
 						<Route path="/:username/edit" render={(props) => <UserEditFormContainer {...props} /> } />
+						<Route exact path="/:username" render={(props) => <UserShow {...props} /> } />
 						<Route path="/:username/page" render={(props) => <ProfileDetailPageContainer {...props} /> } />
+						<Route path="/courses/:id" render={(props) => <CourseShowContainer {...props} /> } />
 					</Switch>
 				</div>
 				<div className='sidebar-div'>

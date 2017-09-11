@@ -12,6 +12,7 @@
 #  professor_id       :integer
 #  course_code        :string
 #  course_description :text
+#  course_cap         :integer
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

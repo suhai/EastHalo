@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-class UserShow extends React.Component {
+class User extends React.Component {
   constructor(props) {
     super(props);
     this.showUser = this.showUser.bind(this);
@@ -27,4 +27,4 @@ class UserShow extends React.Component {
   }
 }
 
-export default UserShow;
+export default User;

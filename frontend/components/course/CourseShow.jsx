@@ -17,7 +17,9 @@ class CourseShow extends React.Component {
 	componentWillReceiveProps(props) {
 		this.setState({
 			course: Object.keys(props.courses).length > 0 ? props.courses[props.match.params.id] : {}
-		})
+		});
+
+		console.log('hellooooo', this.state)
 	}
 
   render() {
@@ -33,7 +35,6 @@ class CourseShow extends React.Component {
 			students
 		} = this.state.course;
 
-		console.log(this.props);
     return (
       <main className='user-page'>
 				<h3>THIS IS THE COURSE SHOW PAGE</h3>
@@ -44,8 +45,8 @@ class CourseShow extends React.Component {
 				<li><span>End Time: {end_time}</span></li>
 				<li><span>Course Load: {course_credit}</span></li>
 				<li><span>Course Description: {course_description}</span></li>
-				<li><span>Current Size: `${students} / {course_cap}`</span></li> 
-				{/* <li><span>Instructor: {professor.lname}</span></li> */}
+				{/* <li><span>Current Size: {students.length} / {course_cap}</span></li> 
+				<li><span>Instructor: {professor.lname}</span></li> */}
       </main>
     );
   }

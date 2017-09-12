@@ -1,5 +1,36 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import RaisedButton from 'material-ui/RaisedButton';
+import {fullWhite} from 'material-ui/styles/colors';
+import ActionAndroid from 'material-ui/svg-icons/action/android';
+import FontIcon from 'material-ui/FontIcon';
+import Checkbox from 'material-ui/Checkbox';
+import {
+  Table,
+  TableBody,
+  TableFooter,
+  TableHeader,
+  TableHeaderColumn,
+  TableRow,
+  TableRowColumn,
+} from 'material-ui/Table';
+import TextField from 'material-ui/TextField';
+import Toggle from 'material-ui/Toggle';
+
+const styles = {
+  propContainer: {
+    width: 200,
+    overflow: 'hidden',
+    margin: '20px auto 0',
+  },
+  propToggleHeader: {
+    margin: '20px auto 10px',
+  },
+};
+
+const style = {
+  margin: 12,
+};
 
 class Course extends React.Component {
   constructor(props) {
@@ -18,17 +49,29 @@ class Course extends React.Component {
 
 
   render() {
+		const { 
+			course_code, 
+			title, 
+			start_time, 
+			end_time, 
+			course_credit, 
+			course_cap, 
+			course_description,
+			professor,
+			students
+		} = this.props.course;
 
     return (
-      <div>
-				<span>{this.props.course.course_code.toString().slice(0,7)}</span>
-				<span>{this.props.course.title.toString().slice(0,8)}</span>
-				<span>{this.props.course.start_time.toString().slice(0,5)}</span>
-				<span>{this.props.course.end_time.toString().slice(0,5)}</span>
-				<span>{this.props.course.professor.fname.toString().slice(0,10)}</span>
-				<span>{this.props.course.course_credit.toString().slice(0,3)}</span>
-				<button onClick={this.showCourse} className=''>Details</button>
-      </div>
+			<TableRow>
+				<TableRowColumn>{course_code}</TableRowColumn>
+				<TableRowColumn>{title}</TableRowColumn>
+				<TableRowColumn>{start_time}</TableRowColumn>
+				<TableRowColumn>{end_time}</TableRowColumn>
+				<TableRowColumn>{course_credit}</TableRowColumn>
+				<TableRowColumn>{students.length} / {course_cap}</TableRowColumn>
+				<TableRowColumn>{professor.lname}</TableRowColumn>
+				<TableRowColumn><RaisedButton backgroundColor="#a4c639" icon={<ActionAndroid color={fullWhite} />} style={style} onClick={this.showCourse}/></TableRowColumn>
+			</TableRow>
     );
   }
 }

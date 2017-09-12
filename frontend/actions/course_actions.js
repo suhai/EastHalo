@@ -40,7 +40,7 @@ export const fetchCourses = () => dispatch => (
 
 
 export const fetchCourse = id => dispatch => (
-  APIUtil.fetchCourse(id)
+	APIUtil.fetchCourse(id)
     .then(course => dispatch(receiveCourse(course)))
 );
 

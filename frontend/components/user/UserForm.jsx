@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form'
 
 const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet']
 
-let CourseForm = props => {
+let UserForm = props => {
   const { handleSubmit, load, pristine, reset, submitting } = props
   return (
     <form onSubmit={handleSubmit}>
@@ -106,14 +106,14 @@ let CourseForm = props => {
   )
 }
 
-CourseForm = reduxForm({
-  form: 'courseForm' // a unique identifier for this form
-})(CourseForm)
+UserForm = reduxForm({
+  form: 'userForm' // a unique identifier for this form
+})(UserForm)
 
-CourseForm = connect(
+UserForm = connect(
   state => ({
 
   }),
-)(CourseForm)
+)(UserForm)
 
-export default CourseForm
+export default UserForm

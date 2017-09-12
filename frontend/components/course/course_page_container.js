@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { createCourse, fetchCourses, deleteCourse, editCourse, fetchCourse } from '../../actions/course_actions';
+import { createCourse, fetchCourses, deleteCourse, editCourse } from '../../actions/course_actions';
 import Courses from './Courses';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -10,7 +10,6 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
 	createCourse: data => dispatch(createCourse(data)),
-	fetchCourse: id => dispatch(fetchCourse(id)),
 	fetchCourses: () => dispatch(fetchCourses()),
 	editCourse: id => dispatch(editCourse(id)),
   deleteCourse: id => dispatch(deleteCourse(id))

@@ -4,6 +4,8 @@ aside.loggedhome-sidebar {
 	flex-direction: column;
 	border-top-right-radius: 20px;
 	background-color: #86BFD3;
+	overflow-y: scroll;
+	height: calc(100% - 100px);
 
 	div.updates {
 		margin: 5em .5em 5em .1em;

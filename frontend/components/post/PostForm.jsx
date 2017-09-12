@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form'
 
 const colors = ['Red', 'Orange', 'Yellow', 'Green', 'Blue', 'Indigo', 'Violet']
 
-let CourseForm = props => {
+let PostForm = props => {
   const { handleSubmit, load, pristine, reset, submitting } = props
   return (
     <form onSubmit={handleSubmit}>
@@ -106,14 +106,14 @@ let CourseForm = props => {
   )
 }
 
-CourseForm = reduxForm({
-  form: 'courseForm' // a unique identifier for this form
-})(CourseForm)
+PostForm = reduxForm({
+  form: 'postForm' // a unique identifier for this form
+})(PostForm)
 
-CourseForm = connect(
+PostForm = connect(
   state => ({
 
   }),
-)(CourseForm)
+)(PostForm)
 
-export default CourseForm
+export default PostForm

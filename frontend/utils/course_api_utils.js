@@ -15,15 +15,9 @@ export const fetchCourse = id => (
 );
 
 export const fetchCourses = query => {
-  if (query === undefined) query = {};
   return $.ajax({
     method: 'GET',
     url: `api/courses`,
-    data: {
-      query: query.query,
-      course_id: query.course_id,
-      search: query.search
-    }
   });
 };
 

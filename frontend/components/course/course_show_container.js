@@ -2,12 +2,10 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { fetchCourse, editCourse, deleteCourse } from '../../actions/course_actions';
 import CourseShow from './CourseShow';
-import { selectCourse } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
 	currentUser: state.session.currentUser,
 	courses: state.courses,
-  course: selectCourse(state, ownProps) 
 });
 
 const mapDispatchToProps = dispatch => ({

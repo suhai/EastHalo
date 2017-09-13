@@ -26,7 +26,7 @@ class CourseShow extends React.Component {
 	};
 	
 	deleteCourse() {
-		console.log('deleting course ......')
+		this.props.deleteCourse(this.state.course.id)
 		window.location.hash = '/registrar';
 	};
 	
@@ -89,10 +89,7 @@ class CourseShow extends React.Component {
 							<th scope="col">Course Detail</th>
 						</tr>
 					</thead>
-					{/* <tfoot>
-						<p className='table-paragraph'>Course Description</p>
-						<p>{course_description}</p>
-					</tfoot> */}
+
 					<tbody>
 						<tr>
 							<td>Course Code</td>

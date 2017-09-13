@@ -62,7 +62,6 @@ class Courses extends React.Component {
 							<th scope="col">Load</th>
 							<th scope="col">Size</th>
 							<th scope="col">Instructor</th>
-							<th scope="col">More</th>
 						</tr>
 					</thead>
 

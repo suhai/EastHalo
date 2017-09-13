@@ -32,7 +32,7 @@ class Course extends React.Component {
 		} = this.props.course;
 
     return (
-			<tr>
+			<tr onClick={this.showCourse}>
 				<td>{course_code}</td>
 				<td>{title}</td>
 				<td>{start_time}</td>
@@ -40,7 +40,6 @@ class Course extends React.Component {
 				<td>{course_credit}</td>
 				<td>{students.length} / {course_cap}</td>
 				<td>{professor.lname}</td>
-				<td><button onClick={this.showCourse}>Detail</button></td>
 			</tr>
     );
   }

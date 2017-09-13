@@ -3,10 +3,23 @@ export const RECEIVE_COURSE = 'RECEIVE_COURSE';
 export const RECEIVE_COURSES = 'RECEIVE_COURSES';
 export const REMOVE_COURSE = 'REMOVE_COURSE';
 export const COURSE_ERROR= 'COURSE_ERROR';
+export const CLEAR_ERRORS= 'CLEAR_ERRORS';
+export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
+
+
 
 export const receiveCourse = course => ({
   type: RECEIVE_COURSE,
   course
+});
+
+export const clearErrors = () => ({
+  type: CLEAR_ERRORS
+});
+
+export const receiveErrors = (errors) => ({
+  type: RECEIVE_ERRORS,
+  errors
 });
 
 export const receiveCourses = courses => ({
@@ -28,7 +41,7 @@ export const CourseError = error => ({
 // async actions
 export const createCourse = data => dispatch => (
   APIUtil.createCourse(data)
-  .then(course => { dispatch(receiveCourse(course)); dispatch(clearErrors())},
+  .then(course =>  dispatch(receiveCourse(course)),
   err => dispatch(receiveErrors(err.responseJSON)))
 );
 

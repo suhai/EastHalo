@@ -7,8 +7,9 @@ class Api::CoursesController < ApplicationController
 	end
 
 	def create
-		@course = Course.find_or_create_by(title: course_params[:title], professor_id: course_params[:professor_id], course_credit: course_params[:course_credit], start_time: course_params[:start_time], end_time: course_params[:end_time])
-		if @course
+		# @course = Course.find_or_create_by(title: course_params[:title], professor_id: course_params[:professor_id], course_credit: course_params[:course_credit], start_time: course_params[:start_time], end_time: course_params[:end_time])
+		@course = Course.new(course_params)
+		if @course.save
 			render json: @course
 		else
 			render json: @course.errors.full_messages, status: 422
@@ -35,7 +36,7 @@ class Api::CoursesController < ApplicationController
 	#----------------------------------------------------------------------------
 	private
 	def course_params
-		params.require(:course).permit(:title, :professor_id, :course_credit, :start_time, :end_time)
+		params.require(:course).permit(:course_code, :course_cap, :course_description, :department_id, :title, :professor_id, :course_credit, :start_time, :end_time)
 	end
 
 	def set_course

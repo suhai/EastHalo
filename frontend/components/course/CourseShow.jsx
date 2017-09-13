@@ -12,12 +12,23 @@ class CourseShow extends React.Component {
 			profLName: '',
 			profFInitial: ''
 		};
+		this.editCourse = this.editCourse.bind(this);
+		this.deleteCourse = this.deleteCourse.bind(this);
 	}
 
 	componentWillMount() {
 		const id = this.props.match.params.id;
 		this.props.fetchCourse(id);
-	}
+	};
+
+	editCourse() {
+		console.log('editing course ......')
+	};
+	
+	deleteCourse() {
+		console.log('deleting course ......')
+		window.location.hash = '/registrar';
+	};
 	
 	componentWillReceiveProps(props) {
 		Object.keys(props.courses).length > 0 ?
@@ -70,6 +81,11 @@ class CourseShow extends React.Component {
 				<li><span>Course Description: {course_description}</span></li>
 				<li><span>Current Density: {courseDensity}</span></li> 
 				<li><span>Instructor: {`${profLName}, ${profFInitial.toUpperCase()}`}.</span></li>
+
+				<div>
+					<div><button className='btn edit' onClick={this.editCourse}>Edit Course</button></div>	
+					<div><button className='btn delete' onClick={this.deleteCourse}>Delete Course</button></div>
+				</div>
       </main>
     );
   }

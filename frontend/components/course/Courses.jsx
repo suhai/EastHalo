@@ -49,12 +49,17 @@ class Courses extends React.Component {
 			showCheckboxes: false,
 			height: '300px',
     };
-    this.addCourse = this.addCourse.bind(this);
+		this.addCourse = this.addCourse.bind(this);
+		this.renderForm = this.renderForm.bind(this);
 	};
 	
 	showCourse() {
 		const id = this.props.course.id;
 		window.location.hash = `courses/${this.props.course.id}`;
+	};
+	
+	renderForm() {
+		window.location.hash = 'registrar/courseform';
   }
 
 	handleToggle(event, toggled) {
@@ -97,6 +102,7 @@ class Courses extends React.Component {
 
     return (
       <div className=''>
+				<div><button className='btn create' onClick={this.renderForm}>Create Course</button></div>	
 				<Table
           height={this.state.height}
           fixedHeader={this.state.fixedHeader}

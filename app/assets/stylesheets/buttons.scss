@@ -1,0 +1,32 @@
+@import 'variables';
+
+button.btn {
+	color: whitesmoke;
+
+
+}
+
+button.create {
+	border: 1px solid green;
+	background-color: #000;
+}
+
+button.edit {
+	border: 3px solid #000;
+	background-color: #263780;
+}
+
+button.delete {
+	border: 1px solid #000;
+	background-color: #C41913;
+}
+
+button.submit {
+	border: 1px solid turquoise;
+	background-color: #C41913;
+}
+
+button.clear {
+	border: 1px solid #000;
+	background-color: #504D4D;
+}

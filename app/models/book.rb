@@ -12,6 +12,7 @@
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #  bookstore_id :integer
+#  image_url    :string
 #
 
 class Book < ApplicationRecord

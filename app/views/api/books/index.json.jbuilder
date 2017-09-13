@@ -6,6 +6,7 @@
 		json.publisher book.publisher
 		json.description book.description
 		json.price book.price
+		json.image_url book.image_url
 		json.category book.category
 		json.created_at book.created_at
 		json.updated_at book.updated_at

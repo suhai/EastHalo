@@ -32,6 +32,8 @@ const style = {
   margin: 12,
 };
 
+
+
 class Course extends React.Component {
   constructor(props) {
     super(props);
@@ -45,7 +47,7 @@ class Course extends React.Component {
   showCourse() {
 		const id = this.props.course.id;
 		window.location.hash = `courses/${this.props.course.id}`;
-  }
+	}
 
 
   render() {

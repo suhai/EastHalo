@@ -5,21 +5,38 @@ class CourseShow extends React.Component {
   constructor(props) {
 		super(props);
 		this.state = {
-			course: {}
+			course: {},
+			classSize: 0,
+			courseCap: 1,
+			courseDensity: 0,
+			profLName: '',
+			profFInitial: ''
 		};
 	}
-	
+
 	componentWillMount() {
 		const id = this.props.match.params.id;
 		this.props.fetchCourse(id);
 	}
 	
 	componentWillReceiveProps(props) {
-		this.setState({
-			course: Object.keys(props.courses).length > 0 ? props.courses[props.match.params.id] : {}
-		});
-
-		console.log('hellooooo', this.state)
+		Object.keys(props.courses).length > 0 ?
+			this.setState({
+				course: props.courses[props.match.params.id],
+				classSize: props.courses[props.match.params.id].students.length,
+				courseCap: props.courses[props.match.params.id].course_cap,
+				courseDensity: (props.courses[props.match.params.id].students.length / props.courses[props.match.params.id].course_cap),
+				profLName: props.courses[props.match.params.id].professor.lname,
+				profFInitial: props.courses[props.match.params.id].professor.fname.slice(0,1)
+			}) :
+			this.setState({
+				course: {},
+				classSize: 0,
+				courseCap: 1,
+				courseDensity: 0,
+				profLName: '',
+				profFInitial: ''
+			});
 	}
 
   render() {
@@ -35,6 +52,12 @@ class CourseShow extends React.Component {
 			students
 		} = this.state.course;
 
+		const { 
+			courseDensity,
+			profLName,
+			profFInitial
+		} = this.state;
+
     return (
       <main className='user-page'>
 				<h3>THIS IS THE COURSE SHOW PAGE</h3>
@@ -45,8 +68,8 @@ class CourseShow extends React.Component {
 				<li><span>End Time: {end_time}</span></li>
 				<li><span>Course Load: {course_credit}</span></li>
 				<li><span>Course Description: {course_description}</span></li>
-				{/* <li><span>Current Size: {students.length} / {course_cap}</span></li> 
-				<li><span>Instructor: {professor.lname}</span></li> */}
+				<li><span>Current Density: {courseDensity}</span></li> 
+				<li><span>Instructor: {`${profLName}, ${profFInitial.toUpperCase()}`}.</span></li>
       </main>
     );
   }

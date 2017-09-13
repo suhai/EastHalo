@@ -1,9 +1,9 @@
 json.extract! user, :id, :type, :fname, :lname, :dob, :username, :email, :bio, :profile_image_url, :friends, :posts, :comments, :schedule, :cash_balance, :is_admin, :created_at, :updated_at
 
 if user.type == 'Student'
-	json.extract! user, :courses, :professors, :course_credit, :course_enrollments, :transcript
+	json.extract! user, :courses, :professors, :course_credit, :course_enrollments, :transcript, :departments
 elsif user.type == 'Professor'
-	json.extract! user, :courses, :students, :course_credit
+	json.extract! user, :courses, :students, :course_credit, :departments
 end
 
 json.id user.id
@@ -18,6 +18,7 @@ json.profile_image_url user.profile_image_url
 json.friends user.friends
 json.posts user.posts
 json.comments user.comments
+json.departments user.departments if user.type == 'Student' || user.type == 'Professor'
 json.courses user.courses if user.type == 'Student' || user.type == 'Professor'
 json.professors user.professors if user.type == 'Student'
 json.course_enrollments user.course_enrollments if user.type == 'Student'

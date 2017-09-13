@@ -24,5 +24,6 @@ class Professor < User
 	has_many :courses
 	has_many :grades, through: :courses
 	has_many :students, through: :courses, dependent: :destroy
+	has_many :departments, through: :courses, dependent: :destroy
 
 end

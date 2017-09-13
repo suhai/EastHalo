@@ -23,6 +23,7 @@
 class Student < User
 	has_many :course_enrollments
 	has_many :courses, through: :course_enrollments, dependent: :destroy
+	has_many :departments, through: :courses, dependent: :destroy
 	has_many :professors, through: :courses, dependent: :destroy
 	has_one :transcript, dependent: :destroy
 	has_many :grades, dependent: :destroy

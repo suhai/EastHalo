@@ -12,7 +12,8 @@
 		json.friends user.friends
 		json.posts user.posts
 		json.comments user.comments
-		json.courses user.courses if user.type == 'Student'
+		json.courses user.courses if user.type == 'Student' || user.type == 'Professor'
+		json.departments user.departments if user.type == 'Student' || user.type == 'Professor'
 		json.professors user.professors if user.type == 'Student'
 		json.course_enrollments user.course_enrollments if user.type == 'Student'
 		json.students user.students if user.type == 'Professor'

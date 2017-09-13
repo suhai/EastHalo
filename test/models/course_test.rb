@@ -13,6 +13,7 @@
 #  course_code        :string
 #  course_description :text
 #  course_cap         :integer
+#  department         :string
 #
 
 require 'test_helper'

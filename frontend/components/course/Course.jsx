@@ -15,7 +15,7 @@ class Course extends React.Component {
   showCourse() {
 		const id = this.props.course.id;
 		window.location.hash = `courses/${this.props.course.id}`;
-	}
+	};
 
 
   render() {
@@ -35,10 +35,10 @@ class Course extends React.Component {
 			<tr onClick={this.showCourse}>
 				<td>{course_code}</td>
 				<td>{title}</td>
-				<td>{start_time}</td>
-				<td>{end_time}</td>
+				<td>{start_time.slice(11,16)}</td>
+				<td>{end_time.slice(11,16)}</td>
 				<td>{course_credit}</td>
-				<td>{students.length} / {course_cap}</td>
+				<td>{students.length}/{course_cap}</td>
 				<td>{professor.lname}</td>
 			</tr>
     );

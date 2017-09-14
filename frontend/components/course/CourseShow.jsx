@@ -26,8 +26,7 @@ class CourseShow extends React.Component {
 	};
 
 	deleteCourse() {
-		console.log('course deleted ......')
-		// this.props.deleteCourse(this.state.course.id)
+		this.props.deleteCourse(this.state.course.id)
 		window.location.hash = '/registrar';
 	};
 

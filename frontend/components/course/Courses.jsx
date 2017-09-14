@@ -14,11 +14,6 @@ class Courses extends React.Component {
 		this.renderForm = this.renderForm.bind(this);
 	};
 
-	// showCourse() {
-	// 	const id = this.props.course.id;
-	// 	window.location.hash = `courses/${this.props.course.id}`;
-	// };
-
 	renderForm() {
 		window.location.hash = 'registrar/courseform';
 	}

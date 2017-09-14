@@ -10,7 +10,7 @@ class CourseShow extends React.Component {
 			courseCap: 1,
 			courseDensity: 0,
 			profLName: '',
-			profFInitial: ''
+			profFName: ''
 		};
 		this.editCourse = this.editCourse.bind(this);
 		this.deleteCourse = this.deleteCourse.bind(this);
@@ -40,8 +40,8 @@ class CourseShow extends React.Component {
 				classSize: props.courses[props.match.params.id].students.length,
 				courseCap: props.courses[props.match.params.id].course_cap,
 				courseDensity: (props.courses[props.match.params.id].students.length / props.courses[props.match.params.id].course_cap),
-				profLName: props.courses[props.match.params.id].professor.lname,
-				profFInitial: props.courses[props.match.params.id].professor.fname.slice(0, 1)
+				profLName: props.courses[props.match.params.id].professor.lname.slice(0, 1).toUpperCase() + props.courses[props.match.params.id].professor.lname.slice(1),
+				profFName: props.courses[props.match.params.id].professor.fname.slice(0, 1).toUpperCase() + props.courses[props.match.params.id].professor.fname.slice(1) 
 			}) :
 			this.setState({
 				course: {},
@@ -50,7 +50,7 @@ class CourseShow extends React.Component {
 				courseCap: 1,
 				courseDensity: 0,
 				profLName: '',
-				profFInitial: ''
+				profFName: ''
 			});
 	}
 
@@ -72,7 +72,7 @@ class CourseShow extends React.Component {
 			departmentName,
 			courseDensity,
 			profLName,
-			profFInitial
+			profFName
 		} = this.state;
 
 		return (
@@ -84,7 +84,7 @@ class CourseShow extends React.Component {
 				</div>
 				<hr />
 
-				<table id="background-image" summary="Meeting Results">
+				<table id="background-image" className="full-width">
 					<thead>
 						<tr>
 							<th scope="col">Course Information</th>
@@ -118,20 +118,16 @@ class CourseShow extends React.Component {
 							<td>{course_credit}</td>
 						</tr>
 						<tr>
-							<td>Description</td>
-							<td>{course_description}</td>
-						</tr>
-						<tr>
 							<td>Current Density</td>
 							<td>{courseDensity}</td>
 						</tr>
 						<tr>
 							<td>Instructor</td>
-							<td>{`${profLName}, ${profFInitial.toUpperCase()}`}</td>
+							<td>{`${profLName}, ${profFName}`}</td>
 						</tr>
 					</tbody>
 				</table>
-				<div>
+				<div className='pull-left'>
 					<p className='table-paragraph'>Course Description</p>
 					<p>{course_description}</p>
 				</div>

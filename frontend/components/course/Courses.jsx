@@ -41,9 +41,9 @@ class Courses extends React.Component {
 
 		return (
 			<div className=''>
-				<div><button className='btn create' onClick={this.renderForm}>Create Course</button></div>
+				<div><button className='btn create align-left' onClick={this.renderForm}>Create Course</button></div>
 
-				<table id="gradient-style" summary="Meeting Results">
+				<table id="gradient-style" className="full-width">
 					<thead>
 						<tr>
 							<th scope="col">Code</th>
@@ -61,7 +61,7 @@ class Courses extends React.Component {
 					</tbody>
 
 				</table>
-				<p>
+				<p className='pull-left'>
 					Give background color to the table cells to achieve seamless transition
 				</p>
 			</div>

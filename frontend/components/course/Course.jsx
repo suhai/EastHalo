@@ -39,7 +39,7 @@ class Course extends React.Component {
 				<td>{end_time.slice(11,16)}</td>
 				<td>{course_credit}</td>
 				<td>{students.length}/{course_cap}</td>
-				<td>{professor.lname}</td>
+				<td>{`${professor.lname}, ${professor.fname.slice(0,1).toUpperCase()}`}</td>
 			</tr>
     );
   }

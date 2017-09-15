@@ -14,15 +14,43 @@ class CourseShow extends React.Component {
 		};
 		this.editCourse = this.editCourse.bind(this);
 		this.deleteCourse = this.deleteCourse.bind(this);
+		this.enrollInCourse = this.enrollInCourse.bind(this);
+		this.disEnrollFromCourse = this.disEnrollFromCourse.bind(this);
 	}
 
-	componentWillMount() {
+	componentDidMount() {
 		const id = this.props.match.params.id;
 		this.props.fetchCourse(id);
+		this.props.fetchCourseEnrollments();
 	};
 
 	editCourse() {
 		window.location.hash = `courses/edit/${this.state.course.id}`;
+	};
+
+	enrollInCourse() {
+		let data = {
+			course_enrollment: {
+				course_id: this.state.course.id,
+				student_id: this.props.currentUser.id
+			}
+		};
+
+		if (data.course_id !== "undefined" && data.student_id !== "undefined") {
+			this.props.createCourseEnrollment(data);
+		}
+	};
+
+	disEnrollFromCourse() {
+		console.log('disenrolling now .....');
+		let enrollmentsArr = values(this.props.courseEnrollments);
+		console.log(this.props.courseEnrollments);
+		console.log(this.state.course.id);
+		
+		// let enrollmentID = values(this.props.courseEnrollments).filter(function(enrollment) { return (enrollment.student_id === this.props.currentUser.id && enrollment.course_id === this.state.course.id)})
+		// .id;
+		
+		// this.props.deleteCourseEnrollment(enrollmentID);
 	};
 
 	deleteCourse() {
@@ -41,7 +69,7 @@ class CourseShow extends React.Component {
 				courseCap: props.courses[props.match.params.id].course_cap,
 				courseDensity: (props.courses[props.match.params.id].students.length / props.courses[props.match.params.id].course_cap),
 				profLName: props.courses[props.match.params.id].professor.lname.slice(0, 1).toUpperCase() + props.courses[props.match.params.id].professor.lname.slice(1),
-				profFName: props.courses[props.match.params.id].professor.fname.slice(0, 1).toUpperCase() + props.courses[props.match.params.id].professor.fname.slice(1) 
+				profFName: props.courses[props.match.params.id].professor.fname.slice(0, 1).toUpperCase() + props.courses[props.match.params.id].professor.fname.slice(1)
 			}) :
 			this.setState({
 				course: {},
@@ -79,14 +107,18 @@ class CourseShow extends React.Component {
 			<main className='user-page'>
 				<div>
 					<h2 className='course-header'>{title}</h2>
-					<div><button className='btn edit' onClick={this.editCourse}>Edit Course</button></div>
-					<div><button className='btn delete' onClick={this.deleteCourse}>Delete Course</button></div>
+					<div className='grouped-buttons'>
+						<button className='btn edit' onClick={this.editCourse}>Edit Course</button>
+						<button className='btn delete' onClick={this.deleteCourse}>Delete Course</button>
+						<button className='btn create' onClick={this.enrollInCourse}>Add Course</button>
+						<button className='btn delete' onClick={this.disEnrollFromCourse}>Drop Course</button>
+					</div>
 				</div>
 				<hr />
 
 				<table id="background-image" className="full-width">
 					<thead>
-						<tr>
+						<tr className='fixed-header'>
 							<th scope="col">Course Information</th>
 							<th scope="col">Course Detail</th>
 						</tr>

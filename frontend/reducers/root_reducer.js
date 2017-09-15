@@ -6,15 +6,15 @@ import SearchReducer from './search_reducer';
 import CourseReducer from './course_reducer';
 import DepartmentReducer from './department_reducer';
 import CommentReducer from './comment_reducer';
-// import { reducer as formReducer } from 'redux-form'
+import CourseEnrollmentReducer from './course_enrollment_reducer';
 
 const rootReducer = combineReducers({
 	session: SessionReducer,
 	errors: errorsReducer,
   users: UserReducer,
 	search: SearchReducer,
-	// form: formReducer,
 	courses: CourseReducer,
+	courseEnrollments: CourseEnrollmentReducer,
 	departments: DepartmentReducer,
 	comments: CommentReducer
 });

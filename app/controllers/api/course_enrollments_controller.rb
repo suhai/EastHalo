@@ -31,6 +31,6 @@ class Api::CourseEnrollmentsController < ApplicationController
 	end
 
 	def set_course_enrollment
-		@course_enrollment = course_enrollment.find(params[:id])
+		@course_enrollment = CourseEnrollment.find(params[:id])
 	end
 end

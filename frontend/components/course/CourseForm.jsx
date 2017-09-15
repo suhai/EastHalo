@@ -73,7 +73,6 @@ class CourseForm extends React.Component {
 			course_description: ''
 		});
 
-		// this.props.fetchCourses();
 		this.redirectAction();
 	};
 

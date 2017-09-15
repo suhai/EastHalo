@@ -1,4 +1,5 @@
 import React from 'react';
+import { values, merge } from 'lodash';
 
 class CourseForm extends React.Component {
 	constructor(props) {
@@ -12,7 +13,7 @@ class CourseForm extends React.Component {
 			course_cap: '',
 			start_time: '',
 			end_time: '',
-			course_description: ''
+			course_description: '',
 		};
 
 		this.update = this.update.bind(this);
@@ -21,6 +22,12 @@ class CourseForm extends React.Component {
 		this.redirectAction = this.redirectAction.bind(this);
 	};
 
+	componentDidMount() {
+		this.props.fetchUsers();
+		this.props.fetchCourses();
+		this.props.fetchDepartments();
+		console.log(this.props);
+	};
 
 	redirectAction() {
 		window.location.hash = '/registrar';
@@ -69,7 +76,7 @@ class CourseForm extends React.Component {
 		if (e.keyCode === 13) {
 			this.addCourse();
 		}
-	}
+	};
 
 	render() {
 		const {
@@ -84,6 +91,10 @@ class CourseForm extends React.Component {
 			course_description
 		} = this.state;
 
+		let profList = values(this.props.users).map((user, idx) => (
+			<option key={idx} value={user.id} onChange={this.update('professor_id')}>{`${user.lname}, ${user.fname.slice(0,1).toUpperCase()}`}</option>
+		));
+		
 		return (
 			<div>
 				<form className="form-style-9">
@@ -94,7 +105,10 @@ class CourseForm extends React.Component {
 						</li>
 						<li>
 							<input type="number" className="field-style field-split align-left" value={department_id} onChange={this.update('department_id')} placeholder="Department" />
-							<input type="number" className="field-style field-split align-right" value={professor_id} onChange={this.update('professor_id')} placeholder="Instructor" />
+							<select value="Radish">
+								{profList}
+							</select>
+							{/* <input type="number" className="field-style field-split align-right" value={professor_id} onChange={this.update('professor_id')} placeholder="Instructor" /> */}
 						</li>
 						<li>
 							<input type="number" className="field-style field-split align-left" value={course_credit} onChange={this.update('course_credit')} placeholder="Course Credit" />

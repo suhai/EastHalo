@@ -5,6 +5,13 @@ export const fetchUser = user => (
   })
 );
 
+// export const fetchAllUsers = () => (
+//  	$.ajax({
+// 		method: 'GET',
+// 		url: `api/users`
+// 	})
+// );
+
 export const fetchUsers = query => {
   if (query === undefined) query = {};
   return $.ajax({

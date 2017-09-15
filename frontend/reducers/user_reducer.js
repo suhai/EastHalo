@@ -1,4 +1,4 @@
-import { RECEIVE_USER, RECEIVE_USERS } from '../actions/user_actions';
+import { RECEIVE_USER, RECEIVE_USERS, REMOVE_USER } from '../actions/user_actions';
 import merge from 'lodash/merge';
 
 
@@ -14,7 +14,11 @@ const UserReducer = (state = {}, action) => {
       for (let key in action.users) {
         newState[key] = action.users[key];
       }
-      return newState;
+			return newState;
+
+		case REMOVE_USER:
+			delete newState[action.user.id];
+			return newState;
 
     default:
       return state;

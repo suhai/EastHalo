@@ -21,7 +21,7 @@ class User extends React.Component {
     return (
       <li className='search-show'>
         <img onClick={this.showUser} src={this.props.user.profile_image_url} />
-        <span onClick={this.showUser}>{this.props.user.username}</span>
+        <span onClick={this.showUser}>{`${this.props.user.fname}, ${this.props.user.lname}`}</span>
       </li>
     );
   }

@@ -13,14 +13,14 @@ class Search extends React.Component {
     window.scrollTo(0, 0);
     let query = this.props.location.search.slice(3);
 		this.props.fetchUsers({ search: query });
-		this.props.fetchCourses({ search: query });
+		// this.props.fetchCourses({ search: query });
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.search !== this.props.location.search) {
       let query = nextProps.location.search.slice(3);
 			this.props.fetchUsers({ search: query });
-			this.props.fetchCourses({ search: query });
+			// this.props.fetchCourses({ search: query });
     }
   }
 
@@ -29,16 +29,15 @@ class Search extends React.Component {
       <User user={user} key={user.id} />
 		));
 		
-		let courses = values(this.props.search.courses).map( course => (
-      <Course course={course} key={course.id} />
-    ));
+		// let courses = values(this.props.search.courses).map( course => (
+    //   <Course course={course} key={course.id} />
+    // ));
 
     let results = <p className='nothing'>Sorry, No Matches Were Found.</p>;
-    if (users.length !== 0 || courses.length !== 0) {
+    if (users.length !== 0) {
       results = (
         <ul className='search-results'>
           {users}
-					{courses}
         </ul>
       );
     }

@@ -2,6 +2,7 @@ import * as APIUtil from '../utils/user_api_utils';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
 export const RANDOM_USERS = 'RANDOM_USERS';
+export const REMOVE_USER = 'REMOVE_USER';
 
 export const receiveUser = user => ({
   type: RECEIVE_USER,
@@ -19,16 +20,20 @@ export const receiveRandomUsers = users => ({
 });
 //-----------------------------------------------------------------------------
 
+// export const fetchAllUsers = () => dispatch => (
+//   APIUtil.fetchAllUsers()
+//     .then(users => dispatch(receiveUsers(users)))
+// );
 
 export const fetchUsers = () => dispatch => (
   APIUtil.fetchUsers()
     .then(users => dispatch(receiveUsers(users)))
 );
 
-export const fetchRandomUsers = query => dispatch => (
-  APIUtil.fetchUsers(query)
-    .then(users => dispatch(receiveUsers(users)))
-);
+// export const fetchRandomUsers = query => dispatch => (
+//   APIUtil.fetchUsers(query)
+//     .then(users => dispatch(receiveUsers(users)))
+// );
 
 export const fetchUser = id => dispatch => (
   APIUtil.fetchUser(id)

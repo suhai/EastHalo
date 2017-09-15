@@ -8,12 +8,12 @@ export const selectUser = (state, ownProps) => {
   return {};
 };
 
-export const selectCourse = (state, ownProps) => {
-  let courseId = ownProps.match.params.id;
-  for (let key in state.courses) {
-    if (state.courses[key].id === courseId) {
-      return state.courses[key];
-    }
-  };
-  return {};
-};
+// export const selectCourse = (state, ownProps) => {
+//   let courseId = ownProps.match.params.id;
+//   for (let key in state.courses) {
+//     if (state.courses[key].id === courseId) {
+//       return state.courses[key];
+//     }
+//   };
+//   return {};
+// };

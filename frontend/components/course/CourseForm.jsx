@@ -91,8 +91,15 @@ class CourseForm extends React.Component {
 			course_description
 		} = this.state;
 
-		let profList = values(this.props.users).map((user, idx) => (
+		let profList = values(this.props.users).filter(function(person) {
+			return person.type == 'Professor';
+		})
+		.map((user, idx) => (
 			<option key={idx} value={user.id} onChange={this.update('professor_id')}>{`${user.lname}, ${user.fname.slice(0,1).toUpperCase()}`}</option>
+		));
+
+		let deptList = values(this.props.departments).map((dept, idx) => (
+			<option key={idx} value={dept.id} onChange={this.update('department_id')}>{dept.name}</option>
 		));
 		
 		return (
@@ -104,11 +111,12 @@ class CourseForm extends React.Component {
 							<input type="text" className="field-style field-split align-right" value={title} onChange={this.update('title')} placeholder="Title" />
 						</li>
 						<li>
-							<input type="number" className="field-style field-split align-left" value={department_id} onChange={this.update('department_id')} placeholder="Department" />
-							<select value="Radish">
+							<select className="field-style field-split align-left"  value={this.state.professor_id}>
+								{deptList}
+							</select>
+							<select className="field-style field-split align-right"  value={this.state.department_id}>
 								{profList}
 							</select>
-							{/* <input type="number" className="field-style field-split align-right" value={professor_id} onChange={this.update('professor_id')} placeholder="Instructor" /> */}
 						</li>
 						<li>
 							<input type="number" className="field-style field-split align-left" value={course_credit} onChange={this.update('course_credit')} placeholder="Course Credit" />

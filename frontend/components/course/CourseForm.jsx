@@ -26,16 +26,21 @@ class CourseForm extends React.Component {
 		this.props.fetchUsers();
 		this.props.fetchCourses();
 		this.props.fetchDepartments();
-		console.log(this.props);
+	};
+
+	update(prop) {
+		return e => this.setState({ [prop]: e.currentTarget.value });
 	};
 
 	redirectAction() {
 		window.location.hash = '/registrar';
 	};
 
-	update(prop) {
-		return e => this.setState({ [prop]: e.currentTarget.value });
-	}
+	handleKey(e) {
+		if (e.keyCode === 13) {
+			this.addCourse();
+		}
+	};
 
 	addCourse() {
 		let data = {
@@ -68,14 +73,8 @@ class CourseForm extends React.Component {
 			course_description: ''
 		});
 
-		this.props.fetchCourses();
+		// this.props.fetchCourses();
 		this.redirectAction();
-	};
-
-	handleKey(e) {
-		if (e.keyCode === 13) {
-			this.addCourse();
-		}
 	};
 
 	render() {
@@ -111,10 +110,10 @@ class CourseForm extends React.Component {
 							<input type="text" className="field-style field-split align-right" value={title} onChange={this.update('title')} placeholder="Title" />
 						</li>
 						<li>
-							<select className="field-style field-split align-left"  value={this.state.professor_id}>
+							<select className="field-style field-split align-left"  value={this.state.department_id} onChange={this.update('department_id')} >
 								{deptList}
 							</select>
-							<select className="field-style field-split align-right"  value={this.state.department_id}>
+							<select className="field-style field-split align-right"  value={this.state.professor_id} onChange={this.update('professor_id')} >
 								{profList}
 							</select>
 						</li>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { values, merge } from 'lodash';
 
 class CourseEditForm extends React.Component {
 	constructor(props) {
@@ -7,8 +8,8 @@ class CourseEditForm extends React.Component {
 			id: '',
 			course_code: '',
 			title: '',
-			department_id: '',
-			professor_id: '',
+			department_name: '',
+			professor_name: '',
 			course_credit: '',
 			course_cap: '',
 			start_time: '',
@@ -22,9 +23,12 @@ class CourseEditForm extends React.Component {
 		this.redirectAction = this.redirectAction.bind(this);
 	};
 
-	componentWillMount() {
+	componentDidMount() {
 		const id = this.props.match.params.id;
 		this.props.fetchCourse(id);
+		this.props.fetchUsers();
+		this.props.fetchCourses();
+		this.props.fetchDepartments();
 	};
 
 	update(prop) {
@@ -48,8 +52,8 @@ class CourseEditForm extends React.Component {
 				id: this.props.match.params.id,
 				course_code: this.state.course_code,
 				title: this.state.title,
-				department_id: this.state.department_id,
-				professor_id: this.state.professor_id,
+				department_name: this.state.department.name,
+				professor_name: this.state.professor.lname,
 				start_time: this.state.start_time,
 				end_time: this.state.end_time,
 				course_credit: this.state.course_credit,
@@ -61,8 +65,8 @@ class CourseEditForm extends React.Component {
 			id: '',
 			course_code: '',
 			title: '',
-			department_id: '',
-			professor_id: '',
+			department_name: '',
+			professor_name: '',
 			start_time: '06:00',
 			end_time: '07:00',
 			course_credit: '',
@@ -81,8 +85,8 @@ class CourseEditForm extends React.Component {
 				id: props.match.params.id,
 				course_code: props.courses[props.match.params.id].course_code,
 				title: props.courses[props.match.params.id].title,
-				department_id: props.courses[props.match.params.id].department_id,
-				professor_id: props.courses[props.match.params.id].professor_id,
+				department_name: props.courses[props.match.params.id].department.name,
+				professor_name: props.courses[props.match.params.id].professor.lname,
 				start_time: props.courses[props.match.params.id].start_time.slice(11,16),
 				end_time: props.courses[props.match.params.id].end_time.slice(11,16),
 				course_credit: props.courses[props.match.params.id].course_credit,
@@ -93,8 +97,8 @@ class CourseEditForm extends React.Component {
 				id: '',
 				course_code: '',
 				title: '',
-				department_id: '',
-				professor_id: '',
+				department_name: '',
+				professor_name: '',
 				start_time: '06:00',
 				end_time: '07:00',
 				course_credit: '',
@@ -108,8 +112,8 @@ class CourseEditForm extends React.Component {
 		const {
 			course_code,
 			title,
-			department_id,
-			professor_id,
+			department_name,
+			professor_name,
 			start_time,
 			end_time,
 			course_credit,
@@ -127,8 +131,12 @@ class CourseEditForm extends React.Component {
 							<input type="text" className="field-style field-split align-right" value={title} onChange={this.update('title')} />
 						</li>
 						<li>
-							<input type="text" className="field-style field-split align-left" value={department_id} onChange={this.update('department_id')} />
-							<input type="text" className="field-style field-split align-right" value={professor_id} onChange={this.update('professor_id')} />
+							<select className="field-style field-split align-left"  value={this.state.department_id} >
+								<option>{department_name}</option>
+							</select>
+							<select className="field-style field-split align-right"  value={this.state.professor_id} >
+								<option>{professor_name}</option>
+							</select>
 						</li>
 						<li>
 							<input type="number" className="field-style field-split align-left" value={course_credit} onChange={this.update('course_credit')} />

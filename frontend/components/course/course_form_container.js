@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createCourse, fetchCourse, fetchCourses, editCourse } from '../../actions/course_actions';
+import { createCourse, fetchCourses } from '../../actions/course_actions';
 import { fetchUsers } from '../../actions/user_actions';
 import { fetchDepartments } from '../../actions/department_actions';
 import CourseForm from './CourseForm';
@@ -11,9 +11,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	createCourse: data => dispatch(createCourse(data)),
+	createCourse: (data) => dispatch(createCourse(data)),
 	fetchCourses: () => dispatch(fetchCourses()),
-	fetchCourse: (id) => dispatch(fetchCourse(id)),
 	fetchUsers: () => dispatch(fetchUsers()),
 	fetchDepartments: () => dispatch(fetchDepartments()),
 });

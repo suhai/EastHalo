@@ -26,10 +26,19 @@ class Course extends React.Component {
 			end_time, 
 			course_credit, 
 			course_cap, 
-			course_description,
-			professor,
-			students
+			course_description
 		} = this.props.course;
+	
+		let classSize = 0;
+		let profLName = '';
+		let profFInitial = '';
+		if (this.props.course.length) {
+			classSize = this.props.course.students.length;
+		};
+		if (this.props.course.professor) {
+			profLName = this.props.course.professor.lname;
+			profFInitial = this.props.course.professor.fname.slice(0,1).toUpperCase();
+		};
 
     return (
 			<tr onClick={this.showCourse}>
@@ -38,8 +47,8 @@ class Course extends React.Component {
 				<td>{start_time.slice(11,16)}</td>
 				<td>{end_time.slice(11,16)}</td>
 				<td>{course_credit}</td>
-				<td>{students.length}/{course_cap}</td>
-				<td>{`${professor.lname}, ${professor.fname.slice(0,1).toUpperCase()}`}</td>
+				<td>{classSize}/{course_cap}</td>
+				<td>{`${profLName}, ${profFInitial}`}</td>
 			</tr>
     );
   }

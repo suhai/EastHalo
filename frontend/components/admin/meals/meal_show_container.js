@@ -1,21 +1,21 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { createBook, fetchBooks, deleteBook } from '../../../actions/book_actions';
-import Books from './Books';
+import { fetchMeal, editMeal, deleteMeal } from '../../../actions/meal_actions';
+import MealShow from './MealShow';
 
 const mapStateToProps = (state, ownProps) => ({
 	currentUser: state.session.currentUser,
-	books: state.Books,
+	meals: state.meals,
 });
 
 const mapDispatchToProps = dispatch => ({
-	createBook: data => dispatch(createBook(data)),
-	fetchBooks: () => dispatch(fetchBooks()),
-  deleteBook: id => dispatch(deleteBook(id))
+  fetchMeal: id => dispatch(fetchMeal(id)),
+  editMeal: (meal, id) => dispatch(editMeal(meal, id)),
+	deleteMeal: id => dispatch(deleteMeal(id)),
 });
 
 export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-)(Books));
+)(MealShow));

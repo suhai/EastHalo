@@ -1,9 +1,9 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
-import Book from './Book';
+import Meal from './Meal';
 
-class Bookstore extends React.Component {
+class Cafetaria extends React.Component {
   constructor(props) {
     super(props);
 		this.state = {
@@ -13,38 +13,35 @@ class Bookstore extends React.Component {
 	};
 	
 	renderForm() {
-		window.location.hash = `/admin/${this.props.currentUser.username}/books/bookform`;
+		window.location.hash = 'cafetaria/mealform';
 	};
 
 	componentDidMount() {
-		this.props.fetchBooks();
+		this.props.fetchMeals();
 	};
 
   render() {
-		let bookList = values(this.props.books);
-		let books = bookList.map((book, idx) => (
-			<Book key={idx} book={book} />
+		let mealList = values(this.props.meals);
+		let meals = mealList.map((meal, idx) => (
+			<Meal key={idx} meal={meal} />
 		));
 
     return (
       <div className=''>
-				<div><button className='btn create align-left' onClick={this.renderForm}>Create Book</button></div>
+				<div><button className='btn create align-left' onClick={this.renderForm}>Create Meal</button></div>
 
 				<table id="gradient-style" className="full-width">
 					<thead>
 						<tr>
-							<th scope="col">Category</th>
-							<th scope="col">Title</th>
-							<th scope="col">Author</th>
-							<th scope="col">Publisher</th>
+							<th scope="col">Name</th>
 							<th scope="col">Price</th>
-							<th scope="col">Description</th>
+							<th scope="col">Ingredients</th>
 							<th scope="col">Image</th>
 						</tr>
 					</thead>
 
 					<tbody>
-						{books}
+						{meals}
 					</tbody>
 
 				</table>
@@ -56,4 +53,4 @@ class Bookstore extends React.Component {
   }
 }
 
-export default Bookstore;
+export default Cafetaria;

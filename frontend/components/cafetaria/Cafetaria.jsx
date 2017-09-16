@@ -13,7 +13,7 @@ class Cafetaria extends React.Component {
 	};
 	
 	renderForm() {
-		window.location.hash = 'cafetaria/mealform';
+		window.location.hash = `/admin/${this.props.currentUser.username}/meals/mealform`;
 	};
 
 	componentDidMount() {

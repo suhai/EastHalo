@@ -2,7 +2,7 @@ import React from 'react';
 import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
 {/* BOOKS */}
-import AdminBookPageContainer from './books/book_page_container';
+import BooksPageContainer from './books/book_page_container';
 import BookFormContainer from './books/book_form_container';
 import BookEditContainer from './books/book_edit_container';
 import BookShowContainer from './books/book_show_container';
@@ -21,7 +21,10 @@ import AdminGradeLetterPageContainer from './grade_letters/grade_letter_page_con
 {/* GRADES */}
 import AdminGradePageContainer from './grades/grade_page_container';
 {/* MEALS */}
-import AdminMealPageContainer from './meals/meal_page_container';
+import MealsPageContainer from './meals/meal_page_container';
+import MealFormContainer from './meals/meal_form_container';
+import MealEditContainer from './meals/meal_edit_container';
+import MealShowContainer from './meals/meal_show_container';
 {/* */}
 import AdminPostPageContainer from './posts/post_page_container';
 {/* SCHEDULES */}
@@ -41,7 +44,7 @@ class Admin extends React.Component {
   }
 
   render() {
- 
+
     return (
       <main className='user-page'>
 				<nav className='profile-nav'> {/* SUB NAVIGATIONS */}
@@ -64,12 +67,16 @@ class Admin extends React.Component {
 
 				<div>
 					<Switch> {/* ROUTES */}
+						{/* ASSIGNMENTS */}
+
 						<Route path="/admin/:username/users" render={(props) => <AdminUserPageContainer {...props} /> } />
 						{/* BOOKS */}
-						<Route path="/admin/:username/books" render={(props) => <AdminBookPageContainer {...props} /> } />
-						<Route exact path="/admin/:username/books/bookform" render={(props) => <BookFormContainer {...props} /> } />
-						<Route path="/admin/:username/books/edit/:id" render={(props) => <BookEditPageContainer {...props} /> } />
 						<Route path="/bookstore/books/:id" render={(props) => <BookShowContainer {...props} /> } />
+						<Route path="/admin/:username/books/bookform" render={(props) => <BookFormContainer {...props} /> } />
+						<Route path="/admin/:username/books/edit/:id" render={(props) => <BookEditContainer {...props} /> } />
+						<Route path="/admin/:username/books" render={(props) => <BooksPageContainer {...props} /> } />
+						{/* CAFETARIA */}
+
 						{/* COMMENTS */}
 						<Route path="/admin/:username/comments" render={(props) => <AdminCommentPageContainer {...props} /> } />
 						{/* COURSE_ENROLLMENTS */}
@@ -85,6 +92,12 @@ class Admin extends React.Component {
 						{/* GRADES */}
 						<Route path="/admin/:username/grades" render={(props) => <AdminGradePageContainer {...props} /> } />
 						{/* MEALS */}
+						<Route path="/cafetaria/meals/:id" render={(props) => <MealShowContainer {...props} /> } />
+						<Route path="/admin/:username/meals/mealform" render={(props) => <MealFormContainer {...props} /> } />
+						<Route path="/admin/:username/meals/edit/:id" render={(props) => <MealEditContainer {...props} /> } />
+						<Route path="/admin/:username/meals" render={(props) => <MealsPageContainer {...props} /> } />
+
+						{/* NEWS */}
 						<Route path="/admin/:username/meals" render={(props) => <AdminMealPageContainer {...props} /> } />
 						{/* POSTS */}
 						<Route path="/admin/:username/posts" render={(props) => <AdminPostPageContainer {...props} /> } />
@@ -92,6 +105,8 @@ class Admin extends React.Component {
 						<Route path="/admin/:username/schedules" render={(props) => <AdminSchedulePageContainer {...props} /> } />
 						{/* TRANSCRIPTS */}
 						<Route path="/admin/:username/transcripts" render={(props) => <AdminTranscriptPageContainer {...props} /> } />
+						{/* USERS */}
+
 						{/* DEFAULT ADMIN PAGE */}
 						<Route exact path="/admin" render={(props) => <AdminUserPageContainer {...props} /> } />
 					</Switch>

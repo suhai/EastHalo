@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
 	createBook: (data) => dispatch(createBook(data)),
-	fetchBooks: (data) => dispatch(fetchBooks()),
+	fetchBooks: () => dispatch(fetchBooks()),
 });
 
 export default connect(

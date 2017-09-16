@@ -5,6 +5,7 @@ import Cafetaria from './Cafetaria';
 
 const mapStateToProps = (state, ownProps) => ({
 	meals: state.meals,
+	currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

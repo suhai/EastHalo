@@ -1,12 +1,17 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import Admin from './Admin';
+import Assignment from './Assignment';
 
 const mapStateToProps = (state, ownProps) => ({
-	currentUser: state.session.currentUser,
+
+});
+
+const mapDispatchToProps = dispatch => ({
+
 });
 
 export default withRouter(
   connect(
     mapStateToProps,
-)(Admin));
+    mapDispatchToProps
+)(Assignment));

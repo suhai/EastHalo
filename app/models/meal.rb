@@ -13,8 +13,8 @@
 
 class Meal < ApplicationRecord
 	after_initialize :set_defaults, unless: :persisted?
-	belongs_to :cafetarium
-	belongs_to :user
+	# belongs_to :cafetarium
+	# belongs_to :user
 
 	def set_defaults
     self.price  ||= 5

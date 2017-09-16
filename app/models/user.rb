@@ -37,8 +37,8 @@ class User < ApplicationRecord
 	has_many :friends, through: :friendships, dependent: :destroy
 	has_many :posts
 	has_many :comments
-	has_many :books
-	has_many :meals
+	# has_many :books
+	# has_many :meals
 	has_one :schedule
 
 

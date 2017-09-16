@@ -5,15 +5,15 @@
 #  id                 :integer          not null, primary key
 #  title              :string
 #  course_credit      :decimal(, )
-#  start_time         :integer
-#  end_time           :integer
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  professor_id       :integer
 #  course_code        :string
 #  course_description :text
 #  course_cap         :integer
-#  department         :string
+#  department_id      :integer
+#  start_time         :time
+#  end_time           :time
 #
 
 class Course < ApplicationRecord

@@ -17,6 +17,8 @@ import UserEditFormContainer from '../user/user_edit_form_container';
 import CourseShowContainer from '../course/course_show_container';
 import UserShow from '../user/UserShow';
 import CourseFormContainer from '../course/course_form_container';
+import MealFormContainer from '../cafetaria/meal_form_container';
+import BookFormContainer from '../bookstore/book_form_container';
 import CourseEditContainer from '../course/course_edit_container';
 import DepartmentPageContainer from '../department/department_page_container';
 
@@ -34,6 +36,8 @@ class LoggedHome extends React.Component {
 					<h3>WELCOME TO THE LOGGED HOMEPAGE</h3>
 					<Switch>
 						<Route path="/registrar/courseform" render={(props) => <CourseFormContainer {...props} />} />
+						<Route path="/cafetaria/mealform" render={(props) => <MealFormContainer {...props} />} />
+						<Route path="/bookstore/bookform" render={(props) => <BookFormContainer {...props} />} />
 						<Route exact path="/admin/departments" render={(props) => <DepartmentPageContainer {...props} />} />
 						<Route path="/admin" render={(props) => <AdminPageContainer {...props} />} />
 						<Route path="/bookstore" render={(props) => <BookstorePageContainer {...props} />} />

@@ -39,7 +39,7 @@ class Departments extends React.Component {
 					</tbody>
 				</table>
 				<p className='pull-left'>
-					Give background color to the table cells to achieve seamless transition
+					Table Footer or Description Will Go Here
 				</p>
 			</div>
 		);

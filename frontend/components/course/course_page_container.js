@@ -5,7 +5,6 @@ import Courses from './Courses';
 
 const mapStateToProps = (state, ownProps) => ({
 	courses: state.courses,
-	form: state.form
 });
 
 const mapDispatchToProps = dispatch => ({

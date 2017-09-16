@@ -18,15 +18,15 @@ class Courses extends React.Component {
 		window.location.hash = 'registrar/courseform';
 	}
 
-	handleToggle(event, toggled) {
-		this.setState({
-			[event.target.name]: toggled,
-		});
-	};
+	// handleToggle(event, toggled) {
+	// 	this.setState({
+	// 		[event.target.name]: toggled,
+	// 	});
+	// };
 
-	handleChange(event) {
-		this.setState({ height: event.target.value });
-	};
+	// handleChange(event) {
+	// 	this.setState({ height: event.target.value });
+	// };
 
 	componentDidMount() {
 		this.props.fetchCourses();
@@ -62,7 +62,7 @@ class Courses extends React.Component {
 
 				</table>
 				<p className='pull-left'>
-					Give background color to the table cells to achieve seamless transition
+					Table Footer or Description Will Go Here
 				</p>
 			</div>
 		);

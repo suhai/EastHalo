@@ -43,14 +43,31 @@ class CourseShow extends React.Component {
 
 	disEnrollFromCourse() {
 		console.log('disenrolling now .....');
-		let enrollmentsArr = values(this.props.courseEnrollments);
-		console.log(this.props.courseEnrollments);
-		console.log(this.state.course.id);
-		
+		console.log(values(this.props.courseEnrollments));
+		// let enrollmentsArr = values(this.props.courseEnrollments);
+		// console.log(this.props.courseEnrollments);
+		// console.log(this.state.course.id);
+		const olele = this.props.courseEnrollments
+		let myPromise = new Promise((resolve, reject) => {
+			resolve(
+				olele.find((el) => {
+					var obj = Object.values(el)[0];
+					return (obj.student_id === this.props.currentUser.id && obj.course_id === this.state.course.id) 	
+				})
+			)	
+		});
+
+		myPromise.then((res) => {
+			console.log(res);
+		})
+		.catch((err) => {
+			console.log(err)
+		});
 		// let enrollmentID = values(this.props.courseEnrollments).filter(function(enrollment) { return (enrollment.student_id === this.props.currentUser.id && enrollment.course_id === this.state.course.id)})
 		// .id;
 		
 		// this.props.deleteCourseEnrollment(enrollmentID);
+		
 	};
 
 	deleteCourse() {

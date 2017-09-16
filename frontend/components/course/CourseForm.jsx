@@ -29,7 +29,7 @@ class CourseForm extends React.Component {
 	};
 
 	update(prop) {
-		return e => this.setState({ [prop]: e.currentTarget.value });
+		return e => this.setState({ [prop]: e.currentTarget.value });	
 	};
 
 	redirectAction() {

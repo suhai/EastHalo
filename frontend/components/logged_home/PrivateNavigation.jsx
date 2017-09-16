@@ -49,7 +49,7 @@ class PrivateNavigation extends React.Component {
 				<nav className='navigation'>
 					<ul>
 						<li><NavLink exact to='/loggedhome'>Home</NavLink></li>
-						<li><NavLink to='/:username/page'>My Page</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/page`}>My Page</NavLink></li>
 						<li><NavLink to='/registrar'>Courses</NavLink></li>
 						<li><NavLink to='/news'>EHU News</NavLink></li>
 						<li><NavLink to='/cafetaria'>Cafetaria</NavLink></li>

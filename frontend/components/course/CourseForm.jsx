@@ -13,7 +13,7 @@ class CourseForm extends React.Component {
 			course_cap: '',
 			start_time: '',
 			end_time: '',
-			course_description: '',
+			course_description: ''
 		};
 
 		this.update = this.update.bind(this);

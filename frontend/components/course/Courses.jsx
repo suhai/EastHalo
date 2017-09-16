@@ -3,35 +3,22 @@ import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
 import Course from './Course';
 
-
 class Courses extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 
 		};
-
 		this.renderForm = this.renderForm.bind(this);
 	};
 
 	renderForm() {
 		window.location.hash = 'registrar/courseform';
-	}
-
-	// handleToggle(event, toggled) {
-	// 	this.setState({
-	// 		[event.target.name]: toggled,
-	// 	});
-	// };
-
-	// handleChange(event) {
-	// 	this.setState({ height: event.target.value });
-	// };
+	};
 
 	componentDidMount() {
 		this.props.fetchCourses();
 	};
-
 
 	render() {
 		let courseList = values(this.props.courses);

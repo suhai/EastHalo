@@ -8,11 +8,10 @@ class Meal extends React.Component {
       
     };
     this.showMeal = this.showMeal.bind(this);
-  }
+  };
 
 
   showMeal() {
-		// const id = this.props.meal.id;
 		window.location.hash = `cafetaria/${this.props.meal.id}`;
 	};
 

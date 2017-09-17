@@ -124,7 +124,7 @@ class BookEditForm extends React.Component {
 								<textarea className="field-style" value={description} onChange={this.update('description')} placeholder="Description"></textarea>
 							</li>
 							<li>
-								<input type="submit" value="Save" onClick={this.addBook} />
+								<input type="submit" value="Save" onClick={this.editBook} />
 								<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
 							</li>
 						</ul>

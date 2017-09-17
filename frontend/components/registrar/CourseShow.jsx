@@ -15,7 +15,7 @@ class CourseShow extends React.Component {
 		this.editCourse = this.editCourse.bind(this);
 		this.deleteCourse = this.deleteCourse.bind(this);
 		this.enrollInCourse = this.enrollInCourse.bind(this);
-		this.disEnrollFromCourse = this.disEnrollFromCourse.bind(this);
+		this.dropCourse = this.dropCourse.bind(this);
 	}
 
 	componentDidMount() {
@@ -29,45 +29,28 @@ class CourseShow extends React.Component {
 	};
 
 	enrollInCourse() {
+		const { id: course_id } = this.state.course;
+		const { id: student_id } = this.props.currentUser;
 		let data = {
 			course_enrollment: {
-				course_id: this.state.course.id,
-				student_id: this.props.currentUser.id
+				course_id,
+				student_id
 			}
 		};
 
-		if (data.course_id !== "undefined" && data.student_id !== "undefined") {
-			this.props.createCourseEnrollment(data);
+		if (course_id !== undefined && student_id !== undefined) {
+			this.props.createCourseEnrollment(data);	
 		}
 	};
 
-	disEnrollFromCourse() {
-		console.log('disenrolling now .....');
-		console.log(values(this.props.courseEnrollments));
-		// let enrollmentsArr = values(this.props.courseEnrollments);
-		// console.log(this.props.courseEnrollments);
-		// console.log(this.state.course.id);
-		const olele = this.props.courseEnrollments
-		let myPromise = new Promise((resolve, reject) => {
-			resolve(
-				olele.find((el) => {
-					var obj = Object.values(el)[0];
-					return (obj.student_id === this.props.currentUser.id && obj.course_id === this.state.course.id) 	
-				})
-			)	
-		});
-
-		myPromise.then((res) => {
-			console.log(res);
+	dropCourse() {
+		this.props.currentUser.course_enrollments.forEach(enrollment => {
+			if (enrollment.course_id === this.state.course.id) {
+				this.props.deleteCourseEnrollment(enrollment.id)
+				// .then( () => this.props.fetchUser(this.props.currentUser.id))
+				// .then(user => this.props.login(user))
+			}
 		})
-		.catch((err) => {
-			console.log(err)
-		});
-		// let enrollmentID = values(this.props.courseEnrollments).filter(function(enrollment) { return (enrollment.student_id === this.props.currentUser.id && enrollment.course_id === this.state.course.id)})
-		// .id;
-		
-		// this.props.deleteCourseEnrollment(enrollmentID);
-		
 	};
 
 	deleteCourse() {
@@ -101,6 +84,7 @@ class CourseShow extends React.Component {
 
 	render() {
 		const {
+			id,
 			course_code,
 			title,
 			course_credit,
@@ -120,6 +104,7 @@ class CourseShow extends React.Component {
 			profFName
 		} = this.state;
 
+		const { course_enrollments } = this.props.currentUser;
 		return (
 			<main className='user-page'>
 				<div>
@@ -127,12 +112,14 @@ class CourseShow extends React.Component {
 					<div className='grouped-buttons'>
 						<button className='btn edit' onClick={this.editCourse}>Edit Course</button>
 						<button className='btn delete' onClick={this.deleteCourse}>Delete Course</button>
-						<button className='btn create' onClick={this.enrollInCourse}>Add Course</button>
-						<button className='btn delete' onClick={this.disEnrollFromCourse}>Drop Course</button>
+						{ course_enrollments.some(course => course.course_id === id ) ? 
+							<button className='btn delete' onClick={this.dropCourse}>Drop Course</button> :
+							<button className='btn create' onClick={this.enrollInCourse}>Add Course</button> 		
+					 	}
 					</div>
 				</div>
 				<hr />
-
+				
 				<table id="background-image" className="full-width">
 					<thead>
 						<tr className='fixed-header'>

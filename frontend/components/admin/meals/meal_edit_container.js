@@ -9,7 +9,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
 	fetchMeals: () => dispatch(fetchMeals()),
-	fetchMeal: (id) => dispatch(fetchMeals(id))
+	fetchMeal: (id) => dispatch(fetchMeals(id)),
+	editMeal: (data, id) => dispatch(editMeal(data, id))
 });
 
 export default connect(

@@ -13,7 +13,7 @@ class MealEditForm extends React.Component {
 
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
-		this.editBook = this.editBook.bind(this);
+		this.editMeal = this.editMeal.bind(this);
 		this.redirectAction = this.redirectAction.bind(this);
 	};
 
@@ -33,12 +33,10 @@ class MealEditForm extends React.Component {
 	};
 
 	redirectAction() {
-		// let id = this.props.match.params.id;
-		// window.location.hash = `cafetaria/meals/${id}`;
 		window.location.hash = `admin/${this.props.currentUser.username}/meals`;
 	};
 
-	editBook() {
+	editMeal() {
 		let data = {
 			meal: {
 				name: this.state.name,

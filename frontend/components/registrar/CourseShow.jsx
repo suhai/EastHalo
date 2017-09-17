@@ -10,12 +10,14 @@ class CourseShow extends React.Component {
 			courseCap: 1,
 			courseDensity: 0,
 			profLName: '',
-			profFName: ''
+			profFName: '',
+			enroll_status: ''
 		};
 		this.editCourse = this.editCourse.bind(this);
 		this.deleteCourse = this.deleteCourse.bind(this);
-		this.enrollInCourse = this.enrollInCourse.bind(this);
+		this.addCourse = this.addCourse.bind(this);
 		this.dropCourse = this.dropCourse.bind(this);
+		this.toggleCourse = this.toggleCourse.bind(this);
 	}
 
 	componentDidMount() {
@@ -28,7 +30,7 @@ class CourseShow extends React.Component {
 		window.location.hash = `/admin/${this.props.currentUser.username}/courses/edit/${this.state.course.id}`;
 	};
 
-	enrollInCourse() {
+	addCourse() {
 		const { id: course_id } = this.state.course;
 		const { id: student_id } = this.props.currentUser;
 		let data = {
@@ -39,18 +41,27 @@ class CourseShow extends React.Component {
 		};
 
 		if (course_id !== undefined && student_id !== undefined) {
-			this.props.createCourseEnrollment(data);	
+			this.props.createCourseEnrollment(data);
+			this.setState({
+				enroll_status: 'Drop Course'
+			})	
 		}
 	};
 
 	dropCourse() {
 		this.props.currentUser.course_enrollments.forEach(enrollment => {
 			if (enrollment.course_id === this.state.course.id) {
-				this.props.deleteCourseEnrollment(enrollment.id)
-				// .then( () => this.props.fetchUser(this.props.currentUser.id))
-				// .then(user => this.props.login(user))
+				this.props.deleteCourseEnrollment(enrollment.id);
+				this.setState({
+					enroll_status: 'Add Course'
+				})
 			}
 		})
+	};
+
+	toggleCourse() {
+		this.state.enroll_status === 'Add Course' ?
+		this.addCourse() : this.dropCourse()
 	};
 
 	deleteCourse() {
@@ -80,6 +91,14 @@ class CourseShow extends React.Component {
 				profLName: '',
 				profFName: ''
 			});
+
+		this.props.currentUser.course_enrollments.some(enrollment => (enrollment.course_id) === this.state.course.id ) ? 
+		this.setState({
+			enroll_status: 'Drop Course'
+		}) :
+		this.setState({
+			enroll_status: 'Add Course'
+		})
 	}
 
 	render() {
@@ -104,7 +123,6 @@ class CourseShow extends React.Component {
 			profFName
 		} = this.state;
 
-		const { course_enrollments } = this.props.currentUser;
 		return (
 			<main className='user-page'>
 				<div>
@@ -112,10 +130,7 @@ class CourseShow extends React.Component {
 					<div className='grouped-buttons'>
 						<button className='btn edit' onClick={this.editCourse}>Edit Course</button>
 						<button className='btn delete' onClick={this.deleteCourse}>Delete Course</button>
-						{ course_enrollments.some(course => course.course_id === id ) ? 
-							<button className='btn delete' onClick={this.dropCourse}>Drop Course</button> :
-							<button className='btn create' onClick={this.enrollInCourse}>Add Course</button> 		
-					 	}
+						<button className='btn delete' onClick={this.toggleCourse}>{this.state.enroll_status}</button>	
 					</div>
 				</div>
 				<hr />
@@ -173,3 +188,9 @@ class CourseShow extends React.Component {
 }
 
 export default CourseShow;
+
+
+// { course_enrollments.some(course => course.course_id === id ) ? 
+// 	<button className='btn delete' onClick={this.dropCourse}>Drop Course</button> :
+// 	<button className='btn create' onClick={this.addCourse}>Add Course</button> 		
+//  }

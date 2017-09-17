@@ -21,6 +21,7 @@ class Api::FriendshipsController < ApplicationController
 
 	def destroy
 		@friendship.destroy
+		render json: @friendship
 	end
 	
 

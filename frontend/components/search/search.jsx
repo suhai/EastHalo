@@ -1,8 +1,6 @@
 import React from 'react';
 import { values } from 'lodash';
 import User from '../user/User';
-import Course from '../course/Course';
-
 
 class Search extends React.Component {
   constructor(props) {
@@ -13,14 +11,12 @@ class Search extends React.Component {
     window.scrollTo(0, 0);
     let query = this.props.location.search.slice(3);
 		this.props.fetchUsers({ search: query });
-		// this.props.fetchCourses({ search: query });
   }
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.location.search !== this.props.location.search) {
       let query = nextProps.location.search.slice(3);
 			this.props.fetchUsers({ search: query });
-			// this.props.fetchCourses({ search: query });
     }
   }
 
@@ -28,10 +24,6 @@ class Search extends React.Component {
     let users = values(this.props.search.users).map( user => (
       <User user={user} key={user.id} />
 		));
-		
-		// let courses = values(this.props.search.courses).map( course => (
-    //   <Course course={course} key={course.id} />
-    // ));
 
     let results = <p className='nothing'>Sorry, No Matches Were Found.</p>;
     if (users.length !== 0) {

@@ -2,19 +2,11 @@ import * as APIUtil from '../utils/meal_api_utils';
 export const RECEIVE_MEAL = 'RECEIVE_MEAL';
 export const RECEIVE_MEALS = 'RECEIVE_MEALS';
 export const REMOVE_MEAL = 'REMOVE_MEAL';
-export const MEAL_ERROR= 'MEAL_ERROR';
-export const CLEAR_ERRORS= 'CLEAR_ERRORS';
 export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
-
-
 
 export const receiveMeal = meal => ({
   type: RECEIVE_MEAL,
   meal
-});
-
-export const clearErrors = () => ({
-  type: CLEAR_ERRORS
 });
 
 export const receiveErrors = (errors) => ({
@@ -32,11 +24,6 @@ export const removeMeal = meal => ({
   meal
 });
 
-export const MealError = error => ({
-  type: MEAL_ERROR,
-  error
-})
-
 //-----------------------------------------------------------------------------
 // async actions
 export const createMeal = data => dispatch => (
@@ -44,7 +31,6 @@ export const createMeal = data => dispatch => (
   .then(meal =>  dispatch(receiveMeal(meal)),
   err => dispatch(receiveErrors(err.responseJSON)))
 );
-
 
 export const fetchMeals = () => dispatch => (
   APIUtil.fetchMeals()

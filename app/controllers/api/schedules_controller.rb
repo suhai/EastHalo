@@ -29,6 +29,7 @@ class Api::SchedulesController < ApplicationController
 
 	def destroy
 		@schedule.destroy
+		render json: @schedule
 	end
 	
 

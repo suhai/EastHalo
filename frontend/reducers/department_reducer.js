@@ -1,7 +1,7 @@
 import { RECEIVE_DEPARTMENTS,
 	RECEIVE_DEPARTMENT,
-	REMOVE_DEPARTMENT,
-	DEPARTMENT_ERROR } from '../actions/department_actions';
+	REMOVE_DEPARTMENT
+} from '../actions/department_actions';
 import merge from 'lodash/merge';
 
 // const defaultState = { };

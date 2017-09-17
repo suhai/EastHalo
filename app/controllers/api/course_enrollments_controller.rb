@@ -21,6 +21,7 @@ class Api::CourseEnrollmentsController < ApplicationController
 
 	def destroy
 		@course_enrollment.destroy
+		render json: @course_enrollment
 	end
 	
 

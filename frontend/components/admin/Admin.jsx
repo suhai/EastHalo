@@ -1,28 +1,28 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
-{/* ASSIGNMENTS */}
+{/* ASSIGNMENTS, only display all + delete options */}
 import AdminAssignmentPageContainer from './assignments/assignment_page_container';
 {/* BOOKS */}
 import AdminBooksPageContainer from './books/book_page_container';
 import AdminBookFormContainer from './books/book_form_container';
 import AdminBookEditContainer from './books/book_edit_container';
 // import AdminBookShowContainer from './books/book_show_container';
-{/* COMMENTS */}
+{/* COMMENTS , only display all + delete options */}
 import AdminCommentPageContainer from './comments/comment_page_container';
-{/* COURSE_ENROLLMENTS */}
+{/* COURSE_ENROLLMENTS , only display all + delete options */}
 import AdminCourseEnrollmentPageContainer from './course_enrollments/course_enrollment_page_container';
 {/* COURSES */}
 import AdminCoursePageContainer from './courses/course_page_container';
 import AdminCourseFormContainer from './courses/course_form_container';
 import AdminCourseEditContainer from './courses/course_edit_container';
-{/* DEPARTMENTS */}
+{/* DEPARTMENTS , only display all + delete options */}
 import AdminDepartmentPageContainer from './departments/department_page_container';
-{/* FRIENDSHIPS */}
+{/* FRIENDSHIPS , only display all + delete options */}
 import AdminFriendshipPageContainer from './friendships/friendship_page_container';
-{/* GRADE_LETTERS */}
+{/* GRADE_LETTERS , only display all + delete options */}
 import AdminGradeLetterPageContainer from './grade_letters/grade_letter_page_container';
-{/* GRADES */}
+{/* GRADES , only display all + delete options */}
 import AdminGradePageContainer from './grades/grade_page_container';
 {/* MEALS */}
 import AdminMealsPageContainer from './meals/meal_page_container';
@@ -31,9 +31,9 @@ import AdminMealEditContainer from './meals/meal_edit_container';
 // import AdminMealShowContainer from './meals/meal_show_container';
 {/* NEWS */}
 import AdminNewsPageContainer from './news/news_page_container';
-{/* */}
+{/* POSTS */}
 import AdminPostPageContainer from './posts/post_page_container';
-{/* SCHEDULES */}
+{/* SCHEDULES , only display all + delete options */}
 import AdminSchedulePageContainer from './schedules/schedule_page_container';
 {/* TRANSCRIPTS */}
 import AdminTranscriptPageContainer from './transcripts/transcript_page_container';

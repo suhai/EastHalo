@@ -2,8 +2,6 @@ import * as APIUtil from '../utils/course_api_utils';
 export const RECEIVE_COURSE = 'RECEIVE_COURSE';
 export const RECEIVE_COURSES = 'RECEIVE_COURSES';
 export const REMOVE_COURSE = 'REMOVE_COURSE';
-export const COURSE_ERROR= 'COURSE_ERROR';
-export const CLEAR_ERRORS= 'CLEAR_ERRORS';
 export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
 
 
@@ -11,10 +9,6 @@ export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
 export const receiveCourse = course => ({
   type: RECEIVE_COURSE,
   course
-});
-
-export const clearErrors = () => ({
-  type: CLEAR_ERRORS
 });
 
 export const receiveErrors = (errors) => ({
@@ -32,10 +26,6 @@ export const removeCourse = course => ({
   course
 });
 
-export const CourseError = error => ({
-  type: COURSE_ERROR,
-  error
-})
 
 //-----------------------------------------------------------------------------
 // async actions

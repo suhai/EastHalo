@@ -1,7 +1,7 @@
-import { RECEIVE_MEALS,
+import { RECEIVE_BOOKS,
 	RECEIVE_BOOK,
-	REMOVE_BOOK,
-	BOOK_ERROR } from '../actions/book_actions';
+	REMOVE_BOOK
+} from '../actions/book_actions';
 import merge from 'lodash/merge';
 
 // const defaultState = { };
@@ -13,7 +13,7 @@ const BookReducer = (state = {}, action) => {
 			newState[action.book.id] = action.book
 			return newState
 
-		case RECEIVE_BOOK:
+		case RECEIVE_BOOKS:
       for (let key in action.books) {
         newState[key] = action.books[key];
       }

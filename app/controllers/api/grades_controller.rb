@@ -29,6 +29,7 @@ class Api::GradesController < ApplicationController
 
 	def destroy
 		@grade.destroy
+		render json: @grade
 	end
 	
 

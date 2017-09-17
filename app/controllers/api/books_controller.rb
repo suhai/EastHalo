@@ -29,6 +29,7 @@ class Api::BooksController < ApplicationController
 
 	def destroy
 		@book.destroy
+		render json: @book
 	end
 	
 

@@ -20,20 +20,11 @@ export const receiveRandomUsers = users => ({
 });
 //-----------------------------------------------------------------------------
 
-// export const fetchAllUsers = () => dispatch => (
-//   APIUtil.fetchAllUsers()
-//     .then(users => dispatch(receiveUsers(users)))
-// );
 
 export const fetchUsers = () => dispatch => (
   APIUtil.fetchUsers()
     .then(users => dispatch(receiveUsers(users)))
 );
-
-// export const fetchRandomUsers = query => dispatch => (
-//   APIUtil.fetchUsers(query)
-//     .then(users => dispatch(receiveUsers(users)))
-// );
 
 export const fetchUser = id => dispatch => (
   APIUtil.fetchUser(id)

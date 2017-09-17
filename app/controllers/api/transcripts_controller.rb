@@ -29,6 +29,7 @@ class Api::TranscriptsController < ApplicationController
 
 	def destroy
 		@transcript.destroy
+		render json: @transcript
 	end
 	
 	

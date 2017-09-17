@@ -29,6 +29,7 @@ class Api::CafetariaController < ApplicationController
 
 	def destroy
 		@cafetarium.destroy
+		render json: @cafetaria
 	end
 	
 

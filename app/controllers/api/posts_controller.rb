@@ -30,6 +30,7 @@ class Api::PostsController < ApplicationController
 
 	def destroy
 		@post.destroy
+		render json: @post
 	end
 
 

@@ -29,6 +29,7 @@ class Api::MealsController < ApplicationController
 
 	def destroy
 		@meal.destroy
+		render json: @meal
 	end
 	
 	

@@ -2,8 +2,6 @@ import * as APIUtil from '../utils/department_api_utils';
 export const RECEIVE_DEPARTMENT = 'RECEIVE_DEPARTMENT';
 export const RECEIVE_DEPARTMENTS = 'RECEIVE_DEPARTMENTS';
 export const REMOVE_DEPARTMENT = 'REMOVE_DEPARTMENT';
-export const DEPARTMENT_ERROR= 'DEPARTMENT_ERROR';
-export const CLEAR_ERRORS= 'CLEAR_ERRORS';
 export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
 
 
@@ -11,10 +9,6 @@ export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
 export const receiveDepartment = department => ({
   type: RECEIVE_DEPARTMENT,
   department
-});
-
-export const clearErrors = () => ({
-  type: CLEAR_ERRORS
 });
 
 export const receiveErrors = (errors) => ({
@@ -31,11 +25,6 @@ export const removeDepartment = department => ({
   type: REMOVE_DEPARTMENT,
   department
 });
-
-export const DepartmentError = error => ({
-  type: DEPARTMENT_ERROR,
-  error
-})
 
 //-----------------------------------------------------------------------------
 // async actions

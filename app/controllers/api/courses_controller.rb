@@ -29,6 +29,7 @@ class Api::CoursesController < ApplicationController
 
 	def destroy
 		@course.destroy
+		render json: @course
 	end
 	
 

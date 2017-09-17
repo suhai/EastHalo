@@ -29,6 +29,7 @@ class Api::GradeLettersController < ApplicationController
 
 	def destroy
 		@grade_letter.destroy
+		render json: @grade_letter
 	end
 	
 

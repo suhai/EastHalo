@@ -1,7 +1,7 @@
 import { RECEIVE_MEALS,
 	RECEIVE_MEAL,
-	REMOVE_MEAL,
-	MEAL_ERROR } from '../actions/meal_actions';
+	REMOVE_MEAL
+ } from '../actions/meal_actions';
 import merge from 'lodash/merge';
 
 // const defaultState = { };

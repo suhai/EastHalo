@@ -1,7 +1,7 @@
 import { RECEIVE_COURSES,
 	RECEIVE_COURSE,
-	REMOVE_COURSE,
-	COURSE_ERROR } from '../actions/course_actions';
+	REMOVE_COURSE
+} from '../actions/course_actions';
 import merge from 'lodash/merge';
 
 // const defaultState = { };

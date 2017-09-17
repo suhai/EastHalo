@@ -29,6 +29,7 @@ class Api::CommentsController < ApplicationController
 
 	def destroy
 		@comment.destroy
+		render json: @comment
 	end
 
 

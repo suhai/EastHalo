@@ -36,8 +36,9 @@ class BookEditForm extends React.Component {
 	};
 
 	redirectAction() {
-		let id = this.props.match.params.id;
-		window.location.hash = `bookstore/books/${id}`;
+		// let id = this.props.match.params.id;
+		// window.location.hash = `bookstore/books/${id}`;
+		window.location.hash = `admin/${this.props.currentUser.username}/books`;
 	};
 
 	editBook() {
@@ -68,16 +69,16 @@ class BookEditForm extends React.Component {
 	};
 
 	componentWillReceiveProps(props) {
-		Object.keys(props.Books).length > 0 ?
+		Object.keys(props.books).length > 0 ?
 		this.setState({
 			id: props.match.params.id,
 			category: props.books[props.match.params.id].category,
 			title: props.books[props.match.params.id].title,
 			author: props.books[props.match.params.id].author,
 			publisher: props.books[props.match.params.id].publisher,
-			price: props.courses[props.match.params.id].price,
-			description: props.courses[props.match.params.id].description,
-			image_url: props.courses[props.match.params.id].image_url
+			price: props.books[props.match.params.id].price,
+			description: props.books[props.match.params.id].description,
+			image_url: props.books[props.match.params.id].image_url
 		}) :
 		this.setState({
 			category: '',

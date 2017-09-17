@@ -5,7 +5,7 @@ import Books from './Books';
 
 const mapStateToProps = (state, ownProps) => ({
 	currentUser: state.session.currentUser,
-	books: state.Books,
+	books: state.books,
 });
 
 const mapDispatchToProps = dispatch => ({

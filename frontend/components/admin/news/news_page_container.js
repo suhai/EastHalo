@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import News from './News';
+import AllNews from './AllNews';
 
 const mapStateToProps = (state, ownProps) => ({
 
@@ -14,4 +14,4 @@ export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-)(News));
+)(AllNews));

@@ -1,38 +1,38 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+// import React from 'react';
+// import ReactDOM from 'react-dom';
 
-class Meal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+// class Meal extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
       
-    };
-    this.showMeal = this.showMeal.bind(this);
-  };
+//     };
+//     this.showMeal = this.showMeal.bind(this);
+//   };
 
 
-  showMeal() {
-		window.location.hash = `cafetaria/${this.props.meal.id}`;
-	};
+//   showMeal() {
+// 		window.location.hash = `cafetaria/${this.props.meal.id}`;
+// 	};
 
 
-  render() {
-		const { 
-			name, 
-			ingredients, 
-			price, 
-			image_url, 
-		} = this.props.meal;
+//   render() {
+// 		const { 
+// 			name, 
+// 			ingredients, 
+// 			price, 
+// 			image_url, 
+// 		} = this.props.meal;
 
-    return (
-			<tr onClick={this.showMeal}>
-				<td>{name}</td>
-				<td>{price}</td>
-				<td>{ingredients}</td>
-				<td>{image_url}</td>
-			</tr>
-    );
-  }
-}
+//     return (
+// 			<tr onClick={this.showMeal}>
+// 				<td>{name}</td>
+// 				<td>{price}</td>
+// 				<td>{ingredients}</td>
+// 				<td>{image_url}</td>
+// 			</tr>
+//     );
+//   }
+// }
 
-export default Meal;
+// export default Meal;

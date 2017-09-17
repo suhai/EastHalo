@@ -8,6 +8,7 @@ const mapStateToProps = (state) => ({
 	courses: state.courses,
 	users: state.users,
 	departments: state.departments,
+	currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -17,7 +17,7 @@ class MealShow extends React.Component {
 	};
 
 	editMeal() {
-		window.location.hash = `admin/meals/edit/${this.state.meal.id}`;
+		window.location.hash = `/admin/${this.props.currentUser.username}/meals/edit/${this.state.meal.id}`;
 	};
 
 	deleteMeal() {

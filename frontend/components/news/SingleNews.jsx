@@ -12,8 +12,8 @@ class SingleNews extends React.Component {
 
 
   showNews() {
-		// const id = this.props.course.id;
-		window.location.hash = `news/${this.props.news.id}`;
+		console.log('I havent been implemented yet');
+		// window.location.hash = `news/${this.props.news.id}`;
 	};
 
 

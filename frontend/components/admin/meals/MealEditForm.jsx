@@ -33,8 +33,9 @@ class MealEditForm extends React.Component {
 	};
 
 	redirectAction() {
-		let id = this.props.match.params.id;
-		window.location.hash = `cafetria/meals/${id}`;
+		// let id = this.props.match.params.id;
+		// window.location.hash = `cafetaria/meals/${id}`;
+		window.location.hash = `admin/${this.props.currentUser.username}/meals`;
 	};
 
 	editBook() {
@@ -62,7 +63,7 @@ class MealEditForm extends React.Component {
 		Object.keys(props.meals).length > 0 ?
 		this.setState({
 			id: props.match.params.id,
-			name: props.mealss[props.match.params.id].name,
+			name: props.meals[props.match.params.id].name,
 			price: props.meals[props.match.params.id].price,
 			ingredients: props.meals[props.match.params.id].ingredients,
 			image_url: props.meals[props.match.params.id].image_url
@@ -86,7 +87,7 @@ class MealEditForm extends React.Component {
 
 		return (
 			<div>
-				<h2 className='course-header'>{title}</h2>
+				<h2 className='course-header'>{name}</h2>
 				<form className="form-style-9">
 					<ul>
 						<li>

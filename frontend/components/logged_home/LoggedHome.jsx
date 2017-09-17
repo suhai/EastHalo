@@ -43,17 +43,19 @@ class LoggedHome extends React.Component {
 					<Switch>
 						<Route path="/subhome" render={(props) => <HomeContainer {...props} />} />
 						<Route path="/:username/page" render={(props) => <ProfileDetailPageContainer {...props} />} />
-						<Route exact path="/registrar" render={(props) => <RegistrarPageContainer {...props} />} />
-						<Route path="/news" render={(props) => <NewsPageContainer {...props} />} />
+						<Route path="/registrar/courses/:id" render={(props) => <CourseShowContainer {...props} />} />
+						<Route path="/registrar" render={(props) => <RegistrarPageContainer {...props} />} />
+						<Route path="/cafetaria/meals/:id" render={(props) => <MealShowContainer {...props} />} />
 						<Route path="/cafetaria" render={(props) => <CafetariaPageContainer {...props} />} />
+						<Route path="/bookstore/books/:id" render={(props) => <BookShowContainer {...props} />} />
 						<Route path="/bookstore" render={(props) => <BookstorePageContainer {...props} />} />
 						<Route path="/admin" render={(props) => <AdminPageContainer {...props} />} />
 						<Route path="/search" render={(props) => <SearchContainer {...props} />} />
+						<Route path="/news" render={(props) => <NewsPageContainer {...props} />} />
 						<Route path="/:username/profile" render={(props) => <UserPageContainer {...props} />} />
-						<Route exact path="/courses/:id" render={(props) => <CourseShowContainer {...props} />} />
+						
 						<Route exact path="/news/:id" render={(props) => <NewsShowContainer {...props} />} />
-						<Route exact path="/cafetaria/meals/:id" render={(props) => <MealShowContainer {...props} />} />
-						<Route exact path="/bookstore/books/:id" render={(props) => <BookShowContainer {...props} />} />
+						
 						{/* */}
 
 						{/* <Route path="/registrar/courseform" render={(props) => <CourseFormContainer {...props} />} />

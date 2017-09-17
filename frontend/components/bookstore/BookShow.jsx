@@ -17,7 +17,7 @@ class BookShow extends React.Component {
 	};
 
 	editBook() {
-		window.location.hash = `bookstore/books/edit/${this.state.book.id}`;
+		window.location.hash = `/admin/${this.props.currentUser.username}/books/edit/${this.state.book.id}`;
 	};
 
 	deleteBook() {

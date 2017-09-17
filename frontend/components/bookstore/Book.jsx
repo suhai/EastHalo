@@ -12,8 +12,7 @@ class Book extends React.Component {
 
 
   showBook() {
-		// const id = this.props.meal.id;
-		window.location.hash = `bookstore/${this.props.book.id}`;
+		window.location.hash = `bookstore/books/${this.props.book.id}`;
 	};
 
 
@@ -29,7 +28,7 @@ class Book extends React.Component {
 		} = this.props.book;
 
     return (
-			<tr onClick={this.showMeal}>
+			<tr onClick={this.showBook}>
 				<td>{category}</td>
 				<td>{title}</td>
 				<td>{author}</td>

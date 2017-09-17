@@ -13,7 +13,7 @@ class AllNews extends React.Component {
 	};
 
 	renderForm() {
-		window.location.hash = 'news/newsform';
+		console.log('I am currently not active')
 	};
 
 	componentDidMount() {

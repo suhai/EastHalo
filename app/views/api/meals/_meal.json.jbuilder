@@ -1,4 +1,3 @@
-
 json.id meal.id
 json.name meal.name
 json.ingredients meal.ingredients

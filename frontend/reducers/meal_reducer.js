@@ -13,7 +13,7 @@ const MealReducer = (state = {}, action) => {
 			newState[action.meal.id] = action.meal
 			return newState
 
-		case RECEIVE_MEAL:
+		case RECEIVE_MEALS:
       for (let key in action.meals) {
         newState[key] = action.meals[key];
       }

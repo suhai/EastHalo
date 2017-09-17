@@ -22,7 +22,7 @@ class Books extends React.Component {
 
 	render() {
 		let bookList = values(this.props.books);
-		let books = bookList.map((map, idx) => (
+		let books = bookList.map((book, idx) => (
 			<Book key={idx} book={book} />
 		));
 

@@ -5,7 +5,6 @@ export const REMOVE_COURSE_ENROLLMENT = 'REMOVE_COURSE_ENROLLMENT';
 export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
 
 
-
 export const receiveCourseEnrollment = course_enrollment => ({
   type: RECEIVE_COURSE_ENROLLMENT,
   course_enrollment

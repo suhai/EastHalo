@@ -5,7 +5,6 @@ export const REMOVE_DEPARTMENT = 'REMOVE_DEPARTMENT';
 export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
 
 
-
 export const receiveDepartment = department => ({
   type: RECEIVE_DEPARTMENT,
   department
@@ -28,7 +27,7 @@ export const removeDepartment = department => ({
 
 //-----------------------------------------------------------------------------
 // async actions
-export const createDeartment = data => dispatch => (
+export const createDepartment = data => dispatch => (
   APIUtil.createDepartment(data)
   .then(department =>  dispatch(receiveDepartment(department)),
   err => dispatch(receiveErrors(err.responseJSON)))

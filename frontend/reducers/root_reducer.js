@@ -9,6 +9,8 @@ import CommentReducer from './comment_reducer';
 import CourseEnrollmentReducer from './course_enrollment_reducer';
 import MealReducer from './meal_reducer';
 import BookReducer from './book_reducer';
+import GradeLetterReducer from './grade_letter_reducer';
+import FriendshipReducer from './friendship_reducer';
 // import PostReducer from './post_reducer';
 
 const rootReducer = combineReducers({
@@ -19,9 +21,11 @@ const rootReducer = combineReducers({
 	courses: CourseReducer,
 	meals: MealReducer,
 	books: BookReducer,
-	courseEnrollments: CourseEnrollmentReducer,
+	course_enrollments: CourseEnrollmentReducer,
 	departments: DepartmentReducer,
 	comments: CommentReducer,
+	grade_letters: GradeLetterReducer,
+	friendships: FriendshipReducer,
 	// posts: PostReducer
 });
 

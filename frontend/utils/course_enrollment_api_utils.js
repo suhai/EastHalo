@@ -21,14 +21,6 @@ export const fetchCourseEnrollments = query => {
 	});
 };
 
-// export const updateCourseEnrollment = (course_enrollment, id) => (
-// 	$.ajax({
-// 		method: 'PATCH',
-// 		url: `api/course_enrollments/${id}`,
-// 		dataType: "json",
-// 		data: course_enrollment
-// 	})
-// );
 
 export const deleteCourseEnrollment = id => (
 	$.ajax({

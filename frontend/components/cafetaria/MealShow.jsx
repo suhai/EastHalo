@@ -1,6 +1,7 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 
+// Need to implemenet Order Meal / Meal already ordered / favorites
 class MealShow extends React.Component {
 	constructor(props) {
 		super(props);

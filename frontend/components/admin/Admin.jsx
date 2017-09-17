@@ -1,17 +1,21 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
+{/* ASSIGNMENTS */}
+import AdminAssignmentPageContainer from './assignments/assignment_page_container';
 {/* BOOKS */}
-import BooksPageContainer from './books/book_page_container';
-import BookFormContainer from './books/book_form_container';
-import BookEditContainer from './books/book_edit_container';
-import BookShowContainer from './books/book_show_container';
+import AdminBooksPageContainer from './books/book_page_container';
+import AdminBookFormContainer from './books/book_form_container';
+import AdminBookEditContainer from './books/book_edit_container';
+// import AdminBookShowContainer from './books/book_show_container';
 {/* COMMENTS */}
 import AdminCommentPageContainer from './comments/comment_page_container';
 {/* COURSE_ENROLLMENTS */}
 import AdminCourseEnrollmentPageContainer from './course_enrollments/course_enrollment_page_container';
 {/* COURSES */}
 import AdminCoursePageContainer from './courses/course_page_container';
+import AdminCourseFormContainer from './courses/course_form_container';
+import AdminCourseEditContainer from './courses/course_edit_container';
 {/* DEPARTMENTS */}
 import AdminDepartmentPageContainer from './departments/department_page_container';
 {/* FRIENDSHIPS */}
@@ -21,10 +25,12 @@ import AdminGradeLetterPageContainer from './grade_letters/grade_letter_page_con
 {/* GRADES */}
 import AdminGradePageContainer from './grades/grade_page_container';
 {/* MEALS */}
-import MealsPageContainer from './meals/meal_page_container';
-import MealFormContainer from './meals/meal_form_container';
-import MealEditContainer from './meals/meal_edit_container';
-import MealShowContainer from './meals/meal_show_container';
+import AdminMealsPageContainer from './meals/meal_page_container';
+import AdminMealFormContainer from './meals/meal_form_container';
+import AdminMealEditContainer from './meals/meal_edit_container';
+// import AdminMealShowContainer from './meals/meal_show_container';
+{/* NEWS */}
+import AdminNewsPageContainer from './news/news_page_container';
 {/* */}
 import AdminPostPageContainer from './posts/post_page_container';
 {/* SCHEDULES */}
@@ -50,6 +56,7 @@ class Admin extends React.Component {
 				<nav className='profile-nav'> {/* SUB NAVIGATIONS */}
 					<ul>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/users`}>Users</NavLink></li>
+						<li><NavLink to={`/admin/${this.props.currentUser.username}/assignments`}>Assignments</NavLink></li>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/books`}>Books</NavLink></li>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/comments`}>Comments</NavLink></li>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/enrollments`}>Enrollments</NavLink></li>	
@@ -62,26 +69,28 @@ class Admin extends React.Component {
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/posts`}>Posts</NavLink></li>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/schedules`}>Schedules</NavLink></li>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/transcripts`}>Transcripts</NavLink></li>
+						<li><NavLink to={`/admin/${this.props.currentUser.username}/news`}>News</NavLink></li>
 					</ul>
 				</nav>
 
 				<div>
 					<Switch> {/* ROUTES */}
 						{/* ASSIGNMENTS */}
-
+						<Route path="/admin/:username/assignments" render={(props) => <AdminAssignmentPageContainer {...props} /> } />
+						{/* USERS */}
 						<Route path="/admin/:username/users" render={(props) => <AdminUserPageContainer {...props} /> } />
 						{/* BOOKS */}
-						<Route path="/bookstore/books/:id" render={(props) => <BookShowContainer {...props} /> } />
-						<Route path="/admin/:username/books/bookform" render={(props) => <BookFormContainer {...props} /> } />
-						<Route path="/admin/:username/books/edit/:id" render={(props) => <BookEditContainer {...props} /> } />
-						<Route path="/admin/:username/books" render={(props) => <BooksPageContainer {...props} /> } />
-						{/* CAFETARIA */}
-
+						{/* <Route path="/bookstore/books/:id" render={(props) => <AdminBookShowContainer {...props} /> } /> */}
+						<Route path="/admin/:username/books/bookform" render={(props) => <AdminBookFormContainer {...props} /> } />
+						<Route path="/admin/:username/books/edit/:id" render={(props) => <AdminBookEditContainer {...props} /> } />
+						<Route path="/admin/:username/books" render={(props) => <AdminBooksPageContainer {...props} /> } />
 						{/* COMMENTS */}
 						<Route path="/admin/:username/comments" render={(props) => <AdminCommentPageContainer {...props} /> } />
 						{/* COURSE_ENROLLMENTS */}
 						<Route path="/admin/:username/enrollments" render={(props) => <AdminCourseEnrollmentPageContainer {...props} /> } />
 						{/* COURSES */}
+						<Route path="/admin/:username/courses/courseform" render={(props) => <AdminCourseFormContainer {...props} /> } />
+						<Route path="/admin/:username/courses/edit/:id" render={(props) => <AdminCourseEditContainer {...props} /> } />
 						<Route path="/admin/:username/courses" render={(props) => <AdminCoursePageContainer {...props} /> } />
 						{/* DEPARTMENTS */}
 						<Route path="/admin/:username/departments" render={(props) => <AdminDepartmentPageContainer {...props} /> } />
@@ -92,13 +101,13 @@ class Admin extends React.Component {
 						{/* GRADES */}
 						<Route path="/admin/:username/grades" render={(props) => <AdminGradePageContainer {...props} /> } />
 						{/* MEALS */}
-						<Route path="/cafetaria/meals/:id" render={(props) => <MealShowContainer {...props} /> } />
-						<Route path="/admin/:username/meals/mealform" render={(props) => <MealFormContainer {...props} /> } />
-						<Route path="/admin/:username/meals/edit/:id" render={(props) => <MealEditContainer {...props} /> } />
-						<Route path="/admin/:username/meals" render={(props) => <MealsPageContainer {...props} /> } />
+						{/* <Route path="/cafetaria/meals/:id" render={(props) => <AdminMealShowContainer {...props} /> } /> */}
+						<Route path="/admin/:username/meals/mealform" render={(props) => <AdminMealFormContainer {...props} /> } />
+						<Route path="/admin/:username/meals/edit/:id" render={(props) => <AdminMealEditContainer {...props} /> } />
+						<Route path="/admin/:username/meals" render={(props) => <AdminMealsPageContainer {...props} /> } />
 
 						{/* NEWS */}
-						<Route path="/admin/:username/meals" render={(props) => <AdminMealPageContainer {...props} /> } />
+						<Route path="/admin/:username/news" render={(props) => <AdminNewsPageContainer {...props} /> } />
 						{/* POSTS */}
 						<Route path="/admin/:username/posts" render={(props) => <AdminPostPageContainer {...props} /> } />
 						{/* SCHEDULES */}

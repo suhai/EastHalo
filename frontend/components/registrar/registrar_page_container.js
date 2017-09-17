@@ -5,6 +5,7 @@ import Courses from './Courses';
 
 const mapStateToProps = (state, ownProps) => ({
 	courses: state.courses,
+	currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

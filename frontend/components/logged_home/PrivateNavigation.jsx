@@ -48,9 +48,9 @@ class PrivateNavigation extends React.Component {
 			<header className='shared-header'>
 				<nav className='navigation'>
 					<ul>
-						<li><NavLink exact to='/loggedhome'>Home</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/page`}>My Page</NavLink></li>
-						<li><NavLink to='/registrar'>Courses</NavLink></li>
+						<li><NavLink to='/subhome'>Home</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/page`}>User Page</NavLink></li>
+						<li><NavLink to='/registrar'>Registrar</NavLink></li>
 						<li><NavLink to='/news'>EHU News</NavLink></li>
 						<li><NavLink to='/cafetaria'>Cafetaria</NavLink></li>
 						<li><NavLink to='/bookstore'>BookStore</NavLink></li>

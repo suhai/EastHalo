@@ -1,7 +1,7 @@
 // import { connect } from 'react-redux';
 // import { withRouter } from 'react-router-dom';
-// import { fetchBook, editBook, deleteBook } from '../../../actions/book_actions';
-// import BookShow from './BookShow';
+// import { fetchMeal, editMeal, deleteMeal } from '../../../actions/meal_actions';
+// import MealShow from './BookShow';
 
 // const mapStateToProps = (state, ownProps) => ({
 // 	currentUser: state.session.currentUser,
@@ -18,4 +18,4 @@
 //   connect(
 //     mapStateToProps,
 //     mapDispatchToProps
-// )(BookShow));
+// )(MealShow));

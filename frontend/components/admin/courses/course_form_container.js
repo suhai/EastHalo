@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
-import { createCourse, fetchCourses } from '../../actions/course_actions';
-import { fetchUsers } from '../../actions/user_actions';
-import { fetchDepartments } from '../../actions/department_actions';
+import { createCourse, fetchCourses } from '../../../actions/course_actions';
+import { fetchUsers } from '../../../actions/user_actions';
+import { fetchDepartments } from '../../../actions/department_actions';
 import CourseForm from './CourseForm';
 
 const mapStateToProps = (state) => ({

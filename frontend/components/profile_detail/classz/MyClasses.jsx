@@ -1,19 +1,14 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
-import Course from './Course';
+import MyClass from './MyClass';
 
-class Courses extends React.Component {
+class MyClasses extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 
 		};
-		this.renderForm = this.renderForm.bind(this);
-	};
-
-	renderForm() {
-		window.location.hash = `/admin/${this.props.currentUser.username}/courses/courseform`;
 	};
 
 	componentDidMount() {
@@ -23,13 +18,11 @@ class Courses extends React.Component {
 	render() {
 		let courseList = values(this.props.courses);
 		let courses = courseList.map((course, idx) => (
-			<Course key={idx} course={course} />
+			<MyClass key={idx} course={course} />
 		));
 
 		return (
 			<div className=''>
-				<div><button className='btn create align-left' onClick={this.renderForm}>Create Course</button></div>
-
 				<table id="gradient-style" className="full-width">
 					<thead>
 						<tr>
@@ -56,4 +49,4 @@ class Courses extends React.Component {
 	}
 }
 
-export default Courses;
+export default MyClasses;

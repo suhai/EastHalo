@@ -25,7 +25,7 @@ class CourseShow extends React.Component {
 	};
 
 	editCourse() {
-		window.location.hash = `courses/edit/${this.state.course.id}`;
+		window.location.hash = `/admin/${this.props.currentUser.username}/courses/edit/${this.state.course.id}`;
 	};
 
 	enrollInCourse() {

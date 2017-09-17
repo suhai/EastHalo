@@ -13,7 +13,7 @@ class Courses extends React.Component {
 	};
 
 	renderForm() {
-		window.location.hash = 'registrar/courseform';
+		window.location.hash = `/admin/${this.props.currentUser.username}/courses/courseform`;
 	};
 
 	componentDidMount() {

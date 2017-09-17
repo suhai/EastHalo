@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { createCourse, fetchCourses, deleteCourse, editCourse } from '../../../actions/course_actions';
-import Courses from './Courses';
+import MyClasses from './MyClasses';
 
 const mapStateToProps = (state, ownProps) => ({
 	courses: state.courses,
-	currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -19,4 +18,4 @@ export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-)(Courses));
+)(MyClasses));

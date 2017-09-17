@@ -1,9 +1,9 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
-import Course from './Course';
+import SingleNews from './SingleNews';
 
-class Courses extends React.Component {
+class AllNews extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -13,22 +13,22 @@ class Courses extends React.Component {
 	};
 
 	renderForm() {
-		window.location.hash = `/admin/${this.props.currentUser.username}/courses/courseform`;
+		window.location.hash = 'news/newsform';
 	};
 
 	componentDidMount() {
-		this.props.fetchCourses();
+		// this.props.fetchAllNews();
 	};
 
 	render() {
-		let courseList = values(this.props.courses);
-		let courses = courseList.map((course, idx) => (
-			<Course key={idx} course={course} />
-		));
+		// let newsList = values(this.props.news);
+		// let all_news = newsList.map((news, idx) => (
+		// 	<SingleNews key={idx} news={news} />
+		// ));
 
 		return (
 			<div className=''>
-				<div><button className='btn create align-left' onClick={this.renderForm}>Create Course</button></div>
+				<div><button className='btn create align-left' onClick={this.renderForm}>Create News</button></div>
 
 				<table id="gradient-style" className="full-width">
 					<thead>
@@ -43,9 +43,9 @@ class Courses extends React.Component {
 						</tr>
 					</thead>
 
-					<tbody>
-						{courses}
-					</tbody>
+					{/* <tbody>
+						{all_news}
+					</tbody> */}
 
 				</table>
 				<p className='pull-left'>
@@ -56,4 +56,4 @@ class Courses extends React.Component {
 	}
 }
 
-export default Courses;
+export default AllNews;

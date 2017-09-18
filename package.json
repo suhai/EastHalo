@@ -26,7 +26,6 @@
 		"react-transition-group": "^2.2.0",
 		"redux": "^3.7.2",
 		"redux-devtools-extension": "^2.13.2",
-		"redux-form": "^7.0.4",
 		"redux-thunk": "^2.2.0",
 		"superagent": "^3.6.0",
 		"webpack-sources": "^1.0.1"
@@ -49,13 +48,13 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "EastHalo.git"
+		"url": "git+https://github.com/suhai/EastHalo.git"
 	},
 	"keywords": [],
 	"author": "suhai",
 	"license": "ISC",
 	"bugs": {
-		"url": ""
+		"url": "https://github.com/suhai/EastHalo/issues"
 	},
 	"homepage": "https://github.com/suhai/EastHalo#readme",
 	"devDependencies": {

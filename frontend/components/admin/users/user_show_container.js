@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchUsers } from '../../../actions/user_actions';
-import Users from './Users';
+import { fetchUser, editUser, deleteUser } from '../../../actions/user_actions';
+import UserShow from './UserShow';
 
 const mapStateToProps = (state, ownProps) => ({
 	currentUser: state.session.currentUser,
@@ -9,11 +9,13 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	fetchUsers: () => dispatch(fetchUsers())
+  fetchUser: id => dispatch(fetchUser(id)),
+  editUser: (user, id) => dispatch(editUser(user, id)),
+	deleteUser: id => dispatch(deleteUser(id)),
 });
 
 export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-)(Users));
+)(UserShow));

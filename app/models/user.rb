@@ -18,6 +18,7 @@
 #  type              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  gender            :string
 #
 
 class User < ApplicationRecord
@@ -28,7 +29,7 @@ class User < ApplicationRecord
   attr_reader :password
 	after_initialize :ensure_session_token
 	after_initialize :set_defaults, unless: :persisted?
-	after_create :instantiate_user_schedule
+	# after_create :instantiate_user_schedule
 	
 	scope :students, -> { where(type: 'Student') }
 	scope :professors, -> { where(type: 'Professor') }

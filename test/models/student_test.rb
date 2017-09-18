@@ -18,6 +18,7 @@
 #  type              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
+#  gender            :string
 #
 
 require 'test_helper'

@@ -1,7 +1,7 @@
 import * as APIUtil from '../utils/user_api_utils';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
-export const RANDOM_USERS = 'RANDOM_USERS';
+// export const RANDOM_USERS = 'RANDOM_USERS';
 export const REMOVE_USER = 'REMOVE_USER';
 
 export const receiveUser = user => ({
@@ -17,6 +17,11 @@ export const receiveUsers = users => ({
 export const receiveRandomUsers = users => ({
   type: RANDOM_USERS,
   users
+});
+
+export const removeUser = user => ({
+  type: REMOVE_USER,
+  user
 });
 //-----------------------------------------------------------------------------
 
@@ -34,4 +39,9 @@ export const fetchUser = id => dispatch => (
 export const editUser = (user, id) => dispatch => (
   APIUtil.updateUser(user, id)
     .then(editedUser => dispatch(receiveUser(editedUser)))
+);
+
+export const deleteUser = id => dispatch => (
+  APIUtil.deleteUser(id)
+  .then(user => dispatch(removeUser(user)))
 );

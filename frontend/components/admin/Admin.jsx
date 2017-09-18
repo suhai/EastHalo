@@ -45,6 +45,8 @@ import AdminSchedulePageContainer from './schedules/schedule_page_container';
 import AdminTranscriptPageContainer from './transcripts/transcript_page_container';
 {/* USERS */}
 import AdminUserPageContainer from './users/user_page_container';
+import AdminUserShowContainer from './users/user_show_container';
+import AdminUserEditContainer from './users/user_edit_container';
 {/* */}
 
 
@@ -83,8 +85,6 @@ class Admin extends React.Component {
 					<Switch> {/* ROUTES */}
 						{/* ASSIGNMENTS */}
 						<Route path="/admin/:username/assignments" render={(props) => <AdminAssignmentPageContainer {...props} /> } />
-						{/* USERS */}
-						<Route path="/admin/:username/users" render={(props) => <AdminUserPageContainer {...props} /> } />
 						{/* BOOKS */}
 						<Route path="/admin/:username/books/bookform" render={(props) => <AdminBookFormContainer {...props} /> } />
 						<Route path="/admin/:username/books/edit/:id" render={(props) => <AdminBookEditContainer {...props} /> } />
@@ -116,7 +116,6 @@ class Admin extends React.Component {
 						<Route path="/admin/:username/meals/edit/:id" render={(props) => <AdminMealEditContainer {...props} /> } />
 						<Route path="/admin/:username/meals/mealform" render={(props) => <AdminMealFormContainer {...props} /> } />
 						<Route path="/admin/:username/meals" render={(props) => <AdminMealsPageContainer {...props} /> } />
-
 						{/* NEWS */}
 						<Route path="/admin/:username/news" render={(props) => <AdminNewsPageContainer {...props} /> } />
 						{/* POSTS */}
@@ -126,6 +125,9 @@ class Admin extends React.Component {
 						{/* TRANSCRIPTS */}
 						<Route path="/admin/:username/transcripts" render={(props) => <AdminTranscriptPageContainer {...props} /> } />
 						{/* USERS */}
+						<Route path="/admin/:username/users/edit/:id" render={(props) => <AdminUserEditContainer {...props} /> } />
+						<Route path="/admin/:username/users/:id" render={(props) => <AdminUserShowContainer {...props} /> } />
+						<Route path="/admin/:username/users" render={(props) => <AdminUserPageContainer {...props} /> } />
 
 						{/* DEFAULT ADMIN PAGE */}
 						<Route exact path="/admin" render={(props) => <AdminUserPageContainer {...props} /> } />

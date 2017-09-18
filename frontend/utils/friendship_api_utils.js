@@ -7,12 +7,6 @@ export const createFriendship = friendship => (
 	})
 );
 
-export const fetchFriendship = id => (
-	$.ajax({
-		method: 'GET',
-		url: `api/friendships/${id}`
-	})
-);
 
 export const fetchFriendships = query => {
 	return $.ajax({

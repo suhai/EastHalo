@@ -19,7 +19,6 @@ class Department extends React.Component {
 	deleteDepartment() {
 		console.log('deleting ........');
 		this.props.deleteDepartment(this.props.department.id)
-		// window.location.hash = `/admin/${this.props.currentUser.username}/departments`;
 	};
 
 

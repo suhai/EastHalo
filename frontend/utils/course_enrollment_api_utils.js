@@ -7,12 +7,6 @@ export const createCourseEnrollment = course_enrollment => (
 	})
 );
 
-export const fetchCourseEnrollment = id => (
-	$.ajax({
-		method: 'GET',
-		url: `api/course_enrollments/${id}`
-	})
-);
 
 export const fetchCourseEnrollments = query => {
 	return $.ajax({

@@ -8,6 +8,7 @@
 #  grade_letter_id :integer
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  comment         :text
 #
 
 class Grade < ApplicationRecord

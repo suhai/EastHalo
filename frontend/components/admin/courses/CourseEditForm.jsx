@@ -5,7 +5,6 @@ class CourseEditForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			// id: '',
 			course_code: '',
 			title: '',
 			department_name: '',
@@ -42,8 +41,6 @@ class CourseEditForm extends React.Component {
 	};
 
 	redirectAction() {
-		// let id = this.props.match.params.id;
-		// window.location.hash = `courses/${id}`;
 		window.location.hash = `admin/${this.props.currentUser.username}/courses`;
 	};
 

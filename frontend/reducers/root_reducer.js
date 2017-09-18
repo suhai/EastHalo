@@ -11,6 +11,7 @@ import MealReducer from './meal_reducer';
 import BookReducer from './book_reducer';
 import GradeLetterReducer from './grade_letter_reducer';
 import FriendshipReducer from './friendship_reducer';
+import GradeReducer from './grade_reducer';
 // import PostReducer from './post_reducer';
 
 const rootReducer = combineReducers({
@@ -26,6 +27,7 @@ const rootReducer = combineReducers({
 	comments: CommentReducer,
 	grade_letters: GradeLetterReducer,
 	friendships: FriendshipReducer,
+	grades: GradeReducer,
 	// posts: PostReducer
 });
 

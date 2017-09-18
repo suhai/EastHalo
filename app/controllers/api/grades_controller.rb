@@ -36,7 +36,7 @@ class Api::GradesController < ApplicationController
 	#----------------------------------------------------------------------------
 	private
 	def grade_params
-		params.require(:grade).permit(:course_id, :student_id, :grade_letter_id)
+		params.require(:grade).permit(:course_id, :student_id, :grade_letter_id, :comment)
 	end
 
 	def set_grade

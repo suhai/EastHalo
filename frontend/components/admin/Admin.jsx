@@ -21,13 +21,16 @@ import AdminDepartmentPageContainer from './departments/department_page_containe
 import AdminDepartmentFormContainer from './departments/department_form_container';
 import AdminDepartmentEditContainer from './departments/department_edit_container';
 {/* FRIENDSHIPS , only display all + delete options */}
-// import AdminFriendshipPageContainer from './friendships/friendship_page_container';
+import AdminFriendshipPageContainer from './friendships/friendship_page_container';
 {/* GRADE_LETTERS , only display all + delete options */}
 import AdminGradeLetterPageContainer from './grade_letters/grade_letter_page_container';
 import AdminGradeLetterFormContainer from './grade_letters/grade_letter_form_container';
 import AdminGradeLetterEditContainer from './grade_letters/grade_letter_edit_container';
-{/* GRADES , only display all + delete options */}
+{/* GRADES, have to decide if grades should be editable */}
 import AdminGradePageContainer from './grades/grade_page_container';
+import AdminGradeShowContainer from './grades/grade_show_container';
+import AdminGradeFormContainer from './grades/grade_form_container';
+import AdminGradeEditContainer from './grades/grade_edit_container';
 {/* MEALS */}
 import AdminMealsPageContainer from './meals/meal_page_container';
 import AdminMealFormContainer from './meals/meal_form_container';
@@ -105,6 +108,9 @@ class Admin extends React.Component {
 						<Route path="/admin/:username/grade_letters/edit/:id" render={(props) => <AdminGradeLetterEditContainer {...props} /> } />
 						<Route path="/admin/:username/grade_letters" render={(props) => <AdminGradeLetterPageContainer {...props} /> } />
 						{/* GRADES */}
+						<Route path="/admin/:username/grades/gradeform" render={(props) => <AdminGradeFormContainer {...props} /> } />
+						<Route path="/admin/:username/grades/edit/:id" render={(props) => <AdminGradeEditContainer {...props} /> } />
+						<Route path="/admin/:username/grades/:id" render={(props) => <AdminGradeShowContainer {...props} /> } />
 						<Route path="/admin/:username/grades" render={(props) => <AdminGradePageContainer {...props} /> } />
 						{/* MEALS */}
 						<Route path="/admin/:username/meals/edit/:id" render={(props) => <AdminMealEditContainer {...props} /> } />

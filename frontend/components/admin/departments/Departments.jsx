@@ -35,7 +35,7 @@ class Departments extends React.Component {
 						<tr>
 							<th scope="col">Department Name</th>
 							<th scope="col">Edit</th>
-							<th scope="col">Delte</th>
+							<th scope="col">Delete</th>
 						</tr>
 					</thead>
 

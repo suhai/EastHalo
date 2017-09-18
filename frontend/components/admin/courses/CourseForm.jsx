@@ -109,10 +109,10 @@ class CourseForm extends React.Component {
 							<input type="text" className="field-style field-split align-right" value={title} onChange={this.update('title')} placeholder="Title" />
 						</li>
 						<li>
-							<select className="field-style field-split align-left"  value={this.state.department_id} onChange={this.update('department_id')} >
+							<select className="field-style field-split align-left"  value={department_id} onChange={this.update('department_id')} >
 								{deptList}
 							</select>
-							<select className="field-style field-split align-right"  value={this.state.professor_id} onChange={this.update('professor_id')} >
+							<select className="field-style field-split align-right"  value={professor_id} onChange={this.update('professor_id')} >
 								{profList}
 							</select>
 						</li>

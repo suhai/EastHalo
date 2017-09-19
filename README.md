@@ -12,7 +12,7 @@ The app is built on a Ruby on Rails backend supported by a PostgreSQL database. 
 A sample model from the Database is shown below:
 
 																	DATABASE MODELS
-`
+```js
 -----------------------------------------------------------------------------		
 
                    List of relations
@@ -43,7 +43,7 @@ A sample model from the Database is shown below:
 	4 | Dance     |      1        |   09:00    |  10:00   |      21      |            
   5 | English   |      1        |   14:10    |  16:00   |      8       | 
   6 | French    |      1        |   19:00    |  22:00   |      35      | 
-`
+```
 
 ### SAMPLE BACKEND OUTPUT FROM API CALLS
 ```js

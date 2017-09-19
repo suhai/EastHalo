@@ -1,3 +1,4 @@
+
 # The EastHalo University
 
 The Application can be found here: [EastHalo](https://easthalo.herokuapp.com/)

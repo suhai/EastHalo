@@ -207,36 +207,40 @@ end
 
 ## Features
 
-Create / Share Posts
-Comment On Posts
-Friend / Unfriend Other Users
-Add / Drop Course
-Edit Self Attributes
-Edit Other Users' Privileges
-CRUD Courses
-CRUD Departments
-CRUD Meals
-CRUD Books
-CRUD News
-Create / Assign Grade
-Transcript (Instantiated for each new user)
-Schedule (Instantiated for each new user)
-Chat With Other Users*
-Purchase Books*
-Purchase Meals*
-Create Assignments*
-Take Assignment*
-Send Mass Emails To All Users*
+```js
+    |   Privilge                             | All Users | Student | Professor | Admin |
+----+----------------------------------------+----------+---------+-----------+--------
+  1 | Create / Share Post                    |     Y     |    Y    |     Y     |   Y   |
+  1 | Comment On Posts                       |     Y     |    Y    |     Y     |   Y   |
+  1 | Friend / Unfriend Other Users          |     Y     |    Y    |     Y     |   Y   |
+  1 | Add / Drop Course                      |     N     |    Y    |     N     |   N   |
+  1 | Edit Self Attributes                   |     Y     |    Y    |     Y     |   Y   |
+  1 | Edit Other Users Privileges            |     N     |    N    |     N     |   Y   |
+  1 | CRUD Courses                           |     N     |    N    |     Y     |   Y   |
+  1 | CRUD Departments                       |     N     |    N    |     N     |   Y   |
+  1 | CRUD Meals                             |     N     |    N    |     N     |   Y   |
+  1 | CRUD Books                             |     N     |    N    |     N     |   Y   |
+  1 | CRUD News                              |     N     |    N    |     Y     |   Y   |
+  1 | Create / Assign Grade                  |     N     |    N    |     Y     |   N   |
+  1 | Acess The News                         |     Y     |    Y    |     Y     |   Y   |
+	1 | Search For Other Users                 |     Y     |    Y    |     Y     |   Y   |
+  1 | Transcript (Instantiated for Students) |     N     |    Y    |     N     |   N   |
+  1 | Schedule (Instantiated for all Users)  |     Y     |    Y    |     Y     |   Y   |
+  1 | Chat With Other Users*                 |     Y     |    Y    |     Y     |   Y   |
+  1 | Purchase Books*                        |     Y     |    Y    |     Y     |   Y   |
+  1 | Purchase Meals*                        |     Y     |    Y    |     Y     |   Y   |
+  1 | Create Assignments*                    |     N     |    N    |     Y     |   N   |
+  1 | Take Assignment*                       |     N     |    Y    |     N     |   N   |
+  1 | Send Mass Emails To All Users*         |     Y     |    Y    |     Y     |   Y   |
+  1 |                                        |     N     |    N    |     Y     |   Y   |
+ 
+The Features with * are being worked on and so are not currently available on the app.
+```
 
 
-### User Authentication
-  Sample information from the database is made publicly available to any visitor to read or watch, with more exclusive access reserved for users who sign in to the 'inner' zone. 
-  Detailed information from the database on my Projects, Trivia, Games (not made by me but in the future I plan to include those that I perosnally build to the database), trending Tech News, and my imaginary Monkeys are available to a user after authentication. The user has access to their individualized profile page where they can customize the page with profile images, perosnal info, etc. However, a user will not be able to access other users' pages or information. For demonstrational purposes only, a user is granted Create, Read, Update, and Delete privileges for the Categories section of the database. Other privileged access to the database is restrictd to superUsers / site admins only.
 
-
-### Content Management
-  As the sole administrator, I am able to activate the editing privileges for my page via the backend to mutate the database from the frontend. In addition to the publicly available content of the site, I am able to add, edit, and delete users and content of my job applications which I am managing with the application.
-  There are six models altogther; User, Trivia, Game, Project, JobApplication, and Category (with a has_many relationship with the Trivia model). Sample code is shown below.
+### User Authentication & Authorization
+In a real world university users are already pre-screened as members of the university and given credentials to create user accounts. For the purpose of this project I have left open the possibility that anyone can sign up. A user's default type is a regular user. An admin can then grant the user privilges by assigning a type to their profile, be it Student, Professor, or another Admin. These 'type' determine what user privilges a user gets within the application. As demonstrated in the table above, all users get a Schedule instantiated for them by default on signing, and they can create and comment on posts, can become friends with any other user user, can access the news, purchase meals and books. Beyong that point there is an overlap in privileges, with the Admin User types enjoying the most exclusive privilges.
 
 
 ### 
@@ -504,19 +508,14 @@ class UserEditForm extends React.Component {
 export default UserEditForm;
 ```
 
-
-
 ## Homepage
 ![Alt text](https://res.cloudinary.com/swy/image/upload/v1501895913/tikld1_v47geg.png "homepage")
-
 
 ## Admin Page
 ![Alt text](https://res.cloudinary.com/swy/image/upload/v1501895911/tkld2_onunua.png "homepage signup")
 
-
 ## Student Page
 ![Alt text](https://res.cloudinary.com/swy/image/upload/v1501895907/tkld3_rpgpas.png "profile edit")
-
 
 ## Cafetaria Page
 ![Alt text](https://res.cloudinary.com/swy/image/upload/v1501895907/tkld4_lp22hq.png "category page")
@@ -525,6 +524,7 @@ export default UserEditForm;
 
 ### Plans For The Future
 
-* I pan to make the user page more fluid to individual user preferences with a user being offered multiple options in choosing the theme of their page, and the ability to enable or disable optional features (yet to be decided on).
+* I plan to add a chat service to the Logged HomePage to mimick facebook chat, implemented Follow and Like features for users to follow other users and like posts and comments. In addition I plan to implement a Stripe payment portal for users to be able to make purchaes with real payments. Currently users have $0 accounts instantiated for them upon signing up. They can then make purchaes from the cafetaria and/or bookstore with their accounts debited with the prices of goods purchased and the bookstore / cafetaria accounts credited with the equivalent amount. I think it'd be more realistic to actually have a credit card / debit card payment system. I also plan to implement a feature for professors to create questions and tests that gets sent to all students in a particular course the professor is teaching. The students answers will then be sent back to the professor who can then assign them a grade for the course.
 
-* I plan to add a chat service to the homepage where a visitor can see if I am currently available online to chat or answer questions they may have regarding the website or any genral topic of mutual interest. And possibly extend this feature to all users to chat with each other.
+* My hope is to keep working on improving the current performance of the app and add more features as time permit. I am in the middle of the search for my first job and may not be able to continue working on adding more features until I have dispensable time.
+

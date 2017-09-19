@@ -21,7 +21,6 @@ class Course < ApplicationRecord
 	validates :department_id, :presence => true
 	validates :title, :presence => true
 	after_initialize :set_defaults, unless: :persisted?
-	# before_create :ensure_is_professor
 	belongs_to :professor, :class_name => :User, :foreign_key => "professor_id"
 	has_many :grades
 	belongs_to :department
@@ -30,11 +29,7 @@ class Course < ApplicationRecord
 
 	def set_defaults
 		self.course_credit  ||= 1.0
-		self.start_time  ||= 1100
-		self.end_time  ||= 1200
+		self.start_time  ||= 0900
+		self.end_time  ||= 1000
 	end	
-		
-	# def ensure_is_professor
-	# 	!!Professor.find(self.professor_id)
-	# end
 end

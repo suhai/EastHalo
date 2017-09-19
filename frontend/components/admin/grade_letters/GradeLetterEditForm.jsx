@@ -6,7 +6,8 @@ class GradeLetterEditForm extends React.Component {
 		super(props);
 		this.state = {
 			id: '',
-			name: ''
+			letter: '',
+			weight: 0
 		};
 
 		this.update = this.update.bind(this);
@@ -39,12 +40,14 @@ class GradeLetterEditForm extends React.Component {
 		let data = {
 			grade_letter: {
 				id: this.state.id,
-				letter: this.state.letter
+				letter: this.state.letter,
+				weight: this.state.weight
 			}
 		};
 		this.setState({
 			id: '',
-			letter: ''
+			letter: '',
+			weight: 0
 		});
 
 		let id = this.props.match.params.id;
@@ -56,11 +59,13 @@ class GradeLetterEditForm extends React.Component {
 		Object.keys(props.grade_letters).length > 0 ?
 		this.setState({
 			id: props.match.params.id,
-			letter: props.grade_letters[props.match.params.id].letter
+			letter: props.grade_letters[props.match.params.id].letter,
+			weight: props.grade_letters[props.match.params.id].weight
 		}) :
 		this.setState({
 			id: '',
-			letter: ''
+			letter: '',
+			weight: 0
 		});
 	};
 
@@ -68,7 +73,8 @@ class GradeLetterEditForm extends React.Component {
 	render() {
 		const {
 			id,
-			letter
+			letter,
+			weight
 		} = this.state;
 
 		return (
@@ -77,7 +83,8 @@ class GradeLetterEditForm extends React.Component {
 				<form className="form-style-9">
 					<ul>
 						<li>
-							<input type="text" className="field-style field-split align-center" value={letter} onChange={this.update('letter')} />
+						<input type="text" className="field-style field-split align-left" value={letter} onChange={this.update('letter')} placeholder="GradeLetter Name" />
+						<input type="number" className="field-style field-split align-right" value={weight} onChange={this.update('weight')} placeholder="GradeLetter Weight" />
 						</li>
 						<li>
 							<input type="submit" value="Save" onClick={this.editGradeLetter} />

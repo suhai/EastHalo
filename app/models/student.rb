@@ -22,15 +22,35 @@
 #
 
 class Student < User
-	has_many :course_enrollments
-	has_many :courses, through: :course_enrollments, dependent: :destroy
-	has_many :departments, through: :courses, dependent: :destroy
-	has_many :professors, through: :courses, dependent: :destroy
+	has_many :course_enrollments, dependent: :destroy
+	has_many :courses, through: :course_enrollments
+	has_many :departments, through: :courses
+	has_many :professors, through: :courses
 	has_one :transcript, dependent: :destroy
 	has_many :grades, dependent: :destroy
 	after_create :instantiate_student_transcript
 
 	def instantiate_student_transcript
 		Transcript.create(student_id: self.id)
+	end
+
+	def gpa
+		total_units > 0 ? (total_credits.to_f / total_units) : 'NA'
+	end
+
+	def total_credits
+		val = 0
+		self.grades.each do |grade|
+			val += (grade.grade_letter.weight * grade.course.course_credit)
+		end
+		val
+	end
+
+	def total_units
+		val = 0
+		self.courses.each do |course|
+			val += course.course_credit
+		end
+		val
 	end
 end

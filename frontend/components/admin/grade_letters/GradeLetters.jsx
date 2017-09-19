@@ -34,8 +34,9 @@ class GradeLetters extends React.Component {
 					<thead>
 						<tr>
 							<th scope="col">GradeLetter</th>
+							<th scope="col">Weight</th>
 							<th scope="col">Edit</th>
-							<th scope="col">Delte</th>
+							<th scope="col">Delete</th>
 						</tr>
 					</thead>
 

@@ -17,8 +17,6 @@
 class Book < ApplicationRecord
 	validates :title, :author, :publisher, :presence => true
 	after_initialize :set_defaults, unless: :persisted?
-	# belongs_to :bookstore
-	# belongs_to :user
 
 	def set_defaults
 		self.price  ||= 0

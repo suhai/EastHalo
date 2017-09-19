@@ -5,7 +5,8 @@ class GradeLetterForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			letter: ''
+			letter: '',
+			weight: 0
 		};
 
 		this.update = this.update.bind(this);
@@ -35,7 +36,8 @@ class GradeLetterForm extends React.Component {
 	addGradeLetter() {
 		let data = {
 			grade_letter: {
-				letter: this.state.letter
+				letter: this.state.letter,
+				weight: this.state.weight,
 			}
 		};
 
@@ -44,7 +46,8 @@ class GradeLetterForm extends React.Component {
 		}
 
 		this.setState({
-			letter: ''
+			letter: '',
+			weight: 0
 		});
 
 		this.redirectAction();
@@ -52,7 +55,8 @@ class GradeLetterForm extends React.Component {
 
 	render() {
 		const {
-			letter
+			letter,
+			weight
 		} = this.state;
 		
 		return (
@@ -61,6 +65,7 @@ class GradeLetterForm extends React.Component {
 					<ul>
 						<li>
 							<input type="text" className="field-style field-split align-left" value={letter} onChange={this.update('letter')} placeholder="GradeLetter Name" />
+							<input type="number" className="field-style field-split align-right" value={weight} onChange={this.update('weight')} placeholder="GradeLetter Weight" />
 						</li>
 						<li>
 							<input type="submit" value="Add GradeLetter" onClick={this.addGradeLetter} />

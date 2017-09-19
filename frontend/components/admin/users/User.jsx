@@ -26,7 +26,6 @@ class User extends React.Component {
 			type, 
 			gender,
 			cash_balance, 
-			dob
 		} = this.props.user;
 
     return (
@@ -34,7 +33,6 @@ class User extends React.Component {
 				<td>{username}</td>
 				<td>{fname}</td>
 				<td>{lname}</td>
-				<td>{dob}</td>
 				<td>{email}</td>
 				<td>{type}</td>
 				<td>{gender}</td>

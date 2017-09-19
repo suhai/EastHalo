@@ -29,20 +29,22 @@ class User < ApplicationRecord
   attr_reader :password
 	after_initialize :ensure_session_token
 	after_initialize :set_defaults, unless: :persisted?
-	# after_create :instantiate_user_schedule
+	after_create :instantiate_user_schedule
 	scope :students, -> { where(type: 'Student') }
 	scope :professors, -> { where(type: 'Professor') }
 
 	has_many :friendships
 	has_many :friends, through: :friendships, dependent: :destroy
-	has_many :posts
-	has_many :comments
-	# has_many :books
-	# has_many :meals
-	has_one :schedule
+	has_many :posts, dependent: :destroy
+	has_many :comments, dependent: :destroy
+	has_one :schedule, dependent: :destroy
 
 	def instantiate_user_schedule
-		Schedule.create(user_id: self.id)
+		Schedule.create(user_id: self.id) if self.type == 'Student' || self.type == 'Professor'
+	end
+
+	def gpa
+		'NA' unless self.type == 'Student'
 	end
 
 #---------------------------------------------------------------------------
@@ -73,6 +75,6 @@ class User < ApplicationRecord
 	
 	def set_defaults
 		self.cash_balance  ||= 0
-		self.course_credit  ||= 0
+		self.course_load  ||= 0
 	end	
 end

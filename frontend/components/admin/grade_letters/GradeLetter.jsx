@@ -23,11 +23,13 @@ class GradeLetter extends React.Component {
   render() {
 		const { 
 			letter, 
+			weight
 		} = this.props.grade_letter;
 
     return (
 			<tr>
 				<td>{letter}</td>
+				<td>{weight}</td>
 				<td onClick={this.editGradeLetter}>Edit</td>
 				<td onClick={this.deleteGradeLetter}>Delete</td>
 			</tr>

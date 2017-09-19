@@ -43,6 +43,7 @@ class UserShow extends React.Component {
 			lname,
 			email,
 			bio,
+			gpa,
 			profile_image_url,
 			is_admin,
 			type,
@@ -97,6 +98,10 @@ class UserShow extends React.Component {
 						<tr>
 							<td>Gender</td>
 							<td>{gender}</td>
+						</tr>
+						<tr>
+							<td>GPA</td>
+							<td>{gpa}</td>
 						</tr>
 						<tr>
 							<td>Account</td>

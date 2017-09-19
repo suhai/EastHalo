@@ -30,11 +30,10 @@ class Users extends React.Component {
 							<th scope="col">Username</th>
 							<th scope="col">First Name</th>
 							<th scope="col">Last Name</th>
-							<th scope="col">DOB</th>
 							<th scope="col">Email</th>
 							<th scope="col">Type</th>
 							<th scope="col">Gender</th>
-							<th scope="col">Balance</th>
+							<th scope="col">Account Balance</th>
 						</tr>
 					</thead>
 

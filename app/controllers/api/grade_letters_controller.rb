@@ -36,7 +36,7 @@ class Api::GradeLettersController < ApplicationController
 	#----------------------------------------------------------------------------
 	private
 	def grade_letter_params
-		params.require(:grade_letter).permit(:letter)
+		params.require(:grade_letter).permit(:letter, :weight)
 	end
 
 	def set_grade_letter

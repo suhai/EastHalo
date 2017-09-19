@@ -12,7 +12,7 @@ import BookReducer from './book_reducer';
 import GradeLetterReducer from './grade_letter_reducer';
 import FriendshipReducer from './friendship_reducer';
 import GradeReducer from './grade_reducer';
-// import PostReducer from './post_reducer';
+import PostReducer from './post_reducer';
 
 const rootReducer = combineReducers({
 	session: SessionReducer,
@@ -28,7 +28,7 @@ const rootReducer = combineReducers({
 	grade_letters: GradeLetterReducer,
 	friendships: FriendshipReducer,
 	grades: GradeReducer,
-	// posts: PostReducer
+	posts: PostReducer
 });
 
 export default rootReducer;

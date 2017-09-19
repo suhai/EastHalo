@@ -39,6 +39,9 @@ import AdminMealEditContainer from './meals/meal_edit_container';
 import AdminNewsPageContainer from './news/news_page_container';
 {/* POSTS */}
 import AdminPostPageContainer from './posts/post_page_container';
+import AdminPostShowContainer from './posts/post_show_container';
+import AdminPostFormContainer from './posts/post_form_container';
+import AdminPostEditContainer from './posts/post_edit_container';
 {/* SCHEDULES , only display all + delete options */}
 import AdminSchedulePageContainer from './schedules/schedule_page_container';
 {/* TRANSCRIPTS */}
@@ -119,6 +122,9 @@ class Admin extends React.Component {
 						{/* NEWS */}
 						<Route path="/admin/:username/news" render={(props) => <AdminNewsPageContainer {...props} /> } />
 						{/* POSTS */}
+						<Route path="/admin/:username/posts/postform" render={(props) => <AdminPostFormContainer {...props} /> } />
+						<Route path="/admin/:username/posts/edit/:id" render={(props) => <AdminPostEditContainer {...props} /> } />
+						<Route path="/admin/:username/posts/:id" render={(props) => <AdminPostShowContainer {...props} /> } />
 						<Route path="/admin/:username/posts" render={(props) => <AdminPostPageContainer {...props} /> } />
 						{/* SCHEDULES */}
 						<Route path="/admin/:username/schedules" render={(props) => <AdminSchedulePageContainer {...props} /> } />

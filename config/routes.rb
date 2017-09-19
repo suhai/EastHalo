@@ -24,6 +24,7 @@ Rails.application.routes.draw do
 		resources :grade_letters, except: [:new, :edit]
 		resources :grades, except: [:new, :edit]
 		resources :departments, except: [:new, :edit]
+		resources :messages, except: [:new, :edit, :update]
   end
 
   root 'static_pages#root'

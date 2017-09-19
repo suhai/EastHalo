@@ -31,7 +31,7 @@ A section of the Database is shown below:
 
 
 ### SAMPLE BACKEND OUTPUT FROM API CALLS
-```
+```js
 POST REQUESTS
 $.ajax({
 	method: 'POST',
@@ -43,8 +43,7 @@ $.ajax({
 		}
 	},
 })
-The above will create a new user with username 'Rich' with his password
-
+<!-- The above will create a new user with username 'Rich' with his password -->
 
 $.ajax({
 	method: 'POST',
@@ -56,8 +55,7 @@ $.ajax({
 		}
 	},
 })
-The above will create a friendship between users with ids 3 and 4. This is a mutual action
-
+<!-- The above will create a friendship between users with ids 3 and 4. This is a mutual action -->
 
 $.ajax({
 	method: 'POST',
@@ -69,16 +67,14 @@ $.ajax({
 		}
 	},
 })
-The above will enroll the student with id 3 into the course with id 1
-
+<!-- The above will enroll the student with id 3 into the course with id 1 -->
 
 GET REQUESTS
 $.ajax({
   type: 'GET',
   url: 'api/professors'
 })
-The above will retrieve all users who are of type 'Professor' from the database
-
+<!-- The above will retrieve all users who are of type 'Professor' from the database -->
 
 $.ajax({
   type: 'GET',
@@ -86,13 +82,11 @@ $.ajax({
 })
 The above will retrieve the user with user_id 3 from the database
 
-
 $.ajax({
 	method: 'GET',
 	url: 'api/cafetaria/meals'
 })
-The above will retrieve all the meals from the cafetaria in the database
-
+<!-- The above will retrieve all the meals from the cafetaria in the database -->
 
 PATCH REQUESTS
 $.ajax({
@@ -104,28 +98,30 @@ $.ajax({
 		}
 	},
 })
-The above will update the fname of student with id 7 to 'Mary' 
-
+<!-- The above will update the fname of student with id 7 to 'Mary'  -->
 
 DELETE REQUESTS
 $.ajax({
   method: 'DELETE',
   url: 'api/users/8'
 })
-The above will delete user with user_id 8 from the database
-#------------------------------------------------------------------------------
-
+<!-- The above will delete user with user_id 8 from the database -->
 ```
 
+#------------------------------------------------------------------------------
 ## SAMPLE DATA FROM THE COURSES TABLE
 #------------------------------------------------------------------------------	
 
- id |   title   | course_credit | start_time | end_time |          created_at           |          updated_at           | professor_id
-----+-----------+---------------+------------+----------+-------------------------------+-------------------------------+--------------
-  2 | Chemistry |               |            |          | 2017-09-01 16:48:27.228722-07 | 2017-09-01 16:48:27.228722-07 |            5
-  1 | Art       |               |            |          | 2017-09-01 16:47:20.182605-07 | 2017-09-01 16:51:43.301649-07 |            4
-  3 | English   |           1.0 |            |          | 2017-09-01 22:07:57.661362-07 | 2017-09-01 22:07:57.661362-07 |            5
-(3 rows)
+ id |   title   | course_credit | start_time | end_time | professor_id |
+----+-----------+---------------+------------+----------+--------------
+  1 | Art       |      1        |   09:00    |  11:00   |      17      |            
+  2 | Biology   |      1        |   13:10    |  14:00   |      8       | 
+  3 | Chemistry |      1        |   08:00    |  10:00   |      93      | 
+	4 | Dance     |      1        |   09:00    |  10:00   |      21      |            
+  5 | English   |      1        |   14:10    |  16:00   |      8       | 
+  6 | French    |      1        |   19:00    |  22:00   |      35      | 
+
+
 
 
 ## Class Interactions

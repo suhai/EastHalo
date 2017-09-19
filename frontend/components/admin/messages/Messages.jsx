@@ -1,9 +1,9 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
-import Post from './Post';
+import Message from './Message';
 
-class Posts extends React.Component {
+class Messages extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -13,35 +13,35 @@ class Posts extends React.Component {
 	};
 
 	renderForm() {
-		window.location.hash = `/admin/${this.props.currentUser.username}/posts/postform`;
+		window.location.hash = `/admin/${this.props.currentUser.username}/messages/messageform`;
 	};
 
 	componentDidMount() {
-		this.props.fetchPosts();
+		this.props.fetchMessages();
 	};
 
 	render() {
-		let postList = values(this.props.posts);
-		let posts = postList.map((post, idx) => (
-			<Post key={idx} post={post} currentUser={this.props.currentUser}/>
+		let messageList = values(this.props.messages);
+		let messages = messageList.map((message, idx) => (
+			<Message key={idx} message={message} currentUser={this.props.currentUser}/>
 		));
 
 		return (
 			<div className=''>
-				<div><button className='btn create align-left' onClick={this.renderForm}>Create Post</button></div>
 
 				<table id="gradient-style" className="full-width">
 					<thead>
 						<tr>
 							{/* <th scope="col">Post ID</th> */}
-							<th scope="col">User</th>
-							<th scope="col">Title</th>
+							<th scope="col">Sender</th>
+							<th scope="col">Email</th>
+							<th scope="col">Subject</th>
 							<th scope="col">Excerpt</th>
 						</tr>
 					</thead>
 
 					<tbody>
-						{posts}
+						{messages}
 					</tbody>
 
 				</table>
@@ -53,4 +53,4 @@ class Posts extends React.Component {
 	}
 }
 
-export default Posts;
+export default Messages;

@@ -13,27 +13,33 @@ class HomePage extends React.Component {
     this.openSignUp = this.openSignUp.bind(this);
     this.openSignIn = this.openSignIn.bind(this);
     this.closeModal = this.closeModal.bind(this);
-    this.swy_info = this.swy_info.bind(this);
-  }
+		this.swy_info = this.swy_info.bind(this);
+		this.renderMessageForm = this.renderMessageForm.bind(this);
+  };
 
   componentWillMount() {
     Modal.setAppElement('body');
-  }
+  };
 
   openSignIn(e) {
     e.preventDefault();
     this.setState({ isOpen: true, authRoute: 'signin' });
-  }
+  };
 
   openSignUp(e) {
     e.preventDefault();
     this.setState({ isOpen: true, authRoute: 'signup' });
-  }
+  };
 
   swy_info(e) {
     e.preventDefault();
     window.location.hash = '/swy_info'
-  }
+	};
+	
+	renderMessageForm(e) {
+    e.preventDefault();
+    window.location.hash = '/enquiries/messageform'
+  };
 
   closeModal(e) {
     e.preventDefault();
@@ -74,8 +80,7 @@ class HomePage extends React.Component {
 					</ul>
 				</div>
 
-        <main className='homepage-info'>
-					{/* <button onClick={this.swy_info} className='swyinfo'>Some Info</button> */}
+        <main className='homepage-info'>	
           <div className='homepage-description'>
             <h2 className="">EastHalo University</h2>
             <div className='placeholder-text'>
@@ -83,6 +88,11 @@ class HomePage extends React.Component {
               <p>Welcome to the University of EastHalo</p>
             </div> 
           </div>
+
+					<div>
+						<button onClick={this.swy_info} className='submit'>Some Info</button>
+						<button onClick={this.renderMessageForm} className='edit'>Contact Us</button>
+					</div>
         </main>
         
         <section className="homepage-bottom">

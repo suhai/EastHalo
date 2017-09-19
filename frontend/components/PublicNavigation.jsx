@@ -36,8 +36,8 @@ class PublicNavigation extends React.Component {
 					</ul>
 					<ul className='searchbar'>
 						<input onKeyPress={this.toSearch} className='search'></input>
-						<li><NavLink to='/alumni'>Alumni</NavLink></li>
-						<li><NavLink to='/X'>Parents</NavLink></li>
+						<li><NavLink to='/swy_info'>Alumni</NavLink></li>
+						<li><NavLink to='/enquiries/messageform'>Contact</NavLink></li>
 					</ul>
 				</nav>
 			</header>

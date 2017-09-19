@@ -1,7 +1,7 @@
 @messages.each do |message|
   json.set! message.id do
 		json.id message.id
-		json.name message.name
+		json.sender message.sender
 		json.subject message.subject
 		json.email message.email
 		json.msg message.msg

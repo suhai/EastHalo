@@ -32,9 +32,12 @@ import AdminGradeShowContainer from './grades/grade_show_container';
 import AdminGradeFormContainer from './grades/grade_form_container';
 import AdminGradeEditContainer from './grades/grade_edit_container';
 {/* MEALS */}
-import AdminMealsPageContainer from './meals/meal_page_container';
+import AdminMealPageContainer from './meals/meal_page_container';
 import AdminMealFormContainer from './meals/meal_form_container';
 import AdminMealEditContainer from './meals/meal_edit_container';
+{/* MESSAGES */}
+import AdminMessagePageContainer from './messages/message_page_container';
+import AdminMessageShowContainer from './messages/message_show_container';
 {/* NEWS */}
 import AdminNewsPageContainer from './news/news_page_container';
 {/* POSTS */}
@@ -77,6 +80,7 @@ class Admin extends React.Component {
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/grade_letters`}>GradeLetters</NavLink></li>	
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/grades`}>Grades</NavLink></li>	
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/meals`}>Meals</NavLink></li>
+						<li><NavLink to={`/admin/${this.props.currentUser.username}/messages`}>Messages</NavLink></li>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/posts`}>Posts</NavLink></li>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/schedules`}>Schedules</NavLink></li>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/transcripts`}>Transcripts</NavLink></li>
@@ -118,7 +122,10 @@ class Admin extends React.Component {
 						{/* MEALS */}
 						<Route path="/admin/:username/meals/edit/:id" render={(props) => <AdminMealEditContainer {...props} /> } />
 						<Route path="/admin/:username/meals/mealform" render={(props) => <AdminMealFormContainer {...props} /> } />
-						<Route path="/admin/:username/meals" render={(props) => <AdminMealsPageContainer {...props} /> } />
+						<Route path="/admin/:username/meals" render={(props) => <AdminMealPageContainer {...props} /> } />
+						{/* MESSAGES */}
+						<Route path="/admin/:username/messages/:id" render={(props) => <AdminMessageShowContainer {...props} /> } />
+						<Route path="/admin/:username/messages" render={(props) => <AdminMessagePageContainer {...props} /> } />
 						{/* NEWS */}
 						<Route path="/admin/:username/news" render={(props) => <AdminNewsPageContainer {...props} /> } />
 						{/* POSTS */}

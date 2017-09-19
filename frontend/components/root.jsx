@@ -5,17 +5,18 @@ import HomePageContainer from './homepage/homepage_container';
 import LoggedHomeContainer from './logged_home/logged_home_container';
 import SwyInfo from './about/swy_info';
 import Footer from './footer/Footer';
+import MessageFormContainer from './admin/messages/message_form_container';
 
 
 const Root = () =>(
 	//This is where the major routes of the app are linked to their corresponding components / containers.
   <div>
     <Switch>
-      <AuthRoute exact path="/" component={HomePageContainer} />
+			<Route path="/enquiries/messageform" component={MessageFormContainer} />
       <Route path="/swy_info" component={SwyInfo} />
       <ProtectedRoute exact path="/loggedhome" component={LoggedHomeContainer} />
-      <ProtectedRoute exact path="/some_route" component={LoggedHomeContainer} />
       <ProtectedRoute path="/:username" component={LoggedHomeContainer} />
+			<AuthRoute path="/" component={HomePageContainer} />
 			<Route path="/" component={() => <h1>ERROR, YOU MAY BE LOST</h1>} />
     </Switch>
     <Footer />

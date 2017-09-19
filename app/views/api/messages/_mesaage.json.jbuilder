@@ -1,5 +1,5 @@
 json.id message.id
-json.name message.name
+json.sender message.sender
 json.subject message.subject
 json.email message.email
 json.msg message.msg

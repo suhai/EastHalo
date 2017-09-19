@@ -28,7 +28,7 @@ class Api::MessagesController < ApplicationController
 	#----------------------------------------------------------------------------
 	private
 	def message_params
-		params.require(:message).permit(:name, :email, :subject, :msg)
+		params.require(:message).permit(:sender, :email, :subject, :msg)
 	end
 
 	def set_message

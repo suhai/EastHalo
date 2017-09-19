@@ -30,7 +30,6 @@ class User < ApplicationRecord
 	after_initialize :ensure_session_token
 	after_initialize :set_defaults, unless: :persisted?
 	# after_create :instantiate_user_schedule
-	
 	scope :students, -> { where(type: 'Student') }
 	scope :professors, -> { where(type: 'Professor') }
 
@@ -41,7 +40,6 @@ class User < ApplicationRecord
 	# has_many :books
 	# has_many :meals
 	has_one :schedule
-
 
 	def instantiate_user_schedule
 		Schedule.create(user_id: self.id)

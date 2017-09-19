@@ -8,11 +8,12 @@ This is a single page web application modeled after a university website. It was
 
 ## Backend
 
-The app is built on a Ruby on Rails backend supported by a PostgreSQL database. I abstracted the routes (except the root, which is the 'static_pages' in this app) from a traditonal Rails routes to React Router. Initially I planned to center the app around two user models; students and professors. However, as I start with my wireframe I realized that I should leave room for scalability in case i decide to extend the user classes beyond just students and professors. So I ended up with a User Model / Class from which all other user types can inherit from. As at the time of writing this README I had four kinds of users; students, professors, administrators, and ordinary users. 
-A section of the Database is shown below:
+The app is built on a Ruby on Rails backend supported by a PostgreSQL database. I abstracted the routes (except the root, which is the 'static_pages' in this app) from a traditonal Rails routes to React Router. Initially I planned to center the app around two user models; students and professors. However, as I start with my wireframe I realized that I should leave room for scalability in case i decide to extend the user classes beyond just students and professors. So I ended up with a User Model / Class from which all other user types can inherit from. As at the time of writing this README I had four types of users; students, professors, administrators, and ordinary users. 
+A sample model from the Database is shown below:
 
 																	DATABASE MODELS
-#------------------------------------------------------------------------------		
+`
+-----------------------------------------------------------------------------		
 
                    List of relations
  Schema |           Name            |   Type   | Owner
@@ -30,6 +31,19 @@ A section of the Database is shown below:
  public | users                     | table    | suhai
 (26 rows)
 
+#------------------------------------------------------------------------------
+## SAMPLE DATA FROM THE COURSES TABLE
+#------------------------------------------------------------------------------	
+
+ id |   title   | course_credit | start_time | end_time | professor_id |
+----+-----------+---------------+------------+----------+--------------
+  1 | Art       |      1        |   09:00    |  11:00   |      17      |            
+  2 | Biology   |      1        |   13:10    |  14:00   |      8       | 
+  3 | Chemistry |      1        |   08:00    |  10:00   |      93      | 
+	4 | Dance     |      1        |   09:00    |  10:00   |      21      |            
+  5 | English   |      1        |   14:10    |  16:00   |      8       | 
+  6 | French    |      1        |   19:00    |  22:00   |      35      | 
+`
 
 ### SAMPLE BACKEND OUTPUT FROM API CALLS
 ```js
@@ -109,24 +123,9 @@ $.ajax({
 <!-- The above will delete user with user_id 8 from the database -->
 ```
 
-#------------------------------------------------------------------------------
-## SAMPLE DATA FROM THE COURSES TABLE
-#------------------------------------------------------------------------------	
-
- id |   title   | course_credit | start_time | end_time | professor_id |
-----+-----------+---------------+------------+----------+--------------
-  1 | Art       |      1        |   09:00    |  11:00   |      17      |            
-  2 | Biology   |      1        |   13:10    |  14:00   |      8       | 
-  3 | Chemistry |      1        |   08:00    |  10:00   |      93      | 
-	4 | Dance     |      1        |   09:00    |  10:00   |      21      |            
-  5 | English   |      1        |   14:10    |  16:00   |      8       | 
-  6 | French    |      1        |   19:00    |  22:00   |      35      | 
-
-
 
 
 ## Class Interactions
-
 ```ruby
 # == Schema Information
 class Student < User
@@ -207,6 +206,28 @@ end
 ```
 
 ## Features
+
+Create / Share Posts
+Comment On Posts
+Friend / Unfriend Other Users
+Add / Drop Course
+Edit Self Attributes
+Edit Other Users' Privileges
+CRUD Courses
+CRUD Departments
+CRUD Meals
+CRUD Books
+CRUD News
+Create / Assign Grade
+Transcript (Instantiated for each new user)
+Schedule (Instantiated for each new user)
+Chat With Other Users*
+Purchase Books*
+Purchase Meals*
+Create Assignments*
+Take Assignment*
+Send Mass Emails To All Users*
+
 
 ### User Authentication
   Sample information from the database is made publicly available to any visitor to read or watch, with more exclusive access reserved for users who sign in to the 'inner' zone. 

@@ -5,15 +5,21 @@ class UserShow extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			user: {}
+			user: {
+				friends: []
+			}
 		};
 		this.editUser = this.editUser.bind(this);
 		this.deleteUser = this.deleteUser.bind(this);
+		this.addFriend = this.addFriend.bind(this);
+		this.dropFriend = this.dropFriend.bind(this);
+		this.toggleFriendship = this.toggleFriendship.bind(this);
 	}
 
 	componentDidMount() {
 		const id = this.props.match.params.id;
 		this.props.fetchUser(id);
+		this.props.fetchFriendships();
 	};
 
 	editUser() {
@@ -26,14 +32,72 @@ class UserShow extends React.Component {
 		window.location.hash = `/admin/${this.props.currentUser.username}/users`;
 	};
 
+	addFriend() {
+		let { id: friend_id } = this.state.user;
+		let { id: user_id } = this.props.currentUser;
+		let data = {
+			friendship: {
+				user_id,
+				friend_id
+			}
+		};
+
+		if (user_id !== undefined && friend_id !== undefined) {
+			this.props.createFriendship(data);
+			this.setState({
+				friendship_status: 'Drop Friend'
+			})	
+		}
+	};
+
+	dropFriend() {
+		let { id: friend_id } = this.state.user;
+		let { id: user_id } = this.props.currentUser;
+		let targetFriendship = values(this.props.currentUser.friendships).find((friendship) => {
+			return (friendship.friend_id == this.state.user.id)
+		})
+
+		if (this.props.deleteFriendship(targetFriendship.id)) {
+			this.setState({
+				frienship_status: 'Add Friend'
+			})
+		}
+		
+		// values(this.props.currentUser.friendships).forEach(friendship => {
+		// 	if (friendship.friend_id === this.state.user.id) {
+		// 		this.props.deleteFriendship(friendship.id);
+		// 		this.setState({
+		// 			frienship_status: 'Add Friend'
+		// 		})
+		// 	}
+		// })
+	};
+
+	toggleFriendship() {
+		this.state.friendship_status === 'Add Friend' ?
+		this.addFriend() : this.dropFriend()
+	};
+
 	componentWillReceiveProps(props) {
 		Object.keys(props.users).length > 0 ?
 			this.setState({
 				user: props.users[props.match.params.id]
 			}) :
 			this.setState({
-				user: {}
+				user: {
+					friends: []
+				}
 			});
+
+			values(this.state.user.friends).find((friend, idx) => (
+				friend == this.props.currentUser))
+				? 
+			this.setState({
+				friendship_status: 'Drop Friend'
+			}) :
+			this.setState({
+				friendship_status: 'Add Friend'
+			})
 	}
 
 	render() {
@@ -58,6 +122,7 @@ class UserShow extends React.Component {
 					<div className='grouped-buttons'>
 						<button className='btn edit' onClick={this.editUser}>Edit User</button>
 						<button className='btn delete' onClick={this.deleteUser}>Delete User</button>
+						<button className='btn delete' onClick={this.toggleFriendship}>{this.state.friendship_status}</button>	
 					</div>
 				</div>
 				<hr />

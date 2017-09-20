@@ -41,7 +41,7 @@ class LoggedHome extends React.Component {
 					<h3>WELCOME TO THE LOGGED HOMEPAGE</h3>
 					<Switch>
 						<Route path="/subhome" render={(props) => <HomeContainer {...props} />} />
-						<Route path="/:username/page" render={(props) => <ProfileDetailPageContainer {...props} />} />
+						<Route path="/:username/profile" render={(props) => <ProfileDetailPageContainer {...props} />} />
 						<Route path="/registrar/courses/:id" render={(props) => <CourseShowContainer {...props} />} />
 						<Route path="/registrar" render={(props) => <RegistrarPageContainer {...props} />} />
 						<Route path="/cafetaria/meals/:id" render={(props) => <MealShowContainer {...props} />} />
@@ -51,7 +51,7 @@ class LoggedHome extends React.Component {
 						<Route path="/admin" render={(props) => <AdminPageContainer {...props} />} />
 						<Route path="/news" render={(props) => <NewsPageContainer {...props} />} />
 						<Route path="/search" render={(props) => <SearchContainer {...props} />} />
-						<Route path="/:username/profile" render={(props) => <UserPageContainer {...props} />} />
+						{/* <Route path="/:username/profile" render={(props) => <UserPageContainer {...props} />} /> */}
 
 						{/* <Route path="/registrar/courseform" render={(props) => <CourseFormContainer {...props} />} />
 						<Route exact path="/courses/edit/:id" render={(props) => <CourseEditContainer {...props} />} />

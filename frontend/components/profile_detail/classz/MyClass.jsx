@@ -10,9 +10,7 @@ class MyClass extends React.Component {
     this.showClass = this.showClass.bind(this);
   }
 
-
   showClass() {
-		// const id = this.props.course.id;
 		window.location.hash = `courses/${this.props.course.id}`;
 	};
 

@@ -1,17 +1,17 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
-import MyClass from './MyClass';
+import Friend from './Friend';
 
-class MyClasses extends React.Component {
+class Friends extends React.Component {
 	constructor(props) {
 		super(props);
 		
 	};
 
 	render() {
-		let courses = values(this.props.currentUser.courses).map((course, idx) => (
-			<MyClass key={idx} course={course} />
+		let friends = values(this.props.currentUser.friends).map((friend, idx) => (
+			<Friend key={idx} currentUser={this.props.currentUser} friend={friend} />
 		));
 
 		return (
@@ -19,18 +19,16 @@ class MyClasses extends React.Component {
 				<table id="gradient-style" className="full-width">
 					<thead>
 						<tr>
-							<th scope="col">Code</th>
-							<th scope="col">Title</th>
-							<th scope="col">From</th>
-							<th scope="col">To</th>
-							<th scope="col">Load</th>
-							<th scope="col">Size</th>
-							<th scope="col">Instructor</th>
+							<th scope="col">First Name</th>
+							<th scope="col">Last Name</th>
+							<th scope="col">Username</th>
+							<th scope="col">Email</th>
+							<th scope="col">Phone</th>
 						</tr>
 					</thead>
 
 					<tbody>
-						{courses}
+						{friends}
 					</tbody>
 
 				</table>
@@ -42,4 +40,4 @@ class MyClasses extends React.Component {
 	}
 }
 
-export default MyClasses;
+export default Friends;

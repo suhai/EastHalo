@@ -49,7 +49,7 @@ class PrivateNavigation extends React.Component {
 				<nav className='navigation'>
 					<ul>
 						<li><NavLink to='/subhome'>Home</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/page`}>User Page</NavLink></li>
+						{/* <li><NavLink to={`/${this.props.currentUser.username}/profile`}>User Page</NavLink></li> */}
 						<li><NavLink to='/registrar'>Registrar</NavLink></li>
 						<li><NavLink to='/news'>EHU News</NavLink></li>
 						<li><NavLink to='/cafetaria'>Cafetaria</NavLink></li>
@@ -71,7 +71,7 @@ class PrivateNavigation extends React.Component {
 									<Link to={`/${this.props.currentUser.username}/profile`}>Profile</Link>
 								</li>
 								<li>
-									<Link to='/:username/settings'>Settings</Link>
+									<NavLink to={`/${this.props.currentUser.username}/settings`}>Settings</NavLink>
 								</li>
 								<li id='signout' onClick={this.logout}>Sign out</li>
 							</ul>

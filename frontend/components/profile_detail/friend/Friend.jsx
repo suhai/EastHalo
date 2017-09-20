@@ -1,19 +1,38 @@
 import React from 'react';
-import { values, merge } from 'lodash';
-import { NavLink, Route, Switch } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 
 class Friend extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      
+    };
+    this.showFriend = this.showFriend.bind(this);
+	};
 
-  }
+
+  showFriend() {
+		window.location.hash = `/admin/${this.props.currentUser.username}/users/${this.props.friend.id}`;
+	};
+
 
   render() {
- 
+		const { 
+			fname, 
+			lname, 
+			email, 
+			phone_number, 
+			username
+		} = this.props.friend;
+
     return (
-      <main className='user-page'>
-        <h3>THIS IS THE FRIENDS PAGE</h3>
-      </main>
+			<tr onClick={this.showFriend}>
+				<td>{fname}</td>
+				<td>{lname}</td>
+				<td>{username}</td>
+				<td>{email}</td>
+				<td>{phone_number}</td>
+			</tr>
     );
   }
 }

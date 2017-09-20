@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import Schedules from './Schedules';
-import { fetchUsers } from '../../../actions/user_actions';
+import { fetchUser } from '../../../actions/user_actions';
+import ScheduleShow from './ScheduleShow';
 
 const mapStateToProps = (state, ownProps) => ({
 	currentUser: state.session.currentUser,
@@ -9,11 +9,11 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	fetchUsers: () => dispatch(fetchUsers())
+	fetchUser: id => dispatch(fetchUser(id))
 });
 
 export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-)(Schedules));
+)(ScheduleShow));

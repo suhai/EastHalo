@@ -52,6 +52,7 @@ import AdminPostFormContainer from './posts/post_form_container';
 import AdminPostEditContainer from './posts/post_edit_container';
 {/* SCHEDULES , only display all + delete options */}
 import AdminSchedulePageContainer from './schedules/schedule_page_container';
+import AdminScheduleShowContainer from './schedules/schedule_show_container';
 {/* TRANSCRIPTS */}
 import AdminTranscriptPageContainer from './transcripts/transcript_page_container';
 import AdminTranscriptShowContainer from './transcripts/transcript_show_container';
@@ -145,6 +146,7 @@ class Admin extends React.Component {
 						<Route path="/admin/:username/posts/:id" render={(props) => <AdminPostShowContainer {...props} /> } />
 						<Route path="/admin/:username/posts" render={(props) => <AdminPostPageContainer {...props} /> } />
 						{/* SCHEDULES */}
+						<Route path="/admin/:username/schedules/:id" render={(props) => <AdminScheduleShowContainer {...props} /> } />
 						<Route path="/admin/:username/schedules" render={(props) => <AdminSchedulePageContainer {...props} /> } />
 						{/* TRANSCRIPTS */}
 						<Route path="/admin/:username/transcripts/:id" render={(props) => <AdminTranscriptShowContainer {...props} /> } />

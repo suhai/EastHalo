@@ -23,28 +23,28 @@ class ProfileDetail extends React.Component {
       <main className='user-page'>
 				<nav className='profile-nav'>
 					<ul>
-						<li><NavLink to={`/${this.props.currentUser.username}/page/account`}>Account</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/page/classes`}>Classes</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/page/friends`}>Friends</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/page/posts`}>Posts</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/page/comments`}>Comments</NavLink></li>	
-						<li><NavLink to={`/${this.props.currentUser.username}/page/schedule`}>Schedule</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/page/assignments`}>Assignments</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/page/transcript`}>Transcript</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/account`}>Account</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/classes`}>Classes</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/friends`}>Friends</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/posts`}>Posts</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/comments`}>Comments</NavLink></li>	
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/schedule`}>Schedule</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/assignments`}>Assignments</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/transcript`}>Transcript</NavLink></li>
 					</ul>
 				</nav>
 
 				<div>
 					<Switch>
-						<Route path="/:username/page/account" render={(props) => <AccountPageContainer {...props} /> } />
-						<Route path="/:username/page/classes" render={(props) => <MyClassPageContainer {...props} /> } />
-						<Route path="/:username/page/assignments" render={(props) => <AssignmentPageContainer {...props} /> } />
-						<Route path="/:username/page/comments" render={(props) => <CommentPageContainer {...props} /> } />
-						<Route path="/:username/page/friends" render={(props) => <FriendPageContainer {...props} /> } />
-						<Route path="/:username/page/posts" render={(props) => <PostPageContainer {...props} /> } />
-						<Route path="/:username/page/schedule" render={(props) => <SchedulePageContainer {...props} /> } />
-						<Route path="/:username/page/transcript" render={(props) => <TranscriptPageContainer {...props} /> } />
-						<Route exact path="/:username/page" render={(props) => <AccountPageContainer {...props} /> } />
+						<Route path="/:username/profile/account" render={(props) => <AccountPageContainer {...props} /> } />
+						<Route path="/:username/profile/classes" render={(props) => <MyClassPageContainer {...props} /> } />
+						<Route path="/:username/profile/assignments" render={(props) => <AssignmentPageContainer {...props} /> } />
+						<Route path="/:username/profile/comments" render={(props) => <CommentPageContainer {...props} /> } />
+						<Route path="/:username/profile/friends" render={(props) => <FriendPageContainer {...props} /> } />
+						<Route path="/:username/profile/posts" render={(props) => <PostPageContainer {...props} /> } />
+						<Route path="/:username/profile/schedule" render={(props) => <SchedulePageContainer {...props} /> } />
+						<Route path="/:username/profile/transcript" render={(props) => <TranscriptPageContainer {...props} /> } />
+						<Route exact path="/:username/profile" render={(props) => <AccountPageContainer {...props} /> } />
 					</Switch>
 				</div>
       </main>

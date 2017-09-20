@@ -106,7 +106,7 @@ class Admin extends React.Component {
 						{/* COMMENTS */}
 						<Route path="/admin/:username/posts/:id/comments/commentform" render={(props) => <AdminCommentFormContainer {...props} /> } />
 						<Route path="/admin/:username/comments/edit/:id" render={(props) => <AdminCommentEditContainer {...props} /> } />
-						<Route path="/admin/:username/comments/:id" render={(props) => <AdminCommentShowContainer {...props} /> } />
+						<Route path="/:username/comments/:id" render={(props) => <AdminCommentShowContainer {...props} /> } />
 						<Route path="/admin/:username/comments" render={(props) => <AdminCommentPageContainer {...props} /> } />
 						{/* COURSE_ENROLLMENTS ; Only Show (and may be delete) */}
 						<Route path="/admin/:username/enrollments" render={(props) => <AdminCourseEnrollmentPageContainer {...props} /> } />
@@ -143,17 +143,17 @@ class Admin extends React.Component {
 						{/* POSTS */}
 						<Route path="/admin/:username/posts/postform" render={(props) => <AdminPostFormContainer {...props} /> } />
 						<Route path="/admin/:username/posts/edit/:id" render={(props) => <AdminPostEditContainer {...props} /> } />
-						<Route path="/admin/:username/posts/:id" render={(props) => <AdminPostShowContainer {...props} /> } />
+						<Route path="/:username/posts/:id" render={(props) => <AdminPostShowContainer {...props} /> } />
 						<Route path="/admin/:username/posts" render={(props) => <AdminPostPageContainer {...props} /> } />
 						{/* SCHEDULES */}
-						<Route path="/admin/:username/schedules/:id" render={(props) => <AdminScheduleShowContainer {...props} /> } />
+						<Route path="/:username/schedules/:id" render={(props) => <AdminScheduleShowContainer {...props} /> } />
 						<Route path="/admin/:username/schedules" render={(props) => <AdminSchedulePageContainer {...props} /> } />
 						{/* TRANSCRIPTS */}
-						<Route path="/admin/:username/transcripts/:id" render={(props) => <AdminTranscriptShowContainer {...props} /> } />
+						<Route path="/:username/transcripts/:id" render={(props) => <AdminTranscriptShowContainer {...props} /> } />
 						<Route path="/admin/:username/transcripts" render={(props) => <AdminTranscriptPageContainer {...props} /> } />
 						{/* USERS */}
 						<Route path="/admin/:username/users/edit/:id" render={(props) => <AdminUserEditContainer {...props} /> } />
-						<Route path="/admin/:username/users/:id" render={(props) => <AdminUserShowContainer {...props} /> } />
+						<Route path="/:username/users/:id" render={(props) => <AdminUserShowContainer {...props} /> } />
 						<Route path="/admin/:username/users" render={(props) => <AdminUserPageContainer {...props} /> } />
 
 						{/* DEFAULT ADMIN PAGE */}

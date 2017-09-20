@@ -1,6 +1,6 @@
 import React from 'react';
 import { values } from 'lodash';
-import User from '../user/User';
+import UserSearchResult from '../users/UserSearchResult';
 
 class Search extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class Search extends React.Component {
 
   render() {
     let users = values(this.props.search.users).map( user => (
-      <User user={user} key={user.id} />
+      <UserSearchResult user={user} key={user.id} />
 		));
 
     let results = <p className='nothing'>Sorry, No Matches Were Found.</p>;

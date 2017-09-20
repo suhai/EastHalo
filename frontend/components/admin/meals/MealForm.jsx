@@ -26,7 +26,7 @@ class MealForm extends React.Component {
 	};
 
 	redirectAction() {
-		window.location.hash = `/cafetaria/meals`;
+		window.location.hash = `/admin/${this.props.currentUser.username}/meals`;
 	};
 
 	handleKey(e) {

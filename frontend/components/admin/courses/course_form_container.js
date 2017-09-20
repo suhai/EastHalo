@@ -7,6 +7,7 @@ import CourseForm from './CourseForm';
 const mapStateToProps = (state) => ({
 	courses: state.courses,
 	users: state.users,
+	currentUser: state.session.currentUser,
 	departments: state.departments,
 });
 

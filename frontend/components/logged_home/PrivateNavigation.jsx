@@ -68,7 +68,7 @@ class PrivateNavigation extends React.Component {
 							</p>
 							<ul id='user-settings' className={this.state.isActive}>
 								<li>
-									<Link to={`/${this.props.currentUser.username}/profile`}>Profile</Link>
+									<Link to={`/${this.props.currentUser.username}/profile/me`}>Profile</Link>
 								</li>
 								<li>
 									<NavLink to={`/${this.props.currentUser.username}/settings`}>Settings</NavLink>

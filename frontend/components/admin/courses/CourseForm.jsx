@@ -33,7 +33,7 @@ class CourseForm extends React.Component {
 	};
 
 	redirectAction() {
-		window.location.hash = '/registrar';
+		window.location.hash = `/admin/${this.props.currentUser.username}/courses`;
 	};
 
 	handleKey(e) {

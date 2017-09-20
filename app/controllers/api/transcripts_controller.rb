@@ -1,5 +1,5 @@
 class Api::TranscriptsController < ApplicationController
-  before_action :set_transcript, only: [:show, :edit, :update, :destroy]
+  before_action :set_transcript, only: [:show, :update, :destroy]
 	
 	def index
 		@transcripts = Transcript.all

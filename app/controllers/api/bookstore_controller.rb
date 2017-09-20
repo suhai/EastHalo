@@ -1,5 +1,5 @@
 class Api::BookstoreController < ApplicationController
-	before_action :set_bookstore, only: [:show, :edit, :update, :destroy]
+	before_action :set_bookstore, only: [:show, :update, :destroy]
 
   def index
 		@bookstores = Bookstore.all 

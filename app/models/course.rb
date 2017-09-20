@@ -22,7 +22,7 @@ class Course < ApplicationRecord
 	validates :title, :presence => true
 	after_initialize :set_defaults, unless: :persisted?
 	belongs_to :professor, :class_name => :User, :foreign_key => "professor_id"
-	has_many :grades, dependent: :destroy
+	has_many :grades
 	belongs_to :department
 	has_many :course_enrollments, dependent: :destroy
   has_many :students, through: :course_enrollments, :class_name => :User

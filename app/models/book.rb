@@ -19,6 +19,6 @@ class Book < ApplicationRecord
 	after_initialize :set_defaults, unless: :persisted?
 
 	def set_defaults
-		self.price  ||= 0
+		self.price  ||= 0.99
 	end	
 end

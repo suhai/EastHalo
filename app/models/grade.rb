@@ -21,6 +21,6 @@ class Grade < ApplicationRecord
 	before_create :ensure_student_is_in_course
 
 	def ensure_student_is_in_course
-		(Course.find(course_id).students).include?(Student.find(student_id))
+	!!(Course.find(course_id).students).include?(Student.find(student_id))
 	end
 end

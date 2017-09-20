@@ -20,7 +20,7 @@ class Friendship < ApplicationRecord
 
   def no_self_friending
     if self.friend_id == self.user_id
-      errors.add(:friend, "Find Some Real Friends")
+      errors.add(:friend, "Find Some Real Friends Yo!")
     end
   end
 

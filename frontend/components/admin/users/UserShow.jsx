@@ -36,7 +36,7 @@ class UserShow extends React.Component {
 		this.props.currentUser.friends.some(friend => 
 			(friend.id === this.state.user.id)) ? 
 			this.setState({
-				friendship_status: 'Drop Friend'
+				friendship_status: 'unFriend'
 			}) :
 			this.setState({
 				friendship_status: 'Add Friend'
@@ -66,7 +66,7 @@ class UserShow extends React.Component {
 		if (user_id !== undefined && friend_id !== undefined) {
 			this.props.createFriendship(data);
 			this.setState({
-				friendship_status: 'Drop Friend'
+				friendship_status: 'unFriend'
 			})	
 		}
 	};

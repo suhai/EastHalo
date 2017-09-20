@@ -1,5 +1,5 @@
 class Api::CoursesController < ApplicationController
-	before_action :set_course, only: [:show, :edit, :update, :destroy]
+	before_action :set_course, only: [:show, :update, :destroy]
 
 	def index
 		@courses = Course.all 
@@ -36,7 +36,7 @@ class Api::CoursesController < ApplicationController
 	#----------------------------------------------------------------------------
 	private
 	def course_params
-		params.require(:course).permit(:course_code, :course_cap, :course_description, :department_id, :title, :professor_id, :course_credit, :start_time, :end_time)
+		params.require(:course).permit(:course_code, :title, :course_cap, :course_description, :department_id, :professor_id, :course_credit, :start_time, :end_time)
 	end
 
 	def set_course

@@ -44,8 +44,8 @@ class Api::UsersController < ApplicationController
 	
 	def destroy
 		@user = User.find(params[:id])
-		@user.destroy if @user.present?
-		# current_user.is_admin ?	@user.destroy : "Sorry You Lack This Privilege"
+		# @user.destroy if @user.present?
+		current_user.is_admin ?	@user.destroy : "Sorry You Lack This Privilege"
 		render json: @user
 	end
 
@@ -53,7 +53,7 @@ class Api::UsersController < ApplicationController
 	#----------------------------------------------------------------------------
   private
 	def user_params
-    params.require(:user).permit(:username, :password, :email, :fname, :lname, :dob, :gender, :profile_image_url, :bio, :cash_balance, :course_credit, :is_admin, :type)
+    params.require(:user).permit(:username, :password, :email, :fname, :lname, :dob, :gender, :profile_image_url, :bio, :cash_balance, :is_admin, :type)
 	end
 	
 	def set_type

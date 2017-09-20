@@ -1,5 +1,5 @@
 class Api::CafetariaController < ApplicationController
-  before_action :set_cafetarium, only: [:show, :edit, :update, :destroy]
+  before_action :set_cafetarium, only: [:show, :update, :destroy]
 	
 	def index
 		@cafetaria = Cafetarium.all 

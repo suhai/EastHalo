@@ -12,7 +12,7 @@ class Commentt extends React.Component {
 
 
   showComment() {
-		// window.location.hash = `registrar/comments/${this.props.comment.id}`;
+	
 	};
 
 

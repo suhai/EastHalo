@@ -8,8 +8,7 @@ class Book extends React.Component {
       
     };
     this.showBook = this.showBook.bind(this);
-  }
-
+  };
 
   showBook() {
 		window.location.hash = `bookstore/books/${this.props.book.id}`;

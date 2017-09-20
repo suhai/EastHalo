@@ -36,8 +36,6 @@ class BookEditForm extends React.Component {
 	};
 
 	redirectAction() {
-		// let id = this.props.match.params.id;
-		// window.location.hash = `bookstore/books/${id}`;
 		window.location.hash = `admin/${this.props.currentUser.username}/books`;
 	};
 

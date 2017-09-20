@@ -8,8 +8,7 @@ class Course extends React.Component {
       
     };
     this.showCourse = this.showCourse.bind(this);
-  }
-
+  };
 
   showCourse() {
 		window.location.hash = `registrar/courses/${this.props.course.id}`;

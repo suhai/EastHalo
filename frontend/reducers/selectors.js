@@ -18,3 +18,13 @@ export const selectCourse = (state, ownProps) => {
   };
   return {};
 };
+
+export const selectFriendship = (state, ownProps) => {
+  let friendshipId = ownProps.match.params.id;
+  for (let key in state.friendships) {
+    if (state.friendships[key].id === friendshipId) {
+      return state.friendships[key];
+    }
+  };
+  return {};
+};

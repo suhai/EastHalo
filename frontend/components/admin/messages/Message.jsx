@@ -8,13 +8,11 @@ class Message extends React.Component {
 
     };
     this.showMessage = this.showMessage.bind(this);
-  }
-
+  };
 
   showMessage() {
 		window.location.hash = `admin/${this.props.currentUser.username}/messages/${this.props.message.id}`;
 	};
-
 
   render() {
 		const { 

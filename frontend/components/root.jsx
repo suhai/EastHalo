@@ -9,7 +9,6 @@ import MessageFormContainer from './admin/messages/message_form_container';
 
 
 const Root = () =>(
-	//This is where the major routes of the app are linked to their corresponding components / containers.
   <div>
     <Switch>
 			<Route path="/enquiries/messageform" component={MessageFormContainer} />

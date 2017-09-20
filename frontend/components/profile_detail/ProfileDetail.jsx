@@ -10,7 +10,6 @@ import SchedulePageContainer from './schedule/schedule_page_container';
 import TranscriptPageContainer from './transcript/transcript_page_container';
 
 
-
 class ProfileDetail extends React.Component {
   constructor(props) {
     super(props);

@@ -17,7 +17,7 @@ class CommentShow extends React.Component {
 
 	deleteComment() {
 		this.props.deleteComment(this.state.comment.id)
-		// window.location.hash = '/registrar';
+		// redirect after this
 	};
 
 	componentWillReceiveProps(props) {

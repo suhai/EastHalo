@@ -14,6 +14,7 @@ import FriendshipReducer from './friendship_reducer';
 import GradeReducer from './grade_reducer';
 import PostReducer from './post_reducer';
 import MessageReducer from './message_reducer';
+import NewsReducer from './news_reducer';
 
 const rootReducer = combineReducers({
 	session: SessionReducer,
@@ -30,7 +31,8 @@ const rootReducer = combineReducers({
 	friendships: FriendshipReducer,
 	grades: GradeReducer,
 	posts: PostReducer,
-	messages: MessageReducer
+	messages: MessageReducer,
+	news: NewsReducer,
 });
 
 export default rootReducer;

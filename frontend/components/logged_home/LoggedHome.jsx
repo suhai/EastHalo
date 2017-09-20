@@ -9,12 +9,11 @@ import CafetariaPageContainer from '../cafetaria/cafetaria_page_container';
 import RegistrarPageContainer from '../registrar/registrar_page_container';
 import SearchContainer from '../search/search_container';
 import SideBarContainer from '../sidebar/sidebar_container';
-import NewsPageContainer from '../news/news_page_container';
 import HomeContainer from './home_container';
 import CourseShowContainer from '../registrar/course_show_container';
-import NewsShowContainer from '../news/news_show_container';
 import MealShowContainer from '../cafetaria/meal_show_container';
 import BookShowContainer from '../bookstore/book_show_container';
+import NewsPageContainer from '../news/news_page_container';
 
 
 // import UserPageContainer from '../user/user_page_container';
@@ -50,13 +49,9 @@ class LoggedHome extends React.Component {
 						<Route path="/bookstore/books/:id" render={(props) => <BookShowContainer {...props} />} />
 						<Route path="/bookstore" render={(props) => <BookstorePageContainer {...props} />} />
 						<Route path="/admin" render={(props) => <AdminPageContainer {...props} />} />
-						<Route path="/search" render={(props) => <SearchContainer {...props} />} />
 						<Route path="/news" render={(props) => <NewsPageContainer {...props} />} />
+						<Route path="/search" render={(props) => <SearchContainer {...props} />} />
 						<Route path="/:username/profile" render={(props) => <UserPageContainer {...props} />} />
-						
-						<Route exact path="/news/:id" render={(props) => <NewsShowContainer {...props} />} />
-						
-						{/* */}
 
 						{/* <Route path="/registrar/courseform" render={(props) => <CourseFormContainer {...props} />} />
 						<Route exact path="/courses/edit/:id" render={(props) => <CourseEditContainer {...props} />} />

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170919175505) do
+ActiveRecord::Schema.define(version: 20170920003246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,13 +116,20 @@ ActiveRecord::Schema.define(version: 20170919175505) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.string "name"
     t.string "email"
     t.string "subject"
     t.text "msg"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "sender"
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string "headline"
+    t.text "url"
+    t.date "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "posts", force: :cascade do |t|
@@ -158,7 +165,6 @@ ActiveRecord::Schema.define(version: 20170919175505) do
     t.string "session_token"
     t.string "profile_image_url"
     t.text "bio"
-    t.decimal "course_load"
     t.decimal "cash_balance"
     t.boolean "is_admin"
     t.string "type"

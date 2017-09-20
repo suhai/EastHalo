@@ -27,4 +27,13 @@ class Professor < User
 	has_many :students, through: :courses
 	has_many :departments, through: :courses
 
+	# def current_course_load
+	# 	val = 0
+	# 	self.courses.each do |course|
+	# 		self.grades.each do |grade|
+	# 			val += course.course_credit if grade.course_id != course.id
+	# 		end
+	# 	end
+	# 	val
+	# end
 end

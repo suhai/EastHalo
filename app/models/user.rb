@@ -75,6 +75,5 @@ class User < ApplicationRecord
 	
 	def set_defaults
 		self.cash_balance  ||= 0
-		self.course_load  ||= 0
 	end	
 end

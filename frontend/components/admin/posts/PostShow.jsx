@@ -10,6 +10,7 @@ class PostShow extends React.Component {
 		};
 		this.editPost = this.editPost.bind(this);
 		this.deletePost = this.deletePost.bind(this);
+		this.renderCommentForm = this.renderCommentForm.bind(this);
 	}
 
 	componentDidMount() {
@@ -27,6 +28,11 @@ class PostShow extends React.Component {
 		let id = this.props.match.params.id;
 		this.props.deletePost(id)
 		window.location.hash = `/admin/${this.props.currentUser.username}/posts`;
+	};
+
+	renderCommentForm() {
+		// jQuery to display commentable text area, but for now
+		window.location.hash = `/admin/${this.props.currentUser.username}/posts/${this.props.match.params.id}/comments/commentform`;
 	};
 
 	componentWillReceiveProps(props) {
@@ -56,7 +62,13 @@ class PostShow extends React.Component {
 						<button className='btn delete' onClick={this.deletePost}>Delete Post</button>
 					</div>
 					<h2 className='course-header'>{title}</h2>
-					<p>{body}</p>
+					<div>
+						<div>
+							<p>{body}</p>
+						</div>
+						<div className='comment-div' onClick={this.renderCommentForm}>
+						</div>
+					</div>	
 				</div>
 			</main>
 		);

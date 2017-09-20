@@ -35,10 +35,10 @@ class Student < User
 	end
 
 	def gpa
-		total_units > 0 ? (total_credits.to_f / total_units) : 'NA'
+		completed_course_credit > 0 ? (total_credit_weight.to_f / completed_course_credit) : 'NA'
 	end
 
-	def total_credits
+	def total_credit_weight
 		val = 0
 		self.grades.each do |grade|
 			val += (grade.grade_letter.weight * grade.course.course_credit)
@@ -46,10 +46,20 @@ class Student < User
 		val
 	end
 
-	def total_units
+	def completed_course_credit
+		val = 0
+		self.grades.each do |grade|
+			val += grade.course.course_credit
+		end
+		val
+	end
+
+	def current_course_load
 		val = 0
 		self.courses.each do |course|
-			val += course.course_credit
+			self.grades.each do |grade|
+				val += course.course_credit if grade.course_id != course.id
+			end
 		end
 		val
 	end

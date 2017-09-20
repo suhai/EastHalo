@@ -11,8 +11,9 @@
 		json.phone_number user.phone_number
 		json.gender user.gender
 		json.gpa user.gpa
+		json.current_course_load user.current_course_load if user.type == 'Student'
+		json.completed_course_credit user.completed_course_credit if user.type == 'Student'
 		json.profile_image_url user.profile_image_url
-		json.course_load user.course_load if user.type == 'Professor' || user.type == 'Student'
 		json.cash_balance user.cash_balance
 		json.is_admin user.is_admin
 		json.friends user.friends

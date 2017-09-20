@@ -9,43 +9,34 @@ class AllNews extends React.Component {
 		this.state = {
 
 		};
-		this.renderForm = this.renderForm.bind(this);
-	};
-
-	renderForm() {
-		console.log('I am currently not active')
 	};
 
 	componentDidMount() {
-		// this.props.fetchAllNews();
+		this.props.fetchAllNews();
 	};
 
 	render() {
-		// let newsList = values(this.props.news);
-		// let all_news = newsList.map((news, idx) => (
-		// 	<SingleNews key={idx} news={news} />
-		// ));
+		let newsList = values(this.props.news);
+		let all_news = newsList.map((news, idx) => (
+			<SingleNews key={idx} news={news} />
+		));
 
 		return (
 			<div className=''>
-				<div><button className='btn create align-left' onClick={this.renderForm}>Create News</button></div>
 
 				<table id="gradient-style" className="full-width">
 					<thead>
 						<tr>
-							<th scope="col">Code</th>
-							<th scope="col">Title</th>
-							<th scope="col">From</th>
-							<th scope="col">To</th>
-							<th scope="col">Load</th>
-							<th scope="col">Size</th>
-							<th scope="col">Instructor</th>
+							<th scope="col">News ID</th>
+							<th scope="col">Headline</th>
+							<th scope="col">News Link</th>
+							<th scope="col">Date</th>
 						</tr>
 					</thead>
 
-					{/* <tbody>
+					<tbody>
 						{all_news}
-					</tbody> */}
+					</tbody>
 
 				</table>
 				<p className='pull-left'>

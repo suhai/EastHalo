@@ -1,7 +1,7 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 
-class NewsForm extends React.Component {
+class NewsEditForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -12,29 +12,30 @@ class NewsForm extends React.Component {
 
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
-		this.addNews = this.addNews.bind(this);
+		this.editNews = this.editNews.bind(this);
 		this.redirectAction = this.redirectAction.bind(this);
 	};
 
 	componentDidMount() {
-		this.props.fetchAllNews();
+		const id = this.props.match.params.id;
+		this.props.fetchNews(id);
 	};
 
 	update(prop) {
-		return e => this.setState({ [prop]: e.currentTarget.value });	
+		return e => this.setState({ [prop]: e.currentTarget.value });
+	};
+
+	handleKey(e) {
+		if (e.keyCode === 13) {
+			this.editNews();
+		}
 	};
 
 	redirectAction() {
 		window.location.hash = `/admin/${this.props.currentUser.username}/news`
 	};
 
-	handleKey(e) {
-		if (e.keyCode === 13) {
-			this.addNews();
-		}
-	};
-
-	addNews() {
+	editNews() {
 		let data = {
 			news: {
 				headline: this.state.headline,
@@ -44,17 +45,34 @@ class NewsForm extends React.Component {
 		};
 
 		if (data.news.url.trim().length > 0) {
-			this.props.createNews(data);
+			let id = this.props.match.params.id;
+			this.props.editNews(data, id);
 		}
 
 		this.setState({
 			headline: '',
 			url: '',
-			date: ''
+			date: '',
 		});
 
 		this.redirectAction();
 	};
+
+	componentWillReceiveProps(props) {
+		Object.keys(props.news).length > 0 ?
+		this.setState({
+			id: props.match.params.id,
+			headline: props.news[props.match.params.id].headline,
+			url: props.news[props.match.params.id].url,
+			date: props.news[props.match.params.id].date
+		}) :
+		this.setState({
+			headline: '',
+			url: '',
+			date: ''
+		});
+	};
+
 
 	render() {
 		const {
@@ -65,6 +83,7 @@ class NewsForm extends React.Component {
 
 		return (
 			<div>
+				<h2 className='course-header'>{headline}</h2>
 				<form className="form-style-9">
 					<ul>
 						<li>
@@ -77,7 +96,7 @@ class NewsForm extends React.Component {
 							<input type="date" className="field-style" value={date} onChange={this.update('date')} placeholder="News URL" />
 						</li>
 						<li>
-							<input type="submit" value="Save News" onClick={this.addNews} />
+							<input type="submit" value="Update News" onClick={this.editNews} />
 							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
 						</li>
 					</ul>
@@ -87,4 +106,4 @@ class NewsForm extends React.Component {
 	};
 };
 
-export default NewsForm;
+export default NewsEditForm;

@@ -12,43 +12,24 @@ class SingleNews extends React.Component {
 
 
   showNews() {
-		console.log('I havent been implemented yet');
-		// window.location.hash = `news/${this.props.news.id}`;
+		console.log('I to be redirected to the url on a separate page');
 	};
 
 
   render() {
-		// const { 
-		// 	course_code, 
-		// 	title, 
-		// 	start_time, 
-		// 	end_time, 
-		// 	course_credit, 
-		// 	course_cap, 
-		// 	course_description
-		// } = this.props.course;
-	
-		// let classSize = 0;
-		// let profLName = '';
-		// let profFInitial = '';
-		// if (this.props.course.length) {
-		// 	classSize = this.props.course.students.length;
-		// };
-		// if (this.props.course.professor) {
-		// 	profLName = this.props.course.professor.lname;
-		// 	profFInitial = this.props.course.professor.fname.slice(0,1).toUpperCase();
-		// };
+		const { 
+			id, 
+			headline, 
+			url, 
+			date
+		} = this.props.news;
 
     return (
 			<tr onClick={this.showNews}>
-				{/* <td>{course_code}</td>
-				<td>{title}</td>
-				<td>{start_time.slice(11,16)}</td>
-				<td>{end_time.slice(11,16)}</td>
-				<td>{course_credit}</td>
-				<td>{classSize}/{course_cap}</td>
-				<td>{`${profLName}, ${profFInitial}`}</td> */}
-				<td>THIS IS A NEWS PLACEHOLDER</td>
+				<td>{id}</td>
+				<td>{headline.slice(0,20)}</td>
+				<td>{url}</td>
+				<td>{date}</td>
 			</tr>
     );
   }

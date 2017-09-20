@@ -10,6 +10,9 @@ import AdminBookEditContainer from './books/book_edit_container';
 // import AdminBookShowContainer from './books/book_show_container';
 {/* COMMENTS , only display all + delete options */}
 import AdminCommentPageContainer from './comments/comment_page_container';
+import AdminCommentShowContainer from './comments/comment_show_container';
+import AdminCommentFormContainer from './comments/comment_form_container';
+import AdminCommentEditContainer from './comments/comment_edit_container';
 {/* COURSE_ENROLLMENTS , only display all + delete options */}
 import AdminCourseEnrollmentPageContainer from './course_enrollments/course_enrollment_page_container';
 {/* COURSES */}
@@ -40,6 +43,8 @@ import AdminMessagePageContainer from './messages/message_page_container';
 import AdminMessageShowContainer from './messages/message_show_container';
 {/* NEWS */}
 import AdminNewsPageContainer from './news/news_page_container';
+import AdminNewsFormContainer from './news/news_form_container';
+import AdminNewsEditContainer from './news/news_edit_container';
 {/* POSTS */}
 import AdminPostPageContainer from './posts/post_page_container';
 import AdminPostShowContainer from './posts/post_show_container';
@@ -49,6 +54,7 @@ import AdminPostEditContainer from './posts/post_edit_container';
 import AdminSchedulePageContainer from './schedules/schedule_page_container';
 {/* TRANSCRIPTS */}
 import AdminTranscriptPageContainer from './transcripts/transcript_page_container';
+import AdminTranscriptShowContainer from './transcripts/transcript_show_container';
 {/* USERS */}
 import AdminUserPageContainer from './users/user_page_container';
 import AdminUserShowContainer from './users/user_show_container';
@@ -80,11 +86,11 @@ class Admin extends React.Component {
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/grade_letters`}>GradeLetters</NavLink></li>	
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/grades`}>Grades</NavLink></li>	
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/meals`}>Meals</NavLink></li>
+						<li><NavLink to={`/admin/${this.props.currentUser.username}/news`}>News</NavLink></li>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/messages`}>Messages</NavLink></li>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/posts`}>Posts</NavLink></li>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/schedules`}>Schedules</NavLink></li>
 						<li><NavLink to={`/admin/${this.props.currentUser.username}/transcripts`}>Transcripts</NavLink></li>
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/news`}>News</NavLink></li>
 					</ul>
 				</nav>
 
@@ -97,6 +103,9 @@ class Admin extends React.Component {
 						<Route path="/admin/:username/books/edit/:id" render={(props) => <AdminBookEditContainer {...props} /> } />
 						<Route path="/admin/:username/books" render={(props) => <AdminBookPageContainer {...props} /> } />
 						{/* COMMENTS */}
+						<Route path="/admin/:username/posts/:id/comments/commentform" render={(props) => <AdminCommentFormContainer {...props} /> } />
+						<Route path="/admin/:username/comments/edit/:id" render={(props) => <AdminCommentEditContainer {...props} /> } />
+						<Route path="/admin/:username/comments/:id" render={(props) => <AdminCommentShowContainer {...props} /> } />
 						<Route path="/admin/:username/comments" render={(props) => <AdminCommentPageContainer {...props} /> } />
 						{/* COURSE_ENROLLMENTS ; Only Show (and may be delete) */}
 						<Route path="/admin/:username/enrollments" render={(props) => <AdminCourseEnrollmentPageContainer {...props} /> } />
@@ -127,6 +136,8 @@ class Admin extends React.Component {
 						<Route path="/admin/:username/messages/:id" render={(props) => <AdminMessageShowContainer {...props} /> } />
 						<Route path="/admin/:username/messages" render={(props) => <AdminMessagePageContainer {...props} /> } />
 						{/* NEWS */}
+						<Route path="/admin/:username/news/newsform" render={(props) => <AdminNewsFormContainer {...props} /> } />
+						<Route path="/admin/:username/news/edit/:id" render={(props) => <AdminNewsEditContainer {...props} /> } />
 						<Route path="/admin/:username/news" render={(props) => <AdminNewsPageContainer {...props} /> } />
 						{/* POSTS */}
 						<Route path="/admin/:username/posts/postform" render={(props) => <AdminPostFormContainer {...props} /> } />
@@ -136,6 +147,7 @@ class Admin extends React.Component {
 						{/* SCHEDULES */}
 						<Route path="/admin/:username/schedules" render={(props) => <AdminSchedulePageContainer {...props} /> } />
 						{/* TRANSCRIPTS */}
+						<Route path="/admin/:username/transcripts/:id" render={(props) => <AdminTranscriptShowContainer {...props} /> } />
 						<Route path="/admin/:username/transcripts" render={(props) => <AdminTranscriptPageContainer {...props} /> } />
 						{/* USERS */}
 						<Route path="/admin/:username/users/edit/:id" render={(props) => <AdminUserEditContainer {...props} /> } />

@@ -5,25 +5,25 @@ export const fetchComments = (id) => (
   })
 );
 
-export const createComment = (comment) => (
+export const makeComment = (comment, post_id) => (
   $.ajax({
     method: 'POST',
-    url: `api/posts/${comment.post_id}/comments`,
+    url: `api/posts/${post_id}/comments`,
     data: {comment}
   })
 );
 
-export const editComment = (comment) => (
+export const editComment = (comment, id) => (
   $.ajax({
     method: 'PATCH',
-    url: `api/posts/${comment.post_id}/comments/${comment.id}`,
+    url: `api/omments/${id}`,
     data: {comment}
   })
 )
 
-export const deleteComment = (comment) => (
+export const deleteComment = (comment, id) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/posts/${comment.post_id}/comments/${comment.id}`
+    url: `api/comments/${id}`
   })
 );

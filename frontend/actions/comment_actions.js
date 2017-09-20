@@ -24,8 +24,8 @@ export const editComment = comment => dispatch => (
     .then(editComment => dispatch(receiveComment(editComment)))
 );
 
-export const createComment = comment => dispatch => (
-  APIUtil.createComment(comment)
+export const makeComment = comment => dispatch => (
+  APIUtil.makeComment(comment)
     .then(newComment => dispatch(receiveComment(newComment)))
 );
 

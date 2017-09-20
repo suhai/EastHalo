@@ -28,9 +28,7 @@
 		"redux-devtools-extension": "^2.13.2",
 		"redux-thunk": "^2.2.0",
 		"superagent": "^3.6.0",
-		"webpack-sources": "^1.0.1",
-		"redux-logger": "^3.0.6",
-		"webpack": "^2.7.0"
+		"webpack-sources": "^1.0.1"
 	},
 	"description": "This README would normally document whatever steps are necessary to get the application up and running.",
 	"version": "1.0.0",

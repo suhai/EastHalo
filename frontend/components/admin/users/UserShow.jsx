@@ -6,7 +6,7 @@ class UserShow extends React.Component {
 		super(props);
 		this.state = {
 			user: {
-				friends: []
+				friendships: []
 			}
 		};
 		this.editUser = this.editUser.bind(this);
@@ -22,6 +22,27 @@ class UserShow extends React.Component {
 		this.props.fetchFriendships();
 	};
 
+	componentWillReceiveProps(props) {
+		Object.keys(props.users).length > 0 ?
+			this.setState({
+				user: props.users[props.match.params.id]
+			}) :
+			this.setState({
+				user: {
+					friendships: []
+				}
+			});
+
+		this.props.currentUser.friends.some(friend => 
+			(friend.id === this.state.user.id)) ? 
+			this.setState({
+				friendship_status: 'Drop Friend'
+			}) :
+			this.setState({
+				friendship_status: 'Add Friend'
+			})
+	}
+
 	editUser() {
 		window.location.hash = `/admin/${this.props.currentUser.username}/users/edit/${this.props.match.params.id}`;
 	};
@@ -33,8 +54,8 @@ class UserShow extends React.Component {
 	};
 
 	addFriend() {
-		let { id: friend_id } = this.state.user;
-		let { id: user_id } = this.props.currentUser;
+		const { id: friend_id } = this.state.user;
+		const { id: user_id } = this.props.currentUser;
 		let data = {
 			friendship: {
 				user_id,
@@ -51,26 +72,14 @@ class UserShow extends React.Component {
 	};
 
 	dropFriend() {
-		let { id: friend_id } = this.state.user;
-		let { id: user_id } = this.props.currentUser;
-		let targetFriendship = values(this.props.currentUser.friendships).find((friendship) => {
-			return (friendship.friend_id == this.state.user.id)
+		this.props.currentUser.friendships.forEach(friendship => {
+			if (friendship.friend_id === this.state.user.id) {
+				this.props.deleteFriendship(friendship.id);
+				this.setState({
+					frienship_status: 'Add Friend'
+				})
+			}
 		})
-
-		if (this.props.deleteFriendship(targetFriendship.id)) {
-			this.setState({
-				frienship_status: 'Add Friend'
-			})
-		}
-		
-		// values(this.props.currentUser.friendships).forEach(friendship => {
-		// 	if (friendship.friend_id === this.state.user.id) {
-		// 		this.props.deleteFriendship(friendship.id);
-		// 		this.setState({
-		// 			frienship_status: 'Add Friend'
-		// 		})
-		// 	}
-		// })
 	};
 
 	toggleFriendship() {
@@ -78,27 +87,6 @@ class UserShow extends React.Component {
 		this.addFriend() : this.dropFriend()
 	};
 
-	componentWillReceiveProps(props) {
-		Object.keys(props.users).length > 0 ?
-			this.setState({
-				user: props.users[props.match.params.id]
-			}) :
-			this.setState({
-				user: {
-					friends: []
-				}
-			});
-
-			values(this.state.user.friends).find((friend, idx) => (
-				friend == this.props.currentUser))
-				? 
-			this.setState({
-				friendship_status: 'Drop Friend'
-			}) :
-			this.setState({
-				friendship_status: 'Add Friend'
-			})
-	}
 
 	render() {
 		const {

@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import Modal from 'react-modal';
-import Login from './Login';
-import Signup from './Signup';
+import LoginPage from './LoginPage';
+import SignupPage from './SignupPage';
 import { values } from 'lodash';
 import PublicNavigation from '../PublicNavigation';
 
@@ -51,9 +51,9 @@ class LaPage extends React.Component {
   render() {
     let authRoute;
     if (this.state.authRoute === 'signin') {
-      authRoute = <Login errors={this.props.errors} login={this.props.login}/>;
+      authRoute = <LoginPage errors={this.props.errors} login={this.props.login}/>;
     } else {
-      authRoute = <Signup errors={this.props.errors}
+      authRoute = <SignupPage errors={this.props.errors}
         signup={this.props.signup}
         login = {this.props.login}/>;
     }

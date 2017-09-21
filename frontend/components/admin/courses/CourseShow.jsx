@@ -13,6 +13,8 @@ class CourseShow extends React.Component {
 			profFName: '',
 			enroll_status: ''
 		};
+		this.editCourse = this.editCourse.bind(this);
+		this.deleteCourse = this.deleteCourse.bind(this);
 		this.addCourse = this.addCourse.bind(this);
 		this.dropCourse = this.dropCourse.bind(this);
 		this.toggleCourse = this.toggleCourse.bind(this);
@@ -22,6 +24,10 @@ class CourseShow extends React.Component {
 		const id = this.props.match.params.id;
 		this.props.fetchCourse(id);
 		this.props.fetchCourseEnrollments();
+	};
+
+	editCourse() {
+		window.location.hash = `/admin/${this.props.currentUser.username}/courses/edit/${this.state.course.id}`;
 	};
 
 	addCourse() {
@@ -56,6 +62,11 @@ class CourseShow extends React.Component {
 	toggleCourse() {
 		this.state.enroll_status === 'Add Course' ?
 		this.addCourse() : this.dropCourse()
+	};
+
+	deleteCourse() {
+		this.props.deleteCourse(this.state.course.id)
+		window.location.hash = `/admin/${this.props.currentUser.username}/courses`;
 	};
 
 	componentWillReceiveProps(props) {
@@ -117,6 +128,8 @@ class CourseShow extends React.Component {
 				<div>
 					<h2 className='course-header'>{title}</h2>
 					<div className='grouped-buttons'>
+						<button className='btn edit' onClick={this.editCourse}>Edit Course</button>
+						<button className='btn delete' onClick={this.deleteCourse}>Delete Course</button>
 						<button className='btn delete' onClick={this.toggleCourse}>{this.state.enroll_status}</button>	
 					</div>
 				</div>
@@ -175,9 +188,3 @@ class CourseShow extends React.Component {
 }
 
 export default CourseShow;
-
-
-// { course_enrollments.some(course => course.course_id === id ) ? 
-// 	<button className='btn delete' onClick={this.dropCourse}>Drop Course</button> :
-// 	<button className='btn create' onClick={this.addCourse}>Add Course</button> 		
-//  }

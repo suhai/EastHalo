@@ -8,7 +8,8 @@ class BookShow extends React.Component {
 		this.state = {
 			book: {}
 		};
-		this.buyBook = this.buyBook.bind(this);
+		this.editBook = this.editBook.bind(this);
+		this.deleteBook = this.deleteBook.bind(this);
 	}
 
 	componentDidMount() {
@@ -16,8 +17,13 @@ class BookShow extends React.Component {
 		this.props.fetchBook(id);
 	};
 
-	buyBook() {
-		
+	editBook() {
+		window.location.hash = `/admin/${this.props.currentUser.username}/books/edit/${this.state.book.id}`;
+	};
+
+	deleteBook() {
+		this.props.deleteBook(this.state.book.id)
+		window.location.hash = `/admin/${this.props.currentUser.username}/books`;
 	};
 
 	componentWillReceiveProps(props) {
@@ -46,7 +52,8 @@ class BookShow extends React.Component {
 				<div>
 					<h2 className='course-header'>{title}</h2>
 					<div className='grouped-buttons'>
-						<button className='btn edit' onClick={this.editBook}>Buy Book</button>
+						<button className='btn edit' onClick={this.editBook}>Edit Book</button>
+						<button className='btn delete' onClick={this.deleteBook}>Delete Book</button>
 					</div>
 				</div>
 				<hr />

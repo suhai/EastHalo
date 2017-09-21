@@ -30,6 +30,7 @@ class User < ApplicationRecord
 	after_initialize :ensure_session_token
 	after_initialize :set_defaults, unless: :persisted?
 	after_create :instantiate_user_schedule
+	after_create :default_user_to_student
 	scope :students, -> { where(type: 'Student') }
 	scope :professors, -> { where(type: 'Professor') }
 
@@ -45,6 +46,10 @@ class User < ApplicationRecord
 
 	def gpa
 		'NA' unless self.type == 'Student'
+	end
+
+	def default_user_to_student
+		User.find(self.id).type = 'Student'
 	end
 
 #---------------------------------------------------------------------------

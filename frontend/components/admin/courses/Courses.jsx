@@ -23,7 +23,7 @@ class Courses extends React.Component {
 	render() {
 		let courseList = values(this.props.courses);
 		let courses = courseList.map((course, idx) => (
-			<Course key={idx} course={course} />
+			<Course key={idx} course={course} currentUser={this.props.currentUser} />
 		));
 
 		return (

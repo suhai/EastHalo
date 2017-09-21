@@ -10,6 +10,7 @@ json.phone_number user.phone_number
 json.gender user.gender
 json.profile_image_url user.profile_image_url
 json.gpa user.gpa
+json.course_enrollments user.course_enrollments if user.type == 'Student'
 json.current_course_load user.current_course_load if user.type == 'Student'
 json.completed_course_credit user.completed_course_credit if user.type == 'Student'
 json.cash_balance user.cash_balance

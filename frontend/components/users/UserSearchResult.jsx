@@ -1,21 +1,14 @@
-
 import React from 'react';
 
 class User extends React.Component {
   constructor(props) {
     super(props);
     this.showUser = this.showUser.bind(this);
-  }
-
-  showUser() {
-    let object = {};
-    object.preventDefault = function() {};
-    if (this.props.home) {
-      this.props.openSignIn(object);
-    } else {
-      window.location.hash = `/${this.props.user.username}`;
-    }
-  }
+	};
+	
+	showUser() {
+		window.location.hash = `/${this.props.currentUser.username}/users/${this.props.user.id}`;
+	};
 
   render() {
     return (

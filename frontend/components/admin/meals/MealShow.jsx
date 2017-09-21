@@ -8,7 +8,9 @@ class MealShow extends React.Component {
 		this.state = {
 			meal: {}
 		};
-		this.editMeal = this.buyMeal.bind(this);
+		this.editMeal = this.editMeal.bind(this);
+		this.deleteMeal = this.deleteMeal.bind(this);
+		this.buyMeal = this.buyMeal.bind(this);
 	}
 
 	componentDidMount() {
@@ -18,6 +20,15 @@ class MealShow extends React.Component {
 
 	buyMeal() {
 		
+	};
+
+	editMeal() {
+		window.location.hash = `/admin/${this.props.currentUser.username}/meals/edit/${this.state.meal.id}`;
+	};
+
+	deleteMeal() {
+		this.props.deleteMeal(this.state.meal.id);
+		window.location.hash = `/admin/${this.props.currentUser.username}/meals`;
 	};
 
 
@@ -45,6 +56,8 @@ class MealShow extends React.Component {
 					<h2 className='course-header'>{name}</h2>
 					<div className='grouped-buttons'>
 						<button className='btn edit' onClick={this.buyMeal}>Buy Meal</button>
+						<button className='btn edit' onClick={this.deleteMeal}>Delete Meal</button>
+						<button className='btn edit' onClick={this.editMeal}>Edit Meal</button>
 					</div>
 				</div>
 				<hr />

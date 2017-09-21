@@ -22,7 +22,7 @@ class Search extends React.Component {
 
   render() {
     let users = values(this.props.search.users).map( user => (
-      <UserSearchResult user={user} key={user.id} />
+      <UserSearchResult user={user} key={user.id} currentUser={this.props.currentUser}/>
 		));
 
     let results = <p className='nothing'>Sorry, No Matches Were Found.</p>;

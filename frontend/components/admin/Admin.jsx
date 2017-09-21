@@ -5,6 +5,7 @@ import { NavLink, Route, Switch } from 'react-router-dom';
 import AdminAssignmentPageContainer from './assignments/assignment_page_container';
 {/* BOOKS */}
 import AdminBookPageContainer from './books/book_page_container';
+import AdminBookShowContainer from './books/book_show_container';
 import AdminBookFormContainer from './books/book_form_container';
 import AdminBookEditContainer from './books/book_edit_container';
 // import AdminBookShowContainer from './books/book_show_container';
@@ -19,6 +20,7 @@ import AdminCourseEnrollmentPageContainer from './course_enrollments/course_enro
 import AdminCoursePageContainer from './courses/course_page_container';
 import AdminCourseFormContainer from './courses/course_form_container';
 import AdminCourseEditContainer from './courses/course_edit_container';
+import AdminCourseShowContainer from './courses/course_show_container';
 {/* DEPARTMENTS , only display all + delete options */}
 import AdminDepartmentPageContainer from './departments/department_page_container';
 import AdminDepartmentFormContainer from './departments/department_form_container';
@@ -36,6 +38,7 @@ import AdminGradeFormContainer from './grades/grade_form_container';
 import AdminGradeEditContainer from './grades/grade_edit_container';
 {/* MEALS */}
 import AdminMealPageContainer from './meals/meal_page_container';
+import AdminMealShowContainer from './meals/meal_show_container';
 import AdminMealFormContainer from './meals/meal_form_container';
 import AdminMealEditContainer from './meals/meal_edit_container';
 {/* MESSAGES */}
@@ -101,6 +104,7 @@ class Admin extends React.Component {
 						{/* BOOKS */}
 						<Route path="/admin/:username/books/bookform" render={(props) => <AdminBookFormContainer {...props} /> } />
 						<Route path="/admin/:username/books/edit/:id" render={(props) => <AdminBookEditContainer {...props} /> } />
+						<Route path="/admin/:username/books/:id" render={(props) => <AdminBookShowContainer {...props} /> } />
 						<Route path="/admin/:username/books" render={(props) => <AdminBookPageContainer {...props} /> } />
 						{/* COMMENTS */}
 						<Route path="/admin/:username/posts/:id/comments/commentform" render={(props) => <AdminCommentFormContainer {...props} /> } />
@@ -112,6 +116,7 @@ class Admin extends React.Component {
 						{/* COURSES */}
 						<Route path="/admin/:username/courses/courseform" render={(props) => <AdminCourseFormContainer {...props} /> } />
 						<Route path="/admin/:username/courses/edit/:id" render={(props) => <AdminCourseEditContainer {...props} /> } />
+						<Route path="/admin/:username/courses/:id" render={(props) => <AdminCourseShowContainer {...props} /> } />
 						<Route path="/admin/:username/courses" render={(props) => <AdminCoursePageContainer {...props} /> } />
 						{/* DEPARTMENTS */}
 						<Route path="/admin/:username/departments/departmentform" render={(props) => <AdminDepartmentFormContainer {...props} /> } />
@@ -131,6 +136,7 @@ class Admin extends React.Component {
 						{/* MEALS */}
 						<Route path="/admin/:username/meals/edit/:id" render={(props) => <AdminMealEditContainer {...props} /> } />
 						<Route path="/admin/:username/meals/mealform" render={(props) => <AdminMealFormContainer {...props} /> } />
+						<Route path="/admin/:username/meals/:id" render={(props) => <AdminMealShowContainer {...props} /> } />
 						<Route path="/admin/:username/meals" render={(props) => <AdminMealPageContainer {...props} /> } />
 						{/* MESSAGES */}
 						<Route path="/admin/:username/messages/:id" render={(props) => <AdminMessageShowContainer {...props} /> } />
@@ -142,17 +148,17 @@ class Admin extends React.Component {
 						{/* POSTS */}
 						<Route path="/admin/:username/posts/postform" render={(props) => <AdminPostFormContainer {...props} /> } />
 						<Route path="/admin/:username/posts/edit/:id" render={(props) => <AdminPostEditContainer {...props} /> } />
-						<Route path="/:username/posts/:id" render={(props) => <AdminPostShowContainer {...props} /> } />
+						<Route path="/admin/:username/posts/:id" render={(props) => <AdminPostShowContainer {...props} /> } />
 						<Route path="/admin/:username/posts" render={(props) => <AdminPostPageContainer {...props} /> } />
 						{/* SCHEDULES */}
-						<Route path="/:username/schedules/:id" render={(props) => <AdminScheduleShowContainer {...props} /> } />
+						<Route path="/admin/:username/schedules/:id" render={(props) => <AdminScheduleShowContainer {...props} /> } />
 						<Route path="/admin/:username/schedules" render={(props) => <AdminSchedulePageContainer {...props} /> } />
 						{/* TRANSCRIPTS */}
-						<Route path="/:username/transcripts/:id" render={(props) => <AdminTranscriptShowContainer {...props} /> } />
+						<Route path="/admin/:username/transcripts/:id" render={(props) => <AdminTranscriptShowContainer {...props} /> } />
 						<Route path="/admin/:username/transcripts" render={(props) => <AdminTranscriptPageContainer {...props} /> } />
 						{/* USERS */}
 						<Route path="/admin/:username/users/edit/:id" render={(props) => <AdminUserEditContainer {...props} /> } />
-						<Route path="/:username/users/:id" render={(props) => <AdminUserShowContainer {...props} /> } />
+						<Route path="/admin/:username/users/:id" render={(props) => <AdminUserShowContainer {...props} /> } />
 						<Route path="/admin/:username/users" render={(props) => <AdminUserPageContainer {...props} /> } />
 
 						{/* DEFAULT ADMIN PAGE */}

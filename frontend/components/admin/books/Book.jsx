@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 class Book extends React.Component {
   constructor(props) {
@@ -11,7 +10,7 @@ class Book extends React.Component {
   };
 
   showBook() {
-		window.location.hash = `bookstore/books/${this.props.book.id}`;
+		window.location.hash = `admin/${this.props.currentUser.username}/books/${this.props.book.id}`;
 	};
 
   render() {

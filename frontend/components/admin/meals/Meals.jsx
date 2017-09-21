@@ -23,7 +23,7 @@ class Meals extends React.Component {
   render() {
 		let mealList = values(this.props.meals);
 		let meals = mealList.map((meal, idx) => (
-			<Meal key={idx} meal={meal} />
+			<Meal key={idx} meal={meal} currentUser={this.props.currentUser} />
 		));
 
     return (

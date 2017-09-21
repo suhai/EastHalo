@@ -25,7 +25,12 @@ class Course < ApplicationRecord
 	has_many :grades
 	belongs_to :department
 	has_many :course_enrollments, dependent: :destroy
-  has_many :students, through: :course_enrollments, :class_name => :User
+	has_many :students, through: :course_enrollments, :class_name => :User
+	before_create :ensure_is_professor
+
+	def ensure_is_professor
+		!!Professor.find(self.professor_id)
+	end
 
 	def set_defaults
 		self.course_credit  ||= 1.0

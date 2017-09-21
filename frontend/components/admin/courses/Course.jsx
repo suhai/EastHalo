@@ -11,7 +11,7 @@ class Course extends React.Component {
   };
 
   showCourse() {
-		window.location.hash = `registrar/courses/${this.props.course.id}`;
+		window.location.hash = `/admin/${this.props.currentUser.username}/courses/${this.props.course.id}`;
 	};
 
 

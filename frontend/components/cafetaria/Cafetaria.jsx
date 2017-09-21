@@ -28,7 +28,6 @@ class Cafetaria extends React.Component {
 
     return (
       <div className=''>
-				<div><button className='btn create align-left' onClick={this.renderForm}>Create Meal</button></div>
 
 				<table id="gradient-style" className="full-width">
 					<thead>

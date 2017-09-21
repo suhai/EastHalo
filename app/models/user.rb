@@ -49,7 +49,7 @@ class User < ApplicationRecord
 	end
 
 	def default_user_to_student
-		User.find(self.id).type = 'Student'
+		self.type = 'Student'
 	end
 
 #---------------------------------------------------------------------------
@@ -80,6 +80,5 @@ class User < ApplicationRecord
 	
 	def set_defaults
 		self.cash_balance  ||= 0
-		self.type = 'Student'
 	end	
 end

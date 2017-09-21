@@ -1,12 +1,12 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
-import Root from './Root';
+import RootApp from './RootApp';
 
 const EastHalo = ({ store }) => (
   <Provider store={ store }>
     <HashRouter>
-      <Root />
+      <RootApp />
     </HashRouter>
   </Provider>
 );

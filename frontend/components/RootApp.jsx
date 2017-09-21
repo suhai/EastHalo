@@ -8,7 +8,7 @@ import Footer from './footer/Footer';
 import MessageFormContainer from './admin/messages/message_form_container';
 
 
-const Root = () =>(
+const RootApp = () =>(
   <div>
     <Switch>
 			<Route path="/enquiries/messageform" component={MessageFormContainer} />
@@ -22,4 +22,4 @@ const Root = () =>(
   </div>
 );
 
-export default Root;
+export default RootApp;

@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 import Root from './Root';
 
-const App = ({ store }) => (
+const EastHalo = ({ store }) => (
   <Provider store={ store }>
     <HashRouter>
       <Root />
@@ -11,4 +11,4 @@ const App = ({ store }) => (
   </Provider>
 );
 
-export default App;
+export default EastHalo;

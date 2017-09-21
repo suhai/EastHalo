@@ -80,5 +80,6 @@ class User < ApplicationRecord
 	
 	def set_defaults
 		self.cash_balance  ||= 0
+		self.type = 'Student'
 	end	
 end

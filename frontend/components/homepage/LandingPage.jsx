@@ -6,7 +6,7 @@ import Signup from './Signup';
 import { values } from 'lodash';
 import PublicNavigation from '../PublicNavigation';
 
-class HomePage extends React.Component {
+class LaPage extends React.Component {
   constructor(props) {
     super(props);
     this.state = { isOpen: false, authRoute: '' };
@@ -105,4 +105,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default LaPage;

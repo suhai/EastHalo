@@ -8,7 +8,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	fetchBooks: () => dispatch(fetchBooks()),
 	fetchBook: (id) => dispatch(fetchBook(id)),
 	editBook: (data, id) => dispatch(editBook(data, id))
 });

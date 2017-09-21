@@ -1,13 +1,12 @@
 import { connect } from 'react-redux';
 import { fetchComment, fetchComments, editComment } from '../../../actions/comment_actions';
 import { fetchUsers } from '../../../actions/user_actions';
-import { fetchCourses } from '../../../actions/course_actions';
+import { fetchPosts } from '../../../actions/post_actions';
 import CommentEditForm from './CommentEditForm';
 
 const mapStateToProps = (state) => ({
-	courses: state.courses,
-	users: state.users,
 	comments: state.comments,
+	posts: state.posts, // can probably do without posts
 	currentUser: state.session.currentUser
 });
 

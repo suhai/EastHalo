@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Commentt extends React.Component {
+class Comment extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -12,25 +12,26 @@ class Commentt extends React.Component {
 
 
   showComment() {
-	
+		// go to this comment on its parent post page
 	};
 
 
   render() {
 		const { 
-			user_id, 
+			id, 
 			post_id, 
 			body
-		} = this.props.Comment;
+		} = this.props.comment;
 
     return (
 			<tr onClick={this.showComment}>
 				<td>{user_id}</td>
 				<td>{post_id}</td>
 				<td>{body.slice(0,100)}</td>
+				<td onClick={this.showComment}>Show More</td>
 			</tr>
     );
   }
 }
 
-export default Commentt;
+export default Comment;

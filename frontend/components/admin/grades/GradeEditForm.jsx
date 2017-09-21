@@ -14,7 +14,7 @@ class GradeEditForm extends React.Component {
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
 		this.editGrade = this.editGrade.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
 	componentDidMount() {
@@ -36,7 +36,7 @@ class GradeEditForm extends React.Component {
 		}
 	};
 
-	redirectAction() {
+	redirectPath() {
 		window.location.hash = `admin/${this.props.currentUser.username}/grades/${this.props.match.params.id}`;
 	};
 
@@ -58,7 +58,7 @@ class GradeEditForm extends React.Component {
 
 		let id = this.props.match.params.id;
 		this.props.editGrade(data, id);
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	componentWillReceiveProps(props) {
@@ -118,7 +118,7 @@ class GradeEditForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Save" onClick={this.editGrade} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

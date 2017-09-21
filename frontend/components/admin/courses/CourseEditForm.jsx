@@ -19,15 +19,15 @@ class CourseEditForm extends React.Component {
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
 		this.editCourse = this.editCourse.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
 	componentDidMount() {
 		const id = this.props.match.params.id;
 		this.props.fetchCourse(id);
-		this.props.fetchUsers();
 		this.props.fetchCourses();
-		this.props.fetchDepartments();
+		// this.props.fetchUsers();
+		// this.props.fetchDepartments();
 	};
 
 	update(prop) {
@@ -40,7 +40,7 @@ class CourseEditForm extends React.Component {
 		}
 	};
 
-	redirectAction() {
+	redirectPath() {
 		window.location.hash = `admin/${this.props.currentUser.username}/courses`;
 	};
 
@@ -70,7 +70,7 @@ class CourseEditForm extends React.Component {
 
 		let id = this.props.match.params.id;
 		this.props.editCourse(data, id);
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	componentWillReceiveProps(props) {
@@ -145,7 +145,7 @@ class CourseEditForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Save" onClick={this.editCourse} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class Post extends React.Component {
+class PostSnippet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -25,13 +25,18 @@ class Post extends React.Component {
 		} = this.props.post;
 
     return (
-			<tr onClick={this.showPost}>
-				<td>{user}</td>
-				<td>{title}</td>
-				<td>{body}</td>
-			</tr>
+			<div>
+				<div onClick={this.showPost}>
+					<p>{user}</p>
+					<p>{title}</p>
+					<p>{body}</p>
+				</div>
+	
+				<div>POST SNIPPET GOES HERE</div>
+				<hr/>
+			</div>
     );
   }
 }
 
-export default Post;
+export default PostSnippet;

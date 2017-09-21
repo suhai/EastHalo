@@ -12,8 +12,11 @@ import CommentShowContainer from '../comments/comment_show_container';
 import CommentFormContainer from '../comments/comment_form_container';
 import CommentEditContainer from '../comments/comment_edit_container';
 import CourseShowContainer from '../registrar/course_show_container';
-import HomeContainer from './home_container';
+{/* HOME */}
+import SubHomeContainer from './sub_home_container';
+{/* MEALS */}
 import MealShowContainer from '../cafetaria/meal_show_container';
+{/* NEWS */}
 import NewsPageContainer from '../news/news_page_container';
 {/* POSTS */}
 import PostShowContainer from '../posts/post_show_container';
@@ -41,7 +44,7 @@ class LoggedHome extends React.Component {
 						{/* ADMIN AREA */}
 						<Route path="/admin" render={(props) => <AdminPageContainer {...props} />} />
 						{/* COMMUNITY AREA */}
-						<Route path="/subhome" render={(props) => <HomeContainer {...props} />} />
+						<Route path="/subhome" render={(props) => <SubHomeContainer {...props} />} />
 						{/* BOOKSTORE */}
 						<Route path="/bookstore/books/:id" render={(props) => <BookShowContainer {...props} />} />
 						<Route path="/bookstore" render={(props) => <BookstorePageContainer {...props} />} />
@@ -54,12 +57,14 @@ class LoggedHome extends React.Component {
 						<Route path="/:username/comments/:id" render={(props) => <CommentShowContainer {...props} /> } />
 						{/* FRIENDSS */}
 						<Route path="/:username/users/:id" render={(props) => <UserShowContainer {...props} /> } />
+						<Route exact path="/users/:id" render={(props) => <UserShowContainer {...props} /> } />
 						{/* NEWS PAGE */}
 						<Route path="/news" render={(props) => <NewsPageContainer {...props} />} />
 						{/* POSTS */}
 						<Route path="/:username/posts/postform" render={(props) => <PostFormContainer {...props} /> } />
 						<Route path="/:username/posts/edit/:id" render={(props) => <PostEditContainer {...props} /> } />
 						<Route path="/:username/posts/:id" render={(props) => <PostShowContainer {...props} /> } />
+						<Route exact path="/posts/:id" render={(props) => <PostShowContainer {...props} /> } />
 						{/* PROFILE */}
 						<Route path="/:username/profile" render={(props) => <ProfileDetailPageContainer {...props} />} />
 						{/* REGISTRAR / COURSES */}

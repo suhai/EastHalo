@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { login, logout, signup, clearErrors } from '../../actions/session_actions';
-import LaPage from './LaPage';
+import HomePage from './HomePage';
 
 const mapStateToProps = (state) => ({
   errors: state.session.errors,
@@ -15,4 +15,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LaPage);
+)(HomePage);

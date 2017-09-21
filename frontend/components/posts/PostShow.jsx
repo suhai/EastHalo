@@ -21,7 +21,7 @@ class PostShow extends React.Component {
 
 	editPost() {
 		let id = this.props.match.params.id;
-		window.location.hash = `/admin/${this.props.currentUser.username}/posts/edit/${id}`;
+		window.location.hash = `/${this.props.currentUser.username}/posts/edit/${id}`;
 	};
 
 	deletePost() {

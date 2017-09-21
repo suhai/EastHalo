@@ -28,11 +28,6 @@ class Student < User
 	has_many :professors, through: :courses
 	has_one :transcript, dependent: :destroy
 	has_many :grades, dependent: :destroy
-	after_create :instantiate_student_transcript
-
-	def instantiate_student_transcript
-		Transcript.create(student_id: self.id)
-	end
 
 	def gpa
 		completed_course_credit > 0 ? (total_credit_weight.to_f / completed_course_credit) : 'NA'

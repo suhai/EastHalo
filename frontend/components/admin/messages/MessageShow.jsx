@@ -9,6 +9,7 @@ class MessageShow extends React.Component {
 
 		};
 		this.deleteMessage = this.deleteMessage.bind(this);
+		this.replyMessage = this.replyMessage.bind(this);
 	}
 
 	componentDidMount() {
@@ -21,6 +22,10 @@ class MessageShow extends React.Component {
 		let id = this.props.match.params.id;
 		this.props.deleteMessage(id)
 		window.location.hash = `/admin/${this.props.currentUser.username}/messages`;
+	};
+
+	replyMessage() {
+		// extract sender email and reply to the message via email
 	};
 
 	componentWillReceiveProps(props) {
@@ -45,6 +50,7 @@ class MessageShow extends React.Component {
 			<main className='user-page'>
 				<div className='grouped-buttons'>
 					<button className='btn delete' onClick={this.deleteMessage}>Delete Message</button>
+					<button className='btn edit' onClick={this.replyMessage}>Reply to {sender}</button>
 				</div>
 
 				<div>

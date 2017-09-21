@@ -18,7 +18,7 @@ class CourseForm extends React.Component {
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
 		this.addCourse = this.addCourse.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
 	componentDidMount() {
@@ -31,7 +31,7 @@ class CourseForm extends React.Component {
 		return e => this.setState({ [prop]: e.currentTarget.value });	
 	};
 
-	redirectAction() {
+	redirectPath() {
 		window.location.hash = `/admin/${this.props.currentUser.username}/courses`;
 	};
 
@@ -71,7 +71,7 @@ class CourseForm extends React.Component {
 			course_description: ''
 		});
 
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	render() {
@@ -126,7 +126,7 @@ class CourseForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Add Course" onClick={this.addCourse} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

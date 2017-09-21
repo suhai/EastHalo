@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchDepartment, fetchDepartments, editDepartment } from '../../../actions/department_actions';
+import { fetchDepartment, editDepartment } from '../../../actions/department_actions';
 import DepartmentEditForm from './DepartmentEditForm';
 
 const mapStateToProps = (state) => ({
@@ -8,7 +8,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	fetchDepartments: () => dispatch(fetchDepartments()),
 	fetchDepartment: (id) => dispatch(fetchDepartment(id)),
 	editDepartment: (data, id) => dispatch(editDepartment(data, id))
 });

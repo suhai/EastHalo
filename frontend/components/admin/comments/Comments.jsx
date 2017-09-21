@@ -17,13 +17,21 @@ class Comments extends React.Component {
 	};
 
 	componentDidMount() {
-		this.props.fetchComments();
+		this.props.fetchAllComments();
 	};
 
 	render() {
-		let commentList = values(this.props.comments);
+		// debugger
+		let commentList = [
+			{user_id: 1, post_id: 21, body: 'Hello America'},
+			{user_id: 2, post_id: 22, body: 'Hello Asia'},
+			{user_id: 3, post_id: 23, body: 'Hello Africa'},
+			{user_id: 4, post_id: 24, body: 'Hello Europe'},
+			{user_id: 5, post_id: 25, body: 'Hello Australia'}
+		]
+		// let commentList = values(this.props.comments);
 		let comments = commentList.map((comment, idx) => (
-			<Comment key={idx} comment={comment} />
+			<Comment key={idx} comment={comment} editComment={this.props.editComment} deleteComment={this.props.deleteComment}/>
 		));
 
 		return (
@@ -34,6 +42,8 @@ class Comments extends React.Component {
 							<th scope="col">User ID</th>
 							<th scope="col">Post ID</th>
 							<th scope="col">Comment</th>
+							<th scope="col">Action I</th>
+							<th scope="col">Action II</th>
 						</tr>
 					</thead>
 

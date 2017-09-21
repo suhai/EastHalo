@@ -1,7 +1,7 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
-import Commentt from './Commentt';
+import Comment from './Comment';
 
 class Comments extends React.Component {
 	constructor(props) {
@@ -21,9 +21,9 @@ class Comments extends React.Component {
 	};
 
 	render() {
-		let commentList = values(this.props.comments);
+		let commentList = values(this.props.currentUser.comments);
 		let comments = commentList.map((comment, idx) => (
-			<Commentt key={idx} comment={comment} />
+			<Comment key={idx} comment={comment} />
 		));
 
 		return (
@@ -34,6 +34,7 @@ class Comments extends React.Component {
 							<th scope="col">User ID</th>
 							<th scope="col">Post ID</th>
 							<th scope="col">Comment</th>
+							<th scope="col">Link</th>
 						</tr>
 					</thead>
 

@@ -21,7 +21,7 @@ class Posts extends React.Component {
 	};
 
 	render() {
-		let postList = values(this.props.posts);
+		let postList = values(this.props.currentUser.posts);
 		let posts = postList.map((post, idx) => (
 			<Post key={idx} post={post} currentUser={this.props.currentUser}/>
 		));

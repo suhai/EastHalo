@@ -11,7 +11,7 @@ class CommentEditForm extends React.Component {
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
 		this.editComment = this.editComment.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
 	componentDidMount() {
@@ -31,7 +31,7 @@ class CommentEditForm extends React.Component {
 		}
 	};
 
-	redirectAction() {
+	redirectPath() {
 		// window.location.hash = `admin/${this.props.currentUser.username}/Comments`;
 		console.log('I have to be redirected to the post page');
 	};
@@ -48,7 +48,7 @@ class CommentEditForm extends React.Component {
 
 		let id = this.props.match.params.id;
 		this.props.editComment(data, id);
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	componentWillReceiveProps(props) {
@@ -78,7 +78,7 @@ class CommentEditForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Save" onClick={this.editComment} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

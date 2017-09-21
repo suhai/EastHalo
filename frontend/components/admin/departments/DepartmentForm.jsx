@@ -11,18 +11,18 @@ class DepartmentForm extends React.Component {
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
 		this.addDepartment = this.addDepartment.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
 	componentDidMount() {
-		this.props.fetchDepartments();
+		// this.props.fetchDepartments();
 	};
 
 	update(prop) {
 		return e => this.setState({ [prop]: e.currentTarget.value });	
 	};
 
-	redirectAction() {
+	redirectPath() {
 		window.location.hash = `admin/${this.props.currentUser.username}/departments`;
 	};
 
@@ -47,7 +47,7 @@ class DepartmentForm extends React.Component {
 			name: ''
 		});
 
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	render() {
@@ -64,7 +64,7 @@ class DepartmentForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Add Department" onClick={this.addDepartment} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

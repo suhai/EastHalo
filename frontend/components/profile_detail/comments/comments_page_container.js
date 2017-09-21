@@ -4,7 +4,6 @@ import { makeComment, fetchComments, deleteComment, editComment } from '../../..
 import Comments from './Comments';
 
 const mapStateToProps = (state, ownProps) => ({
-	comments: state.comments,
 	currentUser: state.session.currentUser
 });
 

@@ -63,14 +63,13 @@ import AdminTranscriptShowContainer from './transcripts/transcript_show_containe
 import AdminUserPageContainer from './users/user_page_container';
 import AdminUserShowContainer from './users/user_show_container';
 import AdminUserEditContainer from './users/user_edit_container';
-{/* */}
 
 
 class Admin extends React.Component {
   constructor(props) {
     super(props);
 
-  }
+  };
 
   render() {
 

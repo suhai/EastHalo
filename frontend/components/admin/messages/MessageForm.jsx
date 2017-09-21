@@ -15,7 +15,7 @@ class MessageForm extends React.Component {
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
 		this.addMessage = this.addMessage.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
 	componentDidMount() {
@@ -26,7 +26,7 @@ class MessageForm extends React.Component {
 		return e => this.setState({ [prop]: e.currentTarget.value });	
 	};
 
-	redirectAction() {
+	redirectPath() {
 		window.location.hash = '/';
 	};
 
@@ -57,7 +57,7 @@ class MessageForm extends React.Component {
 			msg: ''
 		});
 
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	render() {
@@ -85,7 +85,7 @@ class MessageForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Submit Message" onClick={this.addMessage} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

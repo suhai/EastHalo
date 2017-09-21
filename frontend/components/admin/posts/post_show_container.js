@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchUser } from '../../../actions/user_actions';
-import { createPost, fetchPost, fetchPosts, deletePost } from '../../../actions/post_actions';
+import { fetchPost, editPost, deletePost } from '../../../actions/post_actions';
+import { fetchPostComments, editComment, deleteComment } from '../../../actions/comment_actions';
 import PostShow from './PostShow';
 
 const mapStateToProps = (state, ownProps) => ({
@@ -10,12 +10,12 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	createPost: (data) => dispatch(createPost(data)),
 	fetchPost: id => dispatch(fetchPost(id)),
-	fetchPosts: () => dispatch(fetchPosts()),
   editPost: (post, id) => dispatch(editPost(post, id)),
 	deletePost: id => dispatch(deletePost(id)),
-	fetchUser: id => dispatch(fetchUser(id))
+	fetchPostComments: (id) => dispatch(fetchPostComments(id)),
+	editComment: (id) => dispatch(editComment(id)),
+	deletetComment: (id) => dispatch(deleteComment(id))
 });
 
 export default withRouter(

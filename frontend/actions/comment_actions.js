@@ -19,9 +19,27 @@ export const removeComment = comment => ({
   comment
 })
 
-export const editComment = comment => dispatch => (
-  APIUtil.editComment(comment)
-    .then(editComment => dispatch(receiveComment(editComment)))
+
+
+
+export const fetchAllComments = () => dispatch => (
+  APIUtil.fetchAllComments()
+    .then(allComments => dispatch(receiveComments(allComments)))
+);
+
+export const fetchPostComments = (post_id) => dispatch => (
+  APIUtil.fetchPostComments(post_id)
+    .then(postComments => dispatch(receiveComments(postComments)))
+);
+
+export const fetchUserComments = (user_id) => dispatch => (
+  APIUtil.fetchUserComments(user_id)
+    .then(userComments => dispatch(receiveComments(userComments)))
+);
+
+export const fetchComment = (id) => dispatch => (
+  APIUtil.fetchComment(id)
+    .then(comment => dispatch(receiveComment(comment)))
 );
 
 export const makeComment = comment => dispatch => (
@@ -29,12 +47,14 @@ export const makeComment = comment => dispatch => (
     .then(newComment => dispatch(receiveComment(newComment)))
 );
 
-export const fetchComments = (id) => dispatch => (
-  APIUtil.fetchComments(id)
-    .then(comments => dispatch(receiveComments(comments)))
+export const editComment = comment => dispatch => (
+  APIUtil.editComment(comment)
+    .then(editComment => dispatch(receiveComment(editComment)))
 );
+
 
 export const deleteComment = (comment) => dispatch => (
   APIUtil.deleteComment(comment)
     .then(deletedComment => dispatch(removeComment(deletedComment)))
 );
+

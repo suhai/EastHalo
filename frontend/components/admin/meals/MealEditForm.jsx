@@ -14,7 +14,7 @@ class MealEditForm extends React.Component {
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
 		this.editMeal = this.editMeal.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
 	componentDidMount() {
@@ -32,7 +32,7 @@ class MealEditForm extends React.Component {
 		}
 	};
 
-	redirectAction() {
+	redirectPath() {
 		window.location.hash = `admin/${this.props.currentUser.username}/meals`;
 	};
 
@@ -54,7 +54,7 @@ class MealEditForm extends React.Component {
 
 		let id = this.props.match.params.id;
 		this.props.editMeal(data, id);
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	componentWillReceiveProps(props) {
@@ -100,7 +100,7 @@ class MealEditForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Save" onClick={this.editMeal} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

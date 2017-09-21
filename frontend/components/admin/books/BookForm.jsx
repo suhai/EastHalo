@@ -16,18 +16,18 @@ class BookForm extends React.Component {
 
 		this.handleKey = this.handleKey.bind(this);
 		this.addBook = this.addBook.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
-	componentDidMount() {
-		this.props.fetchBooks();
-	};
+	// componentDidMount() {
+	// 	this.props.fetchBooks();
+	// };
 
 	update(prop) {
 		return e => this.setState({ [prop]: e.currentTarget.value });	
 	};
 
-	redirectAction() {
+	redirectPath() {
 		window.location.hash = `/admin/${this.props.currentUser.username}/books`;
 	};
 
@@ -64,7 +64,7 @@ class BookForm extends React.Component {
 			image_url: ''
 		});
 
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	render() {
@@ -99,7 +99,7 @@ class BookForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Add Book" onClick={this.addBook} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

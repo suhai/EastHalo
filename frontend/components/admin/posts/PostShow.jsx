@@ -1,5 +1,6 @@
 import React from 'react';
 import { values, merge } from 'lodash';
+import Comment from '../comments/Comment';
 
 class PostShow extends React.Component {
 	constructor(props) {
@@ -10,13 +11,15 @@ class PostShow extends React.Component {
 		};
 		this.editPost = this.editPost.bind(this);
 		this.deletePost = this.deletePost.bind(this);
+		this.editComment = this.editComment.bind(this);
+		this.deleteComment = this.deleteComment.bind(this);
 		this.renderCommentForm = this.renderCommentForm.bind(this);
 	}
 
 	componentDidMount() {
 		const id = this.props.match.params.id;
+		this.props.fetchPostComments(id);
 		this.props.fetchPost(id);
-		this.props.fetchPosts();
 	};
 
 	editPost() {
@@ -28,6 +31,17 @@ class PostShow extends React.Component {
 		let id = this.props.match.params.id;
 		this.props.deletePost(id)
 		window.location.hash = `/admin/${this.props.currentUser.username}/posts`;
+	};
+
+	editComment() {
+		// edit comment. this should be a jquery event
+		// find comment_id
+		// this.props.editComment(comment_id);
+	};
+
+	deleteComment() {
+		// find comment_id
+		// this.props.deleteComment(comment_id);
 	};
 
 	renderCommentForm() {
@@ -44,6 +58,7 @@ class PostShow extends React.Component {
 				post: {},
 				title: '',
 				body: '',
+				comments: []
 			});
 	}
 
@@ -51,8 +66,13 @@ class PostShow extends React.Component {
 		const {
 			id,
 			title,
-			body
+			body,
+			comments
 		} = this.state.post;
+
+		let postComments = values(comments).map((comment, idx) => (
+			<Comment key={idx} comment={comment} deleteComment={this.props.deleteComment} editComment={this.props.editComment} currentUser={this.props.currentUser}/>
+		));
 
 		return (
 			<main className='user-page'>
@@ -66,7 +86,11 @@ class PostShow extends React.Component {
 						<div>
 							<p>{body}</p>
 						</div>
+						<div>
+							{postComments}
+						</div>
 						<div className='comment-div' onClick={this.renderCommentForm}>
+							Comment Here
 						</div>
 					</div>	
 				</div>

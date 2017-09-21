@@ -11,19 +11,19 @@ class CommentForm extends React.Component {
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
 		this.addComment = this.addComment.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
 	componentDidMount() {
-		this.props.fetchComments();
-		this.props.fetchPosts();
+		// let id = ;
+		// this.props.fetchComment(id);
 	};
 
 	update(prop) {
 		return e => this.setState({ [prop]: e.currentTarget.value });	
 	};
 
-	redirectAction() {
+	redirectPath() {
 		window.location.hash = `admin/${this.props.currentUser.username}/posts`;
 	};
 
@@ -34,13 +34,14 @@ class CommentForm extends React.Component {
 	};
 
 	addComment() {
-		let post_id = this.props.match.params.id;
+		// comment occurs on a particular post
+		// find post_id
 		let data = {
-			comment: {
-				user_id: this.props.currentUser.id,
-				post_id: post_id,
-				body: this.state.body
-			}
+				comment: {
+					user_id: this.props.currentUser.id,
+					post_id: post_id,
+					body: this.state.body
+				}
 		};
 
 		if (data.comment.body.trim().length > 0) {
@@ -51,7 +52,7 @@ class CommentForm extends React.Component {
 			body: ''
 		});
 
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	render() {
@@ -68,7 +69,7 @@ class CommentForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Add Comment" onClick={this.addComment} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

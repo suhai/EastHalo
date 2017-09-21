@@ -14,7 +14,7 @@ class MealForm extends React.Component {
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
 		this.addMeal = this.addMeal.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
 	componentDidMount() {
@@ -25,7 +25,7 @@ class MealForm extends React.Component {
 		return e => this.setState({ [prop]: e.currentTarget.value });	
 	};
 
-	redirectAction() {
+	redirectPath() {
 		window.location.hash = `/admin/${this.props.currentUser.username}/meals`;
 	};
 
@@ -56,7 +56,7 @@ class MealForm extends React.Component {
 			image_url: ''
 		});
 
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	render() {
@@ -83,7 +83,7 @@ class MealForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Add Meal" onClick={this.addMeal} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

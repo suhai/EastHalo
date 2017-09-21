@@ -12,13 +12,13 @@ class DepartmentEditForm extends React.Component {
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
 		this.editDepartment = this.editDepartment.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
 	componentDidMount() {
 		const id = this.props.match.params.id;
 		this.props.fetchDepartment(id);
-		this.props.fetchDepartments();
+		// this.props.fetchDepartments();
 	};
 
 	update(prop) {
@@ -31,7 +31,7 @@ class DepartmentEditForm extends React.Component {
 		}
 	};
 
-	redirectAction() {
+	redirectPath() {
 		window.location.hash = `admin/${this.props.currentUser.username}/departments`;
 	};
 
@@ -49,7 +49,7 @@ class DepartmentEditForm extends React.Component {
 
 		let id = this.props.match.params.id;
 		this.props.editDepartment(data, id);
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	componentWillReceiveProps(props) {
@@ -81,7 +81,7 @@ class DepartmentEditForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Save" onClick={this.editDepartment} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

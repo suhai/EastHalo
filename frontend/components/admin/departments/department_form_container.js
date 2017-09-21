@@ -9,7 +9,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = dispatch => ({
 	createDepartment: (data) => dispatch(createDepartment(data)),
-	fetchDepartments: () => dispatch(fetchDepartments()),
+	// fetchDepartments: () => dispatch(fetchDepartments()),
 });
 
 export default connect(

@@ -13,7 +13,7 @@ class NewsEditForm extends React.Component {
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
 		this.editNews = this.editNews.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
 	componentDidMount() {
@@ -31,7 +31,7 @@ class NewsEditForm extends React.Component {
 		}
 	};
 
-	redirectAction() {
+	redirectPath() {
 		window.location.hash = `/admin/${this.props.currentUser.username}/news`
 	};
 
@@ -55,7 +55,7 @@ class NewsEditForm extends React.Component {
 			date: '',
 		});
 
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	componentWillReceiveProps(props) {
@@ -97,7 +97,7 @@ class NewsEditForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Update News" onClick={this.editNews} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

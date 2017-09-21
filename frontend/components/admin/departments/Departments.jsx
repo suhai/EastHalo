@@ -17,13 +17,13 @@ class Departments extends React.Component {
 	};
 
 	componentDidMount() {
-		this.props.fetchDepartments();
+		// this.props.fetchDepartments();
 	};
 
   render() {
 		let departmentList = values(this.props.departments);
 		let departments = departmentList.map((department, idx) => (
-			<Department key={idx} department={department} deleteDepartment={this.props.deleteDepartment} currentUser={this.props.currentUser}/>
+			<Department key={idx} department={department} deleteDepartment={this.props.deleteDepartment} editDepartment={this.props.editDepartment} currentUser={this.props.currentUser}/>
 		));
 
     return (

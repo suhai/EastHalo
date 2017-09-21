@@ -29,8 +29,7 @@ class User < ApplicationRecord
   attr_reader :password
 	after_initialize :ensure_session_token
 	after_initialize :set_defaults, unless: :persisted?
-	after_create :instantiate_user_schedule
-	after_create :default_user_to_student
+	after_create :default_user_to_student_and_instantiate_schedule_and_transcript
 	scope :students, -> { where(type: 'Student') }
 	scope :professors, -> { where(type: 'Professor') }
 
@@ -40,16 +39,14 @@ class User < ApplicationRecord
 	has_many :comments, dependent: :destroy
 	has_one :schedule, dependent: :destroy
 
-	def instantiate_user_schedule
-		Schedule.create(user_id: self.id) if self.type == 'Student' || self.type == 'Professor'
-	end
-
 	def gpa
 		'NA' unless self.type == 'Student'
 	end
 
-	def default_user_to_student
+	def default_user_to_student_and_instantiate_schedule_and_transcript
 		self.type = 'Student'
+		Transcript.create(student_id: self.id)
+		Schedule.create(user_id: self.id)
 	end
 
 #---------------------------------------------------------------------------

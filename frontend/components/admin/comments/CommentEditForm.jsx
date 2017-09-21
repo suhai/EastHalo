@@ -11,11 +11,11 @@ class CommentEditForm extends React.Component {
 		this.update = this.update.bind(this);
 		this.handleKey = this.handleKey.bind(this);
 		this.editComment = this.editComment.bind(this);
-		this.redirectAction = this.redirectAction.bind(this);
+		this.redirectPath = this.redirectPath.bind(this);
 	};
 
 	componentDidMount() {
-		const id = this.props.match.params.id;
+		let id = this.props.match.params.id;
 		this.props.fetchComment(id);
 		this.props.fetchUsers();
 		this.props.fetchComments();
@@ -31,8 +31,8 @@ class CommentEditForm extends React.Component {
 		}
 	};
 
-	redirectAction() {
-		console.log('I have to be redirected to the post page');
+	redirectPath() {
+		// console.log('redirect me to my parent post');
 	};
 
 	editComment() {
@@ -47,10 +47,11 @@ class CommentEditForm extends React.Component {
 
 		let id = this.props.match.params.id;
 		this.props.editComment(data, id);
-		this.redirectAction();
+		this.redirectPath();
 	};
 
 	componentWillReceiveProps(props) {
+		// need to optimize finding the comment of interest
 		Object.keys(props.comments).length > 0 ?
 		this.setState({
 			id: props.match.params.id,
@@ -77,7 +78,7 @@ class CommentEditForm extends React.Component {
 						</li>
 						<li>
 							<input type="submit" value="Save" onClick={this.editComment} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectAction} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
 						</li>
 					</ul>
 				</form>

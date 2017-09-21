@@ -12,13 +12,12 @@ class Department extends React.Component {
 	};
 
   editDepartment() {
-		console.log('editing ........');
+		this.props.editDepartment(this.props.department.id);
 		window.location.hash = `/admin/${this.props.currentUser.username}/departments/edit/${this.props.department.id}`;
 	};
 
 	deleteDepartment() {
-		console.log('deleting ........');
-		this.props.deleteDepartment(this.props.department.id)
+		this.props.deleteDepartment(this.props.department.id);
 	};
 
 

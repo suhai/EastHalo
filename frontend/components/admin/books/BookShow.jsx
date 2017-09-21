@@ -1,7 +1,7 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 
-// Need to implemenet Order Book / Book already ordered / favorites
+// Need to implemenet Order Book / Payment System / favorites
 class BookShow extends React.Component {
 	constructor(props) {
 		super(props);

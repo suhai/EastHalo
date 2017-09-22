@@ -5,10 +5,12 @@ import { login } from '../../actions/session_actions';
 import { fetchUser } from '../../actions/user_actions';
 import { createCourseEnrollment, fetchCourseEnrollments, deleteCourseEnrollment } from '../../actions/course_enrollment_actions';
 import CourseShow from './CourseShow';
+import { selectCourse } from '../../reducers/selectors';
 
 const mapStateToProps = (state, ownProps) => ({
 	currentUser: state.session.currentUser,
 	courses: state.courses,
+	course: selectCourse(state, ownProps),
 	courseEnrollments: state.courseEnrollments
 });
 

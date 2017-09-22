@@ -43,18 +43,20 @@ class CourseShow extends React.Component {
 	};
 
 	dropCourse() {
-		this.props.currentUser.course_enrollments.forEach(enrollment => {
-			if (enrollment.course_id === this.state.course.id) {
-				this.props.deleteCourseEnrollment(enrollment.id);
-				this.setState({
-					enroll_status: 'Add Course'
-				})
-			}
-		})
+		let targetEnrollment = values(this.props.currentUser.course_enrollments).find(enrollment => {
+			return (enrollment.course_id == this.state.course.id) 
+		});
+
+		if (targetEnrollment !== undefined) {
+			this.props.deleteCourseEnrollment(targetEnrollment.id);
+			this.setState({
+				enroll_status: 'Add Course'
+			})
+		} 
 	};
 
 	toggleCourse() {
-		this.state.enroll_status === 'Add Course' ?
+		this.state.enroll_status == 'Add Course' ?
 		this.addCourse() : this.dropCourse()
 	};
 
@@ -81,7 +83,7 @@ class CourseShow extends React.Component {
 				profFName: ''
 			});
 
-		this.props.currentUser.course_enrollments.some(enrollment => (enrollment.course_id) === this.state.course.id ) ? 
+		values(this.props.currentUser.course_enrollments).some(enrollment => (enrollment.course_id) == this.state.course.id ) ? 
 		this.setState({
 			enroll_status: 'Drop Course'
 		}) :
@@ -112,13 +114,17 @@ class CourseShow extends React.Component {
 			profFName
 		} = this.state;
 
+		let enrollableUser = this.props.currentUser.type == 'Student' ?
+				<div className='grouped-buttons'>
+					<button className='btn delete' onClick={this.toggleCourse}>{this.state.enroll_status}</button>	
+				</div> :
+				<div>{`Hi ${this.props.currentUser.username}! Interested in ${course_code}? You need to be a student in order to sign up for it.`}</div>
+
 		return (
 			<main className='user-page'>
 				<div>
 					<h2 className='course-header'>{title}</h2>
-					<div className='grouped-buttons'>
-						<button className='btn delete' onClick={this.toggleCourse}>{this.state.enroll_status}</button>	
-					</div>
+					{enrollableUser}
 				</div>
 				<hr />
 				

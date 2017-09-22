@@ -23,6 +23,7 @@
 		json.friendships user.friendships
 		json.courses user.courses if user.type == 'Student' || user.type == 'Professor'
 		json.professors user.professors if user.type == 'Student'
+		json.course_enrollments user.course_enrollments if user.type == 'Student'
 		json.students user.students if user.type == 'Professor'
 		json.created_at user.created_at
 		json.updated_at user.updated_at

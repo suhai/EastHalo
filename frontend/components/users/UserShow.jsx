@@ -103,13 +103,18 @@ class UserShow extends React.Component {
 			cash_balance
 		} = this.state.user;
 
+		let addableUser = this.props.match.params.id == this.props.currentUser.id ?
+			<div>{`Hi ${this.props.currentUser.username}`}</div> :
+			<div className='grouped-buttons'>
+				<button className='btn delete' onClick={this.toggleFriendship}>{this.state.friendship_status}</button>	
+			</div>
+			
+
 		return (
 			<main className='user-page'>
 				<div>
 					<h2 className='course-header'>IMAGE</h2>
-					<div className='grouped-buttons'>
-						<button className='btn delete' onClick={this.toggleFriendship}>{this.state.friendship_status}</button>	
-					</div>
+						{addableUser}
 				</div>
 				<hr />
 

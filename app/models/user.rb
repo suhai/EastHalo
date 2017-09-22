@@ -29,7 +29,7 @@ class User < ApplicationRecord
   attr_reader :password
 	after_initialize :ensure_session_token
 	after_initialize :set_defaults, unless: :persisted?
-	after_create :default_user_to_student_and_instantiate_schedule_and_transcript
+	# after_initialize :default_user_to_student_and_instantiate_schedule_and_transcript
 	scope :students, -> { where(type: 'Student') }
 	scope :professors, -> { where(type: 'Professor') }
 
@@ -43,11 +43,11 @@ class User < ApplicationRecord
 		'NA' unless self.type == 'Student'
 	end
 
-	def default_user_to_student_and_instantiate_schedule_and_transcript
-		self.type = 'Student'
-		Transcript.create(student_id: self.id)
-		Schedule.create(user_id: self.id)
-	end
+	# def default_user_to_student_and_instantiate_schedule_and_transcript
+	# 	self.type = 'Student'
+	# 	Transcript.create(student_id: self.id)
+	# 	Schedule.create(user_id: self.id)
+	# end
 
 #---------------------------------------------------------------------------
   def password=(password)
@@ -79,5 +79,8 @@ class User < ApplicationRecord
 		self.cash_balance  ||= 0
 		self.fname = 'Alex'
 		self.lname = 'Cargo'
+		self.type = 'Student'
+		Transcript.create(student_id: self.id)
+		Schedule.create(user_id: self.id)
 	end	
 end

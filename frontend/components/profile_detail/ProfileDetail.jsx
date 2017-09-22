@@ -23,12 +23,12 @@ class ProfileDetail extends React.Component {
 				<nav className='profile-nav'>
 					<ul>
 						<li><NavLink to={`/${this.props.currentUser.username}/profile/me`}>Profile</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/profile/friends`}>Friends</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/profile/posts`}>Posts</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/profile/comments`}>Comments</NavLink></li>	
-						<li><NavLink to={`/${this.props.currentUser.username}/profile/schedule`}>Schedule</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/profile/assignments`}>Assignments</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/profile/transcript`}>Transcript</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/friends`}>My Friends</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/posts`}>My Posts</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/comments`}>My Comments</NavLink></li>	
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/schedule`}>My Schedule</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/assignments`}>My Assignments</NavLink></li>
+						<li><NavLink to={`/${this.props.currentUser.username}/profile/transcript`}>My Transcript</NavLink></li>
 					</ul>
 				</nav>
 

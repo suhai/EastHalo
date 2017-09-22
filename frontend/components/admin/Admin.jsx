@@ -76,24 +76,58 @@ class Admin extends React.Component {
     return (
       <main className='user-page'>
 				<nav className='profile-nav'> {/* SUB NAVIGATIONS */}
-					<ul>
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/users`}>Users</NavLink></li>
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/assignments`}>Assignments</NavLink></li>
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/books`}>Books</NavLink></li>
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/comments`}>Comments</NavLink></li>
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/enrollments`}>Enrollments</NavLink></li>	
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/courses`}>Courses</NavLink></li>	
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/departments`}>Departments</NavLink></li>
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/friendships`}>Friendships</NavLink></li>	
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/grade_letters`}>GradeLetters</NavLink></li>	
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/grades`}>Grades</NavLink></li>	
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/meals`}>Meals</NavLink></li>
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/news`}>News</NavLink></li>
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/messages`}>Messages</NavLink></li>
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/posts`}>Posts</NavLink></li>
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/schedules`}>Schedules</NavLink></li>
-						<li><NavLink to={`/admin/${this.props.currentUser.username}/transcripts`}>Transcripts</NavLink></li>
-					</ul>
+					<div className='admin-nav-bar'>
+						<ul>
+							<li className="dropdown">
+								<a href="javascript:void(0)" className="dropbtn">Academics</a>
+								<div className="dropdown-content">
+									<NavLink to={`/admin/${this.props.currentUser.username}/grade_letters`}>GradeLetters</NavLink>
+									<NavLink to={`/admin/${this.props.currentUser.username}/grades`}>Grades</NavLink>
+									<NavLink to={`/admin/${this.props.currentUser.username}/transcripts`}>Transcripts</NavLink>
+								</div>
+							</li>
+							<li className="dropdown">
+								<a href="javascript:void(0)" className="dropbtn">College</a>
+								<div className="dropdown-content">
+									<NavLink to={`/admin/${this.props.currentUser.username}/departments`}>Departments</NavLink>
+									<NavLink to={`/admin/${this.props.currentUser.username}/courses`}>Courses</NavLink>
+									<NavLink to={`/admin/${this.props.currentUser.username}/enrollments`}>Enrollemnts</NavLink>
+								</div>
+							</li>
+							<li className="dropdown">
+								<a href="javascript:void(0)" className="dropbtn">People</a>
+								<div className="dropdown-content">
+									<NavLink to={`/admin/${this.props.currentUser.username}/users`}>Users</NavLink>
+									<NavLink to={`/admin/${this.props.currentUser.username}/schedules`}>Schedules</NavLink>
+									<NavLink to={`/admin/${this.props.currentUser.username}/assignments`}>Assignments</NavLink>
+								</div>
+							</li>
+							<li className="dropdown">
+								<a href="javascript:void(0)" className="dropbtn">Activities</a>
+								<div className="dropdown-content">
+									<NavLink to={`/admin/${this.props.currentUser.username}/posts`}>Posts</NavLink>
+									<NavLink to={`/admin/${this.props.currentUser.username}/comments`}>Comments</NavLink>
+									<NavLink to={`/admin/${this.props.currentUser.username}/friendships`}>Friendships</NavLink>
+								</div>
+							</li>
+							<li className="dropdown">
+								<a href="javascript:void(0)" className="dropbtn">Shopping</a>
+								<div className="dropdown-content">
+									<NavLink to={`/admin/${this.props.currentUser.username}/books`}>Books</NavLink>
+									<NavLink to={`/admin/${this.props.currentUser.username}/meals`}>Food</NavLink>
+									<NavLink to={`/admin/${this.props.currentUser.username}/meals`}>PlaceHolder</NavLink>
+								</div>
+							</li>
+							<li className="dropdown">
+								<a href="javascript:void(0)" className="dropbtn">News</a>
+								<div className="dropdown-content">
+									<NavLink to={`/admin/${this.props.currentUser.username}/news`}>News</NavLink>
+									<NavLink to={`/admin/${this.props.currentUser.username}/messages`}>Messages</NavLink>
+									<NavLink to={`/admin/${this.props.currentUser.username}/messages`}>PlaceHolder</NavLink>
+								</div>
+							</li>
+						</ul>
+					</div>
 				</nav>
 
 				<div>

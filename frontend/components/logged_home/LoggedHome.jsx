@@ -18,6 +18,7 @@ import SubHomeContainer from './sub_home_container';
 import MealShowContainer from '../cafetaria/meal_show_container';
 {/* NEWS */}
 import NewsPageContainer from '../news/news_page_container';
+import NewsShowContainer from '../news/news_show_container';
 {/* POSTS */}
 import PostShowContainer from '../posts/post_show_container';
 import PostFormContainer from '../posts/post_form_container';
@@ -59,6 +60,7 @@ class LoggedHome extends React.Component {
 						<Route path="/:username/users/:id" render={(props) => <UserShowContainer {...props} /> } />
 						<Route exact path="/users/:id" render={(props) => <UserShowContainer {...props} /> } />
 						{/* NEWS PAGE */}
+						<Route path="/news/:id" render={(props) => <NewsShowContainer {...props} />} />
 						<Route path="/news" render={(props) => <NewsPageContainer {...props} />} />
 						{/* POSTS */}
 						<Route path="/:username/posts/postform" render={(props) => <PostFormContainer {...props} /> } />

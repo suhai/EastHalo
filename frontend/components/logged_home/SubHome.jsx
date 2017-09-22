@@ -33,10 +33,6 @@ class SubHome extends React.Component {
 
 		return (
 			<div className=''>
-				<h3>WELCOME TO THE SUB HOME PAGE</h3>
-				<h4>RANDOM LIST OF FLOATING POSTS</h4>
-				<h4>RANDOM LIST OF FLOATING NEWS</h4>
-				<h4>RANDOM LIST OF FLOATING USERS</h4>
 				{users}
 				{posts}
 				{all_news}

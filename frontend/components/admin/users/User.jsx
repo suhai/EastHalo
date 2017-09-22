@@ -13,7 +13,6 @@ class User extends React.Component {
 
   showUser() {
 		window.location.hash = `admin/${this.props.currentUser.username}/users/${this.props.user.id}`;
-		// window.location.hash = `/${this.props.currentUser.username}/users/${this.props.user.id}`;
 	};
 
 

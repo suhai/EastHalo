@@ -12,7 +12,7 @@ class NewsSnippet extends React.Component {
 
 
   showNews() {
-		console.log('I to be redirected to the url on a separate page');
+		window.location.hash = `/news/${this.props.news.id}`
 	};
 
 

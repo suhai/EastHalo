@@ -6,12 +6,7 @@ const mapStateToProps = (state, ownProps) => ({
 	currentUser: state.session.currentUser
 });
 
-const mapDispatchToProps = dispatch => ({
-
-});
-
 export default withRouter(
   connect(
     mapStateToProps,
-    mapDispatchToProps
 )(Profile));

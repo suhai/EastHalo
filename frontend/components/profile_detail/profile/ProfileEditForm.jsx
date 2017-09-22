@@ -31,6 +31,10 @@ class ProfileEditForm extends React.Component {
 		this.redirectPath = this.redirectPath.bind(this);
 	};
 
+	componentDidMount() {
+		let id = this.props.currentUser.id;
+		this.props.fetchUser(id);
+	};
 
 	update(prop) {
 		return e => this.setState({ [prop]: e.currentTarget.value });
@@ -64,6 +68,7 @@ class ProfileEditForm extends React.Component {
 			username: '',
 			fname: '',
 			lname: '',
+			password: '',
 			email: '',
 			bio: '',
 			dob: '',
@@ -71,28 +76,30 @@ class ProfileEditForm extends React.Component {
 			profile_image_url: ''
 		});
 
-		this.props.editUser(data, this.props.currentUser.id);
+		let id = this.props.currentUser.id;
+		this.props.editUser(data, id);
 		this.redirectPath();
 	};
 
 	componentWillReceiveProps(props) {
-		Object.keys(props.users).length > 0 ?
+		!!props.currentUser ?
 		this.setState({
-			id: props.match.params.id,
-			username: props.users[props.match.params.id].username,
-			fname: props.users[props.match.params.id].fname,
-			lname: props.users[props.match.params.id].lname,
-			password: props.users[props.match.params.id].password,
-			email: props.users[props.match.params.id].email,
-			bio: props.users[props.match.params.id].bio,
-			dob: props.users[props.match.params.id].dob,
-			gender: props.users[props.match.params.id].gender,
-			profile_image_url: props.users[props.match.params.id].profile_image_url
+			id: props.currentUser.id,
+			username: props.currentUser.username,
+			fname: props.currentUser.fname,
+			lname: props.currentUser.lname,
+			password: props.currentUser.password,
+			email: props.currentUser.email,
+			bio: props.currentUser.bio,
+			dob: props.currentUser.dob,
+			gender: props.currentUser.gender,
+			profile_image_url: props.currentUser.profile_image_url
 		}) :
 		this.setState({
 			username: '',
 			fname: '',
 			lname: '',
+			password: '',
 			email: '',
 			bio: '',
 			dob: '',

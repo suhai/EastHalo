@@ -77,5 +77,7 @@ class User < ApplicationRecord
 	
 	def set_defaults
 		self.cash_balance  ||= 0
+		self.fname = 'Alex'
+		self.lname = 'Cargo'
 	end	
 end

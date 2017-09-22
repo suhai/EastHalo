@@ -1,9 +1,13 @@
 import React from 'react';
+import { values, merge } from 'lodash';
 
 class SignupPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '' };
+		this.state = { 
+			username: '', 
+			password: '' 
+		};
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
     this.handleKey = this.handleKey.bind(this);
@@ -25,7 +29,7 @@ class SignupPage extends React.Component {
   }
 
   render() {
-    let errors = this.props.errors.map( (error, idx) => (
+    let errors = values(this.props.errors).map( (error, idx) => (
       <p className='auth-errors' key={idx}>{error}</p>
     ));
     return (

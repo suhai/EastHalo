@@ -107,6 +107,7 @@ class CourseForm extends React.Component {
 						</li>
 						<li>
 							<select className="field-style field-split align-left"  value={department_id} onChange={this.update('department_id')} >
+							<option>Select Department</option>
 								{deptList}
 							</select>
 							{/* <select className="field-style field-split align-right"  value={professor_id} onChange={this.update('professor_id')} >

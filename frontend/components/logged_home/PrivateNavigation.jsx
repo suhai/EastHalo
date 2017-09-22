@@ -44,6 +44,10 @@ class PrivateNavigation extends React.Component {
   }
 
   render() {
+		let adminLink = !!(this.props.currentUser.is_admin) ?
+		<li><NavLink to='/admin'>Admin</NavLink></li> :
+		<li><NavLink to='/cafetaria'>Admin</NavLink></li>;
+
     return (
 			<header className='shared-header'>
 				<nav className='navigation'>
@@ -53,7 +57,7 @@ class PrivateNavigation extends React.Component {
 						<li><NavLink to='/news'>EHU News</NavLink></li>
 						<li><NavLink to='/cafetaria'>Cafetaria</NavLink></li>
 						<li><NavLink to='/bookstore'>BookStore</NavLink></li>
-						<li><NavLink to='/admin'>Admin</NavLink></li>
+						{adminLink}
 					</ul>
 					<ul className='searchbar'>
 						<input onKeyPress={this.toSearch} className='search'></input>
@@ -69,8 +73,7 @@ class PrivateNavigation extends React.Component {
 								<li>
 									<Link to={`/${this.props.currentUser.username}/profile/me`}>Profile</Link>
 								</li>
-								<li>
-									<NavLink to={`/${this.props.currentUser.username}/settings`}>Settings</NavLink>
+								<li><NavLink to={`/${this.props.currentUser.username}/profile/transcript`}>Transcript</NavLink>
 								</li>
 								<li id='signout' onClick={this.logout}>Sign out</li>
 							</ul>

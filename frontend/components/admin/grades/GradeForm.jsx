@@ -91,12 +91,15 @@ class GradeForm extends React.Component {
 					<ul>
 						<li>
 							<select className="field-style field-split align-left"  value={student_id} onChange={this.update('student_id')} placeholder="Choose Student">
+								<option>Select Student</option>
 								{studentList}
 							</select>
 							<select className="field-style field-split align-right"  value={course_id} onChange={this.update('course_id')} placeholder="Choose Course">
+								<option>Select Course</option>
 								{courseList}
 							</select>
 							<select className="field-style field-split align-left"  value={grade_letter_id} onChange={this.update('grade_letter_id')} placeholder="Choose Grade">
+							<option>Select Grade</option>
 								{grade_letList}
 							</select>	
 						</li>

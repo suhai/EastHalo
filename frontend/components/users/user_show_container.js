@@ -13,6 +13,7 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
   fetchUser: id => dispatch(fetchUser(id)),
 	editUser: (user, id) => dispatch(editUser(user, id)),
+	deleteUser: id => dispatch(deleteUser(id)),
 	createFriendship: id => dispatch(createFriendship(id)),
 	deleteFriendship: id => dispatch(deleteFriendship(id)),
 	fetchFriendships: () => dispatch(fetchFriendships()),

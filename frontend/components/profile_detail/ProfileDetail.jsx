@@ -2,6 +2,7 @@ import React from 'react';
 import { values, merge } from 'lodash';
 import { NavLink, Route, Redirect, Switch } from 'react-router-dom';
 import ProfilePageContainer from './profile/profile_page_container';
+import ProfileEditContainer from './profile/profile_edit_container';
 import AssignmentsPageContainer from './assignments/assignments_page_container';
 import CommentsPageContainer from './comments/comments_page_container';
 import FriendsPageContainer from './friends/friends_page_container';
@@ -28,7 +29,6 @@ class ProfileDetail extends React.Component {
 						<li><NavLink to={`/${this.props.currentUser.username}/profile/comments`}>My Comments</NavLink></li>	
 						<li><NavLink to={`/${this.props.currentUser.username}/profile/schedule`}>My Schedule</NavLink></li>
 						<li><NavLink to={`/${this.props.currentUser.username}/profile/assignments`}>My Assignments</NavLink></li>
-						<li><NavLink to={`/${this.props.currentUser.username}/profile/transcript`}>My Transcript</NavLink></li>
 					</ul>
 				</nav>
 
@@ -48,6 +48,7 @@ class ProfileDetail extends React.Component {
 						{/* TRANSCRIIPT */}
 						<Route path="/:username/profile/transcript" render={(props) => <TranscriptPageContainer {...props} /> } />
 						{/* MAIN PROFILE */}
+						<Route path="/:username/profile/edit" render={(props) => <ProfileEditContainer {...props} /> } />
 						<Route path="/:username/profile/me" render={(props) => <ProfilePageContainer {...props} /> } />	
 					</Switch>
 				</div>

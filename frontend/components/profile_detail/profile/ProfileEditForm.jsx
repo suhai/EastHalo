@@ -1,7 +1,7 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 
-class UserEditForm extends React.Component {
+class ProfileEditForm extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -12,9 +12,7 @@ class UserEditForm extends React.Component {
 			email: '',
 			bio: '',
 			dob: '',
-			type: '',
 			gender: '',
-			is_admin: '',
 			profile_image_url: '',
 			typeOption1: 'NULL',
 			typeOption2: 'Student',
@@ -33,11 +31,6 @@ class UserEditForm extends React.Component {
 		this.redirectPath = this.redirectPath.bind(this);
 	};
 
-	componentDidMount() {
-		const id = this.props.match.params.id;
-		this.props.fetchUser(id);
-		this.props.fetchUsers();
-	};
 
 	update(prop) {
 		return e => this.setState({ [prop]: e.currentTarget.value });
@@ -50,7 +43,7 @@ class UserEditForm extends React.Component {
 	};
 
 	redirectPath() {
-		window.location.hash = `admin/${this.props.currentUser.username}/users/${this.props.match.params.id}`;
+		window.location.hash = `/${this.props.currentUser.username}/profile`;
 	};
 
 	editUser() {
@@ -63,9 +56,7 @@ class UserEditForm extends React.Component {
 				email: this.state.email,
 				dob: this.state.dob,
 				bio: this.state.bio,
-				type: this.state.type,
 				gender: this.state.gender,
-				is_admin: this.state.is_admin,
 				profile_image_url: this.state.profile_image_url,
 			}
 		};
@@ -73,18 +64,14 @@ class UserEditForm extends React.Component {
 			username: '',
 			fname: '',
 			lname: '',
-			password: '',
 			email: '',
 			bio: '',
 			dob: '',
-			type: '',
 			gender: '',
-			is_admin: '',
 			profile_image_url: ''
 		});
 
-		let id = this.props.match.params.id;
-		this.props.editUser(data, id);
+		this.props.editUser(data, this.props.currentUser.id);
 		this.redirectPath();
 	};
 
@@ -99,22 +86,17 @@ class UserEditForm extends React.Component {
 			email: props.users[props.match.params.id].email,
 			bio: props.users[props.match.params.id].bio,
 			dob: props.users[props.match.params.id].dob,
-			type: props.users[props.match.params.id].type,
 			gender: props.users[props.match.params.id].gender,
-			is_admin: props.users[props.match.params.id].is_admin,
 			profile_image_url: props.users[props.match.params.id].profile_image_url
 		}) :
 		this.setState({
 			username: '',
 			fname: '',
 			lname: '',
-			password: '',
 			email: '',
 			bio: '',
 			dob: '',
-			type: '',
 			gender: '',
-			is_admin: 'DEFAULT',
 			profile_image_url: ''
 		});
 	};
@@ -129,9 +111,7 @@ class UserEditForm extends React.Component {
 			email,
 			bio,
 			dob,
-			type,
 			gender,
-			is_admin,
 			profile_image_url,
 			typeOption1,
 			typeOption2,
@@ -162,19 +142,6 @@ class UserEditForm extends React.Component {
 								<input type="email" className="field-style field-split align-right" value={email} onChange={this.update('email')} placeholder="Email" />
 							</li>
 							<li>
-								<select className="field-style field-split align-left" value={type} onChange={this.update('type')} >
-									<option value={typeOption1} >TYPE</option>
-									<option value={typeOption2} >Student</option>
-									<option value={typeOption3} >Professor</option>
-								</select>
-
-								<select className="field-style field-split align-right" value={is_admin} onChange={this.update('is_admin')} >
-									<option value={isAdminOption1} >ADMIN?</option>
-									<option value={isAdminOption2} >TRUE</option>
-									<option value={isAdminOption3} >FALSE</option>
-								</select>
-							</li>
-							<li>
 								<input type="url" className="field-style field-split align-left" value={profile_image_url} onChange={this.update('profile_image_url')} placeholder="Image URL" />
 								<select className="field-style field-split align-right" value={gender} onChange={this.update('gender')} >
 									<option value={genderOption1} >Gender</option>
@@ -196,4 +163,4 @@ class UserEditForm extends React.Component {
 	};
 };
 
-export default UserEditForm;
+export default ProfileEditForm;

@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { NavLink, Link } from 'react-router-dom';
 
-class NewsDisplay extends React.Component {
+class NewsShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      news: {}
+      news: {
+				headline: '',
+				url: ''
+			}
     };
     this.redirectPath = this.redirectPath.bind(this);
 	};
@@ -38,9 +41,13 @@ class NewsDisplay extends React.Component {
 			url
 		} = this.state.news
 
+		let root_url = 'https:';
+		let tail_url = url.split(':')[1];
+		let new_url = root_url + tail_url
+
     return (
 			<div>
-				<iframe className="linker" width="800" height="500" src={url} name="iframe_a"></iframe>
+				<iframe className="linker" width="800" height="500" src={new_url} name="iframe_a"></iframe>
 				<p>{headline}</p>
 				<p>When the target of a link matches the name of an iframe, the link will open in the iframe.</p>
     	</div>
@@ -48,4 +55,4 @@ class NewsDisplay extends React.Component {
   }
 }
 
-export default NewsDisplay;
+export default NewsShow;

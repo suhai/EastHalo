@@ -8,8 +8,9 @@ class NewsShow extends React.Component {
     this.state = {
       news: {
 				headline: '',
-				url: ''
-			}
+			},
+			root_url: 'https:',
+			tail_url: ''
     };
     this.redirectPath = this.redirectPath.bind(this);
 	};
@@ -27,7 +28,8 @@ class NewsShow extends React.Component {
 	componentWillReceiveProps(props) {
 		Object.keys(props.all_news).length > 0 ?
 			this.setState({
-				news: props.all_news[props.match.params.id]
+				news: props.all_news[props.match.params.id],
+				tail_url: props.all_news[props.match.params.id].url.split(':')[1]
 			}) :
 			this.setState({
 				news: {}
@@ -41,9 +43,8 @@ class NewsShow extends React.Component {
 			url
 		} = this.state.news
 
-		let root_url = 'https:';
-		let tail_url = url.split(':')[1];
-		let new_url = root_url + tail_url
+		let new_url = this.state.root_url + this.state.tail_url;
+		console.log('helloooo', new_url);
 
     return (
 			<div>

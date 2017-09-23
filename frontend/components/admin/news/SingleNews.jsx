@@ -35,11 +35,11 @@ class SingleNews extends React.Component {
 		} = this.props.news;
 
     return (
-			<tr onClick={this.showNews}>
-				<td>{id}</td>
-				<td>{headline.slice(0,20)}</td>
-				<td>{url}</td>
-				<td>{date}</td>
+			<tr>
+				<td onClick={this.showNews}>{id}</td>
+				<td onClick={this.showNews}>{headline.slice(0,20)}</td>
+				<td onClick={this.showNews}>{url}</td>
+				<td onClick={this.showNews}>{date}</td>
 				<td><button onClick={this.editNews}>Edit</button></td>
 				<td><button onClick={this.deleteNews}>Delete</button></td>
 			</tr>

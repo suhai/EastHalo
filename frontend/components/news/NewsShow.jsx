@@ -8,9 +8,8 @@ class NewsShow extends React.Component {
     this.state = {
       news: {
 				headline: '',
-			},
-			root_url: 'https:',
-			tail_url: ''
+				url: ''
+			}
     };
     this.redirectPath = this.redirectPath.bind(this);
 	};
@@ -28,11 +27,13 @@ class NewsShow extends React.Component {
 	componentWillReceiveProps(props) {
 		Object.keys(props.all_news).length > 0 ?
 			this.setState({
-				news: props.all_news[props.match.params.id],
-				tail_url: props.all_news[props.match.params.id].url.split(':')[1]
+				news: props.all_news[props.match.params.id]
 			}) :
 			this.setState({
-				news: {}
+				news: {
+					headline: '',
+					url: ''
+				}
 			});
 	}
 
@@ -43,12 +44,9 @@ class NewsShow extends React.Component {
 			url
 		} = this.state.news
 
-		let new_url = this.state.root_url + this.state.tail_url;
-		console.log('helloooo', new_url);
-
     return (
 			<div>
-				<iframe className="linker" width="800" height="500" src={new_url} name="iframe_a"></iframe>
+				<iframe className="linker" width="800" height="500" src={url} name="iframe_a"></iframe>
 				<p>{headline}</p>
 				<p>When the target of a link matches the name of an iframe, the link will open in the iframe.</p>
     	</div>

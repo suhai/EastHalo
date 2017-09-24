@@ -75,7 +75,7 @@ class Admin extends React.Component {
 
     return (
       <main className='user-page'>
-				<nav className='profile-nav'> {/* SUB NAVIGATIONS */}
+				<nav className='profile-nav'> 
 					<div className='admin-nav-bar'>
 						<ul>
 							<li className="dropdown">

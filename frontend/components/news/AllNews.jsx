@@ -24,7 +24,9 @@ class AllNews extends React.Component {
 		return (
 			<div className=''>
 
-				<table id="gradient-style" className="full-width">
+			<h1 className='table-h1'>Users Table</h1>
+			<div className="tbl-header">
+				<table cellPadding={0} cellSpacing={0}>
 					<thead>
 						<tr>
 							<th scope="col">News ID</th>
@@ -32,13 +34,18 @@ class AllNews extends React.Component {
 							<th scope="col">News Link</th>
 							<th scope="col">Date</th>
 						</tr>
-					</thead>
+						</thead>
+					</table>
+				</div>
 
-					<tbody>
+				<div className="tbl-content">
+					<table cellPadding={0} cellSpacing={0}>
+						<tbody>
 						{all_news}
-					</tbody>
+						</tbody>
+					</table>
+				</div>
 
-				</table>
 				<p className='pull-left'>
 					Table Footer or Description Will Go Here
 				</p>

@@ -130,7 +130,7 @@ class CourseShow extends React.Component {
 					<div className='grouped-buttons'>
 						<button className='btn edit' onClick={this.editCourse}>Edit Course</button>
 						<button className='btn delete' onClick={this.deleteCourse}>Delete Course</button>
-						<button className='btn delete' onClick={this.toggleCourse}>{this.state.enroll_status}</button>	
+						<button className='btn add' onClick={this.toggleCourse}>{this.state.enroll_status}</button>	
 					</div>
 				</div>
 				<hr />

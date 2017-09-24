@@ -16,22 +16,27 @@ class Friends extends React.Component {
 
 		return (
 			<div className=''>
-				<table id="gradient-style" className="full-width">
-					<thead>
-						<tr>
-							<th scope="col">First Name</th>
-							<th scope="col">Last Name</th>
-							<th scope="col">Username</th>
-							<th scope="col">Email</th>
-							<th scope="col">Phone</th>
-						</tr>
-					</thead>
+        <div className="tbl-header">
+          <table cellPadding={0} cellSpacing={0}>
+						<thead>
+							<tr>
+								<th scope="col">First Name</th>
+								<th scope="col">Last Name</th>
+								<th scope="col">Phone</th>
+								<th scope="col">Gender</th>
+								<th scope="col">Email</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
 
-					<tbody>
-						{friends}
-					</tbody>
-
-				</table>
+				<div className="tbl-content">
+					<table cellPadding={0} cellSpacing={0}>
+						<tbody>
+							{friends}
+						</tbody>
+					</table>
+				</div>
 				<p className='pull-left'>
 					Table Footer or Description Will Go Here
 				</p>

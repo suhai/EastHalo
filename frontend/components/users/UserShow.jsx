@@ -7,7 +7,8 @@ class UserShow extends React.Component {
 		this.state = {
 			user: {
 				friendships: []
-			}
+			},
+			color: ''
 		};
 		this.editUser = this.editUser.bind(this);
 		this.deleteUser = this.deleteUser.bind(this);
@@ -36,10 +37,12 @@ class UserShow extends React.Component {
 		this.props.currentUser.friends.some(friend => 
 			(friend.id === this.state.user.id)) ? 
 			this.setState({
-				friendship_status: 'unFriend'
+				friendship_status: 'unFriend',
+				color: 'delete'
 			}) :
 			this.setState({
-				friendship_status: 'Add Friend'
+				friendship_status: 'Add Friend',
+				color: 'add'
 			})
 	}
 
@@ -66,7 +69,8 @@ class UserShow extends React.Component {
 		if (user_id !== undefined && friend_id !== undefined) {
 			this.props.createFriendship(data);
 			this.setState({
-				friendship_status: 'unFriend'
+				friendship_status: 'unFriend',
+				color: 'delete'
 			})	
 		}
 	};
@@ -76,7 +80,8 @@ class UserShow extends React.Component {
 			if (friendship.friend_id === this.state.user.id) {
 				this.props.deleteFriendship(friendship.id);
 				this.setState({
-					frienship_status: 'Add Friend'
+					frienship_status: 'Add Friend',
+					color: 'add'
 				})
 			}
 		})
@@ -106,7 +111,7 @@ class UserShow extends React.Component {
 		let addableUser = this.props.match.params.id == this.props.currentUser.id ?
 			<div>{`Hi ${this.props.currentUser.username}`}</div> :
 			<div className='grouped-buttons'>
-				<button className='btn delete' onClick={this.toggleFriendship}>{this.state.friendship_status}</button>	
+				<button className={`btn ${this.state.color}`}  onClick={this.toggleFriendship}>{this.state.friendship_status}</button>	
 			</div>
 			
 

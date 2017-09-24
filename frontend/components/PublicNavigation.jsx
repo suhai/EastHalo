@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
+let lighthouse = 'https://res.cloudinary.com/swy/image/upload/v1499750283/images/lighthouse.svg';
 
 class PublicNavigation extends React.Component {
   constructor(props) {
@@ -27,17 +28,19 @@ class PublicNavigation extends React.Component {
 			<header className='shared-header'>
 				<nav className='navigation'>
 					<ul>
+						<li><img className="read" src={lighthouse} height={40} width={40} /></li>
 						<li><NavLink exact to='/'>Home</NavLink></li>
 						<li><NavLink to='/admission'>Admission</NavLink></li>
 						<li><NavLink to='/academics'>Academics</NavLink></li>
 						<li><NavLink to='/campus'>Campus</NavLink></li>
 						<li><NavLink to='/athletics'>Athletics</NavLink></li>
-						<li><NavLink to='/events'>Events</NavLink></li>
+						<li><NavLink to='/alumni'>Alumni</NavLink></li>
 					</ul>
 					<ul className='searchbar'>
-						<input onKeyPress={this.toSearch} className='search'></input>
-						<li><NavLink to='/swy_info'>Alumni</NavLink></li>
-						<li><NavLink to='/enquiries/messageform'>Contact</NavLink></li>
+						<form className="search-form">
+							<input type="text" placeholder="Search College Directory" />
+							<button type="submit" className="search-btn">Search</button>
+						</form>
 					</ul>
 				</nav>
 			</header>

@@ -37,7 +37,8 @@ class CourseShow extends React.Component {
 		if (course_id !== undefined && student_id !== undefined) {
 			this.props.createCourseEnrollment(data);
 			this.setState({
-				enroll_status: 'Drop Course'
+				enroll_status: 'Drop Course',
+				color: 'delete'
 			})	
 		}
 	};
@@ -50,7 +51,8 @@ class CourseShow extends React.Component {
 		if (targetEnrollment !== undefined) {
 			this.props.deleteCourseEnrollment(targetEnrollment.id);
 			this.setState({
-				enroll_status: 'Add Course'
+				enroll_status: 'Add Course',
+				color: 'add'
 			})
 		} 
 	};
@@ -85,10 +87,12 @@ class CourseShow extends React.Component {
 
 		values(this.props.currentUser.course_enrollments).some(enrollment => (enrollment.course_id) == this.state.course.id ) ? 
 		this.setState({
-			enroll_status: 'Drop Course'
+			enroll_status: 'Drop Course',
+			color: 'delete'
 		}) :
 		this.setState({
-			enroll_status: 'Add Course'
+			enroll_status: 'Add Course',
+			color: 'add'
 		})
 	}
 
@@ -111,12 +115,13 @@ class CourseShow extends React.Component {
 			departmentName,
 			courseDensity,
 			profLName,
-			profFName
+			profFName,
+			color
 		} = this.state;
 
 		let enrollableUser = this.props.currentUser.type == 'Student' ?
 				<div className='grouped-buttons'>
-					<button className='btn delete' onClick={this.toggleCourse}>{this.state.enroll_status}</button>	
+					<button className={`btn ${color}`} onClick={this.toggleCourse}>{this.state.enroll_status}</button>	
 				</div> :
 				<div>{`Hi ${this.props.currentUser.username}! Interested in ${course_code}? You need to be a student in order to sign up for it.`}</div>
 

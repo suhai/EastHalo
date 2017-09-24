@@ -1,17 +1,27 @@
 import React from 'react';
 
-class LoginPage extends React.Component {
+class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = { username: '', password: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
     this.handleKey = this.handleKey.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state);
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    let user = {
+      username: 'johnTheAdmin',
+      password: 'password'
+    };
+    this.props.login(user);
   }
 
   update(prop) {
@@ -28,13 +38,15 @@ class LoginPage extends React.Component {
     let errors = this.props.errors.join('');
     return (
       <ul className='homepage-auth'>
-				<p className='demo-username'>Pick a demo username below to login:</p>
-				<p>username 'student' to login as a Student</p>
-				<p>username 'professor' to login as a Professor</p>
-				<p>username 'admin' to login as an Admin</p>
-				<p>username 'alex' to login as none of the above</p>
-				<p className='demo-username'>Use 'password' as the password</p>
-				<hr className='my-hr' />
+        <li>
+          <h1>Sign in</h1>
+        </li>
+        <li><button onClick={this.demoLogin}>Demo login</button></li>
+        <ul>
+          <div></div>
+          <p>OR</p>
+          <div></div>
+        </ul>
         <li>
           <p className='auth-errors'>{errors}</p>
           <input onKeyPress={this.handleKey} onChange={this.update('username')} placeholder='Username'></input>
@@ -50,4 +62,4 @@ class LoginPage extends React.Component {
   }
 }
 
-export default LoginPage;
+export default Login;

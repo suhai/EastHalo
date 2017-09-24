@@ -47,3 +47,59 @@
 	background: #d0dafd;
 	color: #339;
 }
+
+
+
+
+.table-h1 {
+  font-size: 30px;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 15px;
+}
+table{
+  width: 90%;
+	table-layout: fixed;
+	// margin: auto;
+}
+.tbl-header{
+	background-color: maroon;
+	margin-left: 1em;
+	margin-right: 1em;
+ }
+
+.tbl-content{
+  height:300px;
+  overflow-x:auto;
+  margin-top: 0px;
+	border: 2px solid black;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+th{
+  padding: 10px 5px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+td{
+  padding: 5px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #000;
+  border-bottom: solid 2px rgba(255,255,255,0.1);
+}
+
+tbody tr:hover td
+{
+	background: #d0dafd;
+	color: #339;
+}

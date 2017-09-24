@@ -1,21 +1,27 @@
 import React from 'react';
-import { values, merge } from 'lodash';
 
-class SignupPage extends React.Component {
+class Signup extends React.Component {
   constructor(props) {
     super(props);
-		this.state = { 
-			username: '', 
-			password: '' 
-		};
+    this.state = { username: '', password: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
     this.handleKey = this.handleKey.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.signup(this.state);
+  }
+
+  demoLogin(e) {
+    e.preventDefault();
+    let user = {
+      username: 'johnTheAdmin',
+      password: 'password'
+    };
+    this.props.login(user);
   }
 
   update(prop) {
@@ -29,15 +35,20 @@ class SignupPage extends React.Component {
   }
 
   render() {
-    let errors = values(this.props.errors).map( (error, idx) => (
+    let errors = this.props.errors.map( (error, idx) => (
       <p className='auth-errors' key={idx}>{error}</p>
     ));
     return (
       <ul className='homepage-auth'>
         <li>
-          <h3>create a username and password</h3>
+          <h1>Sign up Below</h1>
         </li>
-				<hr className='my-hr' />
+        <li><button onClick={this.demoLogin}>Demo login</button></li>
+        <ul>
+          <div></div>
+          <p>OR</p>
+          <div></div>
+        </ul>
         <li>
           {errors}
           <input onKeyPress={this.handleKey} onChange={this.update('username')} placeholder='Username'></input>
@@ -46,11 +57,11 @@ class SignupPage extends React.Component {
           <input onKeyPress={this.handleKey} onChange={this.update('password')} type='password' placeholder='Password'></input>
         </li>
         <li>
-          <button onClick={this.handleSubmit}>Enter</button>
+          <button onClick={this.handleSubmit}>Register</button>
         </li>
       </ul>
     );
   }
 }
 
-export default SignupPage;
+export default Signup;

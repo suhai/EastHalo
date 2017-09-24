@@ -28,22 +28,29 @@ class Departments extends React.Component {
 
     return (
       <div className=''>
-				<div><button className='btn create align-left' onClick={this.renderForm}>Create Department</button></div>
+				<div><button className='btn create' onClick={this.renderForm}>Create Department</button></div>
 
-				<table id="gradient-style" className="full-width">
-					<thead>
+				<h1 className='table-h1'>Users Table</h1>
+        <div className="tbl-header">
+          <table cellPadding={0} cellSpacing={0}>
+						<thead>
 						<tr>
 							<th scope="col">Department Name</th>
 							<th scope="col">Edit</th>
 							<th scope="col">Delete</th>
 						</tr>
-					</thead>
+						</thead>
+					</table>
+				</div>
 
-					<tbody>
+				<div className="tbl-content">
+					<table cellPadding={0} cellSpacing={0}>
+						<tbody>
 						{departments}
-					</tbody>
+						</tbody>
+					</table>
+				</div>
 
-				</table>
 				<p className='pull-left'>
 					Table Footer or Description Will Go Here
 				</p>

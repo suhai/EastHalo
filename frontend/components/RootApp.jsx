@@ -4,7 +4,6 @@ import { AuthRoute, ProtectedRoute } from '../utils/route_utils';
 import HomePageContainer from './homepage/homepage_container';
 import LoggedHomeContainer from './logged_home/logged_home_container';
 import SwyInfo from './about/swy_info';
-import Footer from './footer/Footer';
 import MessageFormContainer from './admin/messages/message_form_container';
 
 
@@ -18,7 +17,7 @@ const RootApp = () =>(
 			<AuthRoute path="/" component={HomePageContainer} />
 			<Route path="/" component={() => <h1>ERROR, YOU MAY BE LOST</h1>} />
     </Switch>
-    <Footer />
+    {/* <Footer /> */}
   </div>
 );
 

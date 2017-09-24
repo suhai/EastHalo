@@ -5,11 +5,14 @@ import SideBar from './sidebar';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
-  users: state.users
+  users: state.users,
+	news: state.news,
+	posts: state.posts
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchRandomUsers: (query) => dispatch(fetchRandomUsers(query))
+  // fetchRandomSongs: (query) => dispatch(fetchRandomSongs(query)),
+  // fetchRandomUsers: (query) => dispatch(fetchRandomUsers(query))
 });
 
 export default withRouter(

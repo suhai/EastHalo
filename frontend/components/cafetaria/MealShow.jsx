@@ -44,7 +44,7 @@ class MealShow extends React.Component {
 				<div>
 					<h2 className='course-header'>{name}</h2>
 					<div className='grouped-buttons'>
-						<button className='btn edit' onClick={this.buyMeal}>Buy Meal</button>
+						<button className='btn buy' onClick={this.buyMeal}>Buy Meal</button>
 					</div>
 				</div>
 				<hr />

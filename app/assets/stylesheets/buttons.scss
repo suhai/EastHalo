@@ -1,32 +1,57 @@
 @import 'variables';
 
 button.btn {
-	color: whitesmoke;
+	color: $adt;
+	transition: box-shadow 0.3s, text-shadow 0.3s;
 }
 
 button.create {
-	border: 3px solid green;
-	background-color: #000;
+	border: 1px solid $abz;
+	background-color: $ada;
+	float: right;
+	margin-right: 1em;
 }
 
 button.edit {
-	border: 3px solid #000;
-	background-color: #263780;
+	border: 1px solid $abz;
+	background-color: $adk;
+	float: right;
+	margin-right: 1em;
 }
 
 button.delete {
-	border: 3px solid #000;
-	background-color: #C41913;
+	border: 1px solid $abz;
+	background-color: $ado;
+}
+
+button.toggle {
+	border: 1px solid $abz;
+	background-color: $acy;
+}
+
+button.add {
+	border: 1px solid $abz;
+	background-color: $adl;
+}
+
+button.buy {
+	border: 1px solid $abz;
+	background-color: $afm;
 }
 
 button.submit {
-	border: 1px solid turquoise;
-	background-color: #C41913;
+	border: 1px solid $abz;
+	background-color: $ada;
 }
 
 button.clear {
-	border: 1px solid #000;
-	background-color: #504D4D;
+	border: 1px solid $abz;
+	background-color: $ada;
+}
+
+button.cancel {
+	border: 1px solid $abz;
+	background-color: $ada;
 }
 
 .grouped-buttons {
@@ -56,3 +81,131 @@ button.clear {
 // 	box-sizing: border-box;
 // 	padding: .5em;
 // }
+
+
+button {
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  border-spacing: 0;
+  font-family: Open Sans;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.monkey-h1 {
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+// .tikld1 {
+//   font-size: 3.5em;
+//   text-align: center;
+//   margin-top: 1.5em;
+//   margin-bottom: 1em;
+// }
+
+.tikld {
+  font-size: 1.5em;
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 0.3em;
+  // color: $afk;
+}
+
+.swyinfo {
+  // display: flex;
+  // flex-direction: column;
+  position: absolute;
+  max-width: 100px;
+  left: 5%;
+  margin-top: 30px;
+  color: white;
+  border-radius: 5px;
+  font-weight: 300;
+  font-size: 14px;
+  transition: box-shadow 0.3s, text-shadow 0.3s;
+  padding: 5px 15px 5px 15px;
+  border: .2em solid aquamarine;
+}
+
+.swyinfo:hover {
+  box-shadow: 0 0 5px white, 0 0 5px white inset;
+  border-radius: 5px;
+  text-shadow: 0 0 2px white;
+}
+
+
+
+
+
+//signup buton
+button.signup {
+  color: white;
+  border: .2em solid antiquewhite;
+  border-radius: 5px;
+  font-weight: 300;
+  padding: 5px 15px 5px 15px;
+  font-size: 14px;
+  margin-top: 30px;
+  transition: box-shadow 0.3s, text-shadow 0.3s;
+}
+
+
+//admin login butoton
+button.login {
+  background: $ads;
+  color: white;
+  border-radius: 5px;
+  font-weight: 300;
+  padding: .6em;
+  font-size: 14px;
+  transition: text-shadow 0.3s;
+  margin-top: 30px;
+  margin-right: 10px;
+}
+
+button.signup:hover {
+  box-shadow: 0 0 5px white, 0 0 5px white inset;
+  border-radius: 5px;
+  text-shadow: 0 0 2px white;
+}
+
+button.login:hover {
+  text-shadow: 0 0 2px white;
+}
+
+button:focus { outline:0 }
+
+
+
+button.user-page-edit {
+	border: 1px solid $military-green;
+	border-radius: 3px;
+	font-size: 12px;
+	color: $abf;
+	margin-right: 10px;
+	width: 60px;
+
+	&:hover {
+		border: 1px solid lightgray;
+	}
+}
+
+button.user-page-delete {
+	border: 1px solid $military-green;
+	border-radius: 3px;
+	font-size: 12px;
+	color: $adn;
+	margin-right: 10px;
+	width: 60px;
+
+	&:hover {
+		border: 1px solid lightgray;
+	}
+}

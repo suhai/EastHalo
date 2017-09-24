@@ -11,6 +11,7 @@
 		"lodash": "^4.17.4",
 		"lodash.merge": "^4.6.0",
 		"moment": "^2.18.1",
+		"popper.js": "^1.12.5",
 		"react": "^15.6.1",
 		"react-addons-css-transition-group": "^15.6.0",
 		"react-dom": "^15.6.1",

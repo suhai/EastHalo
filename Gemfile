@@ -24,7 +24,7 @@ gem 'bcrypt'
 # gem "paperclip", '~> 5.0.0'
 gem 'aws-sdk', '>=2.0'
 # gem 'seed_dump'
-
+gem 'bourbon'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

@@ -30,21 +30,28 @@ class GradeLetters extends React.Component {
       <div className=''>
 				<div><button className='btn create align-left' onClick={this.renderForm}>Create GradeLetter</button></div>
 
-				<table id="gradient-style" className="full-width">
-					<thead>
+				<h1 className='table-h1'>Users Table</h1>
+        <div className="tbl-header">
+          <table cellPadding={0} cellSpacing={0}>
+						<thead>
 						<tr>
 							<th scope="col">GradeLetter</th>
 							<th scope="col">Weight</th>
 							<th scope="col">Edit</th>
 							<th scope="col">Delete</th>
 						</tr>
-					</thead>
+						</thead>
+					</table>
+				</div>
 
-					<tbody>
+				<div className="tbl-content">
+					<table cellPadding={0} cellSpacing={0}>
+						<tbody>
 						{grade_letters}
-					</tbody>
+						</tbody>
+					</table>
+				</div>
 
-				</table>
 				<p className='pull-left'>
 					Table Footer or Description Will Go Here
 				</p>

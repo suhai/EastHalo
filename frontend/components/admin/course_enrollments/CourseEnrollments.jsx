@@ -24,23 +24,30 @@ class CourseEnrollments extends React.Component {
     return (
       <div className=''>
 
-				<table id="gradient-style" className="full-width">
+			<h1 className='table-h1'>Enrollments Table</h1>
+			<div className="tbl-header">
+				<table cellPadding={0} cellSpacing={0}>
 					<thead>
 						<tr>
-							<th scope="col">Enrollment ID</th>
+							<th scope="col">Enrollmt ID</th>
 							<th scope="col">Course</th>
 							<th scope="col">Student</th>
 							<th scope="col">Professor</th>
 							<th scope="col">Load</th>
 							<th scope="col">Delete</th>
 						</tr>
-					</thead>
+						</thead>
+					</table>
+				</div>
 
-					<tbody>
+				<div className="tbl-content">
+					<table cellPadding={0} cellSpacing={0}>
+						<tbody>
 						{enrollments}
-					</tbody>
+						</tbody>
+					</table>
+				</div>
 
-				</table>
 				<p className='pull-left'>
 					Table Footer or Description Will Go Here
 				</p>

@@ -29,7 +29,9 @@ class Courses extends React.Component {
 		return (
 			<div className=''>
 
-				<table id="gradient-style" className="full-width">
+			<h1 className='table-h1'>Users Table</h1>
+			<div className="tbl-header">
+				<table cellPadding={0} cellSpacing={0}>
 					<thead>
 						<tr>
 							<th scope="col">Code</th>
@@ -40,13 +42,18 @@ class Courses extends React.Component {
 							<th scope="col">Size</th>
 							<th scope="col">Instructor</th>
 						</tr>
-					</thead>
+						</thead>
+					</table>
+				</div>
 
-					<tbody>
+				<div className="tbl-content">
+					<table cellPadding={0} cellSpacing={0}>
+						<tbody>
 						{courses}
-					</tbody>
+						</tbody>
+					</table>
+				</div>
 
-				</table>
 				<p className='pull-left'>
 					Table Footer or Description Will Go Here
 				</p>

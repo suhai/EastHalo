@@ -46,7 +46,7 @@ class BookShow extends React.Component {
 				<div>
 					<h2 className='course-header'>{title}</h2>
 					<div className='grouped-buttons'>
-						<button className='btn edit' onClick={this.editBook}>Buy Book</button>
+						<button className='btn buy' onClick={this.buyBook}>Buy Book</button>
 					</div>
 				</div>
 				<hr />

@@ -30,8 +30,10 @@ class Books extends React.Component {
 			<div className=''>
 				<div><button className='btn create align-left' onClick={this.renderForm}>Create Book</button></div>
 
-				<table id="gradient-style" className="full-width">
-					<thead>
+				<h1 className='table-h1'>Users Table</h1>
+        <div className="tbl-header">
+          <table cellPadding={0} cellSpacing={0}>
+						<thead>
 						<tr>
 							<th scope="col">Category</th>
 							<th scope="col">Title</th>
@@ -41,13 +43,18 @@ class Books extends React.Component {
 							<th scope="col">Description</th>
 							<th scope="col">Image URL</th>
 						</tr>
-					</thead>
+						</thead>
+					</table>
+				</div>
 
-					<tbody>
+				<div className="tbl-content">
+					<table cellPadding={0} cellSpacing={0}>
+						<tbody>
 						{books}
-					</tbody>
+						</tbody>
+					</table>
+				</div>
 
-				</table>
 				<p className='pull-left'>
 					Table Footer or Description Will Go Here
 				</p>

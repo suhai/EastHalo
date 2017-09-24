@@ -17,7 +17,7 @@
 		display: inline-block;
 		color: white;
 		text-align: center;
-		padding: 14px 16px;
+		padding: 5px;
 		text-decoration: none;
 	}
 	
@@ -40,13 +40,15 @@
 	
 	.dropdown-content a {
 		color: black;
-		padding: 12px 16px;
+		padding: 5px;
 		text-decoration: none;
 		display: block;
 		text-align: left;
 	}
 	
-	.dropdown-content a:hover {background-color: #f1f1f1}
+	.dropdown-content a:hover {
+		background-color: #f1f1f1
+	}
 	
 	.dropdown:hover .dropdown-content {
 		display: block;

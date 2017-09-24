@@ -28,15 +28,15 @@ class User extends React.Component {
 		} = this.props.user;
 
     return (
-			<tr onClick={this.showUser}>
-				<td>{username}</td>
-				<td>{fname}</td>
-				<td>{lname}</td>
-				<td>{email}</td>
-				<td>{type}</td>
-				<td>{gender}</td>
-				<td>{cash_balance}</td>
-			</tr>
+				<tr onClick={this.showUser}>
+					<td>{username}</td>
+					<td>{fname}</td>
+					<td>{lname}</td>
+					<td>{type}</td>
+					<td>{gender}</td>
+					<td>{cash_balance}</td>
+					<td>{email}</td>
+				</tr>
     );
   }
 }

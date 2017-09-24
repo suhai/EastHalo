@@ -29,7 +29,9 @@ class Messages extends React.Component {
 		return (
 			<div className=''>
 
-				<table id="gradient-style" className="full-width">
+			<h1 className='table-h1'>Users Table</h1>
+			<div className="tbl-header">
+				<table cellPadding={0} cellSpacing={0}>
 					<thead>
 						<tr>
 							{/* <th scope="col">Post ID</th> */}
@@ -38,13 +40,18 @@ class Messages extends React.Component {
 							<th scope="col">Subject</th>
 							<th scope="col">Excerpt</th>
 						</tr>
-					</thead>
+						</thead>
+					</table>
+				</div>
 
-					<tbody>
+				<div className="tbl-content">
+					<table cellPadding={0} cellSpacing={0}>
+						<tbody>
 						{messages}
-					</tbody>
+						</tbody>
+					</table>
+				</div>
 
-				</table>
 				<p className='pull-left'>
 					Table Footer or Description Will Go Here
 				</p>

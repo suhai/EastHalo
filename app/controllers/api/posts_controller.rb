@@ -2,8 +2,13 @@ class Api::PostsController < ApplicationController
 	before_action :set_post, only: [:show, :update, :destroy]
 	
 	def index
-		@posts = Post.all
-		render :index
+		if current_user.is_admin
+			@post = Post.all
+			render :index
+		else
+			@posts = Post.where(user_id: current_user.id)
+			render :index
+		end	
 	end
 
 	def create

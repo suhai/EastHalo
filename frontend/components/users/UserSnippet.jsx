@@ -20,20 +20,20 @@ class UserSnippet extends React.Component {
 			lname, 
 			email, 
 			phone_number, 
-			username
+			username,
+			profile_image_url
 		} = this.props.user;
 
     return (
-			<div>
-				<div onClick={this.showUser}>
-					<p>{fname}</p>
-					<p>{lname}</p>
-					<p>{username}</p>
-					<p>{email}</p>
-					<p>{phone_number}</p>
+			<div class="img-gallery" onClick={this.showUser}>
+				<div className="gallery">
+					<img src="https://res.cloudinary.com/swy/image/upload/v1499749804/images/diver.svg" alt="Diver" width={300} height={200} />
+					<div className="desc">
+					<div>
+						<p>{username}</p>
+					</div>
+					</div>
 				</div>
-				
-				<div>USER SNIPPET GOES HERE</div>
 				<hr/>
 			</div>
     );

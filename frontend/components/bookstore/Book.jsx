@@ -27,15 +27,18 @@ class Book extends React.Component {
 		} = this.props.book;
 
     return (
-			<tr onClick={this.showBook}>
-				<td>{category}</td>
-				<td>{title}</td>
-				<td>{author}</td>
-				<td>{publisher}</td>
-				<td>{price}</td>
-				<td>{description}</td>
-				<td>{image_url}</td>
-			</tr>
+			<div class="img-gallery" onClick={this.showBook}>
+				<div className="gallery">
+					<img src={image_url} alt={title} />
+					<div className="desc">
+					<div>
+						<p>{title}</p>
+						<p>${price}</p>
+					</div>
+					</div>
+				</div>
+				<hr/>
+			</div>
     );
   }
 }

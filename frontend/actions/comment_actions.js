@@ -42,8 +42,8 @@ export const fetchComment = (id) => dispatch => (
     .then(comment => dispatch(receiveComment(comment)))
 );
 
-export const makeComment = comment => dispatch => (
-  APIUtil.makeComment(comment)
+export const makeComment = (comment, post_id) => dispatch => (
+  APIUtil.makeComment(comment, post_id)
     .then(newComment => dispatch(receiveComment(newComment)))
 );
 

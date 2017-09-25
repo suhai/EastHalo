@@ -38,15 +38,15 @@ class Login extends React.Component {
     let errors = this.props.errors.join('');
     return (
       <ul className='homepage-auth'>
-        <li>
-          <h1>Sign in</h1>
-        </li>
-        <li><button onClick={this.demoLogin}>Demo login</button></li>
+				<li><button onClick={this.demoLogin}>Demo login</button></li>
         <ul>
           <div></div>
-          <p>OR</p>
+          <p></p>
           <div></div>
         </ul>
+        <li>
+          <h1>Sign in Below</h1>
+        </li>
         <li>
           <p className='auth-errors'>{errors}</p>
           <input onKeyPress={this.handleKey} onChange={this.update('username')} placeholder='Username'></input>

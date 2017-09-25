@@ -40,15 +40,15 @@ class Signup extends React.Component {
     ));
     return (
       <ul className='homepage-auth'>
+				<li><button onClick={this.demoLogin}>Demo login</button></li>
+        <ul>
+          <div></div>
+          <p></p>
+          <div></div>
+        </ul>
         <li>
           <h1>Sign up Below</h1>
         </li>
-        <li><button onClick={this.demoLogin}>Demo login</button></li>
-        <ul>
-          <div></div>
-          <p>OR</p>
-          <div></div>
-        </ul>
         <li>
           {errors}
           <input onKeyPress={this.handleKey} onChange={this.update('username')} placeholder='Username'></input>

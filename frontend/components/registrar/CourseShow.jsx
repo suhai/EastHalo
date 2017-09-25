@@ -36,30 +36,23 @@ class CourseShow extends React.Component {
 
 		if (course_id !== undefined && student_id !== undefined) {
 			this.props.createCourseEnrollment(data);
-			this.setState({
-				enroll_status: 'Drop Course',
-				color: 'delete'
-			})	
 		}
 	};
 
 	dropCourse() {
-		let targetEnrollment = values(this.props.currentUser.course_enrollments).find(enrollment => {
-			return (enrollment.course_id == this.state.course.id) 
+		let targetEnrollment = values(this.props.course_enrollments).find(enrollment => {
+			return (enrollment.course_id == this.props.match.params.id) 
 		});
 
 		if (targetEnrollment !== undefined) {
 			this.props.deleteCourseEnrollment(targetEnrollment.id);
-			this.setState({
-				enroll_status: 'Add Course',
-				color: 'add'
-			})
+
 		} 
 	};
 
 	toggleCourse() {
-		this.state.enroll_status == 'Add Course' ?
-		this.addCourse() : this.dropCourse()
+		this.props.course_enrollments[this.props.match.params.id] ?
+		this.dropCourse() : this.addCourse()
 	};
 
 	componentWillReceiveProps(props) {
@@ -85,7 +78,7 @@ class CourseShow extends React.Component {
 				profFName: ''
 			});
 
-		values(this.props.currentUser.course_enrollments).some(enrollment => (enrollment.course_id) == this.state.course.id ) ? 
+		values(this.props.course_enrollments).some(enrollment => (enrollment.course_id) == this.state.course.id ) ? 
 		this.setState({
 			enroll_status: 'Drop Course',
 			color: 'delete'

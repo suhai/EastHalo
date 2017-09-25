@@ -35,6 +35,7 @@ class CommentForm extends React.Component {
 
 	addComment() {
 		let post_id = this.props.match.params.id;
+		debugger
 		let data = {
 			comment: {
 				user_id: this.props.currentUser.id,
@@ -44,7 +45,7 @@ class CommentForm extends React.Component {
 		};
 
 		if (data.comment.body.trim().length > 0) {
-			// this.props.makeComment(data, data.comment.post_id);
+			this.props.makeComment(data, data.comment.post_id);
 		}
 
 		this.setState({

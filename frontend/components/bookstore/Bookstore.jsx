@@ -26,39 +26,11 @@ class Bookstore extends React.Component {
 			<Book key={idx} book={book} />
 		));
 
-    return (
-      <div className=''>
-
-			<h1 className='table-h1'>Users Table</h1>
-			<div className="tbl-header">
-				<table cellPadding={0} cellSpacing={0}>
-					<thead>
-						<tr>
-							<th scope="col">Category</th>
-							<th scope="col">Title</th>
-							<th scope="col">Author</th>
-							<th scope="col">Publisher</th>
-							<th scope="col">Price</th>
-							<th scope="col">Description</th>
-							<th scope="col">Image</th>
-						</tr>
-						</thead>
-					</table>
-				</div>
-
-				<div className="tbl-content">
-					<table cellPadding={0} cellSpacing={0}>
-						<tbody>
-						{books}
-						</tbody>
-					</table>
-				</div>
-
-				<p className='pull-left'>
-					Table Footer or Description Will Go Here
-				</p>
+		return (
+			<div className='community-page'>
+				{books}
 			</div>
-    );
+		);
   }
 }
 

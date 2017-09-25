@@ -2,8 +2,13 @@ class Api::CommentsController < ApplicationController
 	before_action :set_comment, only: [:show, :update, :destroy]
 
 	def index
-		@comments = Comment.all
-		render :index
+		if current_user.is_admin
+			@comments = Comment.all
+			render :index
+		else 
+			@comments = Comment.where(user_id: current_user.id)
+			render :index
+		end
 	end
 
 	def create

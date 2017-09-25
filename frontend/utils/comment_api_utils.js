@@ -2,7 +2,7 @@ export const makeComment = (comment, post_id) => (
   $.ajax({
     method: 'POST',
     url: `api/posts/${post_id}/comments`,
-    data: {comment}
+    data: comment
   })
 );
 

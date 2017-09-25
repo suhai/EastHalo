@@ -2,8 +2,13 @@ class Api::CoursesController < ApplicationController
 	before_action :set_course, only: [:show, :update, :destroy]
 
 	def index
-		@courses = Course.all 
-		render :index
+		if current_user.is_admin
+			@course_enrollments = Course.all
+			render :index
+		else
+			@course_enrollments = Course.where(student_id: current_user.id) || Course.where(professor_id: current_user.id)
+			render :index
+		end	
 	end
 
 	def create

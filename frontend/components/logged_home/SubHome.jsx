@@ -32,7 +32,7 @@ class SubHome extends React.Component {
 		));
 
 		return (
-			<div className=''>
+			<div className='community-page'>
 				{users}
 				{posts}
 				{all_news}

@@ -10,17 +10,18 @@ const CourseEnrollmentReducer = (state = {}, action) => {
 	let newState = merge({}, state)
 	switch (action.type) {
 		case RECEIVE_COURSE_ENROLLMENT:
-			newState[action.course_enrollment.id] = action.course
+			newState[action.course_enrollment.course_id] = action.course_enrollment
 			return newState
 
 		case RECEIVE_COURSE_ENROLLMENTS:
       for (let key in action.course_enrollments) {
-        newState[key] = action.course_enrollments[key];
+				const enrollment = action.course_enrollments[key]
+        newState[enrollment.course_id] = enrollment;
       }
 			return newState;
 
 		case REMOVE_COURSE_ENROLLMENT:
-			delete newState[action.course_enrollment.id];
+			delete newState[action.course_enrollment.course_id];
 			return newState;
 
 		default:

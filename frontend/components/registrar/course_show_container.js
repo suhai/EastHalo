@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
 	currentUser: state.session.currentUser,
 	courses: state.courses,
 	course: selectCourse(state, ownProps),
-	courseEnrollments: state.courseEnrollments
+	course_enrollments: state.course_enrollments
 });
 
 const mapDispatchToProps = dispatch => ({

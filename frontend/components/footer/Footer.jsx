@@ -9,7 +9,7 @@ class Footer extends React.Component {
         <div className="container">
           <p>© EastHalo</p>
           <p className="a-center">
-            <a href="#">2017 College of The Year</a>
+            <a href="#">Univeristy of EastHalo</a>
           </p>
           <p className="a-right">2020 Avocado Road, Farmington, CA</p>
         </div>

@@ -34,8 +34,8 @@ class UserShow extends React.Component {
 				}
 			});
 
-		this.props.currentUser.friends.some(friend => 
-			(friend.id === this.state.user.id)) ? 
+		values(this.props.friendships).some(friendship => 
+			(friendship.friend_id == this.state.user.id)) ? 
 			this.setState({
 				friendship_status: 'unFriend',
 				color: 'delete'
@@ -68,28 +68,22 @@ class UserShow extends React.Component {
 
 		if (user_id !== undefined && friend_id !== undefined) {
 			this.props.createFriendship(data);
-			this.setState({
-				friendship_status: 'unFriend',
-				color: 'delete'
-			})	
 		}
 	};
 
 	dropFriend() {
-		this.props.currentUser.friendships.forEach(friendship => {
-			if (friendship.friend_id === this.state.user.id) {
-				this.props.deleteFriendship(friendship.id);
-				this.setState({
-					frienship_status: 'Add Friend',
-					color: 'add'
-				})
-			}
-		})
+		let targetFriendship = values(this.props.friendships).find(friendship => {
+			return (friendship.friend_id == this.props.match.params.id) 
+		});
+
+		if (targetFriendship !== undefined) {
+			this.props.deleteFriendship(targetFriendship.id);
+		} 
 	};
 
 	toggleFriendship() {
-		this.state.friendship_status === 'Add Friend' ?
-		this.addFriend() : this.dropFriend()
+		this.props.friendships[this.props.match.params.id] ?
+		this.dropFriend() : this.addFriend()
 	};
 
 
@@ -108,24 +102,28 @@ class UserShow extends React.Component {
 			cash_balance
 		} = this.state.user;
 
+		const {
+			color
+		} = this.state;
+
 		let addableUser = this.props.match.params.id == this.props.currentUser.id ?
 			<div>{`Hi ${this.props.currentUser.username}`}</div> :
 			<div className='grouped-buttons'>
-				<button className={`btn ${this.state.color}`}  onClick={this.toggleFriendship}>{this.state.friendship_status}</button>	
+				<button className={`btn ${color}`}  onClick={this.toggleFriendship}>{this.state.friendship_status}</button>	
 			</div>
 			
 
 		return (
 			<main className='user-page'>
-					<div class="img-gallery" onClick={this.showUser}>
+					<div className="img-gallery" onClick={this.showUser}>
 						<div className="gallery">
 							<img src="https://res.cloudinary.com/swy/image/upload/v1499749804/images/diver.svg" alt="Diver" width={300} height={200} />
 						</div>
 					</div>
 					<hr/>
 				<div>
-					<div className='grouped-buttons'>
-						<button className='btn toggle' onClick={this.toggleFriendship}>{this.state.friendship_status}</button>	
+					<div className='course-header'>
+						{addableUser}
 					</div>
 				</div>
 				<hr />

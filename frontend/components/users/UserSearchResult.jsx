@@ -12,10 +12,20 @@ class User extends React.Component {
 
   render() {
     return (
-      <li className='search-show'>
-        <img onClick={this.showUser} src={this.props.user.profile_image_url} />
-        <span onClick={this.showUser}>{`${this.props.user.fname}, ${this.props.user.lname}`}</span>
-      </li>
+      <main className='user-page'>
+					<div className="img-gallery" onClick={this.showUser}>
+						<div className="gallery">
+							<img src="https://res.cloudinary.com/swy/image/upload/v1499749804/images/diver.svg" alt="Diver" width={300} height={200} />
+						</div>
+					</div>
+					<hr/>
+				<div>
+					<div className='course-header'>
+						{this.props.user.username}
+					</div>
+				</div>
+				<hr />	
+			</main>
     );
   }
 }

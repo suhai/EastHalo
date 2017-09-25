@@ -63,21 +63,14 @@ class PrivateNavigation extends React.Component {
 						<input onKeyPress={this.toSearch} className='search'></input>
 					</ul>
 					<ul>
-          	<li className={`nav-user`}>
-							<p tabIndex='0' onBlur={this.closeSettings}
-								onClick={this.toggleSettings}
-								className={`user ${this.state.isActive}`}>
-								{this.props.currentUser.username} ❯❯
-							</p>
-							<ul id='user-settings' className={this.state.isActive}>
-								<li>
-									<Link to={`/${this.props.currentUser.username}/profile/me`}>Profile</Link>
-								</li>
-								<li><NavLink to={`/${this.props.currentUser.username}/profile/transcript`}>Transcript</NavLink>
-								</li>
-								<li id='signout' onClick={this.logout}>Sign out</li>
-							</ul>
-          	</li>
+						<div className="dropdown">
+							<button className="dropbtn">{this.props.currentUser.username} ❯❯</button>
+							<div className="dropdown-content">
+							<Link to={`/${this.props.currentUser.username}/profile/me`}>Profile</Link>
+							<NavLink to={`/${this.props.currentUser.username}/profile/transcript`}>Transcript</NavLink>
+							<NavLink to='/' onClick={this.logout}>Sign Out</NavLink>
+							</div>
+						</div>
         	</ul>
 				</nav>
 			</header>
@@ -86,3 +79,4 @@ class PrivateNavigation extends React.Component {
 }
 
 export default PrivateNavigation;
+

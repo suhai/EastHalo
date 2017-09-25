@@ -3,10 +3,10 @@ class Api::CoursesController < ApplicationController
 
 	def index
 		if current_user.is_admin
-			@course_enrollments = Course.all
+			@courses = Course.all
 			render :index
 		else
-			@course_enrollments = Course.where(student_id: current_user.id) || Course.where(professor_id: current_user.id)
+			@courses = Course.where(student_id: current_user.id) || Course.where(professor_id: current_user.id)
 			render :index
 		end	
 	end

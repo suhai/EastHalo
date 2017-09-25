@@ -46,7 +46,6 @@ class CourseShow extends React.Component {
 
 		if (targetEnrollment !== undefined) {
 			this.props.deleteCourseEnrollment(targetEnrollment.id);
-
 		} 
 	};
 

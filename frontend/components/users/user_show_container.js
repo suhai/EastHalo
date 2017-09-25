@@ -7,7 +7,7 @@ import UserShow from './UserShow';
 const mapStateToProps = (state, ownProps) => ({
 	currentUser: state.session.currentUser,
 	users: state.users,
-	frienships: state.friendships
+	friendships: state.friendships
 });
 
 const mapDispatchToProps = dispatch => ({

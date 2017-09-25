@@ -10,17 +10,18 @@ const FriendshipReducer = (state = {}, action) => {
 	let newState = merge({}, state)
 	switch (action.type) {
 		case RECEIVE_FRIENDSHIP:
-			newState[action.friendship.id] = action.friendship
+			newState[action.friendship.friend_id] = action.friendship
 			return newState
 
 		case RECEIVE_FRIENDSHIPS:
       for (let key in action.friendships) {
-        newState[key] = action.friendships[key];
+				const friendship = action.friendships[key]
+        newState[friendship.friend_id] = friendship;
       }
 			return newState;
 
 		case REMOVE_FRIENDSHIP:
-			delete newState[action.friendship.id];
+			delete newState[action.friendship.friend_id];
 			return newState;
 
 		default:

@@ -8,10 +8,11 @@
 .profile-nav a {
   font-size: .85em;
   color: $black;
-  padding: .2em .8em;
+  padding: 1em;
   border-radius: .25em;
   background: $acz;
-  transition: .2s;
+	transition: .2s;
+	margin: 2em auto;
 }
 
 .profile-nav ul {
@@ -29,6 +30,6 @@
 .profile-nav a:hover,
 .profile-nav a.active {
   color: $white;
-	background: $afl;
+	background: $aey;
 	text-decoration: none;
 }

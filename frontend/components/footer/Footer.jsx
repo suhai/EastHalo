@@ -11,7 +11,7 @@ class Footer extends React.Component {
           <p className="a-center">
             <a href="#">Univeristy of EastHalo</a>
           </p>
-          <p className="a-right">2020 Avocado Road, Farmington, CA</p>
+          <p className="a-right">2020 Avocado Road, EastHalo, CA</p>
         </div>
       </div>
     );

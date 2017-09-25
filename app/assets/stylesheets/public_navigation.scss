@@ -6,12 +6,13 @@
 }
 
 .search-form input {
-  background: transparent;
+  background: $afg;
   border: 0px;
   border-bottom: 1px solid $adx;
-  color: whitesmoke;
+  color: $black;
   height: 30px;
-  width: 240px;
+	width: 240px;
+	padding: 5px;
 }
 
 .search-form input:hover,

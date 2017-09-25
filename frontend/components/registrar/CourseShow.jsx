@@ -108,12 +108,13 @@ class CourseShow extends React.Component {
 			courseDensity,
 			profLName,
 			profFName,
-			color
+			color,
+			enroll_status
 		} = this.state;
 
 		let enrollableUser = this.props.currentUser.type == 'Student' ?
 				<div className='grouped-buttons'>
-					<button className={`btn ${color}`} onClick={this.toggleCourse}>{this.state.enroll_status}</button>	
+					<button className={`btn ${color}`} onClick={this.toggleCourse}>{enroll_status}</button>	
 				</div> :
 				<div>{`Hi ${this.props.currentUser.username}! Interested in ${course_code}? You need to be a student in order to sign up for it.`}</div>
 

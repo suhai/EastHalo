@@ -87,10 +87,13 @@ class HomePage extends React.Component {
 
         <main className='homepage-info'>	
           <div className='homepage-description'>
-            <h2 className="">EastHalo University</h2>
+            <h1 className="">EastHalo University</h1>
             <div className='placeholder-text'>
-              <h3>SITE UNDER CONSTRUCTION</h3>
-              <p>Welcome to the University of EastHalo</p>
+              <h3>MIXING COLORS</h3>
+							<div className='home-page-para'>
+								<p>As Summer Fades into Fall, Biology Professor Sam Porter Takes His Class Through The Inner Workings of Chlorophyll. Previous Studies Had Shown That very little Could Be Deduced By This Very Importmant Pigment In Plants.
+								</p>
+							</div>
             </div> 
           </div>
         </main>
@@ -142,14 +145,11 @@ class HomePage extends React.Component {
 					</div>
 					<div className="section">
 						<div className="container">
-							<div className="page-header">
-								<h3>East Halo In The News</h3>
-							</div>
 							<div className="row">
 								<div className="col-md-4">
 									<h4>Art</h4>
 									<ul>
-										<li>Ancient Jewellery Unearthed</li>
+										<li>Ancient Chest Unearthed in Spain</li>
 										<li>Photographer Andrew Gallup's Discovery</li>
 									</ul>
 								</div>
@@ -164,7 +164,7 @@ class HomePage extends React.Component {
 									<h4>Politics</h4>
 									<ul>
 										<li>Senator Mooose on Rampage Again</li>
-										<li>Roses Can Be Yellow Too</li>
+										<li>What Do Parliamentarians in Avalonia Do?</li>
 									</ul>
 								</div>
 							</div>

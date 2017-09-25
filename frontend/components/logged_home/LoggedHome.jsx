@@ -28,6 +28,7 @@ import SearchContainer from '../search/search_container';
 import SideBarContainer from '../sidebar/sidebar_container';
 {/* USERS */}
 import UserShowContainer from '../users/user_show_container';
+import SettingsPage from './Settings';
 
 
 class LoggedHome extends React.Component {
@@ -74,6 +75,7 @@ class LoggedHome extends React.Component {
 						<Route path="/registrar" render={(props) => <RegistrarPageContainer {...props} />} />
 						{/* SEARCH */}
 						<Route path="/search" render={(props) => <SearchContainer {...props} />} />
+						<Route path="/settings" render={(props) => <SettingsPage {...props} />} />
 					</Switch>
 				</div>
 				<div className='sidebar-div'>

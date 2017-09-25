@@ -40,11 +40,15 @@ div.loggedhome {
 	margin: 2em;
 	display: flex;
 	flex-wrap: wrap;
+}
 
-	// .user-display {
-	// 	height: 180px;
-	// 	width: 100%;
-	// 	flex: 1;
-	// 	margin: 5px 50px;
-	// }
+.attention-page {
+	margin: 5em;
+	padding: 2em;
+	border: 1em solid whitesmoke;
+	font-weight: 700;
+
+	h2 {
+    text-align: center;
+	}
 }

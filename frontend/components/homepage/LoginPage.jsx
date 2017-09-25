@@ -39,17 +39,11 @@ class Login extends React.Component {
     return (
       <ul className='homepage-auth'>
 				<li><button onClick={this.demoLogin}>Demo login</button></li>
-        <ul>
-          <div></div>
-          <p></p>
-          <div></div>
-        </ul>
-        <li>
-          <h1>Sign in Below</h1>
-        </li>
+          <h6>OR</h6>
+          <h6>Sign in Below</h6>
         <li>
           <p className='auth-errors'>{errors}</p>
-          <input onKeyPress={this.handleKey} onChange={this.update('username')} placeholder='Username'></input>
+          <input onKeyPress={this.handleKey} onChange={this.update('username')} placeholder='username'></input>
         </li>
         <li>
           <input onKeyPress={this.handleKey} onChange={this.update('password')} type='password' placeholder='Password'></input>

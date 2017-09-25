@@ -5,9 +5,7 @@ class UserShow extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			user: {
-				friendships: []
-			},
+			user: {},
 			color: ''
 		};
 		this.editUser = this.editUser.bind(this);
@@ -29,13 +27,13 @@ class UserShow extends React.Component {
 				user: props.users[props.match.params.id]
 			}) :
 			this.setState({
-				user: {
-					friendships: []
-				}
+				user: {}
 			});
 
-		values(this.props.friendships).some(friendship => 
-			(friendship.friend_id == this.state.user.id)) ? 
+			let targetFriendship = values(this.props.friendships).find(friendship => {
+				return (friendship.friend_id == this.props.match.params.id) 
+			});
+			!!targetFriendship ?
 			this.setState({
 				friendship_status: 'unFriend',
 				color: 'delete'
@@ -103,13 +101,14 @@ class UserShow extends React.Component {
 		} = this.state.user;
 
 		const {
+			friendship_status,
 			color
 		} = this.state;
 
 		let addableUser = this.props.match.params.id == this.props.currentUser.id ?
 			<div>{`Hi ${this.props.currentUser.username}`}</div> :
 			<div className='grouped-buttons'>
-				<button className={`btn ${color}`}  onClick={this.toggleFriendship}>{this.state.friendship_status}</button>	
+				<button className={`btn ${color}`}  onClick={this.toggleFriendship}>{friendship_status}</button>	
 			</div>
 			
 

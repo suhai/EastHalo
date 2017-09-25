@@ -30,7 +30,7 @@ class PublicNavigation extends React.Component {
 					<ul>
 						<li><img className="read" src={lighthouse} height={40} width={40} /></li>
 						<li><NavLink exact to='/'>Home</NavLink></li>
-						<li><NavLink to='/admission'>Admission</NavLink></li>
+						<li><NavLink to='/admission'>Admissions</NavLink></li>
 						<li><NavLink to='/academics'>Academics</NavLink></li>
 						<li><NavLink to='/campus'>Campus</NavLink></li>
 						<li><NavLink to='/athletics'>Athletics</NavLink></li>
@@ -38,7 +38,7 @@ class PublicNavigation extends React.Component {
 					</ul>
 					<ul className='searchbar'>
 						<form className="search-form">
-							<input type="text" placeholder="Search College Directory" />
+							<input type="text" placeholder="Search University Directory" />
 							<button type="submit" className="search-btn">Search</button>
 						</form>
 					</ul>

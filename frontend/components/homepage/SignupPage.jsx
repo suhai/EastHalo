@@ -18,7 +18,7 @@ class Signup extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     let user = {
-      username: 'johnTheAdmin',
+      username: 'johnBull',
       password: 'password'
     };
     this.props.login(user);
@@ -41,14 +41,8 @@ class Signup extends React.Component {
     return (
       <ul className='homepage-auth'>
 				<li><button onClick={this.demoLogin}>Demo login</button></li>
-        <ul>
-          <div></div>
-          <p></p>
-          <div></div>
-        </ul>
-        <li>
-          <h1>Sign up Below</h1>
-        </li>
+        <h6>OR</h6>
+				<h6>Sign Up Below</h6>
         <li>
           {errors}
           <input onKeyPress={this.handleKey} onChange={this.update('username')} placeholder='Username'></input>

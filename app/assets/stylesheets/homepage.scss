@@ -245,26 +245,26 @@ button.login:hover {
 }
 
 
-// temporary. will be removed or replaced later
-.swyinfo {
-  position: absolute;
-  max-width: 100px;
-  left: 5%;
-  margin-top: 30px;
-  color: white;
-  border-radius: 5px;
-  font-weight: 300;
-  font-size: 14px;
-  transition: box-shadow 0.3s, text-shadow 0.3s;
-  padding: 5px 15px 5px 15px;
-  border: .2em solid aquamarine;
-}
+// // temporary. will be removed or replaced later
+// .swyinfo {
+//   position: absolute;
+//   max-width: 100px;
+//   left: 5%;
+//   margin-top: 30px;
+//   color: white;
+//   border-radius: 5px;
+//   font-weight: 300;
+//   font-size: 14px;
+//   transition: box-shadow 0.3s, text-shadow 0.3s;
+//   padding: 5px 15px 5px 15px;
+//   border: .2em solid aquamarine;
+// }
 
-.swyinfo:hover {
-  box-shadow: 0 0 5px white, 0 0 5px white inset;
-  border-radius: 5px;
-  text-shadow: 0 0 2px white;
-}
+// .swyinfo:hover {
+//   box-shadow: 0 0 5px white, 0 0 5px white inset;
+//   border-radius: 5px;
+//   text-shadow: 0 0 2px white;
+// }
 
 
 .banner,
@@ -312,3 +312,16 @@ button.login:hover {
   padding: 0;
 }
 
+
+.home-page-para {
+	max-width: 45em;
+	background-color: $white;
+	padding: .1em;
+	opacity: 0.8;
+
+	p {
+		// text-align: center;
+		font-weight: bold;
+		color: $aac;
+	}
+}

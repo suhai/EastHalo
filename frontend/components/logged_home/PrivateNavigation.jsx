@@ -46,7 +46,7 @@ class PrivateNavigation extends React.Component {
   render() {
 		let adminLink = !!(this.props.currentUser.is_admin) ?
 		<li><NavLink to='/admin'>Admin</NavLink></li> :
-		<li><NavLink to='/cafetaria'>Admin</NavLink></li>;
+		<li><NavLink to='/settings'>Admin</NavLink></li>;
 
     return (
 			<header className='shared-header'>

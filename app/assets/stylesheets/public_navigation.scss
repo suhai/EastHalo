@@ -8,23 +8,23 @@
 .search-form input {
   background: transparent;
   border: 0px;
-  border-bottom: 1px solid #fff;
-  color: #fff;
+  border-bottom: 1px solid $adx;
+  color: whitesmoke;
   height: 30px;
   width: 240px;
 }
 
 .search-form input:hover,
 .search-form input:focus {
-  border-bottom: 1px solid #1a77ff;
+  border-bottom: 1px solid $aed;
   outline: 0px;
 }
 
 .search-btn {
   background: transparent;
   border: 0px;
-  border-bottom: 1px solid #1a77ff;
-  color: #fff;
+  border-bottom: 1px solid $aed;
+  color: whitesmoke;
   height: 30px;
   margin: 0 0 0 10px;
   padding: 0 10px;

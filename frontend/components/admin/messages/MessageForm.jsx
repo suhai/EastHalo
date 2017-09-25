@@ -71,24 +71,17 @@ class MessageForm extends React.Component {
 		return (
 			<div className='homepage message-div'>
 				<PublicNavigation />
-				<form className="form-style-9 msg-form">
-					<ul>
-						<li>
-							<input type="text" className="field-style field-split align-left" value={sender} onChange={this.update('sender')} placeholder="Your Name" />
-							<input type="text" className="field-style field-split align-right" value={email} onChange={this.update('email')} placeholder="Your Email" />
-						</li>
-						<li>
-							<input type="text" className="field-style" value={subject} onChange={this.update('subject')} placeholder="Subject" />
-						</li>
-						<li>
-							<textarea className="field-style" value={msg} onChange={this.update('msg')} placeholder="Message"></textarea>
-						</li>
-						<li>
-							<input type="submit" value="Submit Message" onClick={this.addMessage} />
-							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
-						</li>
-					</ul>
+				<div className="form-style-8">
+				<h2>Send US Your Enquiries Below</h2>
+				<form >	
+					<input type="text" className="field-style field-split align-left" value={sender} onChange={this.update('sender')} placeholder="Your Name" />
+					<input type="text" className="field-style field-split align-right" value={email} onChange={this.update('email')} placeholder="Your Email" />
+					<input type="text" className="field-style" value={subject} onChange={this.update('subject')} placeholder="Subject" />
+					<textarea className="field-style" value={msg} onChange={this.update('msg')} placeholder="Message"></textarea>
+					<input type="submit" value="Submit Message" onClick={this.addMessage} />
+					<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />		
 				</form>
+				</div>
 			</div>
 		)
 	};

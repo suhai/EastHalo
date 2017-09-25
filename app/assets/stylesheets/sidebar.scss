@@ -3,28 +3,24 @@
 aside.loggedhome-sidebar {
 	display: flex;
 	flex-direction: column;
-	border-top-right-radius: 20px;
 	background-color: #86BFD3;
 	overflow-y: scroll;
-	height: calc(100% - 100px);
-
-	div.updates {
-		margin: 5em .5em 5em .1em;
-	}
+	height: calc(100%);
+	// height: calc(100% - 100px);
+	width: 100%;
 
 	div.chat-area {
-		position: fixed;
-		bottom: 3.5em;
-		width: 24.5%;
-		border: 5px solid black;
-		height: 5em;
-		margin: .1em .01em 0;
+		// position: fixed;
+		bottom: 0;
+		flex: 1;
+		right: 0.1em;
+		border: 1px solid black;
+		// margin: .1em .01em 0;
 		background-color: white !important;
 		box-sizing: border-box;
-		border-radius: 10px;
 
 		.chatbox {
-
+			
 		}
 	}
 

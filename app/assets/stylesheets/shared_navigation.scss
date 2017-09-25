@@ -20,12 +20,13 @@ header {
 
 header.shared-header {
 	display: flex;
-  height: 45px;
+  height: 55px;
   width: 100%;
-  background: $bgcolor;
+	background: $bgcolor;
+	background: $abz;
   color: white;
   font-size: 14px;
-
+	padding: 10px 5px;
   position: fixed;
   top: 0;
   left: 0;

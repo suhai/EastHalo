@@ -17,17 +17,18 @@
 .profile-nav ul {
     display: inline-block;
     margin: 0;
-    padding: 0;
+    // padding: 10px;
     zoom:1;
     *display: inline;
 }
 .profile-nav li {
   float: left;
-  margin-left: 1.5em;
+	margin-left: 1.5em;
 }
 
 .profile-nav a:hover,
 .profile-nav a.active {
   color: $white;
-  background: $afl;
+	background: $afl;
+	text-decoration: none;
 }

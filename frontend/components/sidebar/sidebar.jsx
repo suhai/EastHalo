@@ -62,17 +62,10 @@ class SideBar extends React.Component {
   }
 
   render() {
-    let songs = [];
     let users = [];
-    // this.state.songIds.forEach( id => {
-    //   songs.push(this.props.songs.random[id]);
-    // });
     this.state.userIds.forEach( id => {
       users.push(this.props.users[id]);
     });
-    // songs = songs.map( song => (
-    //   <SidebarSongContainer song={song} key={song.id} />
-    // ));
     users = users.map( user => (
       <SidebarUserContainer user={user} key={user.id} />
     ));
@@ -90,12 +83,7 @@ class SideBar extends React.Component {
             {users}
           </ul>
         </li>
-        <li className='song-suggestion'>
-          <span className='like'>Related Tracks</span>
-          <ul>
-            {/* {songs} */}
-          </ul>
-        </li>
+				
 				<div className="chat-area">
 					<ul>
 						<h3>Lets Chat!!!</h3>

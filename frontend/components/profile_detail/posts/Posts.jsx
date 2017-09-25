@@ -31,7 +31,7 @@ class Posts extends React.Component {
 				<div><button className='btn create align-left' onClick={this.renderForm}>Create Post</button></div>
 
 				<h1 className='table-h1'>My Posts</h1>
-        <div className="tbl-header">
+        <div className="tbl-header2">
           <table cellPadding={0} cellSpacing={0}>
 						<thead>
 						<tr>

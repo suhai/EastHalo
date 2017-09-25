@@ -7,11 +7,11 @@ class Footer extends React.Component {
     return (
       <div className="footer">
         <div className="container">
-          <p>© 2014 BestBite</p>
+          <p>© EastHalo</p>
           <p className="a-center">
-            <a href="#">BestBite.com</a>
+            <a href="#">2017 College of The Year</a>
           </p>
-          <p className="a-right">12 Greentree Lane, Orlando, FL</p>
+          <p className="a-right">2020 Avocado Road, Farmington, CA</p>
         </div>
       </div>
     );

@@ -99,7 +99,7 @@ class HomePage extends React.Component {
 					<div>
 						<div className="jumbotron">
 							<div className="container">
-								<h1>Meet Junction</h1>
+								<h1>INTELLECTUAL IMMERSION</h1>
 							</div>
 						</div>
 						<div className="supporting">
@@ -107,18 +107,18 @@ class HomePage extends React.Component {
 								<div className="row">
 									<div className="col-md-4">
 										<img className="read" src={apple} height={128} width={128} />
-										<h2>Read</h2>
-										<p>Discover new stories and follow your favorite writers.</p>
+										<h2>Communicate</h2>
+										<p>Explore your passions and dive deep within your community to now others.</p>
 									</div>
 									<div className="col-md-4">
 										<img className="read" src={books} height={128} width={128} />
-										<h2>Write</h2>
-										<p>Create stories about our world, or entirely new worlds.</p>
+										<h2>Learn</h2>
+										<p>Learn from others and let your creativity drive you and the world around you.</p>
 									</div>
 									<div className="col-md-4">
 										<img className="read" src={bell} height={128} width={128} />
-										<h2>Talk</h2>
-										<p>Join the conversation by talking with your favorite readers and your fans.</p>
+										<h2>Share</h2>
+										<p>Pass on your knowledge to the world and make a positve change</p>
 									</div>
 								</div>
 							</div>
@@ -136,35 +136,35 @@ class HomePage extends React.Component {
 				<div>
 					<div className="section banner">
 						<div className="container">
-							<h3>Always have the answer to "What's for dinner?"</h3>
-							<a className="btn btn-lg btn-default" href="#">Learn More</a>
+							<h3>Where Are The Makers of Civilization?</h3>
+							<a className="btn btn-lg btn-default" href="#">Learn More Here</a>
 						</div>
 					</div>
 					<div className="section">
 						<div className="container">
 							<div className="page-header">
-								<h3>Newest Contributions</h3>
+								<h3>East Halo In The News</h3>
 							</div>
 							<div className="row">
 								<div className="col-md-4">
-									<h4>Breakfast</h4>
+									<h4>Art</h4>
 									<ul>
-										<li>Maple French Toast</li>
-										<li>Rolled Oats with Berries</li>
+										<li>Ancient Jewellery Unearthed</li>
+										<li>Photographer Andrew Gallup's Discovery</li>
 									</ul>
 								</div>
 								<div className="col-md-4">
-									<h4>Dinner</h4>
+									<h4>Science</h4>
 									<ul>
-										<li>Black Bean Stuffed Peppers</li>
-										<li>Pesto Pasta with Spinach</li>
+										<li>The Sun and The Moon Are Actually Twins</li>
+										<li>Tomatoes From Professor Kanter's Garden</li>
 									</ul>
 								</div>
 								<div className="col-md-4">
-									<h4>Dessert</h4>
+									<h4>Politics</h4>
 									<ul>
-										<li>German Chocolate Cake</li>
-										<li>Hazelnut Tiramisu</li>
+										<li>Senator Mooose on Rampage Again</li>
+										<li>Roses Can Be Yellow Too</li>
 									</ul>
 								</div>
 							</div>

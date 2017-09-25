@@ -16,8 +16,10 @@ class Schedule extends React.Component {
 
 		return (
 			<div className=''>
-				<table id="gradient-style" className="full-width">
-					<thead>
+				<h1 className='table-h1'>Users Table</h1>
+        <div className="tbl-header2">
+          <table cellPadding={0} cellSpacing={0}>
+						<thead>
 						<tr>
 							<th scope="col">Code</th>
 							<th scope="col">Title</th>
@@ -27,13 +29,18 @@ class Schedule extends React.Component {
 							<th scope="col">Size</th>
 							<th scope="col">Instructor</th>
 						</tr>
-					</thead>
+						</thead>
+					</table>
+				</div>
 
-					<tbody>
+				<div className="tbl-content">
+					<table cellPadding={0} cellSpacing={0}>
+						<tbody>
 						{courses}
-					</tbody>
+						</tbody>
+					</table>
+				</div>
 
-				</table>
 				<p className='pull-left'>
 					Table Footer or Description Will Go Here
 				</p>

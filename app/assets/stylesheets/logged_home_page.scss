@@ -4,7 +4,9 @@ div.loggedhome {
   display: flex;
   position: relative;
 	background: white;
-	margin: 3.1em auto 4em;
+	margin-top: 3em;
+	margin-bottom: 0;
+	height: 1000px;
 	
 	background: gray; /* For browsers that do not support gradients */
 	background: -webkit-linear-gradient(left top, #F4F6F7, #B2C8D6); 
@@ -29,7 +31,7 @@ div.loggedhome {
 
 	.sidebar-div {
 		flex: 1;
-		border-left: 3px solid lavender;
-		border-left: 3px solid $gray;
+		// border-left: 3px solid lavender;
+		border-left: 1px solid $gray;
 	}
 }

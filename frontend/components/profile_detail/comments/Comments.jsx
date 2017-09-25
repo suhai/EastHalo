@@ -28,7 +28,9 @@ class Comments extends React.Component {
 
 		return (
 			<div className=''>
-				<table id="gradient-style" className="full-width">
+				<h1 className='table-h1'>Comments Table</h1>
+				<div className="tbl-header2">
+				<table cellPadding={0} cellSpacing={0}>
 					<thead>
 						<tr>
 							<th scope="col">User ID</th>
@@ -36,13 +38,18 @@ class Comments extends React.Component {
 							<th scope="col">Comment</th>
 							<th scope="col">Link</th>
 						</tr>
-					</thead>
+						</thead>
+					</table>
+				</div>
 
-					<tbody>
+				<div className="tbl-content">
+					<table cellPadding={0} cellSpacing={0}>
+						<tbody>
 						{comments}
-					</tbody>
+						</tbody>
+					</table>
+				</div>
 
-				</table>
 				<p className='pull-left'>
 					Table Footer or Description Will Go Here
 				</p>

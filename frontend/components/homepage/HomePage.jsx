@@ -92,7 +92,7 @@ class HomePage extends React.Component {
             <div className='placeholder-text'>
               <h3>MIXING COLORS</h3>
 							<div className='home-page-para'>
-								<p>As Summer Fades into Fall, Biology Professor Sam Porter Takes His Class Through The Inner Workings of Chlorophyll. Previous Studies Had Shown That very little Could Be Deduced By This Very Importmant Pigment In Plants.
+								<p>As Summer Fades into Fall, Biology Professor Sam Porter Takes His Class Through The Inner Workings of Chlorophyll. Previous Studies Had Shown That very little Could Be Deduced By This Very Important Pigment In Plants.
 								</p>
 							</div>
             </div> 
@@ -112,7 +112,7 @@ class HomePage extends React.Component {
 									<div className="col-md-4">
 										<img className="read" src={apple} height={128} width={128} />
 										<h2>Communicate</h2>
-										<p>Explore your passions and dive deep within your community to now others.</p>
+										<p>Explore your passions and dive deep within your community to know others.</p>
 									</div>
 									<div className="col-md-4">
 										<img className="read" src={books} height={128} width={128} />

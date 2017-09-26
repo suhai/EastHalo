@@ -22,7 +22,7 @@ class CourseEnrollments extends React.Component {
 		));
 
     return (
-      <div className=''>
+      <div className='pages'>
 
 			<h1 className='table-h1'>Enrollments Table</h1>
 			<div className="tbl-header">

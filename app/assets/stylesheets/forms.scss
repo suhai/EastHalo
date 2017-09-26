@@ -120,7 +120,15 @@
 	float:left;
 }
 .form-style-9 ul li input.align-right{
-	float:right;
+	float: right;
+}
+.form-style-9 ul li select.align-left{
+	float: left;
+	margin-top: 10px;
+}
+.form-style-9 ul li select.align-right{
+	float: right;
+	margin-top: 10px;
 }
 .form-style-9 ul li textarea{
 	width: 100%;

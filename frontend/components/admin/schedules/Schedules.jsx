@@ -23,8 +23,8 @@ class Schedules extends React.Component {
 
 
     return (
-      <div className=''>
-				<h1 className='table-h1'>Users Table</h1>
+      <div className='pages'>
+				<h1 className='table-h1'>Schedules Table</h1>
         <div className="tbl-header">
           <table cellPadding={0} cellSpacing={0}>
 						<thead>

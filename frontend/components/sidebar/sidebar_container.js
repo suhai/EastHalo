@@ -11,8 +11,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  // fetchRandomSongs: (query) => dispatch(fetchRandomSongs(query)),
-  // fetchRandomUsers: (query) => dispatch(fetchRandomUsers(query))
+  fetchRandomUsers: (query) => dispatch(fetchRandomUsers(query))
 });
 
 export default withRouter(

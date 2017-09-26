@@ -126,12 +126,12 @@ class UserShow extends React.Component {
 					</div>
 				</div>
 				<hr />
-
+				<div className='profile-detail-table'>
 				<table id="background-image" className="full-width">
 					<thead>
 						<tr className='fixed-header'>
-							<th scope="col">User Information</th>
-							<th scope="col">User Detail</th>
+							<th scope="col" className='profile-table-header'>User Information</th>
+							<th scope="col" className='profile-table-header'>User Detail</th>
 						</tr>
 					</thead>
 
@@ -199,9 +199,6 @@ class UserShow extends React.Component {
 
 					</tbody>
 				</table>
-				<div className='pull-left'>
-					<p className='table-paragraph'>User Bio</p>
-					<p>{bio}</p>
 				</div>
 			</main>
 		);

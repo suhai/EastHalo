@@ -30,7 +30,7 @@ class Grades extends React.Component {
 			<div className=''>
 				<div><button className='btn create align-left' onClick={this.renderForm}>Create Grade</button></div>
 
-				<h1 className='table-h1'>Users Table</h1>
+				<h1 className='table-h1'>Grades Table</h1>
         <div className="tbl-header">
           <table cellPadding={0} cellSpacing={0}>
 						<thead>

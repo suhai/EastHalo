@@ -27,17 +27,16 @@ class AllNews extends React.Component {
 		));
 
 		return (
-			<div className=''>
+			<div className='pages'>
 				<div><button className='btn create align-left' onClick={this.renderForm}>Create News</button></div>
 
-				<h1 className='table-h1'>Users Table</h1>
+				<h1 className='table-h1'>News Table</h1>
         <div className="tbl-header">
           <table cellPadding={0} cellSpacing={0}>
 						<thead>
 						<tr>
 							<th scope="col">News ID</th>
 							<th scope="col">Headline</th>
-							<th scope="col">News Link</th>
 							<th scope="col">Date</th>
 							<th scope="col">Action I</th>
 							<th scope="col">action II</th>

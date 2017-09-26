@@ -23,6 +23,7 @@ export const removeUser = user => ({
   type: REMOVE_USER,
   user
 });
+
 //-----------------------------------------------------------------------------
 
 
@@ -44,4 +45,9 @@ export const editUser = (user, id) => dispatch => (
 export const deleteUser = id => dispatch => (
   APIUtil.deleteUser(id)
   .then(user => dispatch(removeUser(user)))
+);
+
+export const fetchRandomUsers = query => dispatch => (
+  APIUtil.fetchUsers(query)
+    .then(users => dispatch(receiveUsers(users)))
 );

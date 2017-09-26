@@ -146,51 +146,50 @@ class ProfileEditForm extends React.Component {
 
 		return (
 			<div>
-				<h2 className='course-header'>{username}</h2>
-					<form className="form-style-9">
-						<ul>
-							<li>
-								<input type="text" className="field-style field-split align-left" value={username} onChange={this.update('username')} placeholder="username" />
-								<input type="password" className="field-style field-split align-right" value={password} onChange={this.update('password')} placeholder="Password" />
-							</li>
-							<li>
-								<input type="text" className="field-style field-split align-left" value={fname} onChange={this.update('fname')} placeholder="First Name" />
-								<input type="text" className="field-style field-split align-right" value={lname} onChange={this.update('lname')} placeholder="Last Name" />
-							</li>
-							<li>
-								<input type="date" className="field-style field-split align-left" value={dob} onChange={this.update('dob')} placeholder="DOB" />
-								<input type="email" className="field-style field-split align-right" value={email} onChange={this.update('email')} placeholder="Email" />
-							</li>
-							<li>
-								<select className="field-style field-split align-left" value={type} onChange={this.update('type')} >
-									<option value={typeOption1} >DEFAULT</option>
-									<option value={typeOption2} >Student</option>
-									<option value={typeOption3} >Professor</option>
-								</select>
+				<form className="form-style-9">
+					<ul>
+						<li>
+							<input type="text" className="field-style field-split align-left" value={username} onChange={this.update('username')} placeholder="username" />
+							<input type="password" className="field-style field-split align-right" value={password} onChange={this.update('password')} placeholder="Password" />
+						</li>
+						<li>
+							<input type="text" className="field-style field-split align-left" value={fname} onChange={this.update('fname')} placeholder="First Name" />
+							<input type="text" className="field-style field-split align-right" value={lname} onChange={this.update('lname')} placeholder="Last Name" />
+						</li>
+						<li>
+							<input type="date" className="field-style field-split align-left" value={dob} onChange={this.update('dob')} placeholder="DOB" />
+							<input type="email" className="field-style field-split align-right" value={email} onChange={this.update('email')} placeholder="Email" />
+						</li>
+						<li>
+							<select className="field-style field-split align-left" value={type} onChange={this.update('type')} >
+								<option value={typeOption1} >DEFAULT</option>
+								<option value={typeOption2} >Student</option>
+								<option value={typeOption3} >Professor</option>
+							</select>
 
-								<select className="field-style field-split align-right" value={is_admin} onChange={this.update('is_admin')} >
-									<option value={isAdminOption1} >admin?</option>
-									<option value={isAdminOption2} >TRUE</option>
-									<option value={isAdminOption3} >FALSE</option>
-								</select>
-							</li>
-							<li>
-								<input type="url" className="field-style field-split align-left" value={profile_image_url} onChange={this.update('profile_image_url')} placeholder="Image URL" />
-								<select className="field-style field-split align-right" value={gender} onChange={this.update('gender')} >
-									<option value={genderOption1} >Gender</option>
-									<option value={genderOption2} >Male</option>
-									<option value={genderOption3} >Female</option>
-								</select>
-							</li>
-							<li>
-								<textarea className="field-style" value={bio} onChange={this.update('bio')} placeholder="Bio"></textarea>
-							</li>
-							<li>
-								<input type="submit" value="Save" onClick={this.editUser} />
-								<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
-							</li>
-						</ul>
-					</form>
+							<select className="field-style field-split align-right" value={is_admin} onChange={this.update('is_admin')} >
+								<option value={isAdminOption1} >admin?</option>
+								<option value={isAdminOption2} >TRUE</option>
+								<option value={isAdminOption3} >FALSE</option>
+							</select>
+						</li>
+						<li>
+							<input type="url" className="field-style field-split align-left" value={profile_image_url} onChange={this.update('profile_image_url')} placeholder="Image URL" />
+							<select className="field-style field-split align-right" value={gender} onChange={this.update('gender')} >
+								<option value={genderOption1} >Gender</option>
+								<option value={genderOption2} >Male</option>
+								<option value={genderOption3} >Female</option>
+							</select>
+						</li>
+						<li>
+							<textarea className="field-style" value={bio} onChange={this.update('bio')} placeholder="Bio"></textarea>
+						</li>
+						<li>
+							<input type="submit" value="Save" onClick={this.editUser} />
+							<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
+						</li>
+					</ul>
+				</form>
 			</div>
 		)
 	};

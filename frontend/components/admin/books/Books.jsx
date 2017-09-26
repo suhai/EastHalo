@@ -27,7 +27,7 @@ class Books extends React.Component {
 		));
 
 		return (
-			<div className=''>
+			<div className='pages'>
 				<div><button className='btn create align-left' onClick={this.renderForm}>Create Book</button></div>
 
 				<h1 className='table-h1'>Users Table</h1>
@@ -41,7 +41,6 @@ class Books extends React.Component {
 							<th scope="col">Publisher</th>
 							<th scope="col">Price</th>
 							<th scope="col">Description</th>
-							<th scope="col">Image URL</th>
 						</tr>
 						</thead>
 					</table>

@@ -21,8 +21,9 @@
 		margin-top: 3em; 
     font-family: arial, sans-serif;
     border-collapse: collapse;
-    width: 100%;
+    width: 98%;
 	}
+
 
 	
 
@@ -45,7 +46,6 @@ main > div:first-child {
 
 .img-gallery {
   margin: auto;
-	// margin: 20px;
   display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -59,7 +59,7 @@ img {
 img:hover {
   opacity: 0.5;
   filter: alpha(opacity=50); /* For IE8 and earlier */
-  box-shadow: 0 0 2px 1px $acg;
+  // box-shadow: 0 0 2px 1px $acg;
 }
 
 div.gallery {
@@ -84,8 +84,20 @@ div.desc {
   text-align: center;
 }
 
+div.sidebar-user-img {
+  width: 75;
+	height: 75px;
+	
+	img {
+		width: 100%;
+		max-height: 75px;
+	}
+}
 
 // input:focus {
 //   background: salmon;
 // }
 
+.pages {
+	margin-top: 2em;
+}

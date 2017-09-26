@@ -51,7 +51,7 @@ class BookShow extends React.Component {
 					<hr/>
 					<div>
 					<div>
-						<h2 className='course-header'>{title}</h2>
+						
 						<div className='grouped-buttons'>
 							<button className='btn buy' onClick={this.buyBook}>Buy Book</button>
 						</div>
@@ -59,44 +59,38 @@ class BookShow extends React.Component {
 					<hr />
 				</div>
 
-				<table id="background-image" className="full-width">
-					<thead>
-						<tr className='fixed-header'>
-							<th scope="col">Book Information</th>
-							<th scope="col">Book Detail</th>
-						</tr>
-					</thead>
+				<div className='profile-detail-table'>
+					<table id="background-image" className="full-width">
+						<thead>
+							<tr className='fixed-header'>
+								<th scope="col" className='profile-table-header'>Book Information</th>
+								<th scope="col" className='profile-table-header'>Book Detail</th>
+							</tr>
+						</thead>
 
-					<tbody>
-						<tr>
-							<td>Category</td>
-							<td>{category}</td>
-						</tr>
-						<tr>
-							<td>Title</td>
-							<td>{title}</td>
-						</tr>
-						<tr>
-							<td>Author</td>
-							<td>{author}</td>
-						</tr>
-						<tr>
-							<td>Publisher</td>
-							<td>{publisher}</td>
-						</tr>
-						<tr>
-							<td>Price</td>
-							<td>{price}</td>
-						</tr>
-						<tr>
-							<td>Image</td>
-							<td>{image_url}</td>
-						</tr>
-					</tbody>
-				</table>
-				<div className='pull-left'>
-					<p className='table-paragraph'>Book Description</p>
-					<p>{description}</p>
+						<tbody>
+							<tr>
+								<td>Category</td>
+								<td>{category}</td>
+							</tr>
+							<tr>
+								<td>Title</td>
+								<td>{title}</td>
+							</tr>
+							<tr>
+								<td>Author</td>
+								<td>{author}</td>
+							</tr>
+							<tr>
+								<td>Publisher</td>
+								<td>{publisher}</td>
+							</tr>
+							<tr>
+								<td>Price</td>
+								<td>${price}</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</main>
 		);

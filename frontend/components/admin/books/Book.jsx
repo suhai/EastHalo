@@ -32,7 +32,6 @@ class Book extends React.Component {
 				<td>{publisher}</td>
 				<td>{price}</td>
 				<td>{description}</td>
-				<td>{image_url}</td>
 			</tr>
     );
   }

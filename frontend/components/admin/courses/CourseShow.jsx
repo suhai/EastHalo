@@ -126,7 +126,6 @@ class CourseShow extends React.Component {
 		return (
 			<main className='user-page'>
 				<div>
-					<h2 className='course-header'>{title}</h2>
 					<div className='grouped-buttons'>
 						<button className='btn edit' onClick={this.editCourse}>Edit Course</button>
 						<button className='btn delete' onClick={this.deleteCourse}>Delete Course</button>
@@ -135,53 +134,52 @@ class CourseShow extends React.Component {
 				</div>
 				<hr />
 				
-				<table id="background-image" className="full-width">
-					<thead>
-						<tr className='fixed-header'>
-							<th scope="col">Course Information</th>
-							<th scope="col">Course Detail</th>
-						</tr>
-					</thead>
+				
+				<div className='profile-detail-table'>
+					<table id="background-image" className="full-width">
+						<thead>
+							<tr className='fixed-header'>
+								<th scope="col" className='profile-table-header'>Course Information</th>
+								<th scope="col" className='profile-table-header'>Course Detail</th>
+							</tr>
+						</thead>
 
-					<tbody>
-						<tr>
-							<td>Course Code</td>
-							<td>{course_code}</td>
-						</tr>
-						<tr>
-							<td>Department</td>
-							<td>{departmentName}</td>
-						</tr>
-						<tr>
-							<td>Title</td>
-							<td>{title}</td>
-						</tr>
-						<tr>
-							<td>Start Time</td>
-							<td>{start_time}</td>
-						</tr>
-						<tr>
-							<td>End Time</td>
-							<td>{end_time}</td>
-						</tr>
-						<tr>
-							<td>Course Load</td>
-							<td>{course_credit}</td>
-						</tr>
-						<tr>
-							<td>Current Density</td>
-							<td>{courseDensity}</td>
-						</tr>
-						<tr>
-							<td>Instructor</td>
-							<td>{`${profLName}, ${profFName}`}</td>
-						</tr>
-					</tbody>
-				</table>
-				<div className='pull-left'>
-					<p className='table-paragraph'>Course Description</p>
-					<p>{course_description}</p>
-				</div>
+						<tbody>
+							<tr>
+								<td>Course Code</td>
+								<td>{course_code}</td>
+							</tr>
+							<tr>
+								<td>Department</td>
+								<td>{departmentName}</td>
+							</tr>
+							<tr>
+								<td>Title</td>
+								<td>{title}</td>
+							</tr>
+							<tr>
+								<td>Start Time</td>
+								<td>{start_time}</td>
+							</tr>
+							<tr>
+								<td>End Time</td>
+								<td>{end_time}</td>
+							</tr>
+							<tr>
+								<td>Course Load</td>
+								<td>{course_credit}</td>
+							</tr>
+							<tr>
+								<td>Current Density</td>
+								<td>{courseDensity}</td>
+							</tr>
+							<tr>
+								<td>Instructor</td>
+								<td>{`${profLName}, ${profFName}`}</td>
+							</tr>
+						</tbody>
+					</table>
+					</div>
 			</main>
 		);
 	}

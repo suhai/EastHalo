@@ -121,16 +121,15 @@ class CourseShow extends React.Component {
 		return (
 			<main className='user-page'>
 				<div>
-					<h2 className='course-header'>{title}</h2>
 					{enrollableUser}
 				</div>
 				<hr />
-				
+				<div className='profile-detail-table'>
 				<table id="background-image" className="full-width">
 					<thead>
 						<tr className='fixed-header'>
-							<th scope="col">Course Information</th>
-							<th scope="col">Course Detail</th>
+							<th scope="col" className='profile-table-header'>Course Information</th>
+							<th scope="col" className='profile-table-header'>Course Detail</th>
 						</tr>
 					</thead>
 
@@ -169,9 +168,6 @@ class CourseShow extends React.Component {
 						</tr>
 					</tbody>
 				</table>
-				<div className='pull-left'>
-					<p className='table-paragraph'>Course Description</p>
-					<p>{course_description}</p>
 				</div>
 			</main>
 		);

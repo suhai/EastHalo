@@ -7,7 +7,8 @@ class PostEditForm extends React.Component {
 		this.state = {
 			title: '',
 			body: '',
-			user_id: ''
+			user_id: '',
+			image_url: ''
 		};
 
 		this.update = this.update.bind(this);
@@ -42,13 +43,15 @@ class PostEditForm extends React.Component {
 			post: {
 				title: this.state.title,
 				body: this.state.body,
-				user_id: this.state.user_id
+				user_id: this.state.user_id,
+				image_url: this.state.image_url
 			}
 		};
 		this.setState({
 			title: '',
 			body: '',
-			user_id: ''
+			user_id: '',
+			image_url: ''
 		});
 
 		let id = this.props.match.params.id;
@@ -62,12 +65,14 @@ class PostEditForm extends React.Component {
 			id: props.match.params.id,
 			title: props.posts[props.match.params.id].title,
 			body: props.posts[props.match.params.id].body,
+			image_url: this.state.posts[props.match.params.id].image_url,
 			user_id: props.posts[props.match.params.id].user_id
 		}) :
 		this.setState({
 			id: '',
 			title: '',
 			body: '',
+			image_url: '',
 			user_id: ''
 		});
 	};
@@ -78,6 +83,7 @@ class PostEditForm extends React.Component {
 			id,
 			title,
 			body,
+			image_url,
 			user_id
 		} = this.state;
 
@@ -88,6 +94,9 @@ class PostEditForm extends React.Component {
 					<ul>
 						<li>
 							<input type="text" className="field-style" value={title} onChange={this.update('title')} />
+						</li>
+						<li>
+							<input type="text" className="field-style" value={image_url} onChange={this.update('image_url')} placeholder="Image URL" />
 						</li>
 						<li>
 							<textarea className="field-style" value={body} onChange={this.update('body')} ></textarea>

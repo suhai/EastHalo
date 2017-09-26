@@ -27,10 +27,10 @@ class Meals extends React.Component {
 		));
 
     return (
-      <div className=''>
+      <div className='pages'>
 				<div><button className='btn create align-left' onClick={this.renderForm}>Create Meal</button></div>
 
-				<h1 className='table-h1'>Users Table</h1>
+				<h1 className='table-h1'>Meals Table</h1>
         <div className="tbl-header">
           <table cellPadding={0} cellSpacing={0}>
 						<thead>
@@ -38,7 +38,6 @@ class Meals extends React.Component {
 							<th scope="col">Name</th>
 							<th scope="col">Price</th>
 							<th scope="col">Ingredients</th>
-							<th scope="col">Image</th>
 						</tr>
 						</thead>
 					</table>

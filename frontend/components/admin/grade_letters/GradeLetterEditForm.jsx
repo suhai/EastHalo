@@ -78,8 +78,7 @@ class GradeLetterEditForm extends React.Component {
 		} = this.state;
 
 		return (
-			<div>
-				<h2 className='course-header'>{letter}</h2>
+			<main className='user-page'>
 				<form className="form-style-9">
 					<ul>
 						<li>
@@ -92,7 +91,7 @@ class GradeLetterEditForm extends React.Component {
 						</li>
 					</ul>
 				</form>
-			</div>
+			</main>
 		)
 	};
 };

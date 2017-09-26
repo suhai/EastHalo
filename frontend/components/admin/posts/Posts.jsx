@@ -27,10 +27,10 @@ class Posts extends React.Component {
 		));
 
 		return (
-			<div className=''>
+			<div className='pages'>
 				<div><button className='btn create align-left' onClick={this.renderForm}>Create Post</button></div>
 
-				<h1 className='table-h1'>Users Table</h1>
+				<h1 className='table-h1'>Posts Table</h1>
         <div className="tbl-header">
           <table cellPadding={0} cellSpacing={0}>
 						<thead>

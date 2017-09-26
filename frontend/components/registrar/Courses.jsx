@@ -27,9 +27,9 @@ class Courses extends React.Component {
 		));
 
 		return (
-			<div className=''>
+			<div className='pages'>
 
-			<h1 className='table-h1'>Courses Table</h1>
+			<h1 className='table-h1'>Registrar's Office</h1>
 			<div className="tbl-header">
 				<table cellPadding={0} cellSpacing={0}>
 					<thead>

@@ -26,7 +26,8 @@ div.loggedhome {
 	}
 
 	aside.loggedhome-sidebar {
-    flex: 2
+		flex: 2;
+		max-height: 1000px;
   }
 
 	.sidebar-div {

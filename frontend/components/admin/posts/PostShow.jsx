@@ -89,9 +89,9 @@ class PostShow extends React.Component {
 						<div>
 							{postComments}
 						</div>
-						<div className='comment-div' onClick={this.renderCommentForm}>
+						<button className='btn add' onClick={this.renderCommentForm}>
 							Comment Here
-						</div>
+						</button>
 					</div>	
 				</div>
 			</main>

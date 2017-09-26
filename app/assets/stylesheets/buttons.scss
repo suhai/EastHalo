@@ -125,8 +125,14 @@ button.cancel {
 // }
 
 
+.message-cancel {
+	margin-left: 12.8em;
+	background-color: $salmon !important;
+}
 
-
+div.message-div h2 {
+	text-align: center;
+}
 
 //signup buton
 button.signup {

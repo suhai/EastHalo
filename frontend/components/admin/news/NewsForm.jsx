@@ -7,6 +7,7 @@ class NewsForm extends React.Component {
 		this.state = {
 			headline: '',
 			url: '',
+			image_url: '',
 			date: ''
 		};
 
@@ -39,6 +40,7 @@ class NewsForm extends React.Component {
 			news: {
 				headline: this.state.headline,
 				url: this.state.url,
+				image_url: this.state.image_url,
 				date: this.state.date
 			}
 		};
@@ -50,6 +52,7 @@ class NewsForm extends React.Component {
 		this.setState({
 			headline: '',
 			url: '',
+			image_url: '',
 			date: ''
 		});
 
@@ -60,6 +63,7 @@ class NewsForm extends React.Component {
 		const {
 			headline,
 			url,
+			image_url,
 			date
 		} = this.state;
 
@@ -72,6 +76,9 @@ class NewsForm extends React.Component {
 						</li>
 						<li>
 							<input type="text" className="field-style" value={url} onChange={this.update('url')} placeholder="News URL" />
+						</li>
+						<li>
+							<input type="text" className="field-style" value={image_url} onChange={this.update('image_url')} placeholder="Image URL" />
 						</li>
 						<li>
 							<input type="date" className="field-style" value={date} onChange={this.update('date')} placeholder="News URL" />

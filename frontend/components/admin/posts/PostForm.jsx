@@ -7,6 +7,7 @@ class PostForm extends React.Component {
 		this.state = {
 			title: '',
 			body: '',
+			image_url: '',
 			user_id: '',
 		};
 
@@ -40,6 +41,7 @@ class PostForm extends React.Component {
 			post: {
 				title: this.state.title,
 				body: this.state.body,
+				image_url: this.state.image_url,
 				user_id: this.props.currentUser.id
 			}
 		};
@@ -51,6 +53,7 @@ class PostForm extends React.Component {
 		this.setState({
 			title: '',
 			body: '',
+			image_url: '',
 			user_id: ''
 		});
 
@@ -70,6 +73,9 @@ class PostForm extends React.Component {
 					<ul>
 						<li>
 							<input type="text" className="field-style field-split align-left" value={title} onChange={this.update('title')} placeholder="Title" />
+						</li>
+						<li>
+							<input type="text" className="field-style" value={image_url} onChange={this.update('image_url')} placeholder="Image URL" />
 						</li>
 						<li>
 							<textarea className="field-style" value={body} onChange={this.update('body')} placeholder="body"></textarea>

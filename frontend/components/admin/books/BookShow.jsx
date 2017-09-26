@@ -58,11 +58,12 @@ class BookShow extends React.Component {
 				</div>
 				<hr />
 
+				<div className='profile-detail-table'>
 				<table id="background-image" className="full-width">
 					<thead>
 						<tr className='fixed-header'>
-							<th scope="col">Book Information</th>
-							<th scope="col">Book Detail</th>
+							<th scope="col" className='profile-table-header'>Book Information</th>
+							<th scope="col" className='profile-table-header'>Book Detail</th>
 						</tr>
 					</thead>
 
@@ -87,15 +88,8 @@ class BookShow extends React.Component {
 							<td>Price</td>
 							<td>{price}</td>
 						</tr>
-						<tr>
-							<td>Image</td>
-							<td>{image_url}</td>
-						</tr>
 					</tbody>
 				</table>
-				<div className='pull-left'>
-					<p className='table-paragraph'>Book Description</p>
-					<p>{description}</p>
 				</div>
 			</main>
 		);

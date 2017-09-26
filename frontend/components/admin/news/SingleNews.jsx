@@ -38,7 +38,6 @@ class SingleNews extends React.Component {
 			<tr>
 				<td onClick={this.showNews}>{id}</td>
 				<td onClick={this.showNews}>{headline.slice(0,20)}</td>
-				<td onClick={this.showNews}>{url}</td>
 				<td onClick={this.showNews}>{date}</td>
 				<td><button onClick={this.editNews}>Edit</button></td>
 				<td><button onClick={this.deleteNews}>Delete</button></td>

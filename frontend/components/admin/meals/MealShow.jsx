@@ -53,7 +53,6 @@ class MealShow extends React.Component {
 		return (
 			<main className='user-page'>
 				<div>
-					<h2 className='course-header'>{name}</h2>
 					<div className='grouped-buttons'>
 						<button className='btn edit' onClick={this.buyMeal}>Buy Meal</button>
 						<button className='btn edit' onClick={this.deleteMeal}>Delete Meal</button>
@@ -62,36 +61,34 @@ class MealShow extends React.Component {
 				</div>
 				<hr />
 
-				<table id="background-image" className="full-width">
-					<thead>
-						<tr className='fixed-header'>
-							<th scope="col">Meal Information</th>
-							<th scope="col">Meal Detail</th>
-						</tr>
-					</thead>
+				<div className='profile-detail-table'>
+					<table id="background-image" className="full-width">
+						<thead>
+							<tr className='fixed-header'>
+								<th scope="col" className='profile-table-header'>Meal Information</th>
+								<th scope="col" className='profile-table-header'>Meal Detail</th>
+							</tr>
+						</thead>
 
-					<tbody>
-						<tr>
-							<td>Name</td>
-							<td>{name}</td>
-						</tr>
-						<tr>
-							<td>Ingredients</td>
-							<td>{ingredients}</td>
-						</tr>
-						<tr>
-							<td>Price</td>
-							<td>{price}</td>
-						</tr>
-						<tr>
-							<td>Image</td>
-							<td>{image_url}</td>
-						</tr>
-					</tbody>
-				</table>
-				<div className='pull-left'>
-					<p className='table-paragraph'>Book Description</p>
-					<p>Some Description Can Go Here</p>
+						<tbody>
+							<tr>
+								<td>Name</td>
+								<td>{name}</td>
+							</tr>
+							<tr>
+								<td>Ingredients</td>
+								<td>{ingredients}</td>
+							</tr>
+							<tr>
+								<td>Price</td>
+								<td>{price}</td>
+							</tr>
+							<tr>
+								<td>Image</td>
+								<td>{image_url}</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</main>
 		);

@@ -22,9 +22,9 @@ class AllNews extends React.Component {
 		));
 
 		return (
-			<div className=''>
+			<div className='pages'>
 
-			<h1 className='table-h1'>Users Table</h1>
+			<h1 className='table-h1'>News Page</h1>
 			<div className="tbl-header">
 				<table cellPadding={0} cellSpacing={0}>
 					<thead>
@@ -45,10 +45,6 @@ class AllNews extends React.Component {
 						</tbody>
 					</table>
 				</div>
-
-				<p className='pull-left'>
-					Table Footer or Description Will Go Here
-				</p>
 			</div>
 		);
 	}

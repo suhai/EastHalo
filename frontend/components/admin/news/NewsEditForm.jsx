@@ -7,6 +7,7 @@ class NewsEditForm extends React.Component {
 		this.state = {
 			headline: '',
 			url: '',
+			imaage_url: '',
 			date: ''
 		};
 
@@ -40,6 +41,7 @@ class NewsEditForm extends React.Component {
 			news: {
 				headline: this.state.headline,
 				url: this.state.url,
+				image_url: this.state.image_url,
 				date: this.state.date
 			}
 		};
@@ -52,6 +54,7 @@ class NewsEditForm extends React.Component {
 		this.setState({
 			headline: '',
 			url: '',
+			image_url: '',
 			date: '',
 		});
 
@@ -64,11 +67,13 @@ class NewsEditForm extends React.Component {
 			id: props.match.params.id,
 			headline: props.news[props.match.params.id].headline,
 			url: props.news[props.match.params.id].url,
+			image_url: props.news[props.match.params.id].image_url,
 			date: props.news[props.match.params.id].date
 		}) :
 		this.setState({
 			headline: '',
 			url: '',
+			image_url: '',
 			date: ''
 		});
 	};
@@ -78,12 +83,12 @@ class NewsEditForm extends React.Component {
 		const {
 			headline,
 			url,
+			image_url,
 			date
 		} = this.state;
 
 		return (
 			<div>
-				<h2 className='course-header'>{headline}</h2>
 				<form className="form-style-9">
 					<ul>
 						<li>
@@ -91,6 +96,9 @@ class NewsEditForm extends React.Component {
 						</li>
 						<li>
 							<input type="text" className="field-style" value={url} onChange={this.update('url')} placeholder="News URL" />
+						</li>
+						<li>
+							<input type="text" className="field-style" value={image_url} onChange={this.update('image_url')} placeholder="Image URL" />
 						</li>
 						<li>
 							<input type="date" className="field-style" value={date} onChange={this.update('date')} placeholder="News URL" />

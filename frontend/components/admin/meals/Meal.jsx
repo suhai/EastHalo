@@ -29,7 +29,6 @@ class Meal extends React.Component {
 				<td>{name}</td>
 				<td>{price}</td>
 				<td>{ingredients}</td>
-				<td>{image_url}</td>
 			</tr>
     );
   }

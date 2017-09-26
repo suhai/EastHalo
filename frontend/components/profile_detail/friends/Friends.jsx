@@ -15,7 +15,7 @@ class Friends extends React.Component {
 		));
 
 		return (
-			<div className=''>
+			<div className='pages'>
 				<h1 className='table-h1'>My Friends</h1>
         <div className="tbl-header2">
           <table cellPadding={0} cellSpacing={0}>

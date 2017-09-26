@@ -1,6 +1,6 @@
 import React from 'react';
 // import SidebarPostContainer from './sidebar_post_container';
-// import SidebarUserContainer from './sidebar_user_container';
+import SidebarUserContainer from './sidebar_user_container';
 // import SidebarNewsContainer from './sidebar_news_container';
 import { values } from 'lodash';
 import { Route, Switch } from 'react-router-dom';
@@ -8,15 +8,13 @@ import { Route, Switch } from 'react-router-dom';
 class SideBar extends React.Component {
   constructor (props) {
     super(props);
-    this.state = { offset: 0, userIds: [], songIds: [] };
+    this.state = { offset: 0, userIds: [] };
   }
 
   componentDidMount() {
-    // let sidebar = this;
-    // this.props.fetchRandomUsers({ query: this.props.currentUser.id })
-    //   .then((action) => sidebar.setState({ userIds: Object.keys(action.users) }));
-    // this.props.fetchRandomSongs({ query: this.state.offset })
-    //   .then((action) => sidebar.setState({ songIds: Object.keys(action.songs) }));
+    let sidebar = this;
+    this.props.fetchRandomUsers({ query: this.props.currentUser.id })
+      .then((action) => sidebar.setState({ userIds: Object.keys(action.users) }));
   }
 
   chartBox() {
@@ -39,9 +37,9 @@ class SideBar extends React.Component {
   userDescription() {
     let users = this.props.users;
     let user = {};
-    let name = this.props.match.params.username;
+    let id = this.props.match.params.id;
     for (let key in users) {
-      if (users[key].username === name) {
+      if (users[key].id === id) {
         user = users[key];
       }
     }
@@ -72,13 +70,9 @@ class SideBar extends React.Component {
 
     return (
       <aside className='loggedhome-sidebar'>
-        <Switch>
-          <Route exact path='/stream' component={() => this.chartBox()} />
-          <Route exact path='/:username' component={() => this.userDescription()} />
-          <Route exact path='/:username/:whatever' component={() => this.userDescription()} />
-        </Switch>
-        <li className='artist-suggestion'>
-          <span className='follow'>Who to follow</span>
+				<h5>Check Out Other Users</h5>
+				<hr/>
+        <li className=''>
           <ul>
             {users}
           </ul>
@@ -86,7 +80,7 @@ class SideBar extends React.Component {
 				
 				<div className="chat-area">
 					<ul>
-						<h3>Lets Chat!!!</h3>
+						<h3>Chat Area!!!</h3>
 					</ul>
 					<div className="chatbox">
 						

@@ -79,7 +79,7 @@ class MessageForm extends React.Component {
 					<input type="text" className="field-style" value={subject} onChange={this.update('subject')} placeholder="Subject" />
 					<textarea className="field-style" value={msg} onChange={this.update('msg')} placeholder="Message"></textarea>
 					<input type="submit" value="Submit Message" onClick={this.addMessage} />
-					<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />		
+					<input type="submit" value="Cancel" className="message-cancel" onClick={this.redirectPath} />		
 				</form>
 				</div>
 			</div>

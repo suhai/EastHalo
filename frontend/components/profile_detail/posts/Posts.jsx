@@ -27,7 +27,7 @@ class Posts extends React.Component {
 		));
 
 		return (
-			<div className=''>
+			<div className='pages'>
 				<div><button className='btn create align-left' onClick={this.renderForm}>Create Post</button></div>
 
 				<h1 className='table-h1'>My Posts</h1>

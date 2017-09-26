@@ -41,13 +41,21 @@ class MealShow extends React.Component {
 
 		return (
 			<main className='user-page'>
-				<div>
-					<h2 className='course-header'>{name}</h2>
-					<div className='grouped-buttons'>
-						<button className='btn buy' onClick={this.buyMeal}>Buy Meal</button>
+				<div className="img-gallery">
+					<div className="gallery">
+						<img src={image_url} alt={name} />
 					</div>
 				</div>
 				<hr />
+				<div>
+					<div>
+						<h2 className='course-header'>{name}</h2>
+						<div className='grouped-buttons'>
+							<button className='btn buy' onClick={this.buyMeal}>Buy Meal</button>
+						</div>
+					</div>
+					<hr />
+				</div>
 
 				<table id="background-image" className="full-width">
 					<thead>

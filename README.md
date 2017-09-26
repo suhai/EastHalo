@@ -7,13 +7,12 @@
 The Application can be found here: [EastHalo](https://easthalo.herokuapp.com/)
 
 ## Table of Content
-- [Overview](#example)
-- [Database](#example)
+- [Overview](#overview)
+- [Database](#backend)
 - [Routes / API](#api)
 - [Features](#features)
 - [Example Code](#example)
-- [Optimizations](#optimizations)
-- [Future](#support)
+- [Future](#future)
 
 ## Overview
 This is a single page web application modeled after a university website. It was built with a Rails backend with a PostgreS database and a React-Redux frontend. it took me three weeks from start to it's present state (as of September 18, 2017). It is made of two main layers; the Landing Page, and the LoggedHome Page. The Landing Page is pretty self explanatory and doesn't contain much beyond just signing users up and logging them in. The Logged Home Page on the other hand contains the main functionalities of the app. I go into the details below and in my screen cast of the features found on the landing page of the live app.
@@ -57,6 +56,8 @@ A sample model from the Database is shown below:
   5 | French    |      1        |   19:00    |  22:00   |      35      | 
 ```
 
+
+## API
 ## SAMPLE BACKEND OUTPUT FROM API CALLS
 ```js
 export const createFriendship = friendship => (

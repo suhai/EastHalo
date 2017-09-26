@@ -175,6 +175,7 @@ end
   7 | CRUD Books                             |     N     |    N    |     N     |   Y   |
   7 | CRUD News                              |     N     |    N    |     Y     |   Y   |
   8 | Create / Assign Grade                  |     N     |    N    |     Y     |   N   |
+  8 | Search  Users by Name                  |     N     |    N    |     Y     |   N   |
   9 | Acess The News                         |     Y     |    Y    |     Y     |   Y   |
   0 | Transcript (Instantiated for Students) |     N     |    Y    |     N     |   N   |
   0 | Schedule (Instantiated for all Users)  |     Y     |    Y    |     Y     |   Y   |
@@ -184,7 +185,6 @@ end
   0 | Create Assignments*                    |     N     |    N    |     Y     |   N   |
   0 | Take Assignment*                       |     N     |    Y    |     N     |   N   |
   0 | Send Mass Emails To All Users*         |     Y     |    Y    |     Y     |   Y   |
-	0 | Search For Other Users by Name         |     Y     |    Y    |     Y     |   Y   |
 The Features with * are being worked on and so are not currently available on the app.
 ```
 

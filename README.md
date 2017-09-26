@@ -345,7 +345,8 @@ export default configureStore;
 
 
 
-## Future Plans
+## Future
+### Plans For Future / Continuous Work On This Project
 * I plan to add a chat service to the Logged HomePage to mimick facebook chat, implemented Follow and Like features for users to follow other users and like posts and comments. In addition I plan to implement a Stripe payment portal for users to be able to make purchaes with real payments. Currently users have $0 accounts instantiated for them upon signing up. They can then make purchaes from the cafetaria and/or bookstore with their accounts debited with the prices of goods purchased and the bookstore / cafetaria accounts credited with the equivalent amount. I think it'd be more realistic to actually have a credit card / debit card payment system. I also plan to implement a feature for professors to create questions and tests that gets sent to all students in a particular course the professor is teaching. The students answers will then be sent back to the professor who can then assign them a grade for the course.
 
 * My hope is to keep working on improving the current performance of the app and add more features as time permit. I am in the middle of the search for my first job and may not be able to continue working on adding more features until I have dispensable time.

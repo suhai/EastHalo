@@ -58,36 +58,19 @@ A sample model from the Database is shown below:
 ## API
 
 ```js
-export const createFriendship = friendship => (
-	$.ajax({
-		method: 'POST',
-		url: '/api/friendships',
-		dataType: "json",
-		data: friendship
-	})
-);
+$.ajax({
+	method: 'POST',
+	url: '/api/friendships',
+	dataType: "json",
+	data: friendship
+})
 
 
-export const fetchGrade = id => (
-	$.ajax({
-		method: 'GET',
-		url: `api/grades/${id}`
-	})
-);
+$.ajax({
+	method: 'GET',
+	url: `api/grades/${id}`
+})
 
-
-export const fetchUsers = query => {
-  if (query === undefined) query = {};
-  return $.ajax({
-    method: 'GET',
-		url: "api/users",
-		data: {
-      query: query.query,
-      user_id: query.user_id,
-      search: query.search
-    }
-  });
-};
 
 $.ajax({
 	method: 'PATCH',
@@ -193,7 +176,6 @@ end
   7 | CRUD News                              |     N     |    N    |     Y     |   Y   |
   8 | Create / Assign Grade                  |     N     |    N    |     Y     |   N   |
   9 | Acess The News                         |     Y     |    Y    |     Y     |   Y   |
-	9 | Search For Other Users                 |     N     |    Y    |     N     |   N   |
   0 | Transcript (Instantiated for Students) |     N     |    Y    |     N     |   N   |
   0 | Schedule (Instantiated for all Users)  |     Y     |    Y    |     Y     |   Y   |
   0 | Chat With Other Users*                 |     Y     |    Y    |     Y     |   Y   |
@@ -202,7 +184,7 @@ end
   0 | Create Assignments*                    |     N     |    N    |     Y     |   N   |
   0 | Take Assignment*                       |     N     |    Y    |     N     |   N   |
   0 | Send Mass Emails To All Users*         |     Y     |    Y    |     Y     |   Y   |
- 
+	0 | Search For Other Users by Name         |     Y     |    Y    |     Y     |   Y   |
 The Features with * are being worked on and so are not currently available on the app.
 ```
 

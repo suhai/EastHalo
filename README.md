@@ -1,8 +1,21 @@
 
 # The EastHalo University
+<div align="center">
+  <strong>A Clone of a Univeristy Registration Web Application</strong>
+</div>
 
 The Application can be found here: [EastHalo](https://easthalo.herokuapp.com/)
 
+## Table of Content
+- [Overview](#example)
+- [Database](#example)
+- [Routes / API](#api)
+- [Features](#features)
+- [Example Code](#example)
+- [Optimizations](#optimizations)
+- [Future](#support)
+
+## Overview
 This is a single page web application modeled after a university website. It was built with a Rails backend with a PostgreS database and a React-Redux frontend. it took me three weeks from start to it's present state (as of September 18, 2017). It is made of two main layers; the Landing Page, and the LoggedHome Page. The Landing Page is pretty self explanatory and doesn't contain much beyond just signing users up and logging them in. The Logged Home Page on the other hand contains the main functionalities of the app. I go into the details below and in my screen cast of the features found on the landing page of the live app.
 
 
@@ -44,64 +57,64 @@ A sample model from the Database is shown below:
   5 | French    |      1        |   19:00    |  22:00   |      35      | 
 ```
 
-### SAMPLE BACKEND OUTPUT FROM API CALLS
+## SAMPLE BACKEND OUTPUT FROM API CALLS
 ```js
-POST REQUESTS
-$.ajax({
-	method: 'POST',
-	url: 'api/users',
-	data: {
-		user: {
-		username: 'Rich',
-		password: 'xxxxxxxxxx'
-		}
-	},
-})
-<!-- The above will create a new user with username 'Rich' with his password -->
+var html = require('choo/html')
+var log = require('choo-log')
+var choo = require('choo')
 
-$.ajax({
-	method: 'POST',
-	url: 'api/friendships',
-	data: {
-		friendship: {
-		user_id: 3,
-		friend_id: 4
-		}
-	},
-})
-<!-- The above will create a friendship between users with ids 3 and 4. This is a mutual action -->
+var app = choo()
+app.use(log())
+app.use(countStore)
+app.route('/', mainView)
+app.mount('body')
 
-$.ajax({
-	method: 'POST',
-	url: 'api/course_enrollments',
-	data: {
-		course_enrollment: {
-		course_id: 1,
-		student_id: 3
-		}
-	},
-})
-<!-- The above will enroll the student with id 3 into the course with id 1 -->
+function mainView (state, emit) {
+  return html`
+    <body>
+      <h1>count is ${state.count}</h1>
+      <button onclick=${onclick}>Increment</button>
+    </body>
+  `
 
-GET REQUESTS
-$.ajax({
-  type: 'GET',
-  url: 'api/professors'
-})
-<!-- The above will retrieve all users who are of type 'Professor' from the database -->
+  function onclick () {
+    emit('increment', 1)
+  }
+}
 
-$.ajax({
-  type: 'GET',
-  url: 'api/users/3'
-})
-The above will retrieve the user with user_id 3 from the database
+function countStore (state, emitter) {
+  state.count = 0
+  emitter.on('increment', function (count) {
+    state.count += count
+    emitter.emit('render')
+  })
+}
 
-$.ajax({
-	method: 'GET',
-	url: 'api/cafetaria/meals'
-})
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from '../reducers/root_reducer';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { createLogger } from 'redux-logger';
+
+const middlewares = [thunk];
+
+if (process.env.NODE_ENV !== 'production') {
+  middlewares.unshift(createLogger());
+}
+
+const configureStore = (preloadedState = {}) => (
+  createStore(
+    rootReducer,
+    preloadedState,
+    composeWithDevTools(
+    applyMiddleware(...middlewares))
+  )
+);
+
+export default configureStore;
+```
 <!-- The above will retrieve all the meals from the cafetaria in the database -->
-
+```js
 PATCH REQUESTS
 $.ajax({
 	method: 'PATCH',
@@ -210,28 +223,27 @@ end
     |   Privilge                             | All Users | Student | Professor | Admin |
 ----+----------------------------------------+----------+---------+-----------+--------
   1 | Create / Share Post                    |     Y     |    Y    |     Y     |   Y   |
-  1 | Comment On Posts                       |     Y     |    Y    |     Y     |   Y   |
-  1 | Friend / Unfriend Other Users          |     Y     |    Y    |     Y     |   Y   |
-  1 | Add / Drop Course                      |     N     |    Y    |     N     |   N   |
-  1 | Edit Self Attributes                   |     Y     |    Y    |     Y     |   Y   |
-  1 | Edit Other Users Privileges            |     N     |    N    |     N     |   Y   |
-  1 | CRUD Courses                           |     N     |    N    |     Y     |   Y   |
-  1 | CRUD Departments                       |     N     |    N    |     N     |   Y   |
-  1 | CRUD Meals                             |     N     |    N    |     N     |   Y   |
-  1 | CRUD Books                             |     N     |    N    |     N     |   Y   |
-  1 | CRUD News                              |     N     |    N    |     Y     |   Y   |
-  1 | Create / Assign Grade                  |     N     |    N    |     Y     |   N   |
-  1 | Acess The News                         |     Y     |    Y    |     Y     |   Y   |
-	1 | Search For Other Users                 |     Y     |    Y    |     Y     |   Y   |
-  1 | Transcript (Instantiated for Students) |     N     |    Y    |     N     |   N   |
-  1 | Schedule (Instantiated for all Users)  |     Y     |    Y    |     Y     |   Y   |
-  1 | Chat With Other Users*                 |     Y     |    Y    |     Y     |   Y   |
-  1 | Purchase Books*                        |     Y     |    Y    |     Y     |   Y   |
-  1 | Purchase Meals*                        |     Y     |    Y    |     Y     |   Y   |
-  1 | Create Assignments*                    |     N     |    N    |     Y     |   N   |
-  1 | Take Assignment*                       |     N     |    Y    |     N     |   N   |
-  1 | Send Mass Emails To All Users*         |     Y     |    Y    |     Y     |   Y   |
-  1 |                                        |     N     |    N    |     Y     |   Y   |
+  2 | Comment On Posts                       |     Y     |    Y    |     Y     |   Y   |
+  3 | Friend / Unfriend Other Users          |     Y     |    Y    |     Y     |   Y   |
+  4 | Add / Drop Course                      |     N     |    Y    |     N     |   N   |
+  5 | Edit Self Attributes                   |     Y     |    Y    |     Y     |   Y   |
+  6 | Edit Other Users Privileges            |     N     |    N    |     N     |   Y   |
+  7 | CRUD Courses                           |     N     |    N    |     Y     |   Y   |
+  7 | CRUD Departments                       |     N     |    N    |     N     |   Y   |
+  7 | CRUD Meals                             |     N     |    N    |     N     |   Y   |
+  7 | CRUD Books                             |     N     |    N    |     N     |   Y   |
+  7 | CRUD News                              |     N     |    N    |     Y     |   Y   |
+  8 | Create / Assign Grade                  |     N     |    N    |     Y     |   N   |
+  9 | Acess The News                         |     Y     |    Y    |     Y     |   Y   |
+	9 | Search For Other Users                 |     N     |    Y    |     N     |   N   |
+  0 | Transcript (Instantiated for Students) |     N     |    Y    |     N     |   N   |
+  0 | Schedule (Instantiated for all Users)  |     Y     |    Y    |     Y     |   Y   |
+  0 | Chat With Other Users*                 |     Y     |    Y    |     Y     |   Y   |
+  0 | Purchase Books*                        |     Y     |    Y    |     Y     |   Y   |
+  0 | Purchase Meals*                        |     Y     |    Y    |     Y     |   Y   |
+  0 | Create Assignments*                    |     N     |    N    |     Y     |   N   |
+  0 | Take Assignment*                       |     N     |    Y    |     N     |   N   |
+  0 | Send Mass Emails To All Users*         |     Y     |    Y    |     Y     |   Y   |
  
 The Features with * are being worked on and so are not currently available on the app.
 ```
@@ -243,268 +255,61 @@ In a real world university users are already pre-screened as members of the univ
 
 
 ### 
-# SAMPLE FRONTEND CODE
+## Example
 ```js
-import React from 'react';
-import { values, merge } from 'lodash';
-import { NavLink, Route, Switch } from 'react-router-dom';
-import GradeLetter from './GradeLetter';
+var html = require('choo/html')
+var log = require('choo-log')
+var choo = require('choo')
 
-class GradeLetters extends React.Component {
-  constructor(props) {
-    super(props);
-		this.state = {
+var app = choo()
+app.use(log())
+app.use(countStore)
+app.route('/', mainView)
+app.mount('body')
 
-		};
-		this.renderForm = this.renderForm.bind(this);
-	};
-	
-	renderForm() {
-		window.location.hash = `/admin/${this.props.currentUser.username}/grade_letters/grade_letterform`;
-	};
+function mainView (state, emit) {
+  return html`
+    <body>
+      <h1>count is ${state.count}</h1>
+      <button onclick=${onclick}>Increment</button>
+    </body>
+  `
 
-	componentDidMount() {
-		this.props.fetchGradeLetters();
-	};
-
-  render() {
-		let grade_letterList = values(this.props.grade_letters);
-		let grade_letters = grade_letterList.map((grade_letter, idx) => (
-			<GradeLetter key={idx} grade_letter={grade_letter} deleteGradeLetter={this.props.deleteGradeLetter} currentUser={this.props.currentUser}/>
-		));
-
-    return (
-      <div className=''>
-				<div><button className='btn create align-left' onClick={this.renderForm}>Create GradeLetter</button></div>
-
-				<table id="gradient-style" className="full-width">
-					<thead>
-						<tr>
-							<th scope="col">GradeLetter</th>
-							<th scope="col">Edit</th>
-							<th scope="col">Delte</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						{grade_letters}
-					</tbody>
-
-				</table>
-				<p className='pull-left'>
-					Table Footer or Description Will Go Here
-				</p>
-			</div>
-    );
+  function onclick () {
+    emit('increment', 1)
   }
 }
 
-export default GradeLetters;
-```
+function countStore (state, emitter) {
+  state.count = 0
+  emitter.on('increment', function (count) {
+    state.count += count
+    emitter.emit('render')
+  })
+}
 
-### USER EDIT
-```js
-import React from 'react';
-import { values, merge } from 'lodash';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from '../reducers/root_reducer';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { createLogger } from 'redux-logger';
 
-class UserEditForm extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			username: '',
-			fname: '',
-			lname: '',
-			password: '',
-			email: '',
-			bio: '',
-			dob: '',
-			type: '',
-			gender: '',
-			is_admin: '',
-			profile_image_url: '',
-			typeOption1: 'NULL',
-			typeOption2: 'Student',
-			typeOption3: 'Professor',
-			genderOption1: 'Other',
-			genderOption2: 'Male',
-			genderOption3: 'Female',
-			isAdminOption1: 'DEFAULT',
-			isAdminOption2: 'TRUE',
-			isAdminOption3: 'FALSE'
-		};
+const middlewares = [thunk];
 
-		this.update = this.update.bind(this);
-		this.handleKey = this.handleKey.bind(this);
-		this.editUser = this.editUser.bind(this);
-		this.redirectPath = this.redirectPath.bind(this);
-	};
+if (process.env.NODE_ENV !== 'production') {
+  middlewares.unshift(createLogger());
+}
 
-	componentDidMount() {
-		const id = this.props.match.params.id;
-		this.props.fetchUser(id);
-		this.props.fetchUsers();
-	};
+const configureStore = (preloadedState = {}) => (
+  createStore(
+    rootReducer,
+    preloadedState,
+    composeWithDevTools(
+    applyMiddleware(...middlewares))
+  )
+);
 
-	update(prop) {
-		return e => this.setState({ [prop]: e.currentTarget.value });
-	};
-
-	handleKey(e) {
-		if (e.keyCode === 13) {
-			this.editUser();
-		}
-	};
-
-	redirectPath() {
-		window.location.hash = `admin/${this.props.currentUser.username}/users/${this.props.match.params.id}`;
-	};
-
-	editUser() {
-		let data = {
-			user: {
-				username: this.state.username,
-				fname: this.state.fname,
-				lname: this.state.lname,
-				password: this.state.password,
-				email: this.state.email,
-				dob: this.state.dob,
-				bio: this.state.bio,
-				type: this.state.type,
-				gender: this.state.gender,
-				is_admin: this.state.is_admin,
-				profile_image_url: this.state.profile_image_url,
-			}
-		};
-		this.setState({
-			username: '',
-			fname: '',
-			lname: '',
-			password: '',
-			email: '',
-			bio: '',
-			dob: '',
-			type: '',
-			gender: '',
-			is_admin: '',
-			profile_image_url: ''
-		});
-
-		console.log('about to edit  ......')
-		let id = this.props.match.params.id;
-		this.props.editUser(data, id);
-		console.log('finished editing ......')
-		this.redirectPath();
-	};
-
-	componentWillReceiveProps(props) {
-		Object.keys(props.users).length > 0 ?
-		this.setState({
-			id: props.match.params.id,
-			username: props.users[props.match.params.id].username,
-			fname: props.users[props.match.params.id].fname,
-			lname: props.users[props.match.params.id].lname,
-			password: props.users[props.match.params.id].password,
-			email: props.users[props.match.params.id].email,
-			bio: props.users[props.match.params.id].bio,
-			dob: props.users[props.match.params.id].dob,
-			type: props.users[props.match.params.id].type,
-			gender: props.users[props.match.params.id].gender,
-			is_admin: props.users[props.match.params.id].is_admin,
-			profile_image_url: props.users[props.match.params.id].profile_image_url
-		}) :
-		this.setState({
-			username: '',
-			fname: '',
-			lname: '',
-			password: '',
-			email: '',
-			bio: '',
-			dob: '',
-			type: '',
-			gender: '',
-			is_admin: 'DEFAULT',
-			profile_image_url: ''
-		});
-	};
-
-
-	render() {
-		const {
-			username,
-			fname,
-			lname,
-			password,
-			email,
-			bio,
-			dob,
-			type,
-			gender,
-			is_admin,
-			profile_image_url,
-			typeOption1,
-			typeOption2,
-			typeOption3,
-			genderOption1,
-			genderOption2,
-			genderOption3,
-			isAdminOption1,
-			isAdminOption2,
-			isAdminOption3,
-		} = this.state;
-
-		return (
-			<div>
-				<h2 className='course-header'>{username}</h2>
-					<form className="form-style-9">
-						<ul>
-							<li>
-								<input type="text" className="field-style field-split align-left" value={username} onChange={this.update('username')} placeholder="username" />
-								<input type="password" className="field-style field-split align-right" value={password} onChange={this.update('password')} placeholder="Password" />
-							</li>
-							<li>
-								<input type="text" className="field-style field-split align-left" value={fname} onChange={this.update('fname')} placeholder="First Name" />
-								<input type="text" className="field-style field-split align-right" value={lname} onChange={this.update('lname')} placeholder="Last Name" />
-							</li>
-							<li>
-								<input type="date" className="field-style field-split align-left" value={dob} onChange={this.update('dob')} placeholder="DOB" />
-								<input type="email" className="field-style field-split align-right" value={email} onChange={this.update('email')} placeholder="Email" />
-							</li>
-							<li>
-								<select className="field-style field-split align-left" value={type} onChange={this.update('type')} >
-									<option value={typeOption1} >TYPE</option>
-									<option value={typeOption2} >Student</option>
-									<option value={typeOption3} >Professor</option>
-								</select>
-
-								<select className="field-style field-split align-right" value={is_admin} onChange={this.update('is_admin')} >
-									<option value={isAdminOption1} >ADMIN?</option>
-									<option value={isAdminOption2} >TRUE</option>
-									<option value={isAdminOption3} >FALSE</option>
-								</select>
-							</li>
-							<li>
-								<input type="url" className="field-style field-split align-left" value={profile_image_url} onChange={this.update('profile_image_url')} placeholder="Image URL" />
-								<select className="field-style field-split align-right" value={gender} onChange={this.update('gender')} >
-									<option value={genderOption1} >Gender</option>
-									<option value={genderOption2} >Male</option>
-									<option value={genderOption3} >Female</option>
-								</select>
-							</li>
-							<li>
-								<textarea className="field-style" value={bio} onChange={this.update('bio')} placeholder="Bio"></textarea>
-							</li>
-							<li>
-								<input type="submit" value="Save" onClick={this.editUser} />
-								<input type="submit" value="Cancel" className="field-split align-right" onClick={this.redirectPath} />
-							</li>
-						</ul>
-					</form>
-			</div>
-		)
-	};
-};
-
-export default UserEditForm;
+export default configureStore;
 ```
 
 ## Homepage

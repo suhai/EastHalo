@@ -59,6 +59,16 @@ A sample model from the Database is shown below:
 
 ## SAMPLE BACKEND OUTPUT FROM API CALLS
 ```js
+export const createFriendship = friendship => (
+	$.ajax({
+		method: 'POST',
+		url: '/api/friendships',
+		dataType: "json",
+		data: friendship
+	})
+);
+
+
 var html = require('choo/html')
 var log = require('choo-log')
 var choo = require('choo')

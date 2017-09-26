@@ -23,9 +23,7 @@ This is a single page web application modeled after a university website. It was
 The app is built on a Ruby on Rails backend supported by a PostgreSQL database. I abstracted the routes (except the root, which is the 'static_pages' in this app) from a traditonal Rails routes to React Router. Initially I planned to center the app around two user models; students and professors. However, as I start with my wireframe I realized that I should leave room for scalability in case i decide to extend the user classes beyond just students and professors. So I ended up with a User Model / Class from which all other user types can inherit from. As at the time of writing this README I had four types of users; students, professors, administrators, and ordinary users. 
 A sample model from the Database is shown below:
 
-																	DATABASE MODELS
-```js
------------------------------------------------------------------------------		
+```js	
 
                    List of relations
  Schema |           Name            |   Type   | Owner
@@ -43,9 +41,9 @@ A sample model from the Database is shown below:
  public | users                     | table    | suhai
 (26 rows)
 
-#------------------------------------------------------------------------------
+#--------------------------------------------------------------
 ## SAMPLE DATA FROM THE COURSES TABLE
-#------------------------------------------------------------------------------	
+#--------------------------------------------------------------
 
  id |   title   | course_credit | start_time | end_time | professor_id |
 ----+-----------+---------------+------------+----------+--------------
@@ -58,7 +56,7 @@ A sample model from the Database is shown below:
 
 
 ## API
-## SAMPLE BACKEND OUTPUT FROM API CALLS
+
 ```js
 export const createFriendship = friendship => (
 	$.ajax({
@@ -70,70 +68,27 @@ export const createFriendship = friendship => (
 );
 
 
-var html = require('choo/html')
-var log = require('choo-log')
-var choo = require('choo')
-
-var app = choo()
-app.use(log())
-app.use(countStore)
-app.route('/', mainView)
-app.mount('body')
-
-export const createFriendhsip = friendship => (
-
+export const fetchGrade = id => (
+	$.ajax({
+		method: 'GET',
+		url: `api/grades/${id}`
+	})
 );
 
-export const mainView (state, emit) {
-  return html`
-    <body>
-      <h1>count is ${state.count}</h1>
-      <button onclick=${onclick}>Increment</button>
-    </body>
-  `
 
-  $.ajax({
-	method: 'POST',
-	url: '/api/friendships/',
-	dataType: 'json',
-	data: friendship
-})
-}
+export const fetchUsers = query => {
+  if (query === undefined) query = {};
+  return $.ajax({
+    method: 'GET',
+		url: "api/users",
+		data: {
+      query: query.query,
+      user_id: query.user_id,
+      search: query.search
+    }
+  });
+};
 
-function countStore (state, emitter) {
-  state.count = 0
-  emitter.on('increment', function (count) {
-    state.count += count
-    emitter.emit('render')
-  })
-}
-
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from '../reducers/root_reducer';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import { createLogger } from 'redux-logger';
-
-const middlewares = [thunk];
-
-if (process.env.NODE_ENV !== 'production') {
-  middlewares.unshift(createLogger());
-}
-
-const configureStore = (preloadedState = {}) => (
-  createStore(
-    rootReducer,
-    preloadedState,
-    composeWithDevTools(
-    applyMiddleware(...middlewares))
-  )
-);
-
-export default configureStore;
-```
-<!-- The above will retrieve all the meals from the cafetaria in the database -->
-```js
-PATCH REQUESTS
 $.ajax({
 	method: 'PATCH',
 	url: 'api/student/7',
@@ -143,17 +98,8 @@ $.ajax({
 		}
 	},
 })
-<!-- The above will update the fname of student with id 7 to 'Mary'  -->
 
-DELETE REQUESTS
-$.ajax({
-  method: 'DELETE',
-  url: 'api/users/8'
-})
-<!-- The above will delete user with user_id 8 from the database -->
 ```
-
-
 
 ## Class Interactions
 ```ruby
@@ -189,12 +135,6 @@ class Course < ApplicationRecord
 		self.start_time  ||= 0900
 		self.end_time  ||= 1000
 	end	
-end
-
-
-class Transcript < ApplicationRecord
-	validates :student_id, :presence => true, :uniqueness => true
-	belongs_to :student, :class_name => :User, :foreign_key => "student_id"
 end
 
 
@@ -272,40 +212,9 @@ The Features with * are being worked on and so are not currently available on th
 In a real world university users are already pre-screened as members of the university and given credentials to create user accounts. For the purpose of this project I have left open the possibility that anyone can sign up. A user's default type is a regular user. An admin can then grant the user privilges by assigning a type to their profile, be it Student, Professor, or another Admin. These 'type' determine what user privilges a user gets within the application. As demonstrated in the table above, all users get a Schedule instantiated for them by default on signing, and they can create and comment on posts, can become friends with any other user user, can access the news, purchase meals and books. Beyong that point there is an overlap in privileges, with the Admin User types enjoying the most exclusive privilges.
 
 
-### 
+
 ## Example
 ```js
-var html = require('choo/html')
-var log = require('choo-log')
-var choo = require('choo')
-
-var app = choo()
-app.use(log())
-app.use(countStore)
-app.route('/', mainView)
-app.mount('body')
-
-function mainView (state, emit) {
-  return html`
-    <body>
-      <h1>count is ${state.count}</h1>
-      <button onclick=${onclick}>Increment</button>
-    </body>
-  `
-
-  function onclick () {
-    emit('increment', 1)
-  }
-}
-
-function countStore (state, emitter) {
-  state.count = 0
-  emitter.on('increment', function (count) {
-    state.count += count
-    emitter.emit('render')
-  })
-}
-
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers/root_reducer';
@@ -328,6 +237,134 @@ const configureStore = (preloadedState = {}) => (
 );
 
 export default configureStore;
+```
+
+```js
+import React from 'react';
+import { values, merge } from 'lodash';
+
+class Profile extends React.Component {
+  constructor(props) {
+		super(props);	
+		this.renderEditForm = this.renderEditForm.bind(this);
+	};
+	
+	renderEditForm() {
+		window.location.hash = `/${this.props.currentUser.username}/profile/edit`
+	};
+
+  render() {
+		const { 
+			id,
+			username,
+			fname, 
+			lname, 
+			email, 
+			type, 
+			gender,
+			gpa,
+			phone_number,
+			current_course_load,
+			completed_course_credit,
+			profile_image_url,
+			friends,
+			posts,
+			comments,
+			courses,
+			cash_balance, 
+		} = this.props.currentUser;
+ 
+    return (
+      <main className='user-page'>
+				<div className="img-gallery">
+					<div className="gallery">
+						<img src={profile_image_url} alt={username} />
+						<div className="desc">
+						<div>
+							<p>{username}</p>
+						</div>
+						</div>
+					</div>
+					<hr/>
+				</div>
+
+				<div className='profile-page-detail'>
+					<button className='btn edit' onClick={this.renderEditForm}>Edit Self</button>
+					<div className='profile-detail-table'>
+						<table>
+							<tr>
+								<th className='profile-table-header'>User Information</th>
+								<th className='profile-table-header'>Details</th>
+							</tr>
+							<tr>
+								<td>USER ID</td>
+								<td>{id}</td>
+							</tr>
+							<tr>
+								<td>Username</td>
+								<td>{username}</td>
+							</tr>
+							<tr>
+								<td>First Name</td>
+								<td>{fname}</td>
+							</tr>
+							<tr>
+								<td>Last Name</td>
+								<td>{lname}</td>
+							</tr>
+							<tr>
+								<td>Email</td>
+								<td>{email}</td>
+							</tr>
+							<tr>
+								<td>Phone Number</td>
+								<td>{phone_number}</td>
+							</tr>
+							<tr>
+								<td>Current User Type</td>
+								<td>{type}</td>
+							</tr>
+							<tr>
+								<td>Gender</td>
+								<td>{gender}</td>
+							</tr>
+							<tr>
+								<td>Cummulative GPA</td>
+								<td>{gpa}</td>
+							</tr>
+							<tr>
+								<td>Account Balance</td>
+								<td>{cash_balance}</td>
+							</tr>
+							<tr>
+								<td>Current Course Load</td>
+								<td>{current_course_load}</td>
+							</tr>
+							<tr>
+								<td>Number of Friends</td>
+								<td>{friends.length}</td>
+							</tr>
+							<tr>
+								<td>Number of Posts</td>
+								<td>{posts.length}</td>
+							</tr>
+							<tr>
+								<td>Number of Comments</td>
+								<td>{comments.length}</td>
+							</tr>
+							<tr>
+								<td>Home Address</td>
+								<td>Not Yet Available</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+      </main>
+    );
+  }
+}
+
+export default Profile;
 ```
 
 ## Homepage

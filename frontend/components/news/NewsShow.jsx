@@ -47,7 +47,6 @@ class NewsShow extends React.Component {
     return (
 			<div>
 				<iframe className="linker" width="800" height="500" src={url} name="iframe_a"></iframe>
-				<p>{headline}</p>
     	</div>
     );
   }

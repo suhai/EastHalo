@@ -79,6 +79,15 @@ app.use(countStore)
 app.route('/', mainView)
 app.mount('body')
 
+export const createFriendhsip = friendship => (
+	$.ajax({
+		method: 'POST',
+		url: '/api/friendships/',
+		dataType: 'json',
+		data: friendship
+	})
+);
+
 function mainView (state, emit) {
   return html`
     <body>

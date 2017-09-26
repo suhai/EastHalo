@@ -1,8 +1,42 @@
 @import 'variables';
 
 .user-page {
-	margin-left: 5em;
+	margin-left: 1em;
+	margin-top: 2em;
 }
+
+.profile-page-detail {
+	border: 2px solid $aac;
+	padding: 1em;
+	margin-right: 2em;
+}
+
+.profile-table-header {
+	color: black;
+	font-weight: bold;
+}
+
+.profile-detail-table {
+	table {
+		margin-top: 3em; 
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+	}
+
+	
+
+	td, th {
+			border: 1px solid $black;
+			text-align: left;
+			padding: 10px;
+	}
+
+	tr:nth-child(even) {
+			background-color: $abi;
+	}
+}
+
 
 main > div:first-child {
 	display: flex;

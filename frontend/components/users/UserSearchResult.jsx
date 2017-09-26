@@ -11,21 +11,27 @@ class User extends React.Component {
 	};
 
   render() {
+		const { 
+			fname, 
+			lname, 
+			email, 
+			phone_number, 
+			username,
+			profile_image_url
+		} = this.props.user;
+
     return (
-      <main className='user-page'>
-					<div className="img-gallery" onClick={this.showUser}>
-						<div className="gallery">
-							<img src={this.props.user.profile_image_url} />
-						</div>
+			<div className="img-gallery" onClick={this.showUser}>
+				<div className="gallery">
+					<img src={profile_image_url} alt={username} />
+					<div className="desc">
+					<div>
+						<p>{username}</p>
 					</div>
-					<hr/>
-				<div>
-					<div className='course-header'>
-						{this.props.user.username}
 					</div>
 				</div>
-				<hr />	
-			</main>
+				<hr/>
+			</div>
     );
   }
 }

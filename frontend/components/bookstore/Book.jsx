@@ -32,7 +32,7 @@ class Book extends React.Component {
 					<img src={image_url} alt={title} />
 					<div className="desc">
 						<div>
-							<p>{title}</p>
+							<p>{title}: ${price}</p>
 						</div>
 					</div>
 				</div>

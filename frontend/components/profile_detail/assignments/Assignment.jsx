@@ -12,7 +12,7 @@ class Assignment extends React.Component {
  
     return (
       <main className='user-page'>
-        <h3>THIS IS THE ASSIGNMENTS PAGE</h3>
+        <h3>YOU HAVE NO ASSIGNMENTS YET. SIGN UP FOR A CLASS FIRST</h3>
       </main>
     );
   }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
+import PrivateNavigation from '../logged_home/PrivateNavigation';
 {/* ASSIGNMENTS, only display all + delete options */}
 import AdminAssignmentPageContainer from './assignments/assignment_page_container';
 {/* BOOKS */}
@@ -74,131 +75,134 @@ class Admin extends React.Component {
   render() {
 
     return (
-      <main className='user-page'>
-				<nav className='profile-nav'> 
-					<div className='admin-nav-bar'>
-						<ul>
-							<li className="dropdown">
-								<a href="javascript:void(0)" className="dropbtn">Academics</a>
-								<div className="dropdown-content">
-									<NavLink to={`/admin/${this.props.currentUser.username}/grade_letters`}>GradeLetters</NavLink>
-									<NavLink to={`/admin/${this.props.currentUser.username}/grades`}>Grades</NavLink>
-									<NavLink to={`/admin/${this.props.currentUser.username}/transcripts`}>Transcripts</NavLink>
-								</div>
-							</li>
-							<li className="dropdown">
-								<a href="javascript:void(0)" className="dropbtn">College</a>
-								<div className="dropdown-content">
-									<NavLink to={`/admin/${this.props.currentUser.username}/departments`}>Departments</NavLink>
-									<NavLink to={`/admin/${this.props.currentUser.username}/courses`}>Courses</NavLink>
-									<NavLink to={`/admin/${this.props.currentUser.username}/enrollments`}>Enrollemnts</NavLink>
-								</div>
-							</li>
-							<li className="dropdown">
-								<a href="javascript:void(0)" className="dropbtn">People</a>
-								<div className="dropdown-content">
-									<NavLink to={`/admin/${this.props.currentUser.username}/users`}>Users</NavLink>
-									<NavLink to={`/admin/${this.props.currentUser.username}/schedules`}>Schedules</NavLink>
-									<NavLink to={`/admin/${this.props.currentUser.username}/assignments`}>Assignments</NavLink>
-								</div>
-							</li>
-							<li className="dropdown">
-								<a href="javascript:void(0)" className="dropbtn">Activities</a>
-								<div className="dropdown-content">
-									<NavLink to={`/admin/${this.props.currentUser.username}/posts`}>Posts</NavLink>
-									<NavLink to={`/admin/${this.props.currentUser.username}/comments`}>Comments</NavLink>
-									<NavLink to={`/admin/${this.props.currentUser.username}/friendships`}>Friendships</NavLink>
-								</div>
-							</li>
-							<li className="dropdown">
-								<a href="javascript:void(0)" className="dropbtn">Shopping</a>
-								<div className="dropdown-content">
-									<NavLink to={`/admin/${this.props.currentUser.username}/books`}>Books</NavLink>
-									<NavLink to={`/admin/${this.props.currentUser.username}/meals`}>Food</NavLink>
-									<NavLink to={`/admin/${this.props.currentUser.username}/meals`}>PlaceHolder</NavLink>
-								</div>
-							</li>
-							<li className="dropdown">
-								<a href="javascript:void(0)" className="dropbtn">News</a>
-								<div className="dropdown-content">
-									<NavLink to={`/admin/${this.props.currentUser.username}/news`}>News</NavLink>
-									<NavLink to={`/admin/${this.props.currentUser.username}/messages`}>Messages</NavLink>
-									<NavLink to={`/admin/${this.props.currentUser.username}/messages`}>PlaceHolder</NavLink>
-								</div>
-							</li>
-						</ul>
+			<div className='loggedhome'>
+				<PrivateNavigation logout={this.props.logout} currentUser={this.props.currentUser} />
+				<main className='user-page'>
+					<nav className='profile-nav'> 
+						<div className='admin-nav-bar'>
+							<ul>
+								<li className="dropdown">
+									<a href="javascript:void(0)" className="dropbtn">Academics</a>
+									<div className="dropdown-content">
+										<NavLink to={`/admin/${this.props.currentUser.username}/grade_letters`}>GradeLetters</NavLink>
+										<NavLink to={`/admin/${this.props.currentUser.username}/grades`}>Grades</NavLink>
+										<NavLink to={`/admin/${this.props.currentUser.username}/transcripts`}>Transcripts</NavLink>
+									</div>
+								</li>
+								<li className="dropdown">
+									<a href="javascript:void(0)" className="dropbtn">College</a>
+									<div className="dropdown-content">
+										<NavLink to={`/admin/${this.props.currentUser.username}/departments`}>Departments</NavLink>
+										<NavLink to={`/admin/${this.props.currentUser.username}/courses`}>Courses</NavLink>
+										<NavLink to={`/admin/${this.props.currentUser.username}/enrollments`}>Enrollemnts</NavLink>
+									</div>
+								</li>
+								<li className="dropdown">
+									<a href="javascript:void(0)" className="dropbtn">People</a>
+									<div className="dropdown-content">
+										<NavLink to={`/admin/${this.props.currentUser.username}/users`}>Users</NavLink>
+										<NavLink to={`/admin/${this.props.currentUser.username}/schedules`}>Schedules</NavLink>
+										<NavLink to={`/admin/${this.props.currentUser.username}/assignments`}>Assignments</NavLink>
+									</div>
+								</li>
+								<li className="dropdown">
+									<a href="javascript:void(0)" className="dropbtn">Activities</a>
+									<div className="dropdown-content">
+										<NavLink to={`/admin/${this.props.currentUser.username}/posts`}>Posts</NavLink>
+										<NavLink to={`/admin/${this.props.currentUser.username}/comments`}>Comments</NavLink>
+										<NavLink to={`/admin/${this.props.currentUser.username}/friendships`}>Friendships</NavLink>
+									</div>
+								</li>
+								<li className="dropdown">
+									<a href="javascript:void(0)" className="dropbtn">Shopping</a>
+									<div className="dropdown-content">
+										<NavLink to={`/admin/${this.props.currentUser.username}/books`}>Books</NavLink>
+										<NavLink to={`/admin/${this.props.currentUser.username}/meals`}>Food</NavLink>
+										<NavLink to={`/admin/${this.props.currentUser.username}/meals`}>PlaceHolder</NavLink>
+									</div>
+								</li>
+								<li className="dropdown">
+									<a href="javascript:void(0)" className="dropbtn">News</a>
+									<div className="dropdown-content">
+										<NavLink to={`/admin/${this.props.currentUser.username}/news`}>News</NavLink>
+										<NavLink to={`/admin/${this.props.currentUser.username}/messages`}>Messages</NavLink>
+										<NavLink to={`/admin/${this.props.currentUser.username}/messages`}>PlaceHolder</NavLink>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</nav>
+
+					<div>
+						<Switch> {/* ROUTES */}
+							{/* ASSIGNMENTS */}
+							<Route path="/admin/:username/assignments" render={(props) => <AdminAssignmentPageContainer {...props} /> } />
+							{/* BOOKS */}
+							<Route path="/admin/:username/books/bookform" render={(props) => <AdminBookFormContainer {...props} /> } />
+							<Route path="/admin/:username/books/edit/:id" render={(props) => <AdminBookEditContainer {...props} /> } />
+							<Route path="/admin/:username/books/:id" render={(props) => <AdminBookShowContainer {...props} /> } />
+							<Route path="/admin/:username/books" render={(props) => <AdminBookPageContainer {...props} /> } />
+							{/* COMMENTS */}
+							<Route path="/admin/:username/posts/:id/comments/commentform" render={(props) => <AdminCommentFormContainer {...props} /> } />
+							<Route path="/admin/:username/comments/edit/:id" render={(props) => <AdminCommentEditContainer {...props} /> } />
+							<Route path="/:username/comments/:id" render={(props) => <AdminCommentShowContainer {...props} /> } />
+							<Route path="/admin/:username/comments" render={(props) => <AdminCommentPageContainer {...props} /> } />
+							{/* COURSE_ENROLLMENTS ; Only Show (and may be delete) */}
+							<Route path="/admin/:username/enrollments" render={(props) => <AdminCourseEnrollmentPageContainer {...props} /> } />
+							{/* COURSES */}
+							<Route path="/admin/:username/courses/courseform" render={(props) => <AdminCourseFormContainer {...props} /> } />
+							<Route path="/admin/:username/courses/edit/:id" render={(props) => <AdminCourseEditContainer {...props} /> } />
+							<Route path="/admin/:username/courses/:id" render={(props) => <AdminCourseShowContainer {...props} /> } />
+							<Route path="/admin/:username/courses" render={(props) => <AdminCoursePageContainer {...props} /> } />
+							{/* DEPARTMENTS */}
+							<Route path="/admin/:username/departments/departmentform" render={(props) => <AdminDepartmentFormContainer {...props} /> } />
+							<Route path="/admin/:username/departments/edit/:id" render={(props) => <AdminDepartmentEditContainer {...props} /> } />
+							<Route path="/admin/:username/departments" render={(props) => <AdminDepartmentPageContainer {...props} /> } />
+							{/* FRIENDSHIPS */}
+							<Route path="/admin/:username/friendships" render={(props) => <AdminFriendshipPageContainer {...props} /> } />
+							{/* GRADE_LETTERS */}
+							<Route path="/admin/:username/grade_letters/grade_letterform" render={(props) => <AdminGradeLetterFormContainer {...props} /> } />
+							<Route path="/admin/:username/grade_letters/edit/:id" render={(props) => <AdminGradeLetterEditContainer {...props} /> } />
+							<Route path="/admin/:username/grade_letters" render={(props) => <AdminGradeLetterPageContainer {...props} /> } />
+							{/* GRADES */}
+							<Route path="/admin/:username/grades/gradeform" render={(props) => <AdminGradeFormContainer {...props} /> } />
+							<Route path="/admin/:username/grades/edit/:id" render={(props) => <AdminGradeEditContainer {...props} /> } />
+							<Route path="/admin/:username/grades/:id" render={(props) => <AdminGradeShowContainer {...props} /> } />
+							<Route path="/admin/:username/grades" render={(props) => <AdminGradePageContainer {...props} /> } />
+							{/* MEALS */}
+							<Route path="/admin/:username/meals/edit/:id" render={(props) => <AdminMealEditContainer {...props} /> } />
+							<Route path="/admin/:username/meals/mealform" render={(props) => <AdminMealFormContainer {...props} /> } />
+							<Route path="/admin/:username/meals/:id" render={(props) => <AdminMealShowContainer {...props} /> } />
+							<Route path="/admin/:username/meals" render={(props) => <AdminMealPageContainer {...props} /> } />
+							{/* MESSAGES */}
+							<Route path="/admin/:username/messages/:id" render={(props) => <AdminMessageShowContainer {...props} /> } />
+							<Route path="/admin/:username/messages" render={(props) => <AdminMessagePageContainer {...props} /> } />
+							{/* NEWS */}
+							<Route path="/admin/:username/news/newsform" render={(props) => <AdminNewsFormContainer {...props} /> } />
+							<Route path="/admin/:username/news/edit/:id" render={(props) => <AdminNewsEditContainer {...props} /> } />
+							<Route path="/admin/:username/news" render={(props) => <AdminNewsPageContainer {...props} /> } />
+							{/* POSTS */}
+							<Route path="/admin/:username/posts/postform" render={(props) => <AdminPostFormContainer {...props} /> } />
+							<Route path="/admin/:username/posts/edit/:id" render={(props) => <AdminPostEditContainer {...props} /> } />
+							<Route path="/admin/:username/posts/:id" render={(props) => <AdminPostShowContainer {...props} /> } />
+							<Route path="/admin/:username/posts" render={(props) => <AdminPostPageContainer {...props} /> } />
+							{/* SCHEDULES */}
+							<Route path="/admin/:username/schedules/:id" render={(props) => <AdminScheduleShowContainer {...props} /> } />
+							<Route path="/admin/:username/schedules" render={(props) => <AdminSchedulePageContainer {...props} /> } />
+							{/* TRANSCRIPTS */}
+							<Route path="/admin/:username/transcripts/:id" render={(props) => <AdminTranscriptShowContainer {...props} /> } />
+							<Route path="/admin/:username/transcripts" render={(props) => <AdminTranscriptPageContainer {...props} /> } />
+							{/* USERS */}
+							<Route path="/admin/:username/users/edit/:id" render={(props) => <AdminUserEditContainer {...props} /> } />
+							<Route path="/admin/:username/users/:id" render={(props) => <AdminUserShowContainer {...props} /> } />
+							<Route path="/admin/:username/users" render={(props) => <AdminUserPageContainer {...props} /> } />
+
+							{/* DEFAULT ADMIN PAGE */}
+							<Route exact path="/admin" render={(props) => <AdminUserPageContainer {...props} /> } />
+						</Switch>
 					</div>
-				</nav>
-
-				<div>
-					<Switch> {/* ROUTES */}
-						{/* ASSIGNMENTS */}
-						<Route path="/admin/:username/assignments" render={(props) => <AdminAssignmentPageContainer {...props} /> } />
-						{/* BOOKS */}
-						<Route path="/admin/:username/books/bookform" render={(props) => <AdminBookFormContainer {...props} /> } />
-						<Route path="/admin/:username/books/edit/:id" render={(props) => <AdminBookEditContainer {...props} /> } />
-						<Route path="/admin/:username/books/:id" render={(props) => <AdminBookShowContainer {...props} /> } />
-						<Route path="/admin/:username/books" render={(props) => <AdminBookPageContainer {...props} /> } />
-						{/* COMMENTS */}
-						<Route path="/admin/:username/posts/:id/comments/commentform" render={(props) => <AdminCommentFormContainer {...props} /> } />
-						<Route path="/admin/:username/comments/edit/:id" render={(props) => <AdminCommentEditContainer {...props} /> } />
-						<Route path="/:username/comments/:id" render={(props) => <AdminCommentShowContainer {...props} /> } />
-						<Route path="/admin/:username/comments" render={(props) => <AdminCommentPageContainer {...props} /> } />
-						{/* COURSE_ENROLLMENTS ; Only Show (and may be delete) */}
-						<Route path="/admin/:username/enrollments" render={(props) => <AdminCourseEnrollmentPageContainer {...props} /> } />
-						{/* COURSES */}
-						<Route path="/admin/:username/courses/courseform" render={(props) => <AdminCourseFormContainer {...props} /> } />
-						<Route path="/admin/:username/courses/edit/:id" render={(props) => <AdminCourseEditContainer {...props} /> } />
-						<Route path="/admin/:username/courses/:id" render={(props) => <AdminCourseShowContainer {...props} /> } />
-						<Route path="/admin/:username/courses" render={(props) => <AdminCoursePageContainer {...props} /> } />
-						{/* DEPARTMENTS */}
-						<Route path="/admin/:username/departments/departmentform" render={(props) => <AdminDepartmentFormContainer {...props} /> } />
-						<Route path="/admin/:username/departments/edit/:id" render={(props) => <AdminDepartmentEditContainer {...props} /> } />
-						<Route path="/admin/:username/departments" render={(props) => <AdminDepartmentPageContainer {...props} /> } />
-						{/* FRIENDSHIPS */}
-						<Route path="/admin/:username/friendships" render={(props) => <AdminFriendshipPageContainer {...props} /> } />
-						{/* GRADE_LETTERS */}
-						<Route path="/admin/:username/grade_letters/grade_letterform" render={(props) => <AdminGradeLetterFormContainer {...props} /> } />
-						<Route path="/admin/:username/grade_letters/edit/:id" render={(props) => <AdminGradeLetterEditContainer {...props} /> } />
-						<Route path="/admin/:username/grade_letters" render={(props) => <AdminGradeLetterPageContainer {...props} /> } />
-						{/* GRADES */}
-						<Route path="/admin/:username/grades/gradeform" render={(props) => <AdminGradeFormContainer {...props} /> } />
-						<Route path="/admin/:username/grades/edit/:id" render={(props) => <AdminGradeEditContainer {...props} /> } />
-						<Route path="/admin/:username/grades/:id" render={(props) => <AdminGradeShowContainer {...props} /> } />
-						<Route path="/admin/:username/grades" render={(props) => <AdminGradePageContainer {...props} /> } />
-						{/* MEALS */}
-						<Route path="/admin/:username/meals/edit/:id" render={(props) => <AdminMealEditContainer {...props} /> } />
-						<Route path="/admin/:username/meals/mealform" render={(props) => <AdminMealFormContainer {...props} /> } />
-						<Route path="/admin/:username/meals/:id" render={(props) => <AdminMealShowContainer {...props} /> } />
-						<Route path="/admin/:username/meals" render={(props) => <AdminMealPageContainer {...props} /> } />
-						{/* MESSAGES */}
-						<Route path="/admin/:username/messages/:id" render={(props) => <AdminMessageShowContainer {...props} /> } />
-						<Route path="/admin/:username/messages" render={(props) => <AdminMessagePageContainer {...props} /> } />
-						{/* NEWS */}
-						<Route path="/admin/:username/news/newsform" render={(props) => <AdminNewsFormContainer {...props} /> } />
-						<Route path="/admin/:username/news/edit/:id" render={(props) => <AdminNewsEditContainer {...props} /> } />
-						<Route path="/admin/:username/news" render={(props) => <AdminNewsPageContainer {...props} /> } />
-						{/* POSTS */}
-						<Route path="/admin/:username/posts/postform" render={(props) => <AdminPostFormContainer {...props} /> } />
-						<Route path="/admin/:username/posts/edit/:id" render={(props) => <AdminPostEditContainer {...props} /> } />
-						<Route path="/admin/:username/posts/:id" render={(props) => <AdminPostShowContainer {...props} /> } />
-						<Route path="/admin/:username/posts" render={(props) => <AdminPostPageContainer {...props} /> } />
-						{/* SCHEDULES */}
-						<Route path="/admin/:username/schedules/:id" render={(props) => <AdminScheduleShowContainer {...props} /> } />
-						<Route path="/admin/:username/schedules" render={(props) => <AdminSchedulePageContainer {...props} /> } />
-						{/* TRANSCRIPTS */}
-						<Route path="/admin/:username/transcripts/:id" render={(props) => <AdminTranscriptShowContainer {...props} /> } />
-						<Route path="/admin/:username/transcripts" render={(props) => <AdminTranscriptPageContainer {...props} /> } />
-						{/* USERS */}
-						<Route path="/admin/:username/users/edit/:id" render={(props) => <AdminUserEditContainer {...props} /> } />
-						<Route path="/admin/:username/users/:id" render={(props) => <AdminUserShowContainer {...props} /> } />
-						<Route path="/admin/:username/users" render={(props) => <AdminUserPageContainer {...props} /> } />
-
-						{/* DEFAULT ADMIN PAGE */}
-						<Route exact path="/admin" render={(props) => <AdminUserPageContainer {...props} /> } />
-					</Switch>
-				</div>
-      </main>
+				</main>
+			</div>
     );
   }
 }

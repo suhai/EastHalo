@@ -28,7 +28,7 @@ class Comments extends React.Component {
 
 		return (
 			<div className=''>
-				<h1 className='table-h1'>Comments Table</h1>
+				<h1 className='table-h1'>My Comments</h1>
 				<div className="tbl-header2">
 				<table cellPadding={0} cellSpacing={0}>
 					<thead>

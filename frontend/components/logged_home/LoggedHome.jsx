@@ -41,7 +41,6 @@ class LoggedHome extends React.Component {
 			<div className='loggedhome'>
 				<PrivateNavigation logout={this.props.logout} currentUser={this.props.currentUser} />
 				<div className='placeholder-text2'>
-					<h3>WELCOME TO THE LOGGED HOMEPAGE</h3>
 					<Switch>
 						{/* ADMIN AREA */}
 						<Route path="/admin" render={(props) => <AdminPageContainer {...props} />} />

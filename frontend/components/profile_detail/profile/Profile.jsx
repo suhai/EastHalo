@@ -34,24 +34,89 @@ class Profile extends React.Component {
  
     return (
       <main className='user-page'>
-				<button className='btn edit' onClick={this.renderEditForm}>Edit Profile</button>
-        <h3>THIS IS THE PROFILE PAGE</h3>
-				<h5>Image Goes Here: {profile_image_url}</h5>
-				<h5>USER ID: {id}</h5>
-				<h5>Username: {username}</h5>
-				<h5>First Name: {fname}</h5>
-				<h5>Last Name: {lname}</h5>
-				<h5>Email: {email}</h5>
-				<h5>User Type: {type}</h5>
-				<h5>Gender: {gender}</h5>
-				<h5>Commulative GPA: {gpa}</h5>
-				<h5>Account Balance: {cash_balance}</h5>
-				<h5>Phone Number: {phone_number}</h5>
-				<h5>Course Load This Semester: {current_course_load}</h5>
-				<h5>Number of Friends: {friends.length}</h5>
-				<h5>Number of Posts: {posts.length}</h5>
-				<h5>Number of Comments: {comments.length}</h5>
-				<h5>Home Address: </h5>
+				<div className="img-gallery">
+					<div className="gallery">
+						<img src={profile_image_url} alt={username} />
+						<div className="desc">
+						<div>
+							<p>{username}</p>
+						</div>
+						</div>
+					</div>
+					<hr/>
+				</div>
+
+				<div className='profile-page-detail'>
+					<button className='btn edit' onClick={this.renderEditForm}>Edit Self</button>
+					<div className='profile-detail-table'>
+						<table>
+							<tr>
+								<th className='profile-table-header'>User Information</th>
+								<th className='profile-table-header'>Details</th>
+							</tr>
+							<tr>
+								<td>USER ID</td>
+								<td>{id}</td>
+							</tr>
+							<tr>
+								<td>Username</td>
+								<td>{username}</td>
+							</tr>
+							<tr>
+								<td>First Name</td>
+								<td>{fname}</td>
+							</tr>
+							<tr>
+								<td>Last Name</td>
+								<td>{lname}</td>
+							</tr>
+							<tr>
+								<td>Email</td>
+								<td>{email}</td>
+							</tr>
+							<tr>
+								<td>Phone Number</td>
+								<td>{phone_number}</td>
+							</tr>
+							<tr>
+								<td>Current User Type</td>
+								<td>{type}</td>
+							</tr>
+							<tr>
+								<td>Gender</td>
+								<td>{gender}</td>
+							</tr>
+							<tr>
+								<td>Cummulative GPA</td>
+								<td>{gpa}</td>
+							</tr>
+							<tr>
+								<td>Account Balance</td>
+								<td>{cash_balance}</td>
+							</tr>
+							<tr>
+								<td>Current Course Load</td>
+								<td>{current_course_load}</td>
+							</tr>
+							<tr>
+								<td>Number of Friends</td>
+								<td>{friends.length}</td>
+							</tr>
+							<tr>
+								<td>Number of Posts</td>
+								<td>{posts.length}</td>
+							</tr>
+							<tr>
+								<td>Number of Comments</td>
+								<td>{comments.length}</td>
+							</tr>
+							<tr>
+								<td>Home Address</td>
+								<td>Not Yet Available</td>
+							</tr>
+						</table>
+					</div>
+				</div>
       </main>
     );
   }

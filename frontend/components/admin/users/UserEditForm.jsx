@@ -169,13 +169,13 @@ class UserEditForm extends React.Component {
 							</li>
 							<li>
 								<select className="field-style field-split align-left" value={type} onChange={this.update('type')} >
-									<option value={typeOption1} >TYPE</option>
+									<option value={typeOption1} >DEFAULT</option>
 									<option value={typeOption2} >Student</option>
 									<option value={typeOption3} >Professor</option>
 								</select>
 
 								<select className="field-style field-split align-right" value={is_admin} onChange={this.update('is_admin')} >
-									<option value={isAdminOption1} >ADMIN?</option>
+									<option value={isAdminOption1} >admin?</option>
 									<option value={isAdminOption2} >TRUE</option>
 									<option value={isAdminOption3} >FALSE</option>
 								</select>

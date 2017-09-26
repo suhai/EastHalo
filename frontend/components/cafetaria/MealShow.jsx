@@ -76,10 +76,6 @@ class MealShow extends React.Component {
 						</tr>
 					</tbody>
 				</table>
-				<div className='pull-left'>
-					<p className='table-paragraph'>Book Description</p>
-					<p>Some Description Can Go Here</p>
-				</div>
 			</main>
 		);
 	}

@@ -30,7 +30,7 @@ class Meal extends React.Component {
 					<img src={image_url} alt={name} />
 					<div className="desc">
 					<div>
-						<p>{price}</p>
+						<p>{name}: ${price}</p>
 					</div>
 					</div>
 				</div>

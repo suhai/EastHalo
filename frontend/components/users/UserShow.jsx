@@ -45,13 +45,13 @@ class UserShow extends React.Component {
 	}
 
 	editUser() {
-		window.location.hash = `/admin/${this.props.currentUser.username}/users/edit/${this.props.match.params.id}`;
+		window.location.hash = `/${this.props.currentUser.username}/users/edit/${this.props.match.params.id}`;
 	};
 
 	deleteUser() {
 		let id = this.props.match.params.id;
 		this.props.deleteUser(id)
-		window.location.hash = `/admin/${this.props.currentUser.username}/users`;
+		window.location.hash = `/${this.props.currentUser.username}/users`;
 	};
 
 	addFriend() {

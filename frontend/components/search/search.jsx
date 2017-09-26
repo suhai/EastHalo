@@ -34,8 +34,8 @@ class Search extends React.Component {
       );
     }
     return (
-      <div className='search-page'>
-        <h3>Search results for {`"${this.props.location.search.slice(3)}"`}</h3>
+      <div className='community-page'>
+        <h3>Search results for {`"${this.props.location.search.slice(3)}"`} are: </h3>
         {results}
       </div>
     );

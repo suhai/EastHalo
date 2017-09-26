@@ -18,78 +18,77 @@ class Transcript extends React.Component {
 			lname,
 			gpa,
 			dob,
+			gender,
 			completed_course_credit,
 			current_course_load,
 			cash_balance,
 			email,
 			phone_number,
-			grades
+			grades,
+			profile_image_url,
 		} = this.props.currentUser;
 
 		return (
 			<main className='user-page'>
-				<div>
-					<div className='grouped-buttons'>
-						<button className='btn edit'>Now What</button>
+				<div className="img-gallery">
+					<div className="gallery">
+						<img src={profile_image_url} alt={fname} />
 					</div>
+					<hr/>
 				</div>
-				<hr />
-				
-				<table id="background-image" className="full-width">
-					<thead>
-						<tr className='fixed-header'>
-							<th scope="col">Student Info</th>
-							<th scope="col">Info Detail</th>
-						</tr>
-					</thead>
-
-					<tbody>
-						<tr>
-							<td>Student ID</td>
-							<td>{id}</td>
-						</tr>
-						<tr>
-							<td>First Name</td>
-							<td>{fname}</td>
-						</tr>
-						<tr>
-							<td>Last Name</td>
-							<td>{lname}</td>
-						</tr>
-						<tr>
-							<td>GPA</td>
-							<td>{gpa}</td>
-						</tr>
-						<tr>
-							<td>D.O.B</td>
-							<td>{dob}</td>
-						</tr>
-						<tr>
-							<td>Email</td>
-							<td>{email}</td>
-						</tr>
-						<tr>
-							<td>Phone</td>
-							<td>{phone_number}</td>
-						</tr>
-						<tr>
-							<td>Course load</td>
-							<td>{current_course_load}</td>
-						</tr>
-						<tr>
-							<td>Cummulative Credit</td>
-							<td>{completed_course_credit}</td>
-						</tr>
-						<tr>
-							<td>Cash Balance</td>
-							<td>${cash_balance}</td>
-						</tr>
-					</tbody>
-				</table>
-				<div className='pull-left'>
-					<p className='table-paragraph'>GRADES WILL GO HERE</p>
+				<h3>STUDENT ACADEMIC RECORD</h3>
+				<div className='profile-page-detail'>
+					<div className='profile-detail-table'>
+						<table>
+							<tr>
+								<th className='profile-table-header'>Student Information</th>
+								<th className='profile-table-header'>Details</th>
+							</tr>
+							<tr>
+								<td>STUDENT ID</td>
+								<td>{id}</td>
+							</tr>
+							<tr>
+								<td>First Name</td>
+								<td>{fname}</td>
+							</tr>
+							<tr>
+								<td>Last Name</td>
+								<td>{lname}</td>
+							</tr>
+							<tr>
+								<td>D.O.B</td>
+								<td>{dob}</td>
+							</tr>
+							<tr>
+								<td>Phone Number</td>
+								<td>{phone_number}</td>
+							</tr>
+							<tr>
+								<td>Email</td>
+								<td>{email}</td>
+							</tr>
+							<tr>
+								<td>Gender</td>
+								<td>{gender}</td>
+							</tr>
+							<tr>
+								<td>Cummulative GPA</td>
+								<td>{gpa}</td>
+							</tr>
+							<tr>
+								<td>Cummulative Credits</td>
+								<td>{completed_course_credit}</td>
+							</tr>
+							<tr>
+								<td>Account Balance</td>
+								<td>{cash_balance}</td>
+							</tr>
+						</table>
+					</div>
+					<h3>GRADES WILL GO DOWN HERE</h3>
 				</div>
-			</main>
+      </main>
 		);
 	}
 }

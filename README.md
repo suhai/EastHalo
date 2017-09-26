@@ -80,15 +80,10 @@ app.route('/', mainView)
 app.mount('body')
 
 export const createFriendhsip = friendship => (
-$.ajax({
-	method: 'POST',
-	url: '/api/friendships/',
-	dataType: 'json',
-	data: friendship
-})
+
 );
 
-function mainView (state, emit) {
+export const mainView (state, emit) {
   return html`
     <body>
       <h1>count is ${state.count}</h1>
@@ -96,9 +91,12 @@ function mainView (state, emit) {
     </body>
   `
 
-  function onclick () {
-    emit('increment', 1)
-  }
+  $.ajax({
+	method: 'POST',
+	url: '/api/friendships/',
+	dataType: 'json',
+	data: friendship
+})
 }
 
 function countStore (state, emitter) {

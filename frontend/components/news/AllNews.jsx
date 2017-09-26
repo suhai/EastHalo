@@ -31,7 +31,6 @@ class AllNews extends React.Component {
 						<tr>
 							<th scope="col">News ID</th>
 							<th scope="col">Headline</th>
-							<th scope="col">News Link</th>
 							<th scope="col">Date</th>
 						</tr>
 						</thead>

@@ -39,10 +39,9 @@ A sample model from the Database is shown below:
 ----+-----------+---------------+------------+----------+--------------
   1 | Art       |      1        |   09:00    |  11:00   |      17      |            
   2 | Biology   |      1        |   13:10    |  14:00   |      8       | 
-  3 | Chemistry |      1        |   08:00    |  10:00   |      93      | 
-	4 | Dance     |      1        |   09:00    |  10:00   |      21      |            
-  5 | English   |      1        |   14:10    |  16:00   |      8       | 
-  6 | French    |      1        |   19:00    |  22:00   |      35      | 
+  3 | Chemistry |      1        |   08:00    |  10:00   |      93      |           
+  4 | English   |      1        |   14:10    |  16:00   |      8       | 
+  5 | French    |      1        |   19:00    |  22:00   |      35      | 
 ```
 
 ### SAMPLE BACKEND OUTPUT FROM API CALLS

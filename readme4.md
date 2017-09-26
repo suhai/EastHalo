@@ -1,10 +1,10 @@
-<h1 align="center">choo</h1>
+<h1 align="left">EastHalo University</h1>
 
 <div align="center">
   :steam_locomotive::train::train::train::train::train:
 </div>
 <div align="center">
-  <strong>Fun functional programming</strong>
+  <strong>A Clone of a Univeristy Registration Web Application</strong>
 </div>
 <div align="center">
   A <code>4kb</code> framework for creating sturdy frontend applications
@@ -74,27 +74,42 @@
 </div>
 
 <div align="center">
-  <sub>The little framework that could. Built with ❤︎ by
-  <a href="https://twitter.com/yoshuawuyts">Yoshua Wuyts</a> and
-  <a href="https://github.com/choojs/choo/graphs/contributors">
-    contributors
-  </a>
+  <sub>This project was built within a three week period by
+  <a href="https://twitter.com/suhaiyehuza">Suhai Yehuza</a>
 </div>
 
 ## Table of Content
+- [Wireframe](#example)
+- [Database](#example)
+- [Routes / API](#api)
 - [Features](#features)
-- [Example](#example)
-- [Philosophy](#philosophy)
-- [Events](#events)
-- [State](#state)
-- [Routing](#routing)
-- [Server Rendering](#server-rendering)
+- [Example Code](#example)
 - [Optimizations](#optimizations)
-- [FAQ](#faq)
-- [API](#api)
-- [Installation](#installation)
-- [See Also](#see-also)
-- [Support](#support)
+- [Future](#support)
+
+## WireFrame
+- __minimal size:__ weighing `4kb`, `choo` is a tiny little framework
+- __event based:__ our performant event system makes writing apps easy
+- __small api:__ with only 6 methods there's not much to learn
+- __minimal tooling:__ built for the cutting edge `browserify` compiler
+- __isomorphic:__ renders seamlessly in both Node and browsers
+- __very cute:__ choo choo!
+
+## Database
+- __minimal size:__ weighing `4kb`, `choo` is a tiny little framework
+- __event based:__ our performant event system makes writing apps easy
+- __small api:__ with only 6 methods there's not much to learn
+- __minimal tooling:__ built for the cutting edge `browserify` compiler
+- __isomorphic:__ renders seamlessly in both Node and browsers
+- __very cute:__ choo choo!
+
+## Routes / API
+- __minimal size:__ weighing `4kb`, `choo` is a tiny little framework
+- __event based:__ our performant event system makes writing apps easy
+- __small api:__ with only 6 methods there's not much to learn
+- __minimal tooling:__ built for the cutting edge `browserify` compiler
+- __isomorphic:__ renders seamlessly in both Node and browsers
+- __very cute:__ choo choo!
 
 ## Features
 - __minimal size:__ weighing `4kb`, `choo` is a tiny little framework
@@ -136,6 +151,29 @@ function countStore (state, emitter) {
     emitter.emit('render')
   })
 }
+
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from '../reducers/root_reducer';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { createLogger } from 'redux-logger';
+
+const middlewares = [thunk];
+
+if (process.env.NODE_ENV !== 'production') {
+  middlewares.unshift(createLogger());
+}
+
+const configureStore = (preloadedState = {}) => (
+  createStore(
+    rootReducer,
+    preloadedState,
+    composeWithDevTools(
+    applyMiddleware(...middlewares))
+  )
+);
+
+export default configureStore;
 ```
 Want to see more examples? Check out the [Choo handbook][handbook].
 

@@ -78,10 +78,6 @@ class MealShow extends React.Component {
 							<td>Price</td>
 							<td>{price}</td>
 						</tr>
-						<tr>
-							<td>Image</td>
-							<td>{image_url}</td>
-						</tr>
 					</tbody>
 				</table>
 			</main>

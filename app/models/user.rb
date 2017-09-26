@@ -12,13 +12,13 @@
 #  session_token     :string
 #  profile_image_url :string
 #  bio               :text
-#  course_credit     :decimal(, )
 #  cash_balance      :decimal(, )
 #  is_admin          :boolean
 #  type              :string
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null
 #  gender            :string
+#  phone_number      :integer
 #
 
 class User < ApplicationRecord
@@ -80,6 +80,7 @@ class User < ApplicationRecord
 		self.fname = 'Alex'
 		self.lname = 'Cargo'
 		self.type = 'Student'
+		self.profile_image_url = 'https://res.cloudinary.com/swy/image/upload/v1499749857/images/student.svg'
 		Transcript.create(student_id: self.id)
 		Schedule.create(user_id: self.id)
 	end	

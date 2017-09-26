@@ -179,9 +179,3 @@ class CourseShow extends React.Component {
 }
 
 export default CourseShow;
-
-
-// { course_enrollments.some(course => course.course_id === id ) ? 
-// 	<button className='btn delete' onClick={this.dropCourse}>Drop Course</button> :
-// 	<button className='btn create' onClick={this.addCourse}>Add Course</button> 		
-//  }

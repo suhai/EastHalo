@@ -24,9 +24,21 @@ const Protected = ({component: Component, path, loggedIn}) => (
   )}/>
 );
 
-// access the Redux state to check if the user is logged in
+// renders component if logged in and is an admin, otherwise redirects to the public homepage
+// const HighlyProtected = ({component: Component, path, loggedInAdmin}) => (
+//   <Route path={path} render={(props) => (
+//      loggedInAdmin ? (
+//       <Component {...props}/>
+//     ) : (
+//       <Redirect to="/subhome"/>
+//     )
+//   )}/>
+// );
+
+// access the Redux state to check if the user is logged in and/or is an admin
 const mapStateToProps = state => ({
-  loggedIn: Boolean(state.session.currentUser)
+	loggedIn: Boolean(state.session.currentUser),
+	// loggedInAdmin: Boolean(state.session.currentUser.is_admin)
 });
 
 // connect AuthRoute to the redux state
@@ -34,3 +46,6 @@ export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 
 // connect ProtectedRoute to the redux state
 export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected));
+
+// connect HighlyProtectedRoute to the redux state
+// export const HighlyProtectedRoute = withRouter(connect(mapStateToProps, null)(HighlyProtected));

@@ -146,6 +146,12 @@ class UserEditForm extends React.Component {
 
 		return (
 			<div>
+				<div class="img-gallery">
+					<div className="gallery">
+						<img src={profile_image_url} alt={username} />
+					</div>
+				</div>
+				<hr/>
 				<h2 className='course-header'>{username}</h2>
 					<form className="form-style-9">
 						<ul>

@@ -11,42 +11,38 @@ main > div:first-child {
 
 .img-gallery {
   margin: auto;
-  /* height: 250px; */
-	margin: 20px;
-	
+	// margin: 20px;
   display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
 }
 
 img {
-  /* width: 350px;
-  height: 200px; */
-  border: 1px solid #ddd;
+  border: 1px solid $abi;
   border-radius: 4px;
 }
 
 img:hover {
   opacity: 0.5;
   filter: alpha(opacity=50); /* For IE8 and earlier */
-  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+  box-shadow: 0 0 2px 1px $acg;
 }
 
 div.gallery {
   margin: auto;
-  border: 5px solid #ccc;
+  border: 5px solid $ach;
   float: left;
   width: 180px;
   padding: 5px;
 }
 
 div.gallery:hover {
-  border: 1px solid #777;
+  border: 1px solid $abh;
 }
 
 div.gallery img {
   width: 100%;
-  height: auto;
+  height: 150px;
 }
 
 div.desc {
@@ -58,3 +54,4 @@ div.desc {
 // input:focus {
 //   background: salmon;
 // }
+

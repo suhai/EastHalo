@@ -21,19 +21,20 @@ class NewsSnippet extends React.Component {
 			id, 
 			headline, 
 			url, 
-			date
+			date,
+			image_url
 		} = this.props.news;
 
     return (
-			<div>
-				<div onClick={this.showNews}>
-					<p>{id}</p>
-					<p>{headline.slice(0,20)}</p>
-					<p>{url}</p>
-					<p>{date}</p>
+			<div className="img-gallery" onClick={this.showNews}>
+				<div className="gallery">
+					<img src={image_url} alt='Mews Article' />
+					<div className="desc">
+					<div>
+						<p>{headline.slice(0,20)}</p>
+					</div>
+					</div>
 				</div>
-	
-				<div>NEWS SNIPPET GOES HERE</div>
 				<hr/>
 			</div>
     );

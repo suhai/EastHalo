@@ -42,14 +42,22 @@ class BookShow extends React.Component {
 		} = this.state.book;
 
 		return (
-			<main className='user-page'>
-				<div>
-					<h2 className='course-header'>{title}</h2>
-					<div className='grouped-buttons'>
-						<button className='btn buy' onClick={this.buyBook}>Buy Book</button>
+				<main className='user-page'>
+					<div className="img-gallery">
+						<div className="gallery">
+							<img src={image_url} alt={title} />
+						</div>
 					</div>
+					<hr/>
+					<div>
+					<div>
+						<h2 className='course-header'>{title}</h2>
+						<div className='grouped-buttons'>
+							<button className='btn buy' onClick={this.buyBook}>Buy Book</button>
+						</div>
+					</div>
+					<hr />
 				</div>
-				<hr />
 
 				<table id="background-image" className="full-width">
 					<thead>

@@ -3,12 +3,12 @@
 # Table name: messages
 #
 #  id         :integer          not null, primary key
-#  name       :string
 #  email      :string
 #  subject    :string
 #  msg        :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  sender     :string
 #
 
 class Message < ApplicationRecord

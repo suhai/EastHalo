@@ -49,10 +49,6 @@ class Comments extends React.Component {
 						</tbody>
 					</table>
 				</div>
-
-				<p className='pull-left'>
-					Table Footer or Description Will Go Here
-				</p>
 			</div>
 		);
 	}

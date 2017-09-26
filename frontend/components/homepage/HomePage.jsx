@@ -73,7 +73,8 @@ class HomePage extends React.Component {
           contentLabel="Modal">
           {authRoute}
         </Modal>
-
+				
+				<div className='easthalo'>EASTHALO UNIVERSITY</div>
 				<div className='home-page-button'>
 					<ul>
 						<li>

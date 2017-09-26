@@ -27,7 +27,7 @@ class Meal extends React.Component {
     return (
 			<div className="img-gallery" onClick={this.showUser}>
 				<div className="gallery">
-					<img src={image_url} alt="Diver" width={300} height={200} />
+					<img src={image_url} alt={name} />
 					<div className="desc">
 					<div>
 						<p>{price}</p>

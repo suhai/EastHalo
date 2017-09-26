@@ -4,9 +4,7 @@ import ReactDOM from 'react-dom';
 class PostSnippet extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: ''
-    };
+    this.state = {};
     this.showPost = this.showPost.bind(this);
   }
 
@@ -21,18 +19,20 @@ class PostSnippet extends React.Component {
 			title, 
 			body, 
 			user_id, 
-			user
+			user,
+			image_url
 		} = this.props.post;
 
     return (
-			<div>
-				<div onClick={this.showPost}>
-					<p>{user}</p>
-					<p>{title}</p>
-					<p>{body}</p>
+			<div className="img-gallery" onClick={this.showPost}>
+				<div className="gallery">
+					<img src={image_url} alt={title} />
+					<div className="desc">
+					<div>
+						<p>{title}</p>
+					</div>
+					</div>
 				</div>
-	
-				<div>POST SNIPPET GOES HERE</div>
 				<hr/>
 			</div>
     );

@@ -48,7 +48,6 @@ class NewsShow extends React.Component {
 			<div>
 				<iframe className="linker" width="800" height="500" src={url} name="iframe_a"></iframe>
 				<p>{headline}</p>
-				<p>When the target of a link matches the name of an iframe, the link will open in the iframe.</p>
     	</div>
     );
   }

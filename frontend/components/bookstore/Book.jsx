@@ -27,13 +27,13 @@ class Book extends React.Component {
 		} = this.props.book;
 
     return (
-			<div className="img-gallery" onClick={this.showUser}>
+			<div className="img-gallery" onClick={this.showBook}>
 				<div className="gallery">
-					<img src={image_url} alt="Diver" width={300} height={200} />
+					<img src={image_url} alt={title} />
 					<div className="desc">
-					<div>
-						<p>{title}</p>
-					</div>
+						<div>
+							<p>{title}</p>
+						</div>
 					</div>
 				</div>
 				<hr/>

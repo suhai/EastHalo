@@ -15,6 +15,7 @@ class Meal < ApplicationRecord
 	after_initialize :set_defaults, unless: :persisted?
 	
 	def set_defaults
-    self.price  ||= 5
+		self.price  ||= 5
+		self.image_url = 'https://res.cloudinary.com/swy/image/upload/v1506310612/food14_oeahvi.jpg'
 	end	
 end

@@ -27,7 +27,7 @@ class UserSnippet extends React.Component {
     return (
 			<div className="img-gallery" onClick={this.showUser}>
 				<div className="gallery">
-					<img src="https://res.cloudinary.com/swy/image/upload/v1499749804/images/diver.svg" alt="Diver" width={300} height={200} />
+					<img src={profile_image_url} alt={username} />
 					<div className="desc">
 					<div>
 						<p>{username}</p>

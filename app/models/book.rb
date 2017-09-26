@@ -20,5 +20,6 @@ class Book < ApplicationRecord
 
 	def set_defaults
 		self.price  ||= 0.99
+		self.image_url = 'https://res.cloudinary.com/swy/image/upload/v1506309790/book12_itfeui.jpg'
 	end	
 end

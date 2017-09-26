@@ -15,7 +15,7 @@ class User extends React.Component {
       <main className='user-page'>
 					<div className="img-gallery" onClick={this.showUser}>
 						<div className="gallery">
-							<img src="https://res.cloudinary.com/swy/image/upload/v1499749804/images/diver.svg" alt="Diver" width={300} height={200} />
+							<img src={this.props.user.profile_image_url} />
 						</div>
 					</div>
 					<hr/>

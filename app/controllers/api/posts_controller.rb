@@ -2,13 +2,8 @@ class Api::PostsController < ApplicationController
 	before_action :set_post, only: [:show, :update, :destroy]
 	
 	def index
-		if current_user.is_admin
-			@post = Post.all
-			render :index
-		else
-			@posts = Post.where(user_id: current_user.id)
-			render :index
-		end	
+		@posts = Post.all
+		render :index
 	end
 
 	def create
@@ -42,7 +37,7 @@ class Api::PostsController < ApplicationController
 	#----------------------------------------------------------------------------
 	private
   def post_params
-    params.require(:post).permit(:body, :title, :user_id)
+    params.require(:post).permit(:body, :title, :user_id, :image_url)
   end
 
 	def set_post

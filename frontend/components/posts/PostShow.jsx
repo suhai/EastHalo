@@ -44,6 +44,7 @@ class PostShow extends React.Component {
 				post: {},
 				title: '',
 				body: '',
+				image_url: ''
 			});
 	}
 
@@ -51,16 +52,27 @@ class PostShow extends React.Component {
 		const {
 			id,
 			title,
-			body
+			body,
+			image_url,
+			user_id
 		} = this.state.post;
+
+		let displayButtons = this.props.currentUser.id == user_id ?
+		<div className='grouped-buttons'>
+			<button className='btn edit' onClick={this.editPost}>Edit Post</button>
+			<button className='btn delete' onClick={this.deletePost}>Delete Post</button>
+		</div> : <div></div>
 
 		return (
 			<main className='user-page'>
 				<div>
-					<div className='grouped-buttons'>
-						<button className='btn edit' onClick={this.editPost}>Edit Post</button>
-						<button className='btn delete' onClick={this.deletePost}>Delete Post</button>
+					<div className="img-gallery">
+						<div className="gallery">
+							<img src={image_url} alt={title} />
+						</div>
 					</div>
+					<hr/>				
+						{displayButtons}
 					<h2 className='course-header'>{title}</h2>
 					<div>
 						<div>

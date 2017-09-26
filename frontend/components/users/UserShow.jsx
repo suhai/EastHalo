@@ -114,12 +114,12 @@ class UserShow extends React.Component {
 
 		return (
 			<main className='user-page'>
-					<div className="img-gallery" onClick={this.showUser}>
-						<div className="gallery">
-							<img src="https://res.cloudinary.com/swy/image/upload/v1499749804/images/diver.svg" alt="Diver" width={300} height={200} />
-						</div>
+				<div className="img-gallery" onClick={this.showUser}>
+					<div className="gallery">
+						<img src={profile_image_url} alt={username} />
 					</div>
-					<hr/>
+				</div>
+				<hr/>
 				<div>
 					<div className='course-header'>
 						{addableUser}

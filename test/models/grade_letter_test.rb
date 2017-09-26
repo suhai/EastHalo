@@ -6,6 +6,7 @@
 #  letter     :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  weight     :decimal(, )
 #
 
 require 'test_helper'

@@ -1,7 +1,7 @@
 @import 'variables';
 
 p.auth-errors {
-  color: red;
+  color: $acn;
 }
 
 div.homepage {
@@ -18,13 +18,6 @@ div.homepage {
     padding: 10px 20px;
     height: 100%;
 		padding-bottom: 50px;
-		
-		// html,
-		// body {
-		// 	margin: 0;
-		// 	padding: 0;
-		// 	font-family: 'Merriweather', serif;
-		// }
 		
 	
 		background: url("https://res.cloudinary.com/swy/image/upload/v1499750341/images/pexels-photo-93822.jpg") no-repeat center center fixed;
@@ -161,7 +154,7 @@ main.homepage-info {
 
 .placeholder-text {
 	h3 {
-		color: seagreen;
+		color: $afn;
 		text-align: center !important;
 		margin: 2em;
 	}
@@ -206,11 +199,24 @@ button:focus { outline: 0 }
   }
 }
 
+.easthalo {
+  display: flex;
+	// justify-content: space-between;
+	position: fixed;
+	margin-right: 70%;
+	margin-top: 5em;
+	padding: .5em;
+	font-weight: bold;
+	color: $white;
+	border: 2px solid $abz;
+	margin-left: 5%;
+}
+
 
 //signup buton
 button.signup {
   color: white;
-  border: .2em solid antiquewhite;
+  border: .2em solid $afp;
   border-radius: 5px;
   font-weight: 300;
   padding: 5px 15px;
@@ -220,9 +226,9 @@ button.signup {
 }
 
 button.signup:hover {
-  box-shadow: 0 0 5px white, 0 0 5px white inset;
+  box-shadow: 0 0 5px $white, 0 0 5px $white inset;
   border-radius: 5px;
-  text-shadow: 0 0 2px white;
+  text-shadow: 0 0 2px $white;
 }
 
 button.login {
@@ -231,7 +237,7 @@ button.login {
   border-radius: 5px;
   font-weight: 300;
 	padding: 5px 10px;
-	border: .2em solid aquamarine;
+	border: .2em solid $afo;
   font-size: 14px;
   transition: text-shadow 0.3s;
   margin-top: 30px;
@@ -239,32 +245,10 @@ button.login {
 }
 
 button.login:hover {
-  box-shadow: 0 0 5px white, 0 0 5px white inset;
+  box-shadow: 0 0 5px $white, 0 0 5px $white inset;
   border-radius: 5px;
-  text-shadow: 0 0 2px white;
+  text-shadow: 0 0 2px $white;
 }
-
-
-// // temporary. will be removed or replaced later
-// .swyinfo {
-//   position: absolute;
-//   max-width: 100px;
-//   left: 5%;
-//   margin-top: 30px;
-//   color: white;
-//   border-radius: 5px;
-//   font-weight: 300;
-//   font-size: 14px;
-//   transition: box-shadow 0.3s, text-shadow 0.3s;
-//   padding: 5px 15px 5px 15px;
-//   border: .2em solid aquamarine;
-// }
-
-// .swyinfo:hover {
-//   box-shadow: 0 0 5px white, 0 0 5px white inset;
-//   border-radius: 5px;
-//   text-shadow: 0 0 2px white;
-// }
 
 
 .banner,

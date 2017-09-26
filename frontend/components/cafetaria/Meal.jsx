@@ -25,7 +25,7 @@ class Meal extends React.Component {
 		} = this.props.meal;
 
     return (
-			<div className="img-gallery" onClick={this.showUser}>
+			<div className="img-gallery" onClick={this.showMeal}>
 				<div className="gallery">
 					<img src={image_url} alt={name} />
 					<div className="desc">

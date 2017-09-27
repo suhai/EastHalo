@@ -25,7 +25,6 @@ class Profile extends React.Component {
 			current_course_load,
 			completed_course_credit,
 			profile_image_url,
-			friends,
 			posts,
 			comments,
 			courses,
@@ -97,10 +96,6 @@ class Profile extends React.Component {
 							<tr>
 								<td>Current Course Load</td>
 								<td>{current_course_load}</td>
-							</tr>
-							<tr>
-								<td>Number of Friends</td>
-								<td>{friends.length}</td>
 							</tr>
 							<tr>
 								<td>Number of Posts</td>

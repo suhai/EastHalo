@@ -43,6 +43,11 @@ class User < ApplicationRecord
 		'NA' unless self.type == 'Student'
 	end
 
+	# def friends
+	# 	arr = []
+  #   self.
+  # end
+
 	# def default_user_to_student_and_instantiate_schedule_and_transcript
 	# 	self.type = 'Student'
 	# 	Transcript.create(student_id: self.id)

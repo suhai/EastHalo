@@ -4,7 +4,7 @@
   <strong>A Clone of a Univeristy Registration Web Application</strong>
 </div>
 
-The Application can be found here: [EastHalo](https://easthalo.herokuapp.com/)
+The deployed application can be found here: [EastHalo](https://easthalo.herokuapp.com/)
 
 ## Table of Content
 - [Overview](#overview)
@@ -15,13 +15,13 @@ The Application can be found here: [EastHalo](https://easthalo.herokuapp.com/)
 - [Future](#future)
 
 ## Overview
-This is a single page web application modeled after a university website. It was built with a Rails backend with a PostgreS database and a React-Redux frontend. it took me three weeks from start to it's present state (as of September 18, 2017). It is made of two main layers; the Landing Page, and the LoggedHome Page. The Landing Page is pretty self explanatory and doesn't contain much beyond just signing users up and logging them in. The Logged Home Page on the other hand contains the main functionalities of the app. I go into the details below and in my screen cast of the features found on the landing page of the live app.
+This is a single page web application modeled after a university website. It was built with a Rails backend, a PostgreS database and a React-Redux frontend. It took me three weeks from start to it's present state (as of September 27, 2017). It is made up of two main layers; the Landing Page, and the LoggedHome Page. The Landing Page is pretty self explanatory and doesn't contain much beyond just signing users up and/or signing them in. The LoggedHome Page on the other hand contains the main functionalities of the app. I go into the details below.
 
 
 ## Backend
 
-The app is built on a Ruby on Rails backend supported by a PostgreSQL database. I abstracted the routes (except the root, which is the 'static_pages' in this app) from a traditonal Rails routes to React Router. Initially I planned to center the app around two user models; students and professors. However, as I start with my wireframe I realized that I should leave room for scalability in case i decide to extend the user classes beyond just students and professors. So I ended up with a User Model / Class from which all other user types can inherit from. As at the time of writing this README I had four types of users; students, professors, administrators, and ordinary users. 
-A sample model from the Database is shown below:
+The app is built on a Ruby on Rails backend supported by a PostgreSQL database. I abstracted the routes (except the root, which is the 'static_pages' route in this app) from a traditonal Rails routes to React Router. Initially I planned to center the app around two user models; students and professors. However, after I started working on it I realized that I should leave room for scalability in case I decide to extend the user classes beyond just students and professors. So I ended up with a User Model / Class from which all other user types can inherit. As at the time of writing this README I had four types of users; students, professors, administrators, and ordinary users. 
+A sample model from the database is shown below:
 
 ```js	
 
@@ -41,9 +41,9 @@ A sample model from the Database is shown below:
  public | users                     | table    | suhai
 (26 rows)
 
-#--------------------------------------------------------------
-## SAMPLE DATA FROM THE COURSES TABLE
-#--------------------------------------------------------------
+			---------------------------------------------------
+ 						SAMPLE DATA FROM THE COURSES TABLE
+			---------------------------------------------------
 
  id |   title   | course_credit | start_time | end_time | professor_id |
 ----+-----------+---------------+------------+----------+--------------
@@ -58,10 +58,17 @@ A sample model from the Database is shown below:
 ## API
 
 ```js
+ // Sample API calls to the backedn is shown below:
+$.ajax({
+	method: 'GET',
+	url: '/api/students'
+})
+
+
 $.ajax({
 	method: 'POST',
 	url: '/api/friendships',
-	dataType: "json",
+	dataType: 'json',
 	data: friendship
 })
 
@@ -69,6 +76,14 @@ $.ajax({
 $.ajax({
 	method: 'GET',
 	url: `api/grades/${id}`
+})
+
+
+$.ajax({
+	method: 'POST',
+	url: `api/posts/${id}/comments`,
+	dataType: 'json',
+	data: comment
 })
 
 
@@ -82,9 +97,21 @@ $.ajax({
 	},
 })
 
+
+$.ajax({
+	method: 'PATCH',
+	url: 'api/professor/35',
+	data: {
+		user: {
+		lname: "Thadeus",
+		password: '[FILTERED]'
+		}
+	},
+})
+
 ```
 
-## Class Interactions
+## Sample Model Class Interactions
 ```ruby
 # == Schema Information
 class Student < User
@@ -191,7 +218,7 @@ The Features with * are being worked on and so are not currently available on th
 
 
 ### User Authentication & Authorization
-In a real world university users are already pre-screened as members of the university and given credentials to create user accounts. For the purpose of this project I have left open the possibility that anyone can sign up. A user's default type is a regular user. An admin can then grant the user privilges by assigning a type to their profile, be it Student, Professor, or another Admin. These 'type' determine what user privilges a user gets within the application. As demonstrated in the table above, all users get a Schedule instantiated for them by default on signing, and they can create and comment on posts, can become friends with any other user user, can access the news, purchase meals and books. Beyong that point there is an overlap in privileges, with the Admin User types enjoying the most exclusive privilges.
+In a real world university users are already pre-screened as members of the university and given credentials to create user accounts. For the purpose of this project I have left open the possibility that anyone can sign up. A user's default type is 'Student'. An admin can then grant the user privilges by assigning a type to their profile, be it Student, Professor, or another Admin. These 'types' determine what user privilges a user gets within the application. As demonstrated in the table above, all users get a Schedule instantiated for them by default on signing up, and they can create and comment on posts, can become friends with any other users, can access the news page, purchase meals from cafetaria and books from thebookstore. Beyond that point there is an overlap in privileges, with the Admin User type enjoying the most exclusive privilges. Again, for demonstrational purposes only I have granted all users the ability to edit their user 'type' in their profile. So basically one can test out all the available page privileges by changing their 'type' to any particular type.
 
 
 
@@ -222,23 +249,20 @@ export default configureStore;
 ```
 
 ## Homepage
-![Alt text](https://res.cloudinary.com/swy/image/upload/v1501895913/tikld1_v47geg.png "homepage")
+![Alt text](https://res.cloudinary.com/swy/image/upload/v1506539090/homepage_s5uxoq.png "homepage")
 
-## Admin Page
-![Alt text](https://res.cloudinary.com/swy/image/upload/v1501895911/tkld2_onunua.png "homepage signup")
+## Student Profile Page
+![Alt text](https://res.cloudinary.com/swy/image/upload/v1506539090/profile_page_lvkjj3.png "profile edit")
 
-## Student Page
-![Alt text](https://res.cloudinary.com/swy/image/upload/v1501895907/tkld3_rpgpas.png "profile edit")
-
-## Cafetaria Page
-![Alt text](https://res.cloudinary.com/swy/image/upload/v1501895907/tkld4_lp22hq.png "category page")
+## Bookstore Page
+![Alt text](https://res.cloudinary.com/swy/image/upload/v1506539090/bookstore_avtyja.png "bookstore page")
 
 
 
 
 ## Future
 ### Plans For Future / Continuous Work On This Project
-* I plan to add a chat service to the Logged HomePage to mimick facebook chat, implemented Follow and Like features for users to follow other users and like posts and comments. In addition I plan to implement a Stripe payment portal for users to be able to make purchaes with real payments. Currently users have $0 accounts instantiated for them upon signing up. They can then make purchaes from the cafetaria and/or bookstore with their accounts debited with the prices of goods purchased and the bookstore / cafetaria accounts credited with the equivalent amount. I think it'd be more realistic to actually have a credit card / debit card payment system. I also plan to implement a feature for professors to create questions and tests that gets sent to all students in a particular course the professor is teaching. The students answers will then be sent back to the professor who can then assign them a grade for the course.
+* I plan to add a chat service to the LoggedHome Page to mimick the facebook chat service, implement Follow and Like features for users to follow other users and like posts and comments. In addition I plan to implement a Stripe payment portal for users to be able to make purchaes with real payments. Currently users have $0 accounts instantiated for them upon signing up. They can then make purchaes from the cafetaria and/or bookstore with their accounts debited with the prices of goods purchased and the bookstore / cafetaria accounts credited with the equivalent amount. I think it'd be more realistic to actually have a credit card / debit card payment system. I also plan to implement a feature for professors to create questions and tests that gets sent to all students in a particular course the professor is teaching. The students answers will then be sent back to the professor who can then assign them a grade for the test/course.
 
-* My hope is to keep working on improving the current performance of the app and add more features as time permit. I am in the middle of the search for my first job and may not be able to continue working on adding more features until I have dispensable time.
+* My hope is to keep working on improving the current performance of the app and add more features as time permit.
 

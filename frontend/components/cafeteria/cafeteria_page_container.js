@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { createMeal, fetchMeals, deleteMeal, editMeal } from '../../actions/meal_actions';
-import Cafetaria from './Cafetaria';
+import Cafeteria from './Cafeteria';
 
 const mapStateToProps = (state, ownProps) => ({
 	meals: state.meals,
@@ -19,4 +19,4 @@ export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-)(Cafetaria));
+)(Cafeteria));

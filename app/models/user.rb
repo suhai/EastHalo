@@ -43,18 +43,9 @@ class User < ApplicationRecord
 		'NA' unless self.type == 'Student'
 	end
 
-	# def friends
-	# 	arr = []
-	# 	self.friendships.each do |friendship|
-	# 		arr << User.where(user_id: friendship.friend_id) unless friendship.friend_id == self.id
-	# 	end
-
-	# 	arr
-	# end
-
 	def default_user_to_student_and_instantiate_schedule_and_transcript
 		self.type ||= 'Student'
-		self.transcript ||= Transcript.create(student_id: self.id) if self.type == 'Student'
+		Transcript.create(student_id: self.id) if self.type == 'Student'
 		self.schedule ||= Schedule.create(user_id: self.id)
 	end
 

@@ -6,7 +6,7 @@ import ProfileDetailPageContainer from '../profile_detail/profile_detail_page_co
 import AdminPageContainer from '../admin/admin_page_container';
 import BookShowContainer from '../bookstore/book_show_container';
 import BookstorePageContainer from '../bookstore/bookstore_page_container';
-import CafetariaPageContainer from '../cafetaria/cafetaria_page_container';
+import CafeteriaPageContainer from '../cafeteria/cafeteria_page_container';
 {/* COMMENTS , only display all + delete options */}
 import CommentShowContainer from '../comments/comment_show_container';
 import CommentFormContainer from '../comments/comment_form_container';
@@ -15,7 +15,7 @@ import CourseShowContainer from '../registrar/course_show_container';
 {/* HOME */}
 import SubHomeContainer from './sub_home_container';
 {/* MEALS */}
-import MealShowContainer from '../cafetaria/meal_show_container';
+import MealShowContainer from '../cafeteria/meal_show_container';
 {/* NEWS */}
 import NewsPageContainer from '../news/news_page_container';
 import NewsShowContainer from '../news/news_show_container';
@@ -49,9 +49,9 @@ class LoggedHome extends React.Component {
 						{/* BOOKSTORE */}
 						<Route path="/bookstore/books/:id" render={(props) => <BookShowContainer {...props} />} />
 						<Route path="/bookstore" render={(props) => <BookstorePageContainer {...props} />} />
-						{/* CAFETARIA */}
-						<Route path="/cafetaria/meals/:id" render={(props) => <MealShowContainer {...props} />} />
-						<Route path="/cafetaria" render={(props) => <CafetariaPageContainer {...props} />} />
+						{/* cafeteria */}
+						<Route path="/cafeteria/meals/:id" render={(props) => <MealShowContainer {...props} />} />
+						<Route path="/cafeteria" render={(props) => <CafeteriaPageContainer {...props} />} />
 						{/* COMMENTS */}
 						<Route path="/:username/comments/commentform" render={(props) => <CommentFormContainer {...props} /> } />
 						<Route path="/:username/comments/edit/:id" render={(props) => <CommentEditContainer {...props} /> } />

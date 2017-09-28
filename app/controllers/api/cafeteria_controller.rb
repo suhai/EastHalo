@@ -1,8 +1,8 @@
-class Api::CafetariaController < ApplicationController
+class Api::CafeteriaController < ApplicationController
   before_action :set_cafetarium, only: [:show, :update, :destroy]
 	
 	def index
-		@cafetaria = Cafetarium.all 
+		@cafeteria = Cafetarium.all 
 		render :index
 	end
 
@@ -29,7 +29,7 @@ class Api::CafetariaController < ApplicationController
 
 	def destroy
 		@cafetarium.destroy
-		render json: @cafetaria
+		render json: @cafeteria
 	end
 	
 

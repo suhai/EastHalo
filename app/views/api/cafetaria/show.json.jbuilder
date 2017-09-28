@@ -1,1 +1,1 @@
-json.partial! 'api/cafetaria/cafetarium', cafetarium: @cafetarium
+json.partial! 'api/cafeteria/cafeterium', cafeterium: @cafeterium

@@ -27,7 +27,7 @@ class Student < User
 	has_many :departments, through: :courses
 	has_many :professors, through: :courses
 	has_one :transcript, dependent: :destroy
-	has_many :grades, dependent: :destroy
+	has_many :grades
 
 	def gpa
 		completed_course_credit > 0 ? (total_credit_weight.to_f / completed_course_credit) : 'NA'

@@ -1,9 +1,9 @@
-@cafetaria.each do |cafetarium|
-  json.set! cafetarium.id do
-		json.id cafetarium.id
-		json.account cafetarium.account
-		json.created_at cafetarium.created_at
-		json.updated_at cafetarium.updated_at
+@cafeteria.each do |cafeterium|
+  json.set! cafeterium.id do
+		json.id cafeterium.id
+		json.account cafeterium.account
+		json.created_at cafeterium.created_at
+		json.updated_at cafeterium.updated_at
 	end
 end
 

@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: cafetaria
+# Table name: cafeteria
 #
 #  id         :integer          not null, primary key
 #  account    :decimal(, )

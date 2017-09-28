@@ -34,7 +34,8 @@ class Course < ApplicationRecord
 
 	def set_defaults
 		self.course_credit  ||= 1.0
-		self.start_time  ||= 900
-		self.end_time  ||= 1000
+		self.start_time  ||= '9:00'
+		self.end_time  ||= '10:00'
+		self.course_cap ||= 25
 	end	
 end

@@ -31,7 +31,7 @@ A sample model from the database is shown below:
  public | ar_internal_metadata      | table    | suhai
  public | books                     | table    | suhai
  public | bookstore                	| table    | suhai
- public | cafetaria                 | table    | suhai
+ public | cafeteria                 | table    | suhai
  public | comments                  | table    | suhai
 	
 	Several Models Omitted Here For Brevity
@@ -218,7 +218,7 @@ The Features with * are being worked on and so are not currently available on th
 
 
 ### User Authentication & Authorization
-In a real world university users are already pre-screened as members of the university and given credentials to create user accounts. For the purpose of this project I have left open the possibility that anyone can sign up. A user's default type is 'Student'. An admin can then grant the user privilges by assigning a type to their profile, be it Student, Professor, or another Admin. These 'types' determine what user privilges a user gets within the application. As demonstrated in the table above, all users get a Schedule instantiated for them by default on signing up, and they can create and comment on posts, can become friends with any other users, can access the news page, purchase meals from cafetaria and books from thebookstore. Beyond that point there is an overlap in privileges, with the Admin User type enjoying the most exclusive privilges. Again, for demonstrational purposes only I have granted all users the ability to edit their user 'type' in their profile. So basically one can test out all the available page privileges by changing their 'type' to any particular type.
+In a real world university users are already pre-screened as members of the university and given credentials to create user accounts. For the purpose of this project I have left open the possibility that anyone can sign up. A user's default type is 'Student'. An admin can then grant the user privilges by assigning a type to their profile, be it Student, Professor, or another Admin. These 'types' determine what user privilges a user gets within the application. As demonstrated in the table above, all users get a Schedule instantiated for them by default on signing up, and they can create and comment on posts, can become friends with any other users, can access the news page, purchase meals from cafeteria and books from thebookstore. Beyond that point there is an overlap in privileges, with the Admin User type enjoying the most exclusive privilges. Again, for demonstrational purposes only I have granted all users the ability to edit their user 'type' in their profile. So basically one can test out all the available page privileges by changing their 'type' to any particular type.
 
 
 
@@ -262,7 +262,7 @@ export default configureStore;
 
 ## Future
 ### Plans For Future / Continuous Work On This Project
-* I plan to add a chat service to the LoggedHome Page to mimick the facebook chat service, implement Follow and Like features for users to follow other users and like posts and comments. In addition I plan to implement a Stripe payment portal for users to be able to make purchaes with real payments. Currently users have $0 accounts instantiated for them upon signing up. They can then make purchaes from the cafetaria and/or bookstore with their accounts debited with the prices of goods purchased and the bookstore / cafetaria accounts credited with the equivalent amount. I think it'd be more realistic to actually have a credit card / debit card payment system. I also plan to implement a feature for professors to create questions and tests that gets sent to all students in a particular course the professor is teaching. The students answers will then be sent back to the professor who can then assign them a grade for the test/course.
+* I plan to add a chat service to the LoggedHome Page to mimick the facebook chat service, implement Follow and Like features for users to follow other users and like posts and comments. In addition I plan to implement a Stripe payment portal for users to be able to make purchaes with real payments. Currently users have $0 accounts instantiated for them upon signing up. They can then make purchaes from the cafeteria and/or bookstore with their accounts debited with the prices of goods purchased and the bookstore / cafeteria accounts credited with the equivalent amount. I think it'd be more realistic to actually have a credit card / debit card payment system. I also plan to implement a feature for professors to create questions and tests that gets sent to all students in a particular course the professor is teaching. The students answers will then be sent back to the professor who can then assign them a grade for the test/course.
 
 * My hope is to keep working on improving the current performance of the app and add more features as time permit.
 

@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 		resources :books, except: [:new, :edit]
 		resources :bookstore, except: [:new, :edit]
 		resources :schedules, except: [:new, :edit]
-		resources :cafetaria, except: [:new, :edit]
+		resources :cafeteria, except: [:new, :edit]
 		resources :meals, except: [:new, :edit]
 		resources :grade_letters, except: [:new, :edit]
 		resources :grades, except: [:new, :edit]

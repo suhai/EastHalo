@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: cafetaria
+# Table name: cafeteria
 #
 #  id         :integer          not null, primary key
 #  account    :decimal(, )
@@ -8,7 +8,7 @@
 #  updated_at :datetime         not null
 #
 
-class Cafetarium < ApplicationRecord
+class Cafeterium < ApplicationRecord
 	after_initialize :set_defaults, unless: :persisted?
 
   def set_defaults

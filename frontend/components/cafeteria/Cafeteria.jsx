@@ -3,7 +3,7 @@ import { values, merge } from 'lodash';
 import { NavLink, Route, Switch } from 'react-router-dom';
 import Meal from './Meal';
 
-class Cafetaria extends React.Component {
+class Cafeteria extends React.Component {
   constructor(props) {
     super(props);
 		this.state = {
@@ -35,4 +35,4 @@ class Cafetaria extends React.Component {
   }
 }
 
-export default Cafetaria;
+export default Cafeteria;

@@ -12,7 +12,7 @@ class Meal extends React.Component {
 
 
   showMeal() {
-		window.location.hash = `cafetaria/meals/${this.props.meal.id}`;
+		window.location.hash = `cafeteria/meals/${this.props.meal.id}`;
 	};
 
 

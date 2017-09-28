@@ -21,6 +21,7 @@ class CourseShow extends React.Component {
 	componentDidMount() {
 		const id = this.props.match.params.id;
 		this.props.fetchCourse(id);
+		this.props.fetchCourses();
 		this.props.fetchCourseEnrollments();
 	};
 

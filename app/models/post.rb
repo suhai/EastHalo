@@ -18,6 +18,6 @@ class Post < ApplicationRecord
 	after_initialize :set_defaults, unless: :persisted?
 	
 	def set_defaults
-		self.image_url = 'https://res.cloudinary.com/swy/image/upload/v1499750384/images/pexels-photo-156685.jpg'
+		self.image_url ||= 'https://res.cloudinary.com/swy/image/upload/v1499750384/images/pexels-photo-156685.jpg'
 	end
 end

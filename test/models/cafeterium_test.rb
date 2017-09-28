@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: cafetaria
+# Table name: cafeteria
 #
 #  id         :integer          not null, primary key
 #  account    :decimal(, )
@@ -10,7 +10,7 @@
 
 require 'test_helper'
 
-class CafetariumTest < ActiveSupport::TestCase
+class CafeteriumTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

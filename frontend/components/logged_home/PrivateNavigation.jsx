@@ -55,12 +55,12 @@ class PrivateNavigation extends React.Component {
 						<li><NavLink to='/subhome'>Community</NavLink></li>
 						<li><NavLink to='/registrar'>Registrar</NavLink></li>
 						<li><NavLink to='/news'>EHU News</NavLink></li>
-						<li><NavLink to='/cafetaria'>Cafetaria</NavLink></li>
+						<li><NavLink to='/cafeteria'>Cafeteria</NavLink></li>
 						<li><NavLink to='/bookstore'>BookStore</NavLink></li>
 						{adminLink}
 					</ul>
 					<ul className='searchbar'>
-						<input onKeyPress={this.toSearch} className='search'></input>
+						<input onKeyPress={this.toSearch} placeholder="Search for Users"  className='search'></input>
 					</ul>
 					<ul>
 						<div className="dropdown">

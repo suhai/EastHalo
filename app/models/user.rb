@@ -29,12 +29,12 @@ class User < ApplicationRecord
   attr_reader :password
 	after_initialize :ensure_session_token
 	after_initialize :set_defaults, unless: :persisted?
-	# after_initialize :default_user_to_student_and_instantiate_schedule_and_transcript
+	after_create :default_user_to_student_and_instantiate_schedule_and_transcript
 	scope :students, -> { where(type: 'Student') }
 	scope :professors, -> { where(type: 'Professor') }
 
-	has_many :friendships
-	has_many :friends, through: :friendships, dependent: :destroy
+	has_many :friendships, dependent: :destroy
+	has_many :friends, through: :friendships
 	has_many :posts, dependent: :destroy
 	has_many :comments, dependent: :destroy
 	has_one :schedule, dependent: :destroy
@@ -45,14 +45,18 @@ class User < ApplicationRecord
 
 	# def friends
 	# 	arr = []
-  #   self.
-  # end
+	# 	self.friendships.each do |friendship|
+	# 		arr << User.where(user_id: friendship.friend_id) unless friendship.friend_id == self.id
+	# 	end
 
-	# def default_user_to_student_and_instantiate_schedule_and_transcript
-	# 	self.type = 'Student'
-	# 	Transcript.create(student_id: self.id)
-	# 	Schedule.create(user_id: self.id)
+	# 	arr
 	# end
+
+	def default_user_to_student_and_instantiate_schedule_and_transcript
+		self.type ||= 'Student'
+		self.transcript ||= Transcript.create(student_id: self.id) if self.type == 'Student'
+		self.schedule ||= Schedule.create(user_id: self.id)
+	end
 
 #---------------------------------------------------------------------------
   def password=(password)
@@ -82,10 +86,10 @@ class User < ApplicationRecord
 	
 	def set_defaults
 		self.cash_balance  ||= 0
-		self.fname = 'Alex'
-		self.lname = 'Cargo'
-		self.type = 'Student'
-		self.profile_image_url = 'https://res.cloudinary.com/swy/image/upload/v1499749857/images/student.svg'
+		self.fname ||= 'Alex'
+		self.lname ||= 'Cargo'
+		self.type ||= 'Student'
+		self.profile_image_url ||= 'https://res.cloudinary.com/swy/image/upload/v1499749857/images/student.svg'
 		Transcript.create(student_id: self.id)
 		Schedule.create(user_id: self.id)
 	end	

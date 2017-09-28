@@ -18,7 +18,7 @@ class Login extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     let user = {
-      username: 'johnTheAdmin',
+      username: 'johnBull',
       password: 'password'
     };
     this.props.login(user);

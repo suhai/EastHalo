@@ -15,11 +15,11 @@
 #
 
 class Book < ApplicationRecord
-	validates :title, :author, :publisher, :presence => true
+	validates :title, :author, :presence => true
 	after_initialize :set_defaults, unless: :persisted?
 
 	def set_defaults
 		self.price  ||= 0.99
-		self.image_url = 'https://res.cloudinary.com/swy/image/upload/v1506309790/book12_itfeui.jpg'
+		self.image_url ||= 'https://res.cloudinary.com/swy/image/upload/v1506309790/book12_itfeui.jpg'
 	end	
 end

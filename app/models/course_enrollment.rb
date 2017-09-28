@@ -13,7 +13,7 @@ class CourseEnrollment < ApplicationRecord
 	validates :course_id, :presence => true
 	validates :student_id, :presence => true, uniqueness: { scope: :course_id }
   belongs_to :course
-	belongs_to :student, class_name: "User", :foreign_key => "student_id"
+	belongs_to :student, class_name: "User", :foreign_key => "student_id",dependent: :destroy
 	before_create :ensure_is_student
 	
 	def ensure_is_student

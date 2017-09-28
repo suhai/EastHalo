@@ -18,7 +18,7 @@ class DepartmentEditForm extends React.Component {
 	componentDidMount() {
 		const id = this.props.match.params.id;
 		this.props.fetchDepartment(id);
-		// this.props.fetchDepartments();
+		this.props.fetchDepartments();
 	};
 
 	update(prop) {

@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
 	createDepartment: data => dispatch(createDepartment(data)),
-	// fetchDepartments: () => dispatch(fetchDepartments()),
+	fetchDepartments: () => dispatch(fetchDepartments()),
 	editDepartment: id => dispatch(editDepartment(id)),
   deleteDepartment: id => dispatch(deleteDepartment(id))
 });

@@ -17,7 +17,7 @@ class Departments extends React.Component {
 	};
 
 	componentDidMount() {
-		// this.props.fetchDepartments();
+		this.props.fetchDepartments();
 	};
 
   render() {

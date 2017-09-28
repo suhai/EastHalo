@@ -15,7 +15,7 @@ class DepartmentForm extends React.Component {
 	};
 
 	componentDidMount() {
-		// this.props.fetchDepartments();
+		this.props.fetchDepartments();
 	};
 
 	update(prop) {

@@ -32,7 +32,7 @@ class PostShow extends React.Component {
 
 	renderCommentForm() {
 		// jQuery to display commentable text area, but for now
-		window.location.hash = `/admin/${this.props.currentUser.username}/posts/${this.props.match.params.id}/comments/commentform`;
+		window.location.hash = `/${this.props.currentUser.username}/posts/${this.props.match.params.id}/comments/commentform`;
 	};
 
 	componentWillReceiveProps(props) {

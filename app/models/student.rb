@@ -51,11 +51,10 @@ class Student < User
 
 	def current_course_load
 		val = 0
-		self.courses.each do |course|
-			self.grades.each do |grade|
-				val += course.course_credit if grade.course_id != course.id
-			end
+		self.course_enrollments.each do |enrollment|
+			val += Course.find(enrollment.course_id).course_credit
 		end
+		
 		val
 	end
 end

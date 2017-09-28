@@ -24,7 +24,7 @@ class CommentForm extends React.Component {
 	};
 
 	redirectPath() {
-		window.location.hash = `admin/${this.props.currentUser.username}/posts`;
+		window.location.hash = `/${this.props.currentUser.username}/posts/${this.props.match.params.id}`;
 	};
 
 	handleKey(e) {

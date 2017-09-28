@@ -53,7 +53,7 @@ class LoggedHome extends React.Component {
 						<Route path="/cafeteria/meals/:id" render={(props) => <MealShowContainer {...props} />} />
 						<Route path="/cafeteria" render={(props) => <CafeteriaPageContainer {...props} />} />
 						{/* COMMENTS */}
-						<Route path="/:username/comments/commentform" render={(props) => <CommentFormContainer {...props} /> } />
+						<Route path="/:username/posts/:id/comments/commentform" render={(props) => <CommentFormContainer {...props} /> } />
 						<Route path="/:username/comments/edit/:id" render={(props) => <CommentEditContainer {...props} /> } />
 						<Route path="/:username/comments/:id" render={(props) => <CommentShowContainer {...props} /> } />
 						{/* FRIENDSS */}

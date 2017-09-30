@@ -1,7 +1,6 @@
 import * as APIUtil from '../utils/user_api_utils';
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const RECEIVE_USERS = 'RECEIVE_USERS';
-// export const RANDOM_USERS = 'RANDOM_USERS';
 export const REMOVE_USER = 'REMOVE_USER';
 
 export const receiveUser = user => ({

@@ -19,9 +19,10 @@ class Friend extends React.Component {
 		const { 
 			fname, 
 			lname, 
-			email, 
+			username,
+			gender,
 			phone_number, 
-			username
+			email
 		} = this.props.friend;
 
     return (
@@ -29,8 +30,9 @@ class Friend extends React.Component {
 				<td>{fname}</td>
 				<td>{lname}</td>
 				<td>{username}</td>
-				<td>{email}</td>
+				<td>{gender}</td>
 				<td>{phone_number}</td>
+				<td>{email}</td>
 			</tr>
     );
   }

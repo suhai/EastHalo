@@ -51,70 +51,72 @@ class Profile extends React.Component {
 					<button className='btn edit' onClick={this.renderEditForm}>Edit Self</button>
 					<div className='profile-detail-table'>
 						<table>
-							<tr>
-								<th className='profile-table-header'>User Information</th>
-								<th className='profile-table-header'>Details</th>
-							</tr>
-							<tr>
-								<td>USER ID</td>
-								<td>{id}</td>
-							</tr>
-							<tr>
-								<td>Username</td>
-								<td>{username}</td>
-							</tr>
-							<tr>
-								<td>First Name</td>
-								<td>{fname}</td>
-							</tr>
-							<tr>
-								<td>Last Name</td>
-								<td>{lname}</td>
-							</tr>
-							<tr>
-								<td>Email</td>
-								<td>{email}</td>
-							</tr>
-							<tr>
-								<td>Phone Number</td>
-								<td>{phone_number}</td>
-							</tr>
-							<tr>
-								<td>Current User Type</td>
-								<td>{type}</td>
-							</tr>
-							<tr>
-								<td>Gender</td>
-								<td>{gender}</td>
-							</tr>
-							<tr>
-								<td>Cummulative GPA</td>
-								<td>{gpa}</td>
-							</tr>
-							<tr>
-								<td>Account Balance</td>
-								<td>{cash_balance}</td>
-							</tr>
-							<tr>
-								<td>Current Course Load</td>
-								<td>{current_course_load}</td>
-							</tr>
-							<tr>
-								<td>Number of Friends</td>
-								<td>{friends.length}</td>
-							</tr>
-							<tr>
-								<td>Number of Posts</td>
-								<td>{posts.length}</td>
-							</tr>
-							<tr>
-								<td>Number of Comments</td>
-								<td>{comments.length}</td>
-							</tr>
-							<tr>
-								<td>Home Address</td>
-								<td>Not Yet Available</td>
-							</tr>
+							<tbody>
+								<tr>
+									<th className='profile-table-header'>User Information</th>
+									<th className='profile-table-header'>Details</th>
+								</tr>
+								<tr>
+									<td>USER ID</td>
+									<td>{id}</td>
+								</tr>
+								<tr>
+									<td>Username</td>
+									<td>{username}</td>
+								</tr>
+								<tr>
+									<td>First Name</td>
+									<td>{fname}</td>
+								</tr>
+								<tr>
+									<td>Last Name</td>
+									<td>{lname}</td>
+								</tr>
+								<tr>
+									<td>Email</td>
+									<td>{email}</td>
+								</tr>
+								<tr>
+									<td>Phone Number</td>
+									<td>{phone_number}</td>
+								</tr>
+								<tr>
+									<td>Current User Type</td>
+									<td>{type}</td>
+								</tr>
+								<tr>
+									<td>Gender</td>
+									<td>{gender}</td>
+								</tr>
+								<tr>
+									<td>Cummulative GPA</td>
+									<td>{gpa}</td>
+								</tr>
+								<tr>
+									<td>Account Balance</td>
+									<td>{cash_balance}</td>
+								</tr>
+								<tr>
+									<td>Current Course Load</td>
+									<td>{current_course_load}</td>
+								</tr>
+								<tr>
+									<td>Number of Friends</td>
+									<td>{friends.length}</td>
+								</tr>
+								<tr>
+									<td>Number of Posts</td>
+									<td>{posts.length}</td>
+								</tr>
+								<tr>
+									<td>Number of Comments</td>
+									<td>{comments.length}</td>
+								</tr>
+								<tr>
+									<td>Home Address</td>
+									<td>Not Yet Available</td>
+								</tr>
+							</tbody>
 						</table>
 					</div>
 				</div>

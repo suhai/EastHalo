@@ -29,19 +29,19 @@ class Courses extends React.Component {
 		return (
 			<div className='pages'>
 
-			<h1 className='table-h1'>Registrar's Office</h1>
-			<div className="tbl-header">
-				<table cellPadding={0} cellSpacing={0}>
-					<thead>
-						<tr>
-							<th scope="col">Code</th>
-							<th scope="col">Title</th>
-							<th scope="col">From</th>
-							<th scope="col">To</th>
-							<th scope="col">Load</th>
-							<th scope="col">Size</th>
-							<th scope="col">Instructor</th>
-						</tr>
+				<h1 className='table-h1'>Registrar's Office</h1>
+				<div className="tbl-header">
+					<table cellPadding={0} cellSpacing={0}>
+						<thead>
+							<tr>
+								<th scope="col">Code</th>
+								<th scope="col">Title</th>
+								<th scope="col">From</th>
+								<th scope="col">To</th>
+								<th scope="col">Load</th>
+								<th scope="col">Size</th>
+								<th scope="col">Instructor</th>
+							</tr>
 						</thead>
 					</table>
 				</div>
@@ -49,7 +49,7 @@ class Courses extends React.Component {
 				<div className="tbl-content">
 					<table cellPadding={0} cellSpacing={0}>
 						<tbody>
-						{courses}
+							{courses}
 						</tbody>
 					</table>
 				</div>

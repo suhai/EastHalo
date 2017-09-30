@@ -1,6 +1,6 @@
 class Api::UsersController < ApplicationController
-	# before_action :set_user, only: [:show, :update, :destroy]
-  # before_action :set_type
+	before_action :set_user, only: [:show, :update, :destroy]
+  before_action :set_type, except: [:create]
 
   def index
     if params[:search] != nil

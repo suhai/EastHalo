@@ -80,6 +80,8 @@ class User < ApplicationRecord
 		self.fname ||= 'Alex'
 		self.lname ||= 'Cargo'
 		self.type ||= 'Student'
+		self.phone_number ||= 1234567890
+		self.email ||= 'user@someeamil.com'
 		self.profile_image_url ||= 'https://res.cloudinary.com/swy/image/upload/v1499749857/images/student.svg'
 		Transcript.create(student_id: self.id)
 		Schedule.create(user_id: self.id)

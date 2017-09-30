@@ -23,8 +23,9 @@ class Friends extends React.Component {
 							<tr>
 								<th scope="col">First Name</th>
 								<th scope="col">Last Name</th>
-								<th scope="col">Phone</th>
+								<th scope="col">Username</th>
 								<th scope="col">Gender</th>
+								<th scope="col">Phone</th>
 								<th scope="col">Email</th>
 							</tr>
 						</thead>

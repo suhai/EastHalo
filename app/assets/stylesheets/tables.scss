@@ -10,29 +10,29 @@
 }
 
 table{
-  width: 90%;
+  width: 80%;
 	table-layout: fixed;
 	// margin: auto;
 }
-.tbl-header{
+.tbl-header {
 	background-color: $aeh;
-	margin-left: 1em;
-	margin-right: 1em;
+	margin-left: 2em;
+	margin-right: 2em;
  }
 
- .tbl-header2{
+ .tbl-header2 {
 	background-color: $adb;
-	margin-left: 1em;
-	margin-right: 1em;
+	margin-left: 2em;
+	margin-right: 2em;
  }
 
 .tbl-content{
-  height:300px;
+  height:500px;
   overflow-x:auto;
   margin-top: 0px;
-	border: 2px solid black;
-	margin-left: 1em;
-	margin-right: 1em;
+	border: 5px solid black;
+	margin-left: 2em;
+	margin-right: 2em;
 }
 
 th{

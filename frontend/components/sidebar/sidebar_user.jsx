@@ -13,10 +13,15 @@ class SidebarUser extends React.Component {
   render() {
     return (
 			<div className='sidebar-user-img'> 
-        <li><img onClick={this.showUser} src={this.props.user.profile_image_url} />
-				<span onClick={this.showUser}>{this.props.user.username}</span></li>
+        <li>
+					<div onClick={this.showUser}>
+						<img  src={this.props.user.profile_image_url} />
+					</div>
+					<div onClick={this.showUser} className='clickable-username'>
+						<h6>{this.props.user.username}</h6>
+					</div>
+				</li>
 			</div>
-      
     );
   }
 }

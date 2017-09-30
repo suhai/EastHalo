@@ -15,8 +15,10 @@ div.loggedhome {
 	background: linear-gradient(to bottom right, #F4F6F7, #B2C8D6); /* Standard */
 	
 	
-	.placeholder-text2 {
+	.loggedhome-main {
 		flex: 3;
+		height: 100%;
+		width: 100%;
 
 		h3 {
 			color: $aed;
@@ -32,7 +34,6 @@ div.loggedhome {
 
 	.sidebar-div {
 		flex: 1;
-		// border-left: 3px solid lavender;
 		border-left: 1px solid $gray;
 	}
 }

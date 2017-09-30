@@ -70,8 +70,7 @@ class SideBar extends React.Component {
 
     return (
       <aside className='loggedhome-sidebar'>
-				<h5>Check Out Other Users</h5>
-				<hr/>
+				<h6 className='sidebar-header'>CHECK OUT OTHER USERS</h6>
         <li className=''>
           <ul>
             {users}
@@ -82,7 +81,7 @@ class SideBar extends React.Component {
 					<ul>
 						<h3>Chat Area!!!</h3>
 					</ul>
-					<div className="chatbox">
+					<div className="">
 						
 					</div>
 				</div>

@@ -40,7 +40,7 @@ class LoggedHome extends React.Component {
 		return (
 			<div className='loggedhome'>
 				<PrivateNavigation logout={this.props.logout} currentUser={this.props.currentUser} />
-				<div className='placeholder-text2'>
+				<div className='loggedhome-main'>
 					<Switch>
 						{/* ADMIN AREA */}
 						<Route path="/admin" render={(props) => <AdminPageContainer {...props} />} />

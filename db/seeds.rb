@@ -33,7 +33,7 @@ User.create!([
 		phone_number: 1234567890,
 		gender: "male",
 		profile_image_url: "https://res.cloudinary.com/swy/image/upload/v1499749808/images/showman.svg",
-		is_admin: "TRUE"
+		is_admin: ""
 	},
 
 	{
@@ -78,7 +78,7 @@ User.create!([
 	{
 		fname: "Celestine",
 		lname: "McIntosh",
-		username: "celstine",
+		username: "celestine",
 		password: "password",
 		type: "Student",
 		email: "",
@@ -258,7 +258,7 @@ User.create!([
 	},
 
 	{
-		fname: "Josphine",
+		fname: "Josephine",
 		lname: "Ringer",
 		username: "josphine",
 		password: "password",
@@ -1343,7 +1343,7 @@ Post.create!([
 		title: "Post One",
 		body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
 		user_id: "#{User.all[0].id}",
-		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749839/images/earth-globe.svg"
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749805/images/friendship.svg"
 	},
 
 	{
@@ -1425,14 +1425,14 @@ News.create!([
 		headline: "The Washington Post",
 		url: "https://www.washingtonpost.com/",
 		date: "",
-		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749805/images/friendship.svg"
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749888/images/35842cb2-1841-49fb-9eea-8777a5ad549c.jpg"
 	},
 
 	{
 		headline: "BBC World News",
 		url: "https://www.bbc.com/news/world",
 		date: "",
-		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749888/images/35842cb2-1841-49fb-9eea-8777a5ad549c.jpg"
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749839/images/earth-globe.svg"
 	},
 
 	{

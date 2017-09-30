@@ -32,10 +32,14 @@ class SubHome extends React.Component {
 		));
 
 		return (
-			<div className='community-page'>
-				{users}
-				{posts}
-				{all_news}
+			<div>
+				<h4 className='subhome-header'>BROWSE THROUGH POSTS, NEWS, AND USERS</h4>
+				<hr/>
+				<div className='community-page'>
+					{all_news}
+					{posts}
+					{users}
+				</div>
 			</div>
 		);
 	}

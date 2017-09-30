@@ -6,13 +6,13 @@ div.loggedhome {
 	background: white;
 	margin-top: 3.5em;
 	margin-bottom: 0;
-	min-height: 1000px;
+	height: 45em;
 	
-	background: gray; /* For browsers that do not support gradients */
-	background: -webkit-linear-gradient(left top, #F4F6F7, #B2C8D6); 
-	background: -o-linear-gradient(bottom right, #F4F6F7, #B2C8D6); 
-	background: -moz-linear-gradient(bottom right, #F4F6F7, #B2C8D6);
-	background: linear-gradient(to bottom right, #F4F6F7, #B2C8D6); /* Standard */
+	// background: gray; /* For browsers that do not support gradients */
+	// background: -webkit-linear-gradient(left top, #F4F6F7, #B2C8D6); 
+	// background: -o-linear-gradient(bottom right, #F4F6F7, #B2C8D6); 
+	// background: -moz-linear-gradient(bottom right, #F4F6F7, #B2C8D6);
+	// background: linear-gradient(to bottom right, #F4F6F7, #B2C8D6); /* Standard */
 	
 	
 	.loggedhome-main {
@@ -27,10 +27,10 @@ div.loggedhome {
 		}
 	}
 
-	aside.loggedhome-sidebar {
-		flex: 2;
-		max-height: 1000px;
-  }
+	// aside.loggedhome-sidebar {
+	// 	flex: 2;
+	// 	max-height: 1000px;
+  // }
 
 	.sidebar-div {
 		flex: 1;
@@ -39,7 +39,7 @@ div.loggedhome {
 }
 
 .community-page {
-	margin: 2em;
+	margin: 3em 2em 2em;
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -52,5 +52,14 @@ div.loggedhome {
 
 	h2 {
     text-align: center;
+	}
+}
+
+.subhome-header {
+	text-align: center;
+	margin-top: 1em; 
+	hr {
+		width: 80%;
+
 	}
 }

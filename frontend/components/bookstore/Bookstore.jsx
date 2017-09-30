@@ -27,8 +27,12 @@ class Bookstore extends React.Component {
 		));
 
 		return (
-			<div className='community-page'>
-				{books}
+			<div>
+				<h4 className='subhome-header'>BROWSE THROUGH THE BOOKSTORE INVENTORY</h4>
+				<hr/>
+				<div className='community-page'>
+					{books}
+				</div>
 			</div>
 		);
   }

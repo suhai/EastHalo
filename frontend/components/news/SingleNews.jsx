@@ -28,8 +28,7 @@ class SingleNews extends React.Component {
 			<tr onClick={this.showNews}>
 				<td>{id}</td>
 				<td>{headline.slice(0,20)}</td>
-				<td>{url}</td>
-				<td>{date}</td>
+				<td>Source</td>
 			</tr>
     );
   }

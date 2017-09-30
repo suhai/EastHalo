@@ -28,8 +28,12 @@ class Cafeteria extends React.Component {
 
 
 		return (
-			<div className='community-page'>
-				{meals}
+			<div>
+				<h4 className='subhome-header'>BROWSE THROUGH TODAY'S MENU</h4>
+				<hr/>
+				<div className='community-page'>
+					{meals}
+				</div>
 			</div>
 		);
   }

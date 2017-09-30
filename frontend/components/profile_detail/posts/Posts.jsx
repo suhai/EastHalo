@@ -28,14 +28,13 @@ class Posts extends React.Component {
 
 		return (
 			<div className='pages'>
-				<div><button className='btn create align-left' onClick={this.renderForm}>Create Post</button></div>
+				<div><button className='btn create' onClick={this.renderForm}>Create Post</button></div>
 
 				<h1 className='table-h1'>My Posts</h1>
         <div className="tbl-header2">
           <table cellPadding={0} cellSpacing={0}>
 						<thead>
 						<tr>
-							{/* <th scope="col">Post ID</th> */}
 							<th scope="col">User</th>
 							<th scope="col">Title</th>
 							<th scope="col">Excerpt</th>

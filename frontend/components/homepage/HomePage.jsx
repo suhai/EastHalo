@@ -88,7 +88,7 @@ class HomePage extends React.Component {
 
         <main className='homepage-info'>	
           <div className='homepage-description'>
-            <h1 className="">EastHalo University</h1>
+            <h1 className="easthalo-main-header">EastHalo University</h1>
             <div className='placeholder-text'>
               <h3>MIXING COLORS</h3>
 							<div className='home-page-para'>

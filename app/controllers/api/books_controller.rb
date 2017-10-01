@@ -1,5 +1,6 @@
 class Api::BooksController < ApplicationController
   before_action :set_book, only: [:show, :update, :destroy]
+	before_action :require_is_admin, only: [:create, :destroy]
 	
 	def index
 		@books = Book.all 
@@ -41,5 +42,9 @@ class Api::BooksController < ApplicationController
 
 	def set_book
 		@book = Book.find(params[:id])
+	end
+	
+	def require_is_admin
+		!!self.is_admin
 	end
 end

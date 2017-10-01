@@ -64,7 +64,7 @@ class CourseShow extends React.Component {
 				departmentName: props.courses[props.match.params.id].department.name,
 				classSize: props.courses[props.match.params.id].students.length,
 				courseCap: props.courses[props.match.params.id].course_cap,
-				courseDensity: (props.courses[props.match.params.id].students.length / props.courses[props.match.params.id].course_cap),
+				courseDensity: (props.courses[props.match.params.id].students.length + ' / ' + props.courses[props.match.params.id].course_cap),
 				profLName: props.courses[props.match.params.id].professor.lname.slice(0, 1).toUpperCase() + props.courses[props.match.params.id].professor.lname.slice(1),
 				profFName: props.courses[props.match.params.id].professor.fname.slice(0, 1).toUpperCase() + props.courses[props.match.params.id].professor.fname.slice(1)
 			}) :

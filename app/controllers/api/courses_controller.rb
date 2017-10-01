@@ -1,6 +1,7 @@
 class Api::CoursesController < ApplicationController
 	before_action :set_course, only: [:show, :update, :destroy]
-
+	before_action :require_is_admin, only: [:create, :destroy]
+	
 	def index
 		@courses = Course.all
 		render :index
@@ -41,5 +42,9 @@ class Api::CoursesController < ApplicationController
 
 	def set_course
 		@course = Course.find(params[:id])
+	end
+	
+	def require_is_admin
+		!!self.is_admin
 	end
 end

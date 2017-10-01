@@ -1,5 +1,6 @@
 class Api::DepartmentsController < ApplicationController
 	before_action :set_department, only: [:show, :update, :destroy]
+	before_action :require_is_admin, only: [:create, :destroy]
 	
 	def index
 		@departments = Department.all 
@@ -41,5 +42,9 @@ class Api::DepartmentsController < ApplicationController
 
 	def set_department
 		@department = Department.find(params[:id])
+	end
+
+	def require_is_admin
+		!!self.is_admin
 	end
 end

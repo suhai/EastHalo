@@ -1,5 +1,6 @@
 class Api::CafeteriaController < ApplicationController
   before_action :set_cafetarium, only: [:show, :update, :destroy]
+	before_action :require_is_admin, only: [:create, :destroy]
 	
 	def index
 		@cafeteria = Cafetarium.all 
@@ -41,5 +42,9 @@ class Api::CafeteriaController < ApplicationController
 
 	def set_cafetarium
 		@cafetarium = Cafetarium.find(params[:id])
+	end
+	
+	def require_is_admin
+		!!self.is_admin
 	end
 end

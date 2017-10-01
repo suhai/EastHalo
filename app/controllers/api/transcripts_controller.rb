@@ -1,5 +1,6 @@
 class Api::TranscriptsController < ApplicationController
   before_action :set_transcript, only: [:show, :update, :destroy]
+	before_action :require_is_admin, only: [:destroy]
 	
 	def index
 		@transcripts = Transcript.all
@@ -41,5 +42,9 @@ class Api::TranscriptsController < ApplicationController
 
 	def set_transcript
 		@transcript = Transcript.find(params[:id])
+	end
+	
+	def require_is_admin
+		!!self.is_admin
 	end
 end

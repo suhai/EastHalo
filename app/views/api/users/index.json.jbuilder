@@ -11,7 +11,7 @@
 		json.phone_number user.phone_number
 		json.gender user.gender
 		json.gpa user.gpa
-		json.course_enrollments user.course_enrollments if user.type == 'Student'
+		json.courses user.courses if user.type == 'Student' || user.type == 'Professor'
 		json.current_course_load user.current_course_load if user.type == 'Student'
 		json.completed_course_credit user.completed_course_credit if user.type == 'Student'
 		json.profile_image_url user.profile_image_url
@@ -21,7 +21,6 @@
 		json.posts user.posts
 		json.comments user.comments
 		json.friendships user.friendships
-		json.courses user.courses if user.type == 'Student' || user.type == 'Professor'
 		json.professors user.professors if user.type == 'Student'
 		json.course_enrollments user.course_enrollments if user.type == 'Student'
 		json.students user.students if user.type == 'Professor'

@@ -1,5 +1,6 @@
 class Api::MealsController < ApplicationController
   before_action :set_meal, only: [:show, :update, :destroy]
+	before_action :require_is_admin, only: [:create, :destroy]
 	
 	def index
 		@meals = Meal.all
@@ -41,5 +42,9 @@ class Api::MealsController < ApplicationController
 
 	def set_meal
 		@meal = Meal.find(params[:id])
+	end
+	
+	def require_is_admin
+		!!self.is_admin
 	end
 end

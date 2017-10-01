@@ -1,5 +1,6 @@
 class Api::MessagesController < ApplicationController
   before_action :set_message, only: [:show, :destroy]
+	before_action :require_is_admin, only: [:destroy]
 	
 	def index
 		@messages = Message.all
@@ -33,5 +34,9 @@ class Api::MessagesController < ApplicationController
 
 	def set_message
 		@message = Message.find(params[:id])
+	end
+	
+	def require_is_admin
+		!!self.is_admin
 	end
 end

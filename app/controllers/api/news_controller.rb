@@ -1,5 +1,6 @@
 class Api::NewsController < ApplicationController
 	before_action :set_news, only: [:show, :update, :destroy]
+	before_action :require_is_admin, only: [:create, :destroy]
 	
 	def index
 		@all_news = News.all
@@ -41,5 +42,9 @@ class Api::NewsController < ApplicationController
 
 	def set_news
 		@news = News.find(params[:id])
+	end
+	
+	def require_is_admin
+		!!self.is_admin
 	end
 end

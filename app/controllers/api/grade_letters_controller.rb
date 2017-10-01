@@ -1,5 +1,6 @@
 class Api::GradeLettersController < ApplicationController
   before_action :set_grade_letter, only: [:show, :update, :destroy]
+	before_action :require_is_admin, only: [:create, :destroy]
 	
 	def index
 		@grade_letters = GradeLetter.all 
@@ -41,5 +42,9 @@ class Api::GradeLettersController < ApplicationController
 
 	def set_grade_letter
 		@grade_letter = GradeLetter.find(params[:id])
+	end
+	
+	def require_is_admin
+		!!self.is_admin
 	end
 end

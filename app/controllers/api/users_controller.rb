@@ -1,6 +1,7 @@
 class Api::UsersController < ApplicationController
 	before_action :set_user, only: [:show, :update, :destroy]
-  before_action :set_type, except: [:create]
+	before_action :set_type, except: [:create]
+	before_action :require_is_admin, only: [:destroy]
 
   def index
     if params[:search] != nil
@@ -65,5 +66,9 @@ class Api::UsersController < ApplicationController
 
 	def set_user
 		@user = type.constantize.find(params[:id])
+	end
+	
+	def require_is_admin
+		!!self.is_admin
 	end
 end

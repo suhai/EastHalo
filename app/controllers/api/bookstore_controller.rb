@@ -1,6 +1,7 @@
 class Api::BookstoreController < ApplicationController
 	before_action :set_bookstore, only: [:show, :update, :destroy]
-
+	before_action :require_is_admin, only: [:create, :destroy]
+	
   def index
 		@bookstores = Bookstore.all 
 		render :index
@@ -41,5 +42,9 @@ class Api::BookstoreController < ApplicationController
 
 	def set_bookstore
 		@bookstore = Bookstore.find(params[:id])
+	end
+	
+	def require_is_admin
+		!!self.is_admin
 	end
 end

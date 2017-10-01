@@ -1,5 +1,6 @@
 class Api::GradesController < ApplicationController
   before_action :set_grade, only: [:show, :update, :destroy]
+	before_action :require_is_admin, only: [:create, :destroy]
 	
 	def index
 		@grades = Grade.all 
@@ -41,5 +42,9 @@ class Api::GradesController < ApplicationController
 
 	def set_grade
 		@grade = Grade.find(params[:id])
+	end
+	
+	def require_is_admin
+		!!self.is_admin
 	end
 end

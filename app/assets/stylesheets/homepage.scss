@@ -1,8 +1,24 @@
 @import 'variables';
 
-p.auth-errors {
-  color: $acn;
+div.homepage {
+  width: 99.5%;
+  margin: 0 auto;
+  display: flex;
+	flex-direction: column;
+
+	.easthalo {
+		display: flex;
+		position: fixed;
+		margin-right: 70%;
+		margin-top: 5em;
+		padding: .5em;
+		font-weight: bold;
+		color: $white;
+		border: 2px solid $abz;
+		margin-left: 5%;
+	}
 }
+
 
 main.homepage-info {
   background-size: cover;
@@ -14,241 +30,163 @@ main.homepage-info {
 	flex-direction: column;
 	margin-top: 2.5em;
 	background-image: url('https://res.cloudinary.com/swy/image/upload/v1499750402/images/pexels-photo-187334.jpg');
+
+	.homepage-description {
+		display: flex;
+		flex-wrap: wrap;
+		height: 100%;
+		padding-bottom: 30px;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		background:hsla(0,0%,0%, 0.3);
+	
+		// h1 {
+		// 	font-weight: 300;
+		// 	font-size: 34px;
+		// 	margin: 10px;
+		// 	color: white;
+		// }
+	
+		p {
+			font-size: 1em;
+			font-family: Courier New, Courier, monospace;
+			text-align: left;
+			color: solid black;
+			// margin-top: 1em;
+			// margin-left: 11em;
+			// margin-right: 10em;
+			margin: 1em 10em;
+		}
+
+		.placeholder-text {
+			h3 {
+				color: $afn;
+				text-align: center !important;
+				margin: 2em;
+			}
+		
+			// p {
+			// 	font-size: 14px;
+			// 	color: $abl;
+			// }
+		}
+
+		.home-page-para {
+			max-width: 45em;
+			background-color: $white;
+			padding: .1em;
+			opacity: 0.8;
+		
+			p {
+				// text-align: center;
+				font-weight: bold;
+				color: $aac;
+			}
+		}
+	}
 }
 
-div.homepage {
-  width: 99.5%;
-  margin: 0 auto;
-  display: flex;
+
+section.homepage-bottom {
+	display: flex;
 	flex-direction: column;
-	// margin-bottom: 65px;
+	align-items: center;
+	padding: 1em 2em;
+	height: 100%;
+	padding-bottom: 5em;
+	// background: url("https://res.cloudinary.com/swy/image/upload/v1499750341/images/pexels-photo-93822.jpg") no-repeat center center fixed;
+	background: url("https://res.cloudinary.com/swy/image/upload/v1506479521/dopecollege_wro6xm.jpg") no-repeat center center fixed;
+	background-size: cover;
 
-  section.homepage-bottom{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
-    height: 100%;
-		padding-bottom: 50px;
-		
-		background: url("https://res.cloudinary.com/swy/image/upload/v1499750341/images/pexels-photo-93822.jpg") no-repeat center center fixed;
-		background: url("https://res.cloudinary.com/swy/image/upload/v1506479521/dopecollege_wro6xm.jpg") no-repeat center center fixed;
-		background-size: cover;
-
-		.container {
-			max-width: 940px;
-		}
-		/* Header */
-		
-		.header {
-			padding: 10px 0;
-			height: 60px;
-			background: rgba(0, 0, 0, .5);
-		}
-		
-		.logo {
-			margin: 0 30px 0;
-		}
-		
-		.nav {
-			display: inline-block;
-			margin: 0;
-			padding: 8px 0;
-		}
-		
-		.nav li {
-			color: #fff;
-			display: inline;
-			font-size: 14px;
-			margin-right: 30px;
-			padding: 0 0 5px;
-		}
-		/* Jumbotron */
-		
-		.jumbotron {
-			background-color: transparent;
-			position: relative;
-			text-align: center;
-			top: 30px;
-			text-shadow: 0 2px 3px rgba(0, 0, 0, .4);
-		}
-		
-		.jumbotron h1 {
-			color: #fff;
-			font-size: 60px;
-		}
-		/* Supporting */
-		
-		.supporting {
-			margin-top: 40px;
-			text-shadow: 0 2px 3px rgba(0, 0, 0, .4);
-		}
-		
-		.supporting .col-md-4 {
-			text-align: center;
-			color: #fff;
-			margin-bottom: 40px;
-		}
-		
-		.supporting h2 {
-			font-size: 25px;
-		}
-		
-		.supporting p {
-			font-size: 16px;
-		}
-		/* Download */
-		
-		.download {
-			position: relative;
-			top: 80px;
-			text-align: center;
-		}
-		
-		.btn-default {
-			background: rgba(0, 255, 188, 0.5);
-			border: none;
-			border-radius: 8px;
-			color: #fff;
-			font-size: 18px;
-			letter-spacing: 1.3px;
-			padding: 10px 60px;
-			margin-bottom: 100px;
-		}
-		
-  }
-}
-
-
-
-.homepage-description {
-  display: flex;
-  flex-wrap: wrap;
-  height: 100%;
-  padding-bottom: 30px;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  background:hsla(0,0%,0%, 0.3);
-
-  h1 {
-    font-weight: 300;
-    font-size: 34px;
-    margin: 10px;
-    color: white;
-  }
-
-  p {
-    font-size: 17px;
-    font-family: Courier New, Courier, monospace;
-    text-align: left;
-    color: solid black;
-    margin-top: 1em;
-    margin-left: 11em;
-    margin-right: 10em;
-    margin-bottom: 1em;
-  }
-}
-
-
-.placeholder-text {
-	h3 {
-		color: $afn;
-		text-align: center !important;
-		margin: 2em;
+	.jumbotron {
+		background-color: transparent;
+		position: relative;
+		text-align: center;
+		top: 3em;
+		text-shadow: 0 .2em .3em rgba(0, 0, 0, .4);
+	}
+	
+	.jumbotron h1 {
+		color: $abi;
+		font-size: 3em;
 	}
 
-	p {
-  	font-size: 14px;
-		color: $abl;
+	.container {
+		max-width: 1000px;
 	}
+
+	/* Header */
+	// .header {
+	// 	padding: 10px 0;
+	// 	height: 60px;
+	// 	background: rgba(0, 0, 0, .5);
+	// }
+	
+	// .logo {
+	// 	margin: 0 30px 0;
+	// }
+	
+	// .nav {
+	// 	display: inline-block;
+	// 	margin: 0;
+	// 	padding: 8px 0;
+	// }
+	
+	// .nav li {
+	// 	color: #fff;
+	// 	display: inline;
+	// 	font-size: 14px;
+	// 	margin-right: 30px;
+	// 	padding: 0 0 5px;
+	// }
+	
+	
+	
+	.supporting {
+		margin-top: 4em;
+		text-shadow: 0 .2em .3em rgba(0, 0, 0, .4);
+	}
+	
+	.supporting .col-md-4 {
+		text-align: center;
+		color: $abi;
+		margin-bottom: 4em;
+	}
+	
+	.supporting h2 {
+		font-size: 2em;
+	}
+	
+	.supporting p {
+		font-size: 1.2em;
+	}
+	
+	.enquiries-div {
+		position: relative;
+		top: 8em;
+		text-align: center;
+	}
+	
+	.btn-default {
+		background: $ady;
+		border: none;
+		border-radius: .3em;
+		color: $white;
+		font-size: 1em;
+		letter-spacing: .2em;
+		padding: 1em 3em;
+		margin-bottom: 10em;
+	}
+	
 }
 
-button {
-  -webkit-appearance: none;
-  background: transparent;
-  border: none;
-  border-spacing: 0;
-  font-family: Open Sans;
-  font-size: 16px;
-  text-decoration: none;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-button:focus { outline: 0 }
 
 
-.home-page-button {
-  display: flex;
-	justify-content: space-between;
-	position: fixed;
-	margin-left: 70%;
-	margin-top: 2em;;
-
-  ul {
-    display: flex;
-
-    li {
-      padding: 5px;
-      margin: 5px;
-    }
-  }
-}
-
-.easthalo {
-  display: flex;
-	// justify-content: space-between;
-	position: fixed;
-	margin-right: 70%;
-	margin-top: 5em;
-	padding: .5em;
-	font-weight: bold;
-	color: $white;
-	border: 2px solid $abz;
-	margin-left: 5%;
-}
 
 
-//signup buton
-button.signup {
-  color: white;
-  border: .2em solid $afp;
-  border-radius: 5px;
-  font-weight: 300;
-  padding: 5px 15px;
-  font-size: 14px;
-  margin-top: 30px;
-  transition: box-shadow 0.3s, text-shadow 0.3s;
-}
 
-button.signup:hover {
-  box-shadow: 0 0 5px $white, 0 0 5px $white inset;
-  border-radius: 5px;
-  text-shadow: 0 0 2px $white;
-}
-
-button.login {
-  background: black;
-  color: white;
-  border-radius: 5px;
-  font-weight: 300;
-	padding: 5px 10px;
-	border: .2em solid $afo;
-  font-size: 14px;
-  transition: text-shadow 0.3s;
-  margin-top: 30px;
-  margin-right: 10px;
-}
-
-button.login:hover {
-  box-shadow: 0 0 5px $white, 0 0 5px $white inset;
-  border-radius: 5px;
-  text-shadow: 0 0 2px $white;
-}
 
 
 .banner,
@@ -270,24 +208,24 @@ button.login:hover {
 }
 
 .banner {
-  background-color: #36343f;
-  height: 180px;
-  color: #fff;
+  background-color: $afq;
+  height: 12em;
+  color: $white;
 }
 
 .section .btn {
-  background-color: rgba(216, 25, 47, .5);
-  border: 0px;
-  margin-top: 24px;
-  color: #fff;
+  background-color: $acs;
+  border: 0;
+  margin-top: 2em;
+  color: $white;
 }
 /* Section */
 
 .section h4 {
-  color: #d8192f;
-  margin: 30px 0 20px;
+  color: $afk;
+  margin: 1.5em 0;
   padding: 0;
-  font-size: 20px;
+  font-size: 1.3em;
 }
 
 .section ul {
@@ -297,15 +235,3 @@ button.login:hover {
 }
 
 
-.home-page-para {
-	max-width: 45em;
-	background-color: $white;
-	padding: .1em;
-	opacity: 0.8;
-
-	p {
-		// text-align: center;
-		font-weight: bold;
-		color: $aac;
-	}
-}

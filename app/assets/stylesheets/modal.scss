@@ -1,5 +1,9 @@
 @import 'variables';
 
+p.auth-errors {
+  color: $aco;
+}
+
 .ReactModal__Overlay {
   display: hidden;
 }

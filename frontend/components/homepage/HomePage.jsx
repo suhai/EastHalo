@@ -6,9 +6,9 @@ import SignupPage from './SignupPage';
 import { values } from 'lodash';
 import Footer from '../footer/Footer';
 import PublicNavigation from '../PublicNavigation';
-let apple = 'https://res.cloudinary.com/swy/image/upload/v1506277383/junctionimg4_cvh23a.svg';
-let bell = 'https://res.cloudinary.com/swy/image/upload/v1506277383/junctionimg3_p364nk.svg';
-let books = 'https://res.cloudinary.com/swy/image/upload/v1506277383/junctionimg2_on7siw.svg';
+let chat = 'https://res.cloudinary.com/swy/image/upload/v1506277383/junctionimg4_cvh23a.svg';
+let read = 'https://res.cloudinary.com/swy/image/upload/v1506277383/junctionimg2_on7siw.svg';
+let write = 'https://res.cloudinary.com/swy/image/upload/v1506277383/junctionimg3_p364nk.svg';
 
 
 class HomePage extends React.Component {
@@ -92,7 +92,8 @@ class HomePage extends React.Component {
             <div className='placeholder-text'>
               <h3>MIXING COLORS</h3>
 							<div className='home-page-para'>
-								<p>As Summer Fades into Fall, Biology Professor Sam Porter Takes His Class Through The Inner Workings of Chlorophyll. Previous Studies Had Shown That very little Could Be Deduced By This Very Important Pigment In Plants.
+								<p>
+									As Summer Fades into Fall, Biology Professor Sam Porter Takes His Class Through The Inner Workings of Chlorophyll. Previous Studies Had Shown That very little Could Be Deduced By This Very Important Pigment In Plants.
 								</p>
 							</div>
             </div> 
@@ -110,24 +111,24 @@ class HomePage extends React.Component {
 							<div className="container">
 								<div className="row">
 									<div className="col-md-4">
-										<img className="read" src={apple} height={128} width={128} />
+										<img className="read" src={chat} height={128} width={128} />
 										<h2>Communicate</h2>
 										<p>Explore your passions and dive deep within your community to know others.</p>
 									</div>
 									<div className="col-md-4">
-										<img className="read" src={books} height={128} width={128} />
+										<img className="read" src={read} height={128} width={128} />
 										<h2>Learn</h2>
 										<p>Learn from others and let your creativity drive you and the world around you.</p>
 									</div>
 									<div className="col-md-4">
-										<img className="read" src={bell} height={128} width={128} />
+										<img className="read" src={write} height={128} width={128} />
 										<h2>Share</h2>
 										<p>Pass on your knowledge to the world and make a positve change</p>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div className="download">
+						<div className="enquiries-div">
 							<div className="container">
 								<button onClick={this.renderMessageForm} className="btn btn-default">
 									<span>Send Enquiries Here</span>

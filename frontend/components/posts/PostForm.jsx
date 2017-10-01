@@ -66,7 +66,7 @@ class PostForm extends React.Component {
 		
 		return (
 			<div>
-				<form className="form-style-9">
+				<form className="form-style-regular">
 					<ul>
 						<li>
 							<input type="text" className="field-style field-split align-left" value={title} onChange={this.update('title')} placeholder="Title" />

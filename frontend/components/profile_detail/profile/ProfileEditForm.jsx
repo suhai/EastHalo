@@ -146,7 +146,7 @@ class ProfileEditForm extends React.Component {
 
 		return (
 			<div>
-				<form className="form-style-9">
+				<form className="form-style-regular">
 					<ul>
 						<li>
 							<input type="text" className="field-style field-split align-left" value={username} onChange={this.update('username')} placeholder="username" />

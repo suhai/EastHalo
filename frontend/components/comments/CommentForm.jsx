@@ -62,7 +62,7 @@ class CommentForm extends React.Component {
 		
 		return (
 			<div>
-				<form className="form-style-9">
+				<form className="form-style-regular">
 					<ul>
 						<li>
 							<textarea className="field-style" value={body} onChange={this.update('body')} placeholder="Comment Here"></textarea>

@@ -69,7 +69,7 @@ class MealForm extends React.Component {
 
 		return (
 			<div>
-				<form className="form-style-9">
+				<form className="form-style-regular">
 					<ul>
 						<li>
 							<input type="text" className="field-style field-split align-left" value={name} onChange={this.update('name')} placeholder="Meal Name" />

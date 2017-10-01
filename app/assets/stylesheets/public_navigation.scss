@@ -1,32 +1,32 @@
 @import 'variables';
 
-.search {
-  float: right;
-  margin: 25px 0 0 0;
-}
+// .search {
+//   float: right;
+//   margin: 25px 0 0 0;
+// }
 
 .search-form input {
   background: $afg;
   border: 0px;
-  border-bottom: 1px solid $adx;
+  border-bottom: .1em solid $adx;
   color: $black;
-  height: 30px;
-	width: 240px;
-	padding: 5px;
+  height: 2.5em;
+	width: 16em;
+	padding: .5em;
 }
 
 .search-form input:hover,
 .search-form input:focus {
-  border-bottom: 1px solid $aed;
+  border-bottom: .1em solid $aed;
   outline: 0px;
 }
 
 .search-btn {
   background: transparent;
   border: 0px;
-  border-bottom: 1px solid $aed;
+  border-bottom: .1em solid $aed;
   color: whitesmoke;
-  height: 30px;
-  margin: 0 0 0 10px;
-  padding: 0 10px;
+  height: 2.5em;
+  margin: 0 0 0 1em;
+  padding: 0 1em;
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-let lighthouse = 'https://res.cloudinary.com/swy/image/upload/v1499750283/images/lighthouse.svg';
+let logo = 'https://res.cloudinary.com/swy/image/upload/v1499750283/images/lighthouse.svg';
 
 class PublicNavigation extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class PublicNavigation extends React.Component {
 			<header className='shared-header'>
 				<nav className='navigation'>
 					<ul>
-						<li><img className="read" src={lighthouse} height={40} width={40} /></li>
+						<li><img className="read" src={logo} height={40} width={40} /></li>
 						<li><NavLink exact to='/'>Home</NavLink></li>
 						<li><NavLink to='#'>Admissions</NavLink></li>
 						<li><NavLink to='#'>Academics</NavLink></li>

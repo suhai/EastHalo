@@ -26,11 +26,11 @@ class Schedule extends React.Component {
 						<thead>
 						<tr>
 							<th scope="col">Code</th>
-							<th scope="col">Course Title</th>
-							<th scope="col">From</th>
-							<th scope="col">To</th>
+							<th scope="col">Course</th>
+							<th scope="col">Starts At</th>
+							<th scope="col">Ends At</th>
 							<th scope="col">Load</th>
-							<th scope="col">Size</th>
+							<th scope="col">Class Size</th>
 							<th scope="col">Instructor</th>
 						</tr>
 						</thead>

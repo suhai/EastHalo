@@ -84,7 +84,7 @@ class PostEditForm extends React.Component {
 		return (
 			<div>
 				<h2 className='post-header'>{title}</h2>
-				<form className="form-style-9">
+				<form className="form-style-regular">
 					<ul>
 						<li>
 							<input type="text" className="field-style" value={title} onChange={this.update('title')} />

@@ -71,7 +71,7 @@ class MessageForm extends React.Component {
 		return (
 			<div className='homepage message-div'>
 				<PublicNavigation />
-				<div className="form-style-8">
+				<div className="form-style-msg">
 				<h2>Send US Your Enquiries Below</h2>
 				<form >	
 					<input type="text" className="field-style field-split align-left" value={sender} onChange={this.update('sender')} placeholder="Your Name" />

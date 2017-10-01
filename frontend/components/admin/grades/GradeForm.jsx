@@ -87,7 +87,7 @@ class GradeForm extends React.Component {
 		
 		return (
 			<div>
-				<form className="form-style-9">
+				<form className="form-style-regular">
 					<ul>
 						<li>
 							<select className="field-style field-split align-left"  value={student_id} onChange={this.update('student_id')} placeholder="Choose Student">

@@ -89,7 +89,7 @@ class NewsEditForm extends React.Component {
 
 		return (
 			<div>
-				<form className="form-style-9">
+				<form className="form-style-regular">
 					<ul>
 						<li>
 							<input type="text" className="field-style" value={headline} onChange={this.update('headline')} placeholder="News Headline" />

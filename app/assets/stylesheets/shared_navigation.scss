@@ -5,27 +5,27 @@ header {
   justify-content: space-between;
 
   p {
-    padding: 5px;
+    padding: .5em;
   }
 
   ul {
     display: flex;
 
     li {
-      padding: 5px;
-      margin: 5px;
+      padding: .5em;
+      margin: .5em;
     }
   }
 }
 
 header.shared-header {
 	display: flex;
-  height: 55px;
+  height: 4.5em;
   width: 100%;
 	background: $abz;
   color: white;
   font-size: 14px;
-	padding: 10px 5px;
+	padding: 1em .5em;
   position: fixed;
   top: 0;
   left: 0;
@@ -42,7 +42,7 @@ header.shared-header {
 
     ul li a {
       text-decoration: none;
-      color: white;
+      color: $white;
       margin: 0;
 			padding: 0.5em;
 			flex: 1;
@@ -52,7 +52,7 @@ header.shared-header {
       }
 
       &:hover {
-        text-shadow: 0 0 3px aqua;
+        text-shadow: 0 0 3px $aquamarine;
         cursor: pointer;
         border-bottom: 0;
       }
@@ -68,7 +68,8 @@ header.shared-header {
       margin: 0;
       padding: 0;
       text-align: center;
-      width: 94px;
+			// width: 94px;
+			width: 6.6em;
       display: flex;
       flex-direction: column;
     }
@@ -82,37 +83,37 @@ header.shared-header {
 
         a {
           margin: 0;
-          padding: 13px 20px;
+          padding: 1em 1.5em;
         }
       }
     }
 
-    li.home-logo {
-      height: 65%;
-      width: 70px;
-      margin-top: 20px;
-      margin-right: 10px;
-      padding: 0;
+    // li.home-logo {
+    //   height: 65%;
+    //   width: 70px;
+    //   margin-top: 20px;
+    //   margin-right: 10px;
+    //   padding: 0;
 
-      display: flex;
-      justify-content: center;
+    //   display: flex;
+    //   justify-content: center;
 
-      img {
-        width: 100%;
-      }
-    }
+    //   img {
+    //     width: 100%;
+    //   }
+    // }
 
     ul.searchbar {
       display: flex;
       justify-content: center;
       flex: 1;
-      height: 45px;
+      height: 3.5em;
       align-items: center;
-      margin: 0px 5px 5px 10px;
+      margin: 0 .3em .5em .5em;
     }
   }
 
   .active {
-    // background: tomato;
+		border-radius: .2em;
   }
 }

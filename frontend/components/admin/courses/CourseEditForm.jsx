@@ -118,7 +118,7 @@ class CourseEditForm extends React.Component {
 		return (
 			<div>
 				<h2 className='course-header'>{title}</h2>
-				<form className="form-style-9">
+				<form className="form-style-regular">
 					<ul>
 						<li>
 							<input type="text" className="field-style field-split align-left" value={course_code} onChange={this.update('course_code')} />

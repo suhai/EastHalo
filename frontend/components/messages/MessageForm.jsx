@@ -71,7 +71,7 @@ class MessageForm extends React.Component {
 		return (
 			<div className='homepage message-div'>
 				<PublicNavigation />
-				<form className="form-style-9 msg-form">
+				<form className="form-style-regular msg-form">
 					<ul>
 						<li>
 							<input type="text" className="field-style field-split align-left" value={sender} onChange={this.update('sender')} placeholder="Your Name" />

@@ -71,7 +71,7 @@ class CommentEditForm extends React.Component {
 		return (
 			<div>
 				<h2 className='course-header'>{title}</h2>
-				<form className="form-style-9">
+				<form className="form-style-regular">
 					<ul>
 						<li>
 							<textarea className="field-style" value={body} onChange={this.update('body')} ></textarea>

@@ -3,7 +3,7 @@
 div.loggedhome {
   display: flex;
   position: relative;
-	background: white;
+	background: $white;
 	margin-top: 3.5em;
 	margin-bottom: 0;
 	height: 45em;
@@ -23,7 +23,7 @@ div.loggedhome {
 		h3 {
 			color: $aed;
 			text-align: center !important;
-			text-align: center;
+			// text-align: center;
 		}
 	}
 
@@ -34,7 +34,8 @@ div.loggedhome {
 
 	.sidebar-div {
 		flex: 1;
-		border-left: 1px solid $gray;
+		border-left: .3em solid $gray;
+		border-right: .3em solid $gray;
 	}
 }
 

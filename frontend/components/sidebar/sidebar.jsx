@@ -79,7 +79,7 @@ class SideBar extends React.Component {
 				
 				<div className="chat-area">
 					<ul>
-						<h3>Chat Area!!!</h3>
+						<h3>Chat Area To Be Implemented!!!</h3>
 					</ul>
 					<div className="">
 						

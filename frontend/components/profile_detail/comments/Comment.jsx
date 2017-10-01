@@ -19,6 +19,7 @@ class Comment extends React.Component {
   render() {
 		const { 
 			id, 
+			user_id,
 			post_id, 
 			body
 		} = this.props.comment;
@@ -27,8 +28,7 @@ class Comment extends React.Component {
 			<tr onClick={this.showComment}>
 				<td>{user_id}</td>
 				<td>{post_id}</td>
-				<td>{body.slice(0,100)}</td>
-				<td onClick={this.showComment}>Show More</td>
+				<td>{body.slice(0,35) + ' ...'}</td>
 			</tr>
     );
   }

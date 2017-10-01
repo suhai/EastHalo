@@ -18,17 +18,16 @@ class Post extends React.Component {
 
   render() {
 		const { 
+			id,
 			title, 
-			body, 
-			user_id, 
-			user
+			body
 		} = this.props.post;
 
     return (
 			<tr onClick={this.showPost}>
-				<td>{user}</td>
+				<td>{id}</td>
 				<td>{title}</td>
-				<td>{body}</td>
+				<td>{body.slice(0,35) + ' ...'}</td>
 			</tr>
     );
   }

@@ -9,6 +9,10 @@ class Schedule extends React.Component {
 		
 	};
 
+	componentDidMount() {
+		this.props.fetchCourses();
+	};
+
 	render() {
 		let courses = values(this.props.currentUser.courses).map((course, idx) => (
 			<MyClass key={idx} course={course} />
@@ -22,7 +26,7 @@ class Schedule extends React.Component {
 						<thead>
 						<tr>
 							<th scope="col">Code</th>
-							<th scope="col">Title</th>
+							<th scope="col">Course Title</th>
 							<th scope="col">From</th>
 							<th scope="col">To</th>
 							<th scope="col">Load</th>

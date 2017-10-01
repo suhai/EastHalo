@@ -14,6 +14,10 @@ class MyClass extends React.Component {
 		window.location.hash = `registrar/courses/${this.props.course.id}`;
 	};
 
+	componentDidMount() {
+		console.log(this.props.course);
+		// debugger;
+	};
 
   render() {
 		const { 

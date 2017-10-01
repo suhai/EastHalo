@@ -448,7 +448,7 @@ p "Created #{Transcript.count} transcripts"
 Book.destroy_all
 Book.create!([
 	{
-		title: "Harry Potter and the Philosopher's Stone",
+		title: "Harry Potter",
 		author: "J. K. Rowling",
 		publisher: "",
 		description: "",
@@ -598,7 +598,7 @@ Book.create!([
 	},
 
 	{
-		title: "The Girl with the Dragon Tattoo",
+		title: "Girl with Dragon Tattoo",
 		author: "Stieg Larsson",
 		publisher: "",
 		description: "",
@@ -648,7 +648,7 @@ Book.create!([
 	},
 
 	{
-		title: "Adventures of Huckleberry Finn",
+		title: "Huckleberry Finn",
 		author: "Mark Twain",
 		publisher: "",
 		description: "",
@@ -782,7 +782,7 @@ Meal.create!([
 	},
 
 	{
-		name: "Buttered toast with Marmite",
+		name: "Buttered toast",
 		ingredients: "",
 		price: 20.05,
 		image_url: "https://res.cloudinary.com/swy/image/upload/v1506309823/food27_fdamjt.jpg"

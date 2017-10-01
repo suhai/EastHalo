@@ -35,7 +35,7 @@ class Posts extends React.Component {
           <table cellPadding={0} cellSpacing={0}>
 						<thead>
 						<tr>
-							<th scope="col">User</th>
+							<th scope="col">Post ID</th>
 							<th scope="col">Title</th>
 							<th scope="col">Excerpt</th>
 						</tr>

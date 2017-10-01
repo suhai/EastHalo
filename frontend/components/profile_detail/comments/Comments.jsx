@@ -36,7 +36,6 @@ class Comments extends React.Component {
 							<th scope="col">User ID</th>
 							<th scope="col">Post ID</th>
 							<th scope="col">Comment</th>
-							<th scope="col">Link</th>
 						</tr>
 						</thead>
 					</table>

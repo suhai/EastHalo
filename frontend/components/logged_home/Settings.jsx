@@ -4,15 +4,17 @@ const SettingsPage = (props) => (
 	<div className='attention-page'>
 		<h2>ATTENTION PLEASE!</h2>
 		<hr/>
-		<p>You Are Currently Not An Admin</p>
-		<p>To Access Admin Privileges</p>
-		<p>Please Set The 'is_admin' Field</p> 
-		<p>In Your Profile (right top corner of this page)</p>
-		<p>To 'TRUE'.</p>
-		<p>To Checkout What Other User Type Privileges</p>
-		<p>Are Available, Just Change Your User Type</p>
-		<p>In The Settings To Either a Student</p>
-		<p>A Professor, or a DEFAULT User</p>
+		<code>
+			You are currently not an Admin.<br/><br/>
+			To access Admin privileges,<br/><br/>
+			Please set the 'is_admin' field<br/><br/>
+			in your Profile (right top corner of this page)
+			to 'TRUE'.<br/><br/>
+			To checkout what other User type privileges<br/><br/>
+			are available, just change your User type<br/><br/>
+			in the Settings to either a Student,<br/><br/>
+			a Professor, or a DEFAULT User.<br/><br/>
+		</code>
 	</div>
 );
 

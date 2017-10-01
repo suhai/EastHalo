@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-	# don't forget to set authentication for routes that require it
   protect_from_forgery with: :exception
 	helper_method :current_user, :logged_in?, 
 

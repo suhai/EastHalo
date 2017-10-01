@@ -21,7 +21,6 @@ class Comments extends React.Component {
 	};
 
 	render() {
-		// debugger
 		let commentList = [
 			{user_id: 1, post_id: 21, body: 'Hello America'},
 			{user_id: 2, post_id: 22, body: 'Hello Asia'},

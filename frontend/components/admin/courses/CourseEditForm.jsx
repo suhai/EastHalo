@@ -26,8 +26,8 @@ class CourseEditForm extends React.Component {
 		const id = this.props.match.params.id;
 		this.props.fetchCourse(id);
 		this.props.fetchCourses();
-		// this.props.fetchUsers();
-		// this.props.fetchDepartments();
+		this.props.fetchUsers();
+		this.props.fetchDepartments();
 	};
 
 	update(prop) {

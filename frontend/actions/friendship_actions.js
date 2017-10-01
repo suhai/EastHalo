@@ -4,7 +4,6 @@ export const RECEIVE_FRIENDSHIPS = 'RECEIVE_FRIENDSHIPS';
 export const REMOVE_FRIENDSHIP = 'REMOVE_FRIENDSHIP';
 export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
 
-
 export const receiveFriendship = friendship => ({
   type: RECEIVE_FRIENDSHIP,
   friendship

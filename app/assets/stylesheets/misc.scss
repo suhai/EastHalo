@@ -2,18 +2,19 @@
 
 // shared pages className
 .pages {
-	// display: flex;
-	// flex-direction: column;
-	// background-color: #B8D386;
-	// overflow-y: scroll;
-	// height: calc(100% - 7em);
-	// width: 100%;
-	// margin-top: 2em;
 	width: 95%;
 	margin: 2em auto;
-	// position: fixed;
-	margin-bottom: .5em !important;
-	
+	margin-bottom: .5em !important;	
+}
+
+.course-show-msg {
+	text-align: center;
+	margin: auto;
+}
+
+.course-show-header {
+	text-align: center;
+	margin: auto;
 }
 
 .admin-home-div {
@@ -55,13 +56,22 @@
 }
 
 // comments page and form
-.comment-div {
-	width: 30%;
-	height: 20px;
+.comments-div {
+	width: 98%;
+	height: 3em;
 	border-radius: 5px;
 	float: right;
-	border: 3px solid maroon;
-	padding: 10px;
-	margin-right: 20px;
+	border: .1em solid $aab;
+	text-align: center;
+	padding: .5em;
+	margin: .5em auto;
 	box-sizing: border-box;
+}
+
+.commentable {
+	width: 30%;
+	height: 2em;
+	float: right;
+	border: .1em solid $aaj;
+	text-align: center;
 }

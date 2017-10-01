@@ -4,18 +4,11 @@ main.user-page {
 	margin: 2em auto;
 	flex: 3;
 	align-content: center;
-	// align-items: center;
 
 	.profile-nav {
 		text-align: center;
-		// align-content: center;
-		// margin-bottom: 1.5em;
-		// margin: 1.5em auto;
-		// align-self: center;
 	}
 }
-
-
 
 .profile-nav ul {
 	display: inline-block;
@@ -33,10 +26,8 @@ main.user-page {
   font-size: .85em;
   color: $black;
   padding: 1em;
-  // border-radius: .25em;
   background: $acz;
 	transition: .2s;
-	// margin: 2em auto;
 }
 
 .profile-nav a:hover,
@@ -85,7 +76,6 @@ main.user-page {
 	padding: .3em;
 	border: .1em solid $aej;
 }
-
 
 main > div:first-child {
 	display: flex;

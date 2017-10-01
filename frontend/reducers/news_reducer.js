@@ -4,7 +4,6 @@ import { RECEIVE_ALL_NEWS,
  } from '../actions/news_actions';
 import merge from 'lodash/merge';
 
-// const defaultState = { };
 const NewsReducer = (state = {}, action) => {
 	Object.freeze(state)
 	let newState = merge({}, state)

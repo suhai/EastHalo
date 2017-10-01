@@ -4,7 +4,6 @@ import { RECEIVE_COURSES,
 } from '../actions/course_actions';
 import merge from 'lodash/merge';
 
-// const defaultState = { };
 const CourseReducer = (state = {}, action) => {
 	Object.freeze(state)
 	let newState = merge({}, state)

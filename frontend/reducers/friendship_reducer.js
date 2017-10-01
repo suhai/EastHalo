@@ -4,7 +4,6 @@ import { RECEIVE_FRIENDSHIP,
 } from '../actions/friendship_actions';
 import merge from 'lodash/merge';
 
-// const defaultState = { };
 const FriendshipReducer = (state = {}, action) => {
 	Object.freeze(state)
 	let newState = merge({}, state)

@@ -9,7 +9,6 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	// createBook: data => dispatch(createBook(data)),
 	fetchBooks: () => dispatch(fetchBooks()),
   deleteBook: id => dispatch(deleteBook(id))
 });

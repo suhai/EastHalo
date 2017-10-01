@@ -4,7 +4,6 @@ import { RECEIVE_MEALS,
  } from '../actions/meal_actions';
 import merge from 'lodash/merge';
 
-// const defaultState = { };
 const MealReducer = (state = {}, action) => {
 	Object.freeze(state)
 	let newState = merge({}, state)

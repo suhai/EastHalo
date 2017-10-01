@@ -5,7 +5,6 @@ export const REMOVE_COURSE = 'REMOVE_COURSE';
 export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
 
 
-
 export const receiveCourse = course => ({
   type: RECEIVE_COURSE,
   course

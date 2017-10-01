@@ -4,7 +4,6 @@ import { RECEIVE_POSTS,
 } from '../actions/post_actions';
 import merge from 'lodash/merge';
 
-// const defaultState = { };
 const PostReducer = (state = {}, action) => {
 	Object.freeze(state)
 	let newState = merge({}, state)

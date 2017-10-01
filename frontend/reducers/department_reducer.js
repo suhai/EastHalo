@@ -4,7 +4,6 @@ import { RECEIVE_DEPARTMENTS,
 } from '../actions/department_actions';
 import merge from 'lodash/merge';
 
-// const defaultState = { };
 const DepartmentReducer = (state = {}, action) => {
 	Object.freeze(state)
 	let newState = merge({}, state)

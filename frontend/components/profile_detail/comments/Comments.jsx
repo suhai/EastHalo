@@ -16,10 +16,6 @@ class Comments extends React.Component {
 		window.location.hash = `/admin/${this.props.currentUser.username}/comments/commentform`;
 	};
 
-	componentDidMount() {
-
-	};
-
 	render() {
 		let commentList = values(this.props.currentUser.comments);
 		let comments = commentList.map((comment, idx) => (

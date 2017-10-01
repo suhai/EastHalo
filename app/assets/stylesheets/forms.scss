@@ -1,9 +1,5 @@
 @import 'variables';
 
-// .form-div {
-// 	margin-left: 10em;
-// }
-// regular form style for all but messages
 .form-style-regular{
 	max-width: 450px;
 	background: #FAFAFA;
@@ -35,7 +31,6 @@
 	-moz-transition: all 0.30s ease-in-out;
 	-ms-transition: all 0.30s ease-in-out;
 	-o-transition: all 0.30s ease-in-out;
-
 }
 
 .form-style-regular ul li  .field-style:focus{

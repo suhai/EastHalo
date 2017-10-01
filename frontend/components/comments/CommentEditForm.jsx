@@ -32,7 +32,6 @@ class CommentEditForm extends React.Component {
 	};
 
 	redirectPath() {
-		// window.location.hash = `admin/${this.props.currentUser.username}/Comments`;
 		console.log('I have to be redirected to the post page');
 	};
 

@@ -21,7 +21,6 @@ export const removeComment = comment => ({
 
 
 
-
 export const fetchAllComments = () => dispatch => (
   APIUtil.fetchAllComments()
     .then(allComments => dispatch(receiveComments(allComments)))

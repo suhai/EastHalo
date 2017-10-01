@@ -32,7 +32,6 @@ class Messages extends React.Component {
 				<table id="gradient-style" className="full-width">
 					<thead>
 						<tr>
-							{/* <th scope="col">Post ID</th> */}
 							<th scope="col">Sender</th>
 							<th scope="col">Email</th>
 							<th scope="col">Subject</th>

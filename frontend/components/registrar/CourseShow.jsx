@@ -117,11 +117,13 @@ class CourseShow extends React.Component {
 				<div className='grouped-buttons'>
 					<button className={`btn ${color}`} onClick={this.toggleCourse}>{enroll_status}</button>	
 				</div> :
-				<div>{`Hi ${this.props.currentUser.username}! Interested in ${course_code}? You need to be a student in order to sign up for it.`}</div>
+				<div className='course-show-msg'>{`Hi ${this.props.currentUser.username}! Interested in ${course_code}? You need to be a student in order to sign up for it.`}</div>
 
 		return (
 			<main className='user-page'>
 				<div>
+					<h4 className='course-show-header'>{title}</h4>
+					<hr/>
 					{enrollableUser}
 				</div>
 				<hr />

@@ -54,13 +54,14 @@ class PostShow extends React.Component {
 			title,
 			body,
 			image_url,
-			user_id
+			user_id,
+			comments
 		} = this.state.post;
 
 		let displayButtons = this.props.currentUser.id == user_id ?
 		<div className='grouped-buttons'>
-			<button className='btn edit' onClick={this.editPost}>Edit Post</button>
-			<button className='btn delete' onClick={this.deletePost}>Delete Post</button>
+			<button className='btn edit lefty' onClick={this.editPost}>Edit Post</button>
+			<button className='btn delete righty' onClick={this.deletePost}>Delete Post</button>
 		</div> : <div></div>
 
 		return (
@@ -71,16 +72,20 @@ class PostShow extends React.Component {
 							<img src={image_url} alt={title} />
 						</div>
 					</div>
-					<hr/>				
+					<hr/>	
+					<div className='profile-detail-table'>			
 						{displayButtons}
-					<h2 className='course-header'>{title}</h2>
-					<div>
+						<h2 className='course-header'>{title}</h2>
 						<div>
-							<p>{body}</p>
-						</div>
-						<div className='comment-div' onClick={this.renderCommentForm}>
-						</div>
-					</div>	
+							<div>
+								<p>{body}</p>
+								<div className='comments-div'>
+									<p>Comments For This Particular Post Goes Here</p>
+								</div>
+								<button className='commentable' onClick={this.renderCommentForm}>Click Here To Comment</button>
+							</div>
+						</div>	
+					</div>
 				</div>
 			</main>
 		);

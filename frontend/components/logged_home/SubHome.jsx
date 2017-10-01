@@ -20,7 +20,6 @@ class SubHome extends React.Component {
 	};
 
 	render() {
-		// randomly select some users, posts, and news from all available
 		let users = values(this.props.users).map((user, idx) => (
 			<UserSnippet key={idx} user={user} currentUser={this.props.currentUser} />
 		));

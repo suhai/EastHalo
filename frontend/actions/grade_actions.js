@@ -5,7 +5,6 @@ export const REMOVE_GRADE = 'REMOVE_GRADE';
 export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
 
 
-
 export const receiveGrade = grade => ({
   type: RECEIVE_GRADE,
   grade

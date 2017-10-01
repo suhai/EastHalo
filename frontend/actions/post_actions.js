@@ -5,7 +5,6 @@ export const REMOVE_POST = 'REMOVE_POST';
 export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
 
 
-
 export const receivePost = post => ({
   type: RECEIVE_POST,
   post

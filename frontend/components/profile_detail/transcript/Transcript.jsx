@@ -7,10 +7,6 @@ class Transcript extends React.Component {
 
 	};
 
-	componentDidMount() {
-	
-	};
-
 	render() {
 		const {
 			id,
@@ -86,7 +82,7 @@ class Transcript extends React.Component {
 							</tr>
 						</table>
 					</div>
-					<h3>GRADES WILL GO DOWN HERE</h3>
+					<h3>GRADES WILL GO HERE</h3>
 				</div>
       </main>
 		);

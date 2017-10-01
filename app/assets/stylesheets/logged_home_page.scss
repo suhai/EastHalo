@@ -6,15 +6,7 @@ div.loggedhome {
 	background: $white;
 	margin-top: 3.5em;
 	margin-bottom: 0;
-	// height: 45em;
 	height: 100%;
-	
-	// background: gray; /* For browsers that do not support gradients */
-	// background: -webkit-linear-gradient(left top, #F4F6F7, #B2C8D6); 
-	// background: -o-linear-gradient(bottom right, #F4F6F7, #B2C8D6); 
-	// background: -moz-linear-gradient(bottom right, #F4F6F7, #B2C8D6);
-	// background: linear-gradient(to bottom right, #F4F6F7, #B2C8D6); /* Standard */
-	
 	
 	.loggedhome-main {
 		flex: 3;
@@ -24,14 +16,8 @@ div.loggedhome {
 		h3 {
 			color: $aed;
 			text-align: center !important;
-			// text-align: center;
 		}
 	}
-
-	// aside.loggedhome-sidebar {
-	// 	flex: 2;
-	// 	max-height: 1000px;
-  // }
 
 	.sidebar-div {
 		flex: 1;

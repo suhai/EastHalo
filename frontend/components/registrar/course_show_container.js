@@ -10,7 +10,6 @@ import { selectCourse } from '../../reducers/selectors';
 const mapStateToProps = (state, ownProps) => ({
 	currentUser: state.session.currentUser,
 	courses: state.courses,
-	// course: selectCourse(state, ownProps),
 	course_enrollments: state.course_enrollments
 });
 

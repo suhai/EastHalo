@@ -19,10 +19,6 @@ class BookForm extends React.Component {
 		this.redirectPath = this.redirectPath.bind(this);
 	};
 
-	// componentDidMount() {
-	// 	this.props.fetchBooks();
-	// };
-
 	update(prop) {
 		return e => this.setState({ [prop]: e.currentTarget.value });	
 	};

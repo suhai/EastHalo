@@ -4,7 +4,6 @@ import { RECEIVE_GRADE_LETTERS,
 } from '../actions/grade_letter_actions';
 import merge from 'lodash/merge';
 
-// const defaultState = { };
 const GradeLetterReducer = (state = {}, action) => {
 	Object.freeze(state)
 	let newState = merge({}, state)

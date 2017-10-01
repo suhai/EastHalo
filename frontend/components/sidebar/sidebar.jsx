@@ -1,7 +1,5 @@
 import React from 'react';
-// import SidebarPostContainer from './sidebar_post_container';
 import SidebarUserContainer from './sidebar_user_container';
-// import SidebarNewsContainer from './sidebar_news_container';
 import { values } from 'lodash';
 import { Route, Switch } from 'react-router-dom';
 

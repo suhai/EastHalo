@@ -4,7 +4,6 @@ import { RECEIVE_MESSAGES,
  } from '../actions/message_actions';
 import merge from 'lodash/merge';
 
-// const defaultState = { };
 const MessageReducer = (state = {}, action) => {
 	Object.freeze(state)
 	let newState = merge({}, state)

@@ -1,98 +1,15 @@
 @import 'variables';
 
-// li.nav-user {
-//   position: relative;
-
-//   p.user {
-//     position: relative;
-// 		width: 100%;
-// 		margin: -1em 1em 0 3em;
-//     z-index: 999;
-//     color: white;
-//     padding: 13px 20px;
-//     transition: background 0.3s;
-// 		white-space: nowrap;
-// 		box-sizing: border-box;
-
-//     &:hover {
-//       text-shadow: 0 0 3px white;
-//       cursor: pointer;
-//     }
-
-//     &:focus {
-//       outline: none;
-//     }
-
-//   }
-
-//   p.active.user {
-//     z-index: 999;
-//   }
-
-// }
-
-// ul#user-settings {
-//   position: absolute;
-//   z-index: -10;
-// 	top: -11em;
-// 	flex-direction: column;
-// 	margin-left: 3em;
-
-//   width: 55%;
-// 	height: 7.5em;
-//   justify-content: flex-end;
-// 	background: $bgcolor;
-//   display: hidden;
-
-//   transition: transform 0.3s;
-
-//   &.active {
-//     display: flex;
-//     position: absolute;
-// 		transform: translateY(12.5em);
-//     z-index: -100;
-//   }
-
-//   li {
-//     padding: 1em .5em;
-//     text-shadow: 0 0 0;
-//     text-align: left;
-//     font-size: .8em;
-// 		height: .8em;
-// 		margin-left: -1em;
-//     // width: initial;
-
-//     a {
-//       padding: 0;
-// 		}
-		
-//   }
-
-//   li:hover {
-//     cursor: pointer;
-// 	}
-	
-// 	li#signout {
-// 		padding-bottom: 1.5em;
-// 	}
-// }
-
-// .profile-nav.ul {
-// 	align-items: center;
-// }
-/* The container <div> - needed to position the dropdown content */
+// Dropdown menu
 .dropdown {
 	position: relative;
 	display: inline-block;
 }
 
-/* Style The Dropdown Button */
 .dropbtn {
 	background-color: $abz;
 	color: white;
-	// padding: .7em;
 	font-size: 1em;
-	// margin-right: 1.5em;
 	border: none;
 	cursor: pointer;
 }
@@ -101,17 +18,12 @@
 	min-width: 7em !important;
 }
 
-
-
-/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
 	display: none;
 	position: absolute;
 	background-color: $abz;
 	text-align: left;
-	// min-width: 8em;
 	width: 100%;
-	// box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
 }
 
@@ -129,17 +41,14 @@
 	}
 }
 
-/* Change color of dropdown links on hover */
 .dropdown-content a:hover {
 	background-color: $aei;
 }
 
-/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
 	display: block;
 }
 
-/* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
 	background-color: $abz;
 }

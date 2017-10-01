@@ -5,7 +5,6 @@ export const REMOVE_BOOK = 'REMOVE_BOOK';
 export const RECEIVE_ERRORS= 'RECIEVE_ERRORS';
 
 
-
 export const receiveBook = book => ({
   type: RECEIVE_BOOK,
   book

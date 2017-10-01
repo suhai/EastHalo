@@ -29,9 +29,9 @@ class Meal extends React.Component {
 				<div className="gallery">
 					<img src={image_url} alt={name} />
 					<div className="desc">
-					<div>
-						<p>{name}: ${price}</p>
-					</div>
+						<div>
+							<p>{name}: ${price}</p>
+						</div>
 					</div>
 				</div>
 				<hr/>

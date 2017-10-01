@@ -46,6 +46,11 @@ class BookShow extends React.Component {
 					<div className="img-gallery">
 						<div className="gallery">
 							<img src={image_url} alt={title} />
+							<div className="desc">
+								<div>
+									<p>{title}: ${price}</p>
+								</div>
+							</div>
 						</div>
 					</div>
 					<hr/>

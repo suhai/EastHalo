@@ -43,6 +43,27 @@ class User < ApplicationRecord
 		'NA' unless self.type == 'Student'
 	end
 
+	def book_collections
+		[]	
+	end
+
+	def buy_book(book)
+		self.book_collection << book
+		self.cash_balance -= book.price
+		bookstore.account += book.price
+	end
+
+	def meal_purchase_history
+		[]
+	end
+
+	def buy_meal(meal)
+		self.meal_purchase_history << meal
+		self.cash_balance -= meal.price
+		cafeteria.account += cafeteria.price
+	end
+
+
 	def default_user_to_student_and_instantiate_schedule_and_transcript
 		self.type ||= 'Student'
 		Transcript.create(student_id: self.id) if self.type == 'Student'
@@ -81,9 +102,11 @@ class User < ApplicationRecord
 		self.lname ||= 'Cargo'
 		self.type ||= 'Student'
 		self.phone_number ||= 1234567890
-		self.email ||= 'user@someeamil.com'
+		self.email ||= `#{self.fname}@gmail.com`
 		self.profile_image_url ||= 'https://res.cloudinary.com/swy/image/upload/v1499749857/images/student.svg'
 		Transcript.create(student_id: self.id)
 		Schedule.create(user_id: self.id)
+		self.book_collections ||= []
+		self.meal_purchase_history ||= []
 	end	
 end

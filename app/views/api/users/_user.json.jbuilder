@@ -23,5 +23,7 @@ json.courses user.courses if user.type == 'Student' || user.type == 'Professor'
 json.course_enrollments user.course_enrollments if user.type == 'Student'
 json.professors user.professors if user.type == 'Student'
 json.students user.students if user.type == 'Professor'
+json.meal_purchase_history user.meal_purchase_history
+json.book_collections user.book_collections
 json.created_at user.created_at
 json.updated_at user.updated_at

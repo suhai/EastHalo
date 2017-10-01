@@ -76,6 +76,10 @@
 // 		padding-bottom: 1.5em;
 // 	}
 // }
+
+// .profile-nav.ul {
+// 	align-items: center;
+// }
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
 	position: relative;
@@ -86,11 +90,15 @@
 .dropbtn {
 	background-color: $abz;
 	color: white;
-	padding: .7em;
+	// padding: .7em;
 	font-size: 1em;
-	margin-right: 1.5em;
+	// margin-right: 1.5em;
 	border: none;
 	cursor: pointer;
+}
+
+.profile-menu {
+	min-width: 7em !important;
 }
 
 
@@ -100,7 +108,9 @@
 	display: none;
 	position: absolute;
 	background-color: $abz;
-	min-width: 12em;
+	text-align: left;
+	// min-width: 8em;
+	width: 100%;
 	// box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 	z-index: 1;
 }
@@ -108,7 +118,7 @@
 /* Links inside the dropdown */
 .dropdown-content a {
 	color: $abi;
-	padding: .3em;
+	padding: .5em;
 	text-decoration: none;
 	display: block;
 	
@@ -130,6 +140,6 @@
 }
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
-// .dropdown:hover .dropbtn {
-// 	background-color: $abz;
-// }
+.dropdown:hover .dropbtn {
+	background-color: $abz;
+}

@@ -12,7 +12,12 @@ class Assignment extends React.Component {
  
     return (
       <main className='user-page'>
-        <h3>THIS IS THE ASSIGNMENTS PAGE</h3>
+				<div className='assignment-page'>
+					<h5>THIS IS THE ASSIGNEMNTS PAGE.</h5>
+					<div className=''>
+					
+					</div>
+				</div>
       </main>
     );
   }

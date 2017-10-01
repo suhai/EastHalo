@@ -79,7 +79,7 @@ class BookForm extends React.Component {
 		} = this.state;
 		
 		return (
-			<div>
+			<div className='form-div'>
 				<form className="form-style-regular">
 					<ul>
 						<li>

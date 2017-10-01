@@ -1,36 +1,140 @@
 @import 'variables';
 
-.profile-nav {
-  text-align: center;
-  margin-bottom: 1.5em;
+main.user-page {
+	margin: 2em auto;
+	flex: 3;
+	align-content: center;
+	// align-items: center;
+
+	.profile-nav {
+		text-align: center;
+		// align-content: center;
+		// margin-bottom: 1.5em;
+		// margin: 1.5em auto;
+		// align-self: center;
+	}
+}
+
+
+
+.profile-nav ul {
+	display: inline-block;
+	margin-top: 1em;
+	zoom: 1;
+	*display: inline;
+}
+
+.profile-nav li {
+	float: left;
+	margin-right: .5em;
 }
 
 .profile-nav a {
   font-size: .85em;
   color: $black;
   padding: 1em;
-  border-radius: .25em;
+  // border-radius: .25em;
   background: $acz;
 	transition: .2s;
-	margin: 2em auto;
-}
-
-.profile-nav ul {
-    display: inline-block;
-    margin: 0;
-    // padding: 10px;
-    zoom:1;
-    *display: inline;
-}
-.profile-nav li {
-  float: left;
-	margin-left: 1.5em;
+	// margin: 2em auto;
 }
 
 .profile-nav a:hover,
 .profile-nav a.active {
   color: $white;
-	background: $aey;
+	background: $aej;
 	text-decoration: none;
 }
 
+
+.profile-table-header {
+	color: $black;
+	font-weight: bold;
+}
+
+.profile-detail-table {
+	border: .15em solid $aac;
+	padding: 1em;
+	margin: auto 2em;
+
+	button.btn {
+		margin: 1em;
+	}
+
+	table {
+		margin-top: 3em; 
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 98%;
+	}	
+
+	td, th {
+		border: .1em solid $black;
+		text-align: left;
+		padding: .8em;
+	}
+
+	tr:nth-child(even) {
+			background-color: $abi;
+	}
+}
+
+.unaddable-self {
+	width: 15%;
+	margin-left: 2em;
+	padding: .3em;
+	border: .1em solid $aej;
+}
+
+
+main > div:first-child {
+	display: flex;
+	flex-direction: column;
+}
+
+.img-gallery {
+  margin: auto;
+  display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+}
+
+img {
+  border: 1px solid $abi;
+  border-radius: 4px;
+}
+
+img:hover {
+  opacity: 0.5;
+  filter: alpha(opacity=50); 
+}
+
+div.gallery {
+  margin: auto;
+  border: .5em solid $ach;
+  float: left;
+	width: 10em;
+	height: 13em;
+	padding: .2em;
+}
+
+div.gallery:hover {
+  border: 1px solid $abh;
+}
+
+div.gallery img {
+  width: 99%;
+	height: 6em;
+	margin: auto;
+}
+
+div.desc {
+  padding: 1em;
+  text-align: center;
+}
+
+.assignment-page h5 {
+	border: .2em solid black;
+	padding: .5em;
+	margin: 5em auto;
+}

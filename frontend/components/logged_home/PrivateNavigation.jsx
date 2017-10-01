@@ -65,7 +65,7 @@ class PrivateNavigation extends React.Component {
 					<ul>
 						<div className="dropdown">
 							<button className="dropbtn">{this.props.currentUser.username} ❯❯</button>
-							<div className="dropdown-content">
+							<div className="dropdown-content profile-menu">
 							<Link to={`/${this.props.currentUser.username}/profile/me`}>Profile</Link>
 							<NavLink to={`/${this.props.currentUser.username}/profile/transcript`}>Transcript</NavLink>
 							<NavLink to='/' onClick={this.logout}>Sign Out</NavLink>

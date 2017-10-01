@@ -12,10 +12,9 @@ class Assignment extends React.Component {
  
     return (
       <main className='user-page'>
-
-				<div className='profile-page-detail'>
-					<h4>YOU HAVE TO BE ENROLED IN A COURSE IN ORDER TO HAVE ASSIGNEMNTS.</h4>
-					<div className='profile-detail-table'>
+				<div className='assignment-page'>
+					<h5>YOU HAVE TO BE ENROLED IN A COURSE IN ORDER TO HAVE ASSIGNEMNTS.</h5>
+					<div className=''>
 					
 					</div>
 				</div>

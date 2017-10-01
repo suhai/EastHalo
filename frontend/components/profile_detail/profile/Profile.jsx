@@ -39,17 +39,17 @@ class Profile extends React.Component {
 					<div className="gallery">
 						<img src={profile_image_url} alt={username} />
 						<div className="desc">
-						<div>
-							<p>{username}</p>
-						</div>
+							<div>
+								<p>{username}</p>
+							</div>
 						</div>
 					</div>
 					<hr/>
 				</div>
 
 				<div className='profile-page-detail'>
-					<button className='btn edit' onClick={this.renderEditForm}>Edit Self</button>
 					<div className='profile-detail-table'>
+						<button className='btn edit' onClick={this.renderEditForm}>Edit Self</button>
 						<table>
 							<tbody>
 								<tr>

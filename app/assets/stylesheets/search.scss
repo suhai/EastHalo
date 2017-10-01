@@ -2,21 +2,23 @@
 
 input.search {
 	width: 100%;
-	margin: auto 20px;
+	margin: auto 1.5em;
 	box-sizing: border-box;
-	border: 1px solid gray;
-	border-radius: 4px;
-	font-size: 14px;
-	background-color: rgb(230,230,230);
+	border: .2em solid $aeo;
+	border-radius: .2em;
+	font-size: 1em;
+	background-color: $white;
 	background-image: url('https://res.cloudinary.com/swy/image/upload/v1503358374/search-icon_ot5xw2.png');
-	background-position: right 5px center;
+	background-position: right .5em center;
 	background-size: contain;
 	background-repeat: no-repeat;
-	padding: 5px 20px 5px 10px;
+	padding: .4em 1em;
 	-webkit-transition: width 0.4s ease-in-out;
 	transition: width 0.4s ease-in-out;
 	outline: none;
 	transition: background 0.5s;
 
-	&:focus{ background-color: white }
+	&:focus{ 
+		background-color: $white;
+	}
 }

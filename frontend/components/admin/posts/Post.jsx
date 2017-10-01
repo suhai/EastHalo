@@ -28,7 +28,7 @@ class Post extends React.Component {
 			<tr onClick={this.showPost}>
 				<td>{user}</td>
 				<td>{title}</td>
-				<td>{body}</td>
+				<td>{body.slice(0,35)}</td>
 			</tr>
     );
   }

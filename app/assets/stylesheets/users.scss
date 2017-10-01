@@ -1,88 +1,10 @@
 @import 'variables';
 
-.user-page {
-	margin-left: 1em;
-	margin-top: 2em;
-}
-
-.profile-page-detail {
-	border: 2px solid $aac;
-	padding: 1em;
-	margin-right: 2em;
-}
-
-.profile-table-header {
-	color: black;
-	font-weight: bold;
-}
-
-.profile-detail-table {
-	table {
-		margin-top: 3em; 
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 98%;
-	}
+// .user-page {
+// 	// margin-left: 1em;
+// 	// margin-top: 2em;
+// 	margin: 2em auto;
+// }
 
 
-	
-
-	td, th {
-			border: 1px solid $black;
-			text-align: left;
-			padding: 10px;
-	}
-
-	tr:nth-child(even) {
-			background-color: $abi;
-	}
-}
-
-
-main > div:first-child {
-	display: flex;
-	flex-direction: column;
-}
-
-.img-gallery {
-  margin: auto;
-  display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-}
-
-img {
-  border: 1px solid $abi;
-  border-radius: 4px;
-}
-
-img:hover {
-  opacity: 0.5;
-  filter: alpha(opacity=50); /* For IE8 and earlier */
-  // box-shadow: 0 0 2px 1px $acg;
-}
-
-div.gallery {
-  margin: auto;
-  border: .5em solid $ach;
-  float: left;
-	width: 10em;
-	height: 13em;
-	padding: .2em;
-}
-
-div.gallery:hover {
-  border: 1px solid $abh;
-}
-
-div.gallery img {
-  width: 99%;
-	height: 6em;
-	margin: auto;
-}
-
-div.desc {
-  padding: 1em;
-  text-align: center;
-}
 

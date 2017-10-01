@@ -1,5 +1,11 @@
 @import 'variables';
 
+table {
+  width: 80%;
+	table-layout: fixed;
+	// margin: auto;
+}
+
 .table-h1 {
   font-size: 30px;
   color: #000;
@@ -9,24 +15,20 @@
   margin-bottom: 15px;
 }
 
-table{
-  width: 80%;
-	table-layout: fixed;
-	// margin: auto;
-}
+
 .tbl-header {
 	background-color: $aeh;
 	margin-left: 2em;
 	margin-right: 2em;
  }
 
- .tbl-header2 {
+.tbl-header2 {
 	background-color: $adb;
 	margin-left: 2em;
 	margin-right: 2em;
  }
 
-.tbl-content{
+.tbl-content {
   height:500px;
   overflow-x:auto;
   margin-top: 0px;
@@ -35,7 +37,7 @@ table{
 	margin-right: 2em;
 }
 
-th{
+th {
   padding: 10px 5px;
   text-align: left;
   font-weight: 500;
@@ -44,7 +46,7 @@ th{
   text-transform: uppercase;
 }
 
-td{
+td {
   padding: 5px;
   text-align: left;
   vertical-align:middle;
@@ -54,8 +56,7 @@ td{
   border-bottom: solid 2px rgba(255,255,255,0.1);
 }
 
-tbody tr:hover td
-{
+tbody tr:hover td {
 	background: #d0dafd;
 	color: #339;
 }

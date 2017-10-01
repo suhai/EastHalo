@@ -106,7 +106,7 @@ class UserShow extends React.Component {
 		} = this.state;
 
 		let addableUser = this.props.match.params.id == this.props.currentUser.id ?
-			<div>{`Hi ${this.props.currentUser.username}`}</div> :
+			<div className='unaddable-self'>{`Hi ${this.props.currentUser.username}!`}</div> :
 			<div className='grouped-buttons'>
 				<button className={`btn ${color}`}  onClick={this.toggleFriendship}>{friendship_status}</button>	
 			</div>
@@ -117,15 +117,22 @@ class UserShow extends React.Component {
 				<div className="img-gallery" onClick={this.showUser}>
 					<div className="gallery">
 						<img src={profile_image_url} alt={username} />
+						<div className="desc">
+							<div>
+								<p>{username}</p>
+							</div>
+						</div>
 					</div>
+					<hr/>
 				</div>
-				<hr/>
+
 				<div>
 					<div className='course-header'>
 						{addableUser}
 					</div>
 				</div>
 				<hr />
+				
 				<div className='profile-detail-table'>
 				<table id="background-image" className="full-width">
 					<thead>

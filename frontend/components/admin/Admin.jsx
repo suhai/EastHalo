@@ -64,6 +64,7 @@ import AdminTranscriptShowContainer from './transcripts/transcript_show_containe
 import AdminUserPageContainer from './users/user_page_container';
 import AdminUserShowContainer from './users/user_show_container';
 import AdminUserEditContainer from './users/user_edit_container';
+import SideBarContainer from '../sidebar/sidebar_container';
 
 
 class Admin extends React.Component {
@@ -79,10 +80,10 @@ class Admin extends React.Component {
 				<PrivateNavigation logout={this.props.logout} currentUser={this.props.currentUser} />
 				<main className='user-page'>
 					<nav className='profile-nav'> 
-						<div className='admin-nav-bar'>
+						{/* <div className='admin-nav-bar'> */}
 							<ul>
 								<li className="dropdown">
-									<a href="javascript:void(0)" className="dropbtn">Academics</a>
+									<a href="javascript:void(0)" className="dropbtn">Grades & Transcripts</a>
 									<div className="dropdown-content">
 										<NavLink to={`/admin/${this.props.currentUser.username}/grade_letters`}>GradeLetters</NavLink>
 										<NavLink to={`/admin/${this.props.currentUser.username}/grades`}>Grades</NavLink>
@@ -90,7 +91,7 @@ class Admin extends React.Component {
 									</div>
 								</li>
 								<li className="dropdown">
-									<a href="javascript:void(0)" className="dropbtn">College</a>
+									<a href="javascript:void(0)" className="dropbtn">Enrollements</a>
 									<div className="dropdown-content">
 										<NavLink to={`/admin/${this.props.currentUser.username}/departments`}>Departments</NavLink>
 										<NavLink to={`/admin/${this.props.currentUser.username}/courses`}>Courses</NavLink>
@@ -98,7 +99,7 @@ class Admin extends React.Component {
 									</div>
 								</li>
 								<li className="dropdown">
-									<a href="javascript:void(0)" className="dropbtn">People</a>
+									<a href="javascript:void(0)" className="dropbtn">Student Info</a>
 									<div className="dropdown-content">
 										<NavLink to={`/admin/${this.props.currentUser.username}/users`}>Users</NavLink>
 										<NavLink to={`/admin/${this.props.currentUser.username}/schedules`}>Schedules</NavLink>
@@ -106,7 +107,7 @@ class Admin extends React.Component {
 									</div>
 								</li>
 								<li className="dropdown">
-									<a href="javascript:void(0)" className="dropbtn">Activities</a>
+									<a href="javascript:void(0)" className="dropbtn">Posts & Comments</a>
 									<div className="dropdown-content">
 										<NavLink to={`/admin/${this.props.currentUser.username}/posts`}>Posts</NavLink>
 										<NavLink to={`/admin/${this.props.currentUser.username}/comments`}>Comments</NavLink>
@@ -118,19 +119,17 @@ class Admin extends React.Component {
 									<div className="dropdown-content">
 										<NavLink to={`/admin/${this.props.currentUser.username}/books`}>Books</NavLink>
 										<NavLink to={`/admin/${this.props.currentUser.username}/meals`}>Food</NavLink>
-										<NavLink to={`/admin/${this.props.currentUser.username}/meals`}>PlaceHolder</NavLink>
 									</div>
 								</li>
 								<li className="dropdown">
-									<a href="javascript:void(0)" className="dropbtn">News</a>
+									<a href="javascript:void(0)" className="dropbtn">Messages</a>
 									<div className="dropdown-content">
 										<NavLink to={`/admin/${this.props.currentUser.username}/news`}>News</NavLink>
 										<NavLink to={`/admin/${this.props.currentUser.username}/messages`}>Messages</NavLink>
-										<NavLink to={`/admin/${this.props.currentUser.username}/messages`}>PlaceHolder</NavLink>
 									</div>
 								</li>
 							</ul>
-						</div>
+						{/* </div> */}
 					</nav>
 
 					<div>
@@ -202,6 +201,9 @@ class Admin extends React.Component {
 						</Switch>
 					</div>
 				</main>
+				<div className='sidebar-div'>
+					<SideBarContainer />
+				</div>
 			</div>
     );
   }

@@ -1,11 +1,11 @@
 @import 'variables';
 
 .footer {
-  height: 100px;
-  padding: 40px 0 100px;
-  margin-top: 80px;
-  background-color: #eee;
-  font-size: 14px;
+  height: 10em;
+  padding: 3em 0 6em;
+  margin-top: 6em;
+  background-color: $abd;
+  font-size: 16px;
 }
 
 .footer p {
@@ -13,16 +13,13 @@
   width: 33%;
 }
 
-p {
-  margin: 0 0 10px;
-}
-
 .a-center {
   text-align: center;
 }
 
 .footer a {
-  color: #d8192f;
+	color: $aco;
+	text-decoration: none !important;
 }
 
 .a-right {

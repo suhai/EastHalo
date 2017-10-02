@@ -54,6 +54,7 @@ class ScheduleShow extends React.Component {
 				</div>
 				<hr />
 				
+				<div className='profile-detail-table'>
 				<table id="background-image" className="full-width">
 					<thead>
 						<tr className='fixed-header'>
@@ -71,6 +72,7 @@ class ScheduleShow extends React.Component {
 				</table>
 				<div className='pull-left'>
 					<p className='table-paragraph'>SCHEDULE WILL GO HERE</p>
+				</div>
 				</div>
 			</main>
 		);

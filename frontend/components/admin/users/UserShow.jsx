@@ -115,6 +115,11 @@ class UserShow extends React.Component {
 					<div class="img-gallery" onClick={this.showUser}>
 						<div className="gallery">
 							<img src={profile_image_url} alt={username} />
+							<div className="desc">
+								<div>
+									<p>{username}</p>
+								</div>
+							</div>
 						</div>
 					</div>
 					<hr/>
@@ -127,6 +132,7 @@ class UserShow extends React.Component {
 				</div>
 				<hr />
 
+				<div className='profile-detail-table'>
 				<table id="background-image" className="full-width">
 					<thead>
 						<tr className='fixed-header'>
@@ -202,6 +208,7 @@ class UserShow extends React.Component {
 				<div className='pull-left'>
 					<p className='table-paragraph'>User Bio</p>
 					<p>{bio}</p>
+				</div>
 				</div>
 			</main>
 		);

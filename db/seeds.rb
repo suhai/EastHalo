@@ -1432,14 +1432,14 @@ News.create!([
 		headline: "BBC World News",
 		url: "https://www.bbc.com/news/world",
 		date: "",
-		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749839/images/earth-globe.svg"
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749851/images/physics.svg"
 	},
 
 	{
 		headline: "The Boston Globe",
 		url: "https://www.bostonglobe.com/",
 		date: "",
-		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749851/images/physics.svg"
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749839/images/earth-globe.svg"
 	},
 
 	{

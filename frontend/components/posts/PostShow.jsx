@@ -61,6 +61,7 @@ class PostShow extends React.Component {
 		let displayButtons = this.props.currentUser.id == user_id ?
 		<div className='grouped-buttons'>
 			<button className='btn edit lefty' onClick={this.editPost}>Edit Post</button>
+			<button className='blank'></button>
 			<button className='btn delete righty' onClick={this.deletePost}>Delete Post</button>
 		</div> : <div></div>
 

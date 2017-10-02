@@ -84,20 +84,27 @@ button.cancel {
 
 .grouped-buttons {
 	display: flex;
+	justify-content: space-between;
+	
 	.lefty {
-		margin-right: 35% !important;
+		flex: 1;
 	}
 
 	.righty {
-		margin-left: 35% !important;
+		flex: 1;
 	}
 
+	.blank {
+		flex: 3;
+	}
+	
 	button {
 		flex-basis: 1;
 		margin: auto;
 		box-sizing: border-box;
 	}
 }
+
 
 // homepage message
 .message-cancel {

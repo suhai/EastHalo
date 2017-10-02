@@ -50,7 +50,17 @@ class BookShow extends React.Component {
 		return (
 			<main className='user-page'>
 				<div>
-					<h2 className='course-header'>{title}</h2>
+				<div className="img-gallery">
+						<div className="gallery">
+							<img src={image_url} alt={title} />
+							<div className="desc">
+								<div>
+									<p>{title}: ${price}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<hr/>
 					<div className='grouped-buttons'>
 						<button className='btn edit' onClick={this.editBook}>Edit Book</button>
 						<button className='btn delete' onClick={this.deleteBook}>Delete Book</button>

@@ -53,9 +53,20 @@ class MealShow extends React.Component {
 		return (
 			<main className='user-page'>
 				<div>
+				<div className="img-gallery">
+					<div className="gallery">
+						<img src={image_url} alt={name} />
+						<div className="desc">
+							<div>
+								<p>{name}: ${price}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<hr />
 					<div className='grouped-buttons'>
-						<button className='btn edit' onClick={this.buyMeal}>Buy Meal</button>
-						<button className='btn edit' onClick={this.deleteMeal}>Delete Meal</button>
+						<button className='btn buy' onClick={this.buyMeal}>Buy Meal</button>
+						<button className='btn delete' onClick={this.deleteMeal}>Delete Meal</button>
 						<button className='btn edit' onClick={this.editMeal}>Edit Meal</button>
 					</div>
 				</div>
@@ -82,10 +93,6 @@ class MealShow extends React.Component {
 							<tr>
 								<td>Price</td>
 								<td>{price}</td>
-							</tr>
-							<tr>
-								<td>Image</td>
-								<td>{image_url}</td>
 							</tr>
 						</tbody>
 					</table>

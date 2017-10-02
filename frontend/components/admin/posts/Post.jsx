@@ -21,6 +21,7 @@ class Post extends React.Component {
 			title, 
 			body, 
 			user_id, 
+			image_url,
 			user
 		} = this.props.post;
 

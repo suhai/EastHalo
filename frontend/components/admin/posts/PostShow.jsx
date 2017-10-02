@@ -58,6 +58,7 @@ class PostShow extends React.Component {
 				post: {},
 				title: '',
 				body: '',
+				image_url: '',
 				comments: []
 			});
 	}
@@ -67,6 +68,7 @@ class PostShow extends React.Component {
 			id,
 			title,
 			body,
+			image_url,
 			comments
 		} = this.state.post;
 
@@ -74,25 +76,33 @@ class PostShow extends React.Component {
 			<Comment key={idx} comment={comment} deleteComment={this.props.deleteComment} editComment={this.props.editComment} currentUser={this.props.currentUser}/>
 		));
 
+		let mybtns = <div className='grouped-buttons'>
+		    <button className='btn edit' onClick={this.editPost}>Edit Post</button>
+				<button className='btn delete' onClick={this.deletePost}>Delete Post</button>
+				</div>
+
 		return (
 			<main className='user-page'>
 				<div>
-					<div className='grouped-buttons'>
-						<button className='btn edit' onClick={this.editPost}>Edit Post</button>
-						<button className='btn delete' onClick={this.deletePost}>Delete Post</button>
+					<div className="img-gallery">
+						<div className="gallery">
+							<img src={image_url} alt={title} />
+						</div>
 					</div>
-					<h2 className='course-header'>{title}</h2>
-					<div>
+					<hr/>	
+					<div className='profile-detail-table'>			
+						{mybtns}
+						<h2 className='course-header'>{title}</h2>
 						<div>
-							<p>{body}</p>
-						</div>
-						<div>
-							{postComments}
-						</div>
-						<button className='btn add' onClick={this.renderCommentForm}>
-							Comment Here
-						</button>
-					</div>	
+							<div>
+								<p>{body}</p>
+								<div className='comments-div'>
+									{postComments}
+								</div>
+								<button className='commentable' onClick={this.renderCommentForm}>Click Here To Comment</button>
+							</div>
+						</div>	
+					</div>
 				</div>
 			</main>
 		);

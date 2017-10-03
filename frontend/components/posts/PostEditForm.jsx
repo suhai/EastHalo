@@ -82,7 +82,7 @@ class PostEditForm extends React.Component {
 		} = this.state;
 
 		return (
-			<div>
+			<div className='edit-page-display'>
 				<h2 className='post-header'>{title}</h2>
 				<form className="form-style-regular">
 					<ul>

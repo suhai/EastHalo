@@ -14,6 +14,7 @@ class Transcript extends React.Component {
 			lname,
 			gpa,
 			dob,
+			username,
 			gender,
 			completed_course_credit,
 			current_course_load,
@@ -29,6 +30,11 @@ class Transcript extends React.Component {
 				<div className="img-gallery">
 					<div className="gallery">
 						<img src={profile_image_url} alt={fname} />
+						<div className="desc">
+							<div>
+								<p>{username}</p>
+							</div>
+						</div>
 					</div>
 					<hr/>
 				</div>
@@ -36,6 +42,7 @@ class Transcript extends React.Component {
 				<div className='profile-page-detail'>
 					<div className='profile-detail-table'>
 						<table>
+							<tbody>
 							<tr>
 								<th className='profile-table-header'>Student Information</th>
 								<th className='profile-table-header'>Details</th>
@@ -80,6 +87,7 @@ class Transcript extends React.Component {
 								<td>Account Balance</td>
 								<td>{cash_balance}</td>
 							</tr>
+							</tbody>
 						</table>
 					</div>
 					<h3>GRADES WILL GO HERE</h3>

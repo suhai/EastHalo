@@ -15,8 +15,7 @@ class CommentForm extends React.Component {
 	};
 
 	componentDidMount() {
-		this.props.fetchComments();
-		this.props.fetchPosts();
+		
 	};
 
 	update(prop) {
@@ -35,7 +34,6 @@ class CommentForm extends React.Component {
 
 	addComment() {
 		let post_id = this.props.match.params.id;
-		debugger
 		let data = {
 			comment: {
 				user_id: this.props.currentUser.id,

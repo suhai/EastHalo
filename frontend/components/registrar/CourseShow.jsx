@@ -18,17 +18,11 @@ class CourseShow extends React.Component {
 		this.toggleCourse = this.toggleCourse.bind(this);
 	}
 
-	// componentWillMount() {
-	// 	userType: this.props.currentUser.type
-	// };
-
 	componentDidMount() {
 		const id = this.props.match.params.id;
 		this.props.fetchCourse(id);
 		this.props.fetchCourses();
 		this.props.fetchCourseEnrollments();
-		// console.log(this.props.currentUser.type);
-		// debugger
 	};
 
 	addCourse() {
@@ -122,23 +116,17 @@ class CourseShow extends React.Component {
 			profLName,
 			profFName,
 			color,
-			enroll_status,
-			userType
-		} = this.state;
-
-		
-		let enrollableUser = this.props.currentUser.type === 'Student' ?
-			<div className='grouped-buttons'>
-				<button className={`btn ${color}`} onClick={this.toggleCourse}>{enroll_status}</button>	
-			</div> :
-			<div className='course-show-msg'>{`Hi ${this.props.currentUser.username}! Interested in ${course_code}? You need to be a student in order to sign up for it.`}</div> 	
+			enroll_status
+		} = this.state;	
 
 		return (
 			<main className='user-page'>
 				<div>
 					<h4 className='course-show-header'>{title}</h4>
 					<hr/>
-					{enrollableUser}
+					<div className='grouped-buttons'>
+						<button className={`btn ${color}`} onClick={this.toggleCourse}>{enroll_status}</button>	
+					</div>
 				</div>
 				<hr />
 				<div className='profile-detail-table'>

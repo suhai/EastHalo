@@ -16,7 +16,7 @@ class CommentForm extends React.Component {
 
 	componentDidMount() {
 		let id = 
-		this.props.fetchComment(id);
+		this.props.fetchPostComment(id);
 	};
 
 	update(prop) {

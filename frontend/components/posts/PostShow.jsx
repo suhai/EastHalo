@@ -58,6 +58,13 @@ class PostShow extends React.Component {
 			comments
 		} = this.state.post;
 
+		let displayComments = <p></p>;
+		if (comments) {
+			displayComments = comments.map((comment, idx) => (
+				<p key={idx}>{comment.body}</p>
+			));
+		}
+
 		let displayButtons = this.props.currentUser.id == user_id ?
 		<div className='grouped-buttons'>
 			<button className='btn edit lefty' onClick={this.editPost}>Edit Post</button>
@@ -74,16 +81,17 @@ class PostShow extends React.Component {
 						</div>
 					</div>
 					<hr/>	
-					<div className='profile-detail-table'>			
+					<div className='show-page-display'>			
 						{displayButtons}
 						<h2 className='course-header'>{title}</h2>
 						<div>
 							<div>
 								<p>{body}</p>
 								<div className='comments-div'>
-									<p>Comments For This Particular Post Goes Here</p>
+									<h6>Comments</h6>
+									{displayComments}
 								</div>
-								<button className='commentable' onClick={this.renderCommentForm}>Click Here To Comment</button>
+								<button className='commentable' onClick={this.renderCommentForm}>Add Comment</button>
 							</div>
 						</div>	
 					</div>

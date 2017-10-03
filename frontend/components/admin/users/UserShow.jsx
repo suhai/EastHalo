@@ -107,14 +107,9 @@ class UserShow extends React.Component {
 			color
 		} = this.state;
 
-		let addableUser = this.props.match.params.id == this.props.currentUser.id ?
-		<div></div> :
-			<button className={`btn ${color}`}  onClick={this.toggleFriendship}>{friendship_status}</button>	
-
-
 		return (
 			<main className='user-page'>
-					<div class="img-gallery" onClick={this.showUser}>
+					<div className="img-gallery" onClick={this.showUser}>
 						<div className="gallery">
 							<img src={profile_image_url} alt={username} />
 							<div className="desc">
@@ -129,7 +124,6 @@ class UserShow extends React.Component {
 					<div className='grouped-buttons'>
 						<button className='btn edit' onClick={this.editUser}>Edit User</button>
 						<button className='btn delete' onClick={this.deleteUser}>Delete User</button>
-						{addableUser}
 					</div>
 				</div>
 				<hr />

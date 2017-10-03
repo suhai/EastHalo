@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchComment, editComment, deleteComment } from '../../../actions/comment_actions';
+import { fetchPostComment, editComment, deleteComment } from '../../../actions/comment_actions';
 import { fetchUser } from '../../../actions/user_actions';
 import CommentShow from './CommentShow';
 
@@ -10,7 +10,7 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	fetchComment: id => dispatch(fetchComment(id)),
+	fetchPostComment: id => dispatch(fetchPostComment(id)),
 	fetchUser: id => dispatch(fetchUser(id)),
   editComment: (comment, id) => dispatch(editComment(comment, id)),
 	deleteComment: id => dispatch(deleteComment(id)),

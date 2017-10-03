@@ -15,9 +15,6 @@ class CourseShow extends React.Component {
 		};
 		this.editCourse = this.editCourse.bind(this);
 		this.deleteCourse = this.deleteCourse.bind(this);
-		this.addCourse = this.addCourse.bind(this);
-		this.dropCourse = this.dropCourse.bind(this);
-		this.toggleCourse = this.toggleCourse.bind(this);
 	}
 
 	componentDidMount() {
@@ -30,60 +27,27 @@ class CourseShow extends React.Component {
 		window.location.hash = `/admin/${this.props.currentUser.username}/courses/edit/${this.state.course.id}`;
 	};
 
-	addCourse() {
-		const { id: course_id } = this.state.course;
-		const { id: student_id } = this.props.currentUser;
-		let data = {
-			course_enrollment: {
-				course_id,
-				student_id
-			}
-		};
-
-		if (course_id !== undefined && student_id !== undefined) {
-			this.props.createCourseEnrollment(data)
-			.then(() => this.props.fetchCourseEnrollments());
-			this.setState({
-				enroll_status: 'Drop Course'
-			})	
-		}
-	};
-
-	dropCourse() {
-		this.props.currentUser.course_enrollments.forEach(enrollment => {
-			if (enrollment.course_id === this.state.course.id) {
-				this.props.deleteCourseEnrollment(enrollment.id)
-				.then(() => this.props.fetchCourseEnrollments());
-				this.setState({
-					enroll_status: 'Add Course'
-				})
-			}
-		})
-	};
-
-	toggleCourse() {
-		this.state.enroll_status === 'Add Course' ?
-		this.addCourse() : this.dropCourse()
-	};
-
 	deleteCourse() {
 		this.props.deleteCourse(this.state.course.id)
 		window.location.hash = `/admin/${this.props.currentUser.username}/courses`;
 	};
 
-	componentWillReceiveProps(props) {
-		Object.keys(props.courses).length > 0 ?
+	componentWillReceiveProps(nextProps) {
+		if (Object.keys(nextProps.courses).length > 0) {
+			let id = nextProps.match.params.id;
+			let course = nextProps.courses[id];
 			this.setState({
-				course: props.courses[props.match.params.id],
-				start_time: props.courses[props.match.params.id].start_time.slice(11,16),
-				end_time: props.courses[props.match.params.id].end_time.slice(11,16),
-				departmentName: props.courses[props.match.params.id].department.name,
-				classSize: props.courses[props.match.params.id].students.length,
-				courseCap: props.courses[props.match.params.id].course_cap,
-				courseDensity: (props.courses[props.match.params.id].students.length / props.courses[props.match.params.id].course_cap),
-				profLName: props.courses[props.match.params.id].professor.lname.slice(0, 1).toUpperCase() + props.courses[props.match.params.id].professor.lname.slice(1),
-				profFName: props.courses[props.match.params.id].professor.fname.slice(0, 1).toUpperCase() + props.courses[props.match.params.id].professor.fname.slice(1)
-			}) :
+				course: course,
+				start_time: course.start_time.slice(11,16),
+				end_time: course.end_time.slice(11,16),
+				departmentName: course.department.name,
+				classSize: course.students.length,
+				courseCap: course.course_cap,
+				courseDensity: (course.students.length + ' / ' + course.course_cap),
+				profLName: course.professor.lname.slice(0, 1).toUpperCase() + course.professor.lname.slice(1),
+				profFName: course.professor.fname.slice(0, 1).toUpperCase() + course.professor.fname.slice(1)
+			});
+		} else {
 			this.setState({
 				course: {},
 				departmentName: '',
@@ -93,14 +57,7 @@ class CourseShow extends React.Component {
 				profLName: '',
 				profFName: ''
 			});
-
-		this.props.currentUser.course_enrollments.some(enrollment => (enrollment.course_id) === this.state.course.id ) ? 
-		this.setState({
-			enroll_status: 'Drop Course'
-		}) :
-		this.setState({
-			enroll_status: 'Add Course'
-		})
+		};
 	}
 
 	render() {
@@ -131,7 +88,6 @@ class CourseShow extends React.Component {
 					<div className='grouped-buttons'>
 						<button className='btn edit' onClick={this.editCourse}>Edit Course</button>
 						<button className='btn delete' onClick={this.deleteCourse}>Delete Course</button>
-						<button className='btn add' onClick={this.toggleCourse}>{this.state.enroll_status}</button>	
 					</div>
 				</div>
 				<hr />

@@ -1,6 +1,5 @@
 import React from 'react';
 import { values, merge } from 'lodash';
-import Comment from '../comments/Comment';
 
 class PostShow extends React.Component {
 	constructor(props) {
@@ -73,7 +72,7 @@ class PostShow extends React.Component {
 		} = this.state.post;
 
 		let postComments = values(comments).map((comment, idx) => (
-			<Comment key={idx} comment={comment} deleteComment={this.props.deleteComment} editComment={this.props.editComment} currentUser={this.props.currentUser}/>
+			<p key={idx}><span>[{comment.user_id}]  </span>{comment.body}</p>
 		));
 
 		let mybtns = <div className='grouped-buttons'>
@@ -90,7 +89,7 @@ class PostShow extends React.Component {
 						</div>
 					</div>
 					<hr/>	
-					<div className='profile-detail-table'>			
+					<div className='show-page-display'>			
 						{mybtns}
 						<h2 className='course-header'>{title}</h2>
 						<div>
@@ -99,7 +98,7 @@ class PostShow extends React.Component {
 								<div className='comments-div'>
 									{postComments}
 								</div>
-								<button className='commentable' onClick={this.renderCommentForm}>Click Here To Comment</button>
+								<button className='commentable' onClick={this.renderCommentForm}>Add Comment</button>
 							</div>
 						</div>	
 					</div>

@@ -18,6 +18,10 @@ class CourseShow extends React.Component {
 		this.toggleCourse = this.toggleCourse.bind(this);
 	}
 
+	componentWillMount() {
+
+	}
+
 	componentDidMount() {
 		const id = this.props.match.params.id;
 		this.props.fetchCourse(id);
@@ -36,7 +40,8 @@ class CourseShow extends React.Component {
 		};
 
 		if (course_id !== undefined && student_id !== undefined) {
-			this.props.createCourseEnrollment(data);
+			this.props.createCourseEnrollment(data)
+			.then(() => this.props.fetchCourseEnrollments());
 		}
 	};
 
@@ -46,7 +51,8 @@ class CourseShow extends React.Component {
 		});
 
 		if (targetEnrollment !== undefined) {
-			this.props.deleteCourseEnrollment(targetEnrollment.id);
+			this.props.deleteCourseEnrollment(targetEnrollment.id)
+			.then(() => this.props.fetchCourseEnrollments());
 		} 
 	};
 
@@ -55,19 +61,22 @@ class CourseShow extends React.Component {
 		this.dropCourse() : this.addCourse()
 	};
 
-	componentWillReceiveProps(props) {
-		Object.keys(props.courses).length > 0 ?
+	componentWillReceiveProps(nextProps) {
+		if (Object.keys(nextProps.courses).length > 0) {
+			let id = nextProps.match.params.id;
+			let course = nextProps.courses[id];
 			this.setState({
-				course: props.courses[props.match.params.id],
-				start_time: props.courses[props.match.params.id].start_time.slice(11,16),
-				end_time: props.courses[props.match.params.id].end_time.slice(11,16),
-				departmentName: props.courses[props.match.params.id].department.name,
-				classSize: props.courses[props.match.params.id].students.length,
-				courseCap: props.courses[props.match.params.id].course_cap,
-				courseDensity: (props.courses[props.match.params.id].students.length + ' / ' + props.courses[props.match.params.id].course_cap),
-				profLName: props.courses[props.match.params.id].professor.lname.slice(0, 1).toUpperCase() + props.courses[props.match.params.id].professor.lname.slice(1),
-				profFName: props.courses[props.match.params.id].professor.fname.slice(0, 1).toUpperCase() + props.courses[props.match.params.id].professor.fname.slice(1)
-			}) :
+				course: course,
+				start_time: course.start_time.slice(11,16),
+				end_time: course.end_time.slice(11,16),
+				departmentName: course.department.name,
+				classSize: course.students.length,
+				courseCap: course.course_cap,
+				courseDensity: (course.students.length + ' / ' + course.course_cap),
+				profLName: course.professor.lname.slice(0, 1).toUpperCase() + course.professor.lname.slice(1),
+				profFName: course.professor.fname.slice(0, 1).toUpperCase() + course.professor.fname.slice(1)
+			});
+		} else {
 			this.setState({
 				course: {},
 				departmentName: '',
@@ -77,7 +86,8 @@ class CourseShow extends React.Component {
 				profLName: '',
 				profFName: ''
 			});
-
+		};
+		
 		values(this.props.course_enrollments).some(enrollment => (enrollment.course_id) == this.state.course.id ) ? 
 		this.setState({
 			enroll_status: 'Drop Course',
@@ -113,11 +123,12 @@ class CourseShow extends React.Component {
 			enroll_status
 		} = this.state;
 
-		let enrollableUser = this.props.currentUser.type == 'Student' ?
+		let enrollableUser = this.props.currentUser.type !== 'Student' ?
+				<div className='course-show-msg'>{`Hi ${this.props.currentUser.username}! Interested in ${course_code}? You need to be a student in order to sign up for it.`}</div> :
 				<div className='grouped-buttons'>
 					<button className={`btn ${color}`} onClick={this.toggleCourse}>{enroll_status}</button>	
-				</div> :
-				<div className='course-show-msg'>{`Hi ${this.props.currentUser.username}! Interested in ${course_code}? You need to be a student in order to sign up for it.`}</div>
+				</div> 
+				
 
 		return (
 			<main className='user-page'>

@@ -41,7 +41,8 @@ class CourseShow extends React.Component {
 		};
 
 		if (course_id !== undefined && student_id !== undefined) {
-			this.props.createCourseEnrollment(data);
+			this.props.createCourseEnrollment(data)
+			.then(() => this.props.fetchCourseEnrollments());
 			this.setState({
 				enroll_status: 'Drop Course'
 			})	
@@ -51,7 +52,8 @@ class CourseShow extends React.Component {
 	dropCourse() {
 		this.props.currentUser.course_enrollments.forEach(enrollment => {
 			if (enrollment.course_id === this.state.course.id) {
-				this.props.deleteCourseEnrollment(enrollment.id);
+				this.props.deleteCourseEnrollment(enrollment.id)
+				.then(() => this.props.fetchCourseEnrollments());
 				this.setState({
 					enroll_status: 'Add Course'
 				})

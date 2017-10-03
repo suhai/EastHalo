@@ -65,7 +65,8 @@ class UserShow extends React.Component {
 		};
 
 		if (user_id !== undefined && friend_id !== undefined) {
-			this.props.createFriendship(data);
+			this.props.createFriendship(data)
+			.then(() => this.props.fetchFriendships());
 		}
 	};
 
@@ -75,7 +76,8 @@ class UserShow extends React.Component {
 		});
 
 		if (targetFriendship !== undefined) {
-			this.props.deleteFriendship(targetFriendship.id);
+			this.props.deleteFriendship(targetFriendship.id)
+			.then(() => this.props.fetchFriendships());
 		} 
 	};
 

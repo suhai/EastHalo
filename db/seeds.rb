@@ -1414,6 +1414,34 @@ Post.create!([
 		body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
 		user_id: "#{User.all[12].id}",
 		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749852/images/school-bus.svg"
+	},
+
+	{
+		title: "Post Twelve",
+		body: "Vestibulum auctor sed lectus id tincidunt. Etiam vehicula augue in ipsum aliquet, eget cursus tellus blandit. Morbi tristique aliquam leo in mattis. Nulla cursus ante nec nulla mattis, sit amet tincidunt neque varius. Morbi sed neque nulla. Aenean porta urna ipsum, non euismod dolor rutrum et. Aliquam erat volutpat. Ut non ligula ac lorem gravida tempor id eu ante.Ut sollicitudin posuere sagittis. Etiam rutrum dolor ac purus imperdiet convallis.Donec et dolor ullamcorper, faucibus elit nec, tempus lacus.Vivamus placerat ultricies vehicula. Integer ut lectus vestibulum, volutpat sapien ac, imperdiet magna.Duis pulvinar vulputate magna non maximus. Morbi non ante eleifend, fringilla mauris quis, imperdiet tellus.Phasellus auctor augue ut odio pretium, eget tempor est dignissim.Integer convallis lacus ac cursus tincidunt. Aliquam a lectus scelerisque, porttitor velit sit amet, congue ante.Vivamus auctor metus nisi, non condimentum quam viverra eu. Aliquam ac ultricies leo, non vestibulum sem. Morbi molestie, sapien mollis laoreet auctor, arcu neque aliquam felis, non scelerisque neque eros quis est.",
+		user_id: "#{User.all[15].id}",
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499750384/images/pexels-photo-156685.jpg"
+	},
+
+	{
+		title: "Post Thirteen",
+		body: "Vestibulum auctor sed lectus id tincidunt. Etiam vehicula augue in ipsum aliquet, eget cursus tellus blandit. Morbi tristique aliquam leo in mattis. Nulla cursus ante nec nulla mattis, sit amet tincidunt neque varius. Morbi sed neque nulla. Aenean porta urna ipsum, non euismod dolor rutrum et. Aliquam erat volutpat. Ut non ligula ac lorem gravida tempor id eu ante.Ut sollicitudin posuere sagittis. Etiam rutrum dolor ac purus imperdiet convallis.Donec et dolor ullamcorper, faucibus elit nec, tempus lacus.Vivamus placerat ultricies vehicula. Integer ut lectus vestibulum, volutpat sapien ac, imperdiet magna.Duis pulvinar vulputate magna non maximus. Morbi non ante eleifend, fringilla mauris quis, imperdiet tellus.Phasellus auctor augue ut odio pretium, eget tempor est dignissim.Integer convallis lacus ac cursus tincidunt. Aliquam a lectus scelerisque, porttitor velit sit amet, congue ante.Vivamus auctor metus nisi, non condimentum quam viverra eu. Aliquam ac ultricies leo, non vestibulum sem. Morbi molestie, sapien mollis laoreet auctor, arcu neque aliquam felis, non scelerisque neque eros quis est.",
+		user_id: "#{User.all[16].id}",
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499750289/images/mavis-painting-1580.jpg"
+	},
+
+	{
+		title: "Post Fourteen",
+		body: "Vestibulum auctor sed lectus id tincidunt. Etiam vehicula augue in ipsum aliquet, eget cursus tellus blandit. Morbi tristique aliquam leo in mattis. Nulla cursus ante nec nulla mattis, sit amet tincidunt neque varius. Morbi sed neque nulla. Aenean porta urna ipsum, non euismod dolor rutrum et. Aliquam erat volutpat. Ut non ligula ac lorem gravida tempor id eu ante.Ut sollicitudin posuere sagittis. Etiam rutrum dolor ac purus imperdiet convallis.Donec et dolor ullamcorper, faucibus elit nec, tempus lacus.Vivamus placerat ultricies vehicula. Integer ut lectus vestibulum, volutpat sapien ac, imperdiet magna.Duis pulvinar vulputate magna non maximus. Morbi non ante eleifend, fringilla mauris quis, imperdiet tellus.Phasellus auctor augue ut odio pretium, eget tempor est dignissim.Integer convallis lacus ac cursus tincidunt. Aliquam a lectus scelerisque, porttitor velit sit amet, congue ante.Vivamus auctor metus nisi, non condimentum quam viverra eu. Aliquam ac ultricies leo, non vestibulum sem. Morbi molestie, sapien mollis laoreet auctor, arcu neque aliquam felis, non scelerisque neque eros quis est.",
+		user_id: "#{User.all[17].id}",
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749835/images/compass.svg"
+	},
+
+	{
+		title: "Post Fifteen",
+		body: "Vestibulum auctor sed lectus id tincidunt. Etiam vehicula augue in ipsum aliquet, eget cursus tellus blandit. Morbi tristique aliquam leo in mattis. Nulla cursus ante nec nulla mattis, sit amet tincidunt neque varius. Morbi sed neque nulla. Aenean porta urna ipsum, non euismod dolor rutrum et. Aliquam erat volutpat. Ut non ligula ac lorem gravida tempor id eu ante.Ut sollicitudin posuere sagittis. Etiam rutrum dolor ac purus imperdiet convallis.Donec et dolor ullamcorper, faucibus elit nec, tempus lacus.Vivamus placerat ultricies vehicula. Integer ut lectus vestibulum, volutpat sapien ac, imperdiet magna.Duis pulvinar vulputate magna non maximus. Morbi non ante eleifend, fringilla mauris quis, imperdiet tellus.Phasellus auctor augue ut odio pretium, eget tempor est dignissim.Integer convallis lacus ac cursus tincidunt. Aliquam a lectus scelerisque, porttitor velit sit amet, congue ante.Vivamus auctor metus nisi, non condimentum quam viverra eu. Aliquam ac ultricies leo, non vestibulum sem. Morbi molestie, sapien mollis laoreet auctor, arcu neque aliquam felis, non scelerisque neque eros quis est.",
+		user_id: "#{User.all[18].id}",
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749828/images/basketball.svg"
 	}
 ])
 p "Created #{Post.count} posts"
@@ -1448,19 +1476,561 @@ News.create!([
 		date: "",
 		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749843/images/microscope.svg"
 	},
-
+	
 	{
 		headline: "Reuters News",
 		url: "https://www.reuters.com/",
 		date: "",
 		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749831/images/blackboard-1.svg"
+	},
+	{
+		headline: "Discovery Channel",
+		url: "https://www.discovery.com/",
+		date: "",
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499673227/images/gray-heart.png"
+	},
+
+	{
+		headline: "Huffington Post",
+		url: "https://www.huffingtonpost.com/",
+		date: "",
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749828/images/apple.svg"
+	},
+
+	{
+		headline: "The New Yorker",
+		url: "https://www.newyorker.com/",
+		date: "",
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749828/images/backpack.svg"
+	},
+
+	{
+		headline: "Bloomberg News",
+		url: "https://www.bloomberg.com/",
+		date: "",
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499750307/images/pexels-photo-37727.png"
+	},
+
+	{
+		headline: "Fifa",
+		url: "https://www.fifa.com/",
+		date: "",
+		image_url: "https://res.cloudinary.com/swy/image/upload/v1499749835/images/computer-mouse.svg"
 	}
 ])
 p "Created #{News.count} news articles"
 
 
-# User.destroy_all
-# User.create!([
- 
-# ])
-# p "Created #{User.count} users"
+CourseEnrollment.destroy_all
+CourseEnrollment.create!([
+	{
+		course_id: "#{Course.all[0].id}",
+		student_id: "#{Student.all[0].id}"
+	},
+
+	{
+		course_id: "#{Course.all[0].id}",
+		student_id: "#{Student.all[1].id}"
+	},
+
+	{
+		course_id: "#{Course.all[0].id}",
+		student_id: "#{Student.all[2].id}"
+	},
+
+	{
+		course_id: "#{Course.all[0].id}",
+		student_id: "#{Student.all[3].id}"
+	},
+
+	{
+		course_id: "#{Course.all[0].id}",
+		student_id: "#{Student.all[4].id}"
+	},
+
+	{
+		course_id: "#{Course.all[0].id}",
+		student_id: "#{Student.all[5].id}"
+	},
+
+	{
+		course_id: "#{Course.all[0].id}",
+		student_id: "#{Student.all[6].id}"
+	},
+
+	{
+		course_id: "#{Course.all[0].id}",
+		student_id: "#{Student.all[7].id}"
+	},
+
+	{
+		course_id: "#{Course.all[0].id}",
+		student_id: "#{Student.all[8].id}"
+	},
+
+	{
+		course_id: "#{Course.all[0].id}",
+		student_id: "#{Student.all[9].id}"
+	},
+
+	{
+		course_id: "#{Course.all[1].id}",
+		student_id: "#{Student.all[0].id}"
+	},
+
+	{
+		course_id: "#{Course.all[1].id}",
+		student_id: "#{Student.all[1].id}"
+	},
+
+	{
+		course_id: "#{Course.all[1].id}",
+		student_id: "#{Student.all[2].id}"
+	},
+
+	{
+		course_id: "#{Course.all[1].id}",
+		student_id: "#{Student.all[3].id}"
+	},
+
+	{
+		course_id: "#{Course.all[1].id}",
+		student_id: "#{Student.all[4].id}"
+	},
+
+	{
+		course_id: "#{Course.all[1].id}",
+		student_id: "#{Student.all[5].id}"
+	},
+
+	{
+		course_id: "#{Course.all[1].id}",
+		student_id: "#{Student.all[6].id}"
+	},
+
+	{
+		course_id: "#{Course.all[1].id}",
+		student_id: "#{Student.all[7].id}"
+	},
+
+	{
+		course_id: "#{Course.all[1].id}",
+		student_id: "#{Student.all[8].id}"
+	},
+
+	{
+		course_id: "#{Course.all[1].id}",
+		student_id: "#{Student.all[9].id}"
+	},
+
+	{
+		course_id: "#{Course.all[2].id}",
+		student_id: "#{Student.all[10].id}"
+	},
+
+	{
+		course_id: "#{Course.all[2].id}",
+		student_id: "#{Student.all[11].id}"
+	},
+
+	{
+		course_id: "#{Course.all[2].id}",
+		student_id: "#{Student.all[12].id}"
+	},
+
+	{
+		course_id: "#{Course.all[2].id}",
+		student_id: "#{Student.all[13].id}"
+	},
+
+	{
+		course_id: "#{Course.all[2].id}",
+		student_id: "#{Student.all[14].id}"
+	},
+
+	{
+		course_id: "#{Course.all[2].id}",
+		student_id: "#{Student.all[15].id}"
+	},
+
+	{
+		course_id: "#{Course.all[2].id}",
+		student_id: "#{Student.all[16].id}"
+	},
+
+	{
+		course_id: "#{Course.all[2].id}",
+		student_id: "#{Student.all[17].id}"
+	},
+
+	{
+		course_id: "#{Course.all[2].id}",
+		student_id: "#{Student.all[18].id}"
+	},
+
+	{
+		course_id: "#{Course.all[2].id}",
+		student_id: "#{Student.all[19].id}"
+	},
+
+	{
+		course_id: "#{Course.all[3].id}",
+		student_id: "#{Student.all[20].id}"
+	},
+
+	{
+		course_id: "#{Course.all[3].id}",
+		student_id: "#{Student.all[0].id}"
+	},
+
+	{
+		course_id: "#{Course.all[3].id}",
+		student_id: "#{Student.all[1].id}"
+	},
+
+	{
+		course_id: "#{Course.all[3].id}",
+		student_id: "#{Student.all[2].id}"
+	},
+
+	{
+		course_id: "#{Course.all[3].id}",
+		student_id: "#{Student.all[3].id}"
+	},
+
+	{
+		course_id: "#{Course.all[3].id}",
+		student_id: "#{Student.all[4].id}"
+	},
+
+	{
+		course_id: "#{Course.all[3].id}",
+		student_id: "#{Student.all[5].id}"
+	},
+
+	{
+		course_id: "#{Course.all[3].id}",
+		student_id: "#{Student.all[6].id}"
+	},
+
+	{
+		course_id: "#{Course.all[3].id}",
+		student_id: "#{Student.all[7].id}"
+	},
+
+	{
+		course_id: "#{Course.all[3].id}",
+		student_id: "#{Student.all[8].id}"
+	},
+
+	{
+		course_id: "#{Course.all[4].id}",
+		student_id: "#{Student.all[9].id}"
+	},
+
+	{
+		course_id: "#{Course.all[4].id}",
+		student_id: "#{Student.all[10].id}"
+	},
+
+	{
+		course_id: "#{Course.all[4].id}",
+		student_id: "#{Student.all[11].id}"
+	},
+
+	{
+		course_id: "#{Course.all[4].id}",
+		student_id: "#{Student.all[1].id}"
+	},
+
+	{
+		course_id: "#{Course.all[4].id}",
+		student_id: "#{Student.all[2].id}"
+	},
+
+	{
+		course_id: "#{Course.all[4].id}",
+		student_id: "#{Student.all[3].id}"
+	},
+
+	{
+		course_id: "#{Course.all[4].id}",
+		student_id: "#{Student.all[4].id}"
+	},
+
+	{
+		course_id: "#{Course.all[4].id}",
+		student_id: "#{Student.all[5].id}"
+	},
+
+	{
+		course_id: "#{Course.all[4].id}",
+		student_id: "#{Student.all[6].id}"
+	},
+
+	{
+		course_id: "#{Course.all[4].id}",
+		student_id: "#{Student.all[7].id}"
+	},
+
+	{
+		course_id: "#{Course.all[5].id}",
+		student_id: "#{Student.all[8].id}"
+	},
+
+	{
+		course_id: "#{Course.all[5].id}",
+		student_id: "#{Student.all[9].id}"
+	},
+
+	{
+		course_id: "#{Course.all[5].id}",
+		student_id: "#{Student.all[10].id}"
+	},
+
+	{
+		course_id: "#{Course.all[5].id}",
+		student_id: "#{Student.all[11].id}"
+	},
+
+	{
+		course_id: "#{Course.all[5].id}",
+		student_id: "#{Student.all[0].id}"
+	},
+
+	{
+		course_id: "#{Course.all[5].id}",
+		student_id: "#{Student.all[3].id}"
+	},
+
+	{
+		course_id: "#{Course.all[5].id}",
+		student_id: "#{Student.all[13].id}"
+	},
+
+	{
+		course_id: "#{Course.all[5].id}",
+		student_id: "#{Student.all[14].id}"
+	},
+
+	{
+		course_id: "#{Course.all[5].id}",
+		student_id: "#{Student.all[15].id}"
+	},
+
+	{
+		course_id: "#{Course.all[5].id}",
+		student_id: "#{Student.all[16].id}"
+	},
+
+	{
+		course_id: "#{Course.all[6].id}",
+		student_id: "#{Student.all[17].id}"
+	},
+
+	{
+		course_id: "#{Course.all[6].id}",
+		student_id: "#{Student.all[18].id}"
+	},
+
+	{
+		course_id: "#{Course.all[6].id}",
+		student_id: "#{Student.all[19].id}"
+	},
+
+	{
+		course_id: "#{Course.all[6].id}",
+		student_id: "#{Student.all[20].id}"
+	},
+
+	{
+		course_id: "#{Course.all[6].id}",
+		student_id: "#{Student.all[0].id}"
+	},
+
+	{
+		course_id: "#{Course.all[6].id}",
+		student_id: "#{Student.all[1].id}"
+	},
+
+	{
+		course_id: "#{Course.all[6].id}",
+		student_id: "#{Student.all[2].id}"
+	},
+
+	{
+		course_id: "#{Course.all[6].id}",
+		student_id: "#{Student.all[3].id}"
+	},
+
+	{
+		course_id: "#{Course.all[6].id}",
+		student_id: "#{Student.all[4].id}"
+	},
+
+	{
+		course_id: "#{Course.all[6].id}",
+		student_id: "#{Student.all[5].id}"
+	},
+
+	{
+		course_id: "#{Course.all[7].id}",
+		student_id: "#{Student.all[6].id}"
+	},
+
+	{
+		course_id: "#{Course.all[7].id}",
+		student_id: "#{Student.all[7].id}"
+	},
+
+	{
+		course_id: "#{Course.all[7].id}",
+		student_id: "#{Student.all[8].id}"
+	},
+
+	{
+		course_id: "#{Course.all[7].id}",
+		student_id: "#{Student.all[9].id}"
+	},
+
+	{
+		course_id: "#{Course.all[7].id}",
+		student_id: "#{Student.all[10].id}"
+	},
+
+	{
+		course_id: "#{Course.all[7].id}",
+		student_id: "#{Student.all[11].id}"
+	},
+
+	{
+		course_id: "#{Course.all[7].id}",
+		student_id: "#{Student.all[12].id}"
+	},
+
+	{
+		course_id: "#{Course.all[7].id}",
+		student_id: "#{Student.all[13].id}"
+	},
+
+	{
+		course_id: "#{Course.all[7].id}",
+		student_id: "#{Student.all[14].id}"
+	},
+
+	{
+		course_id: "#{Course.all[7].id}",
+		student_id: "#{Student.all[15].id}"
+	},
+
+	{
+		course_id: "#{Course.all[8].id}",
+		student_id: "#{Student.all[16].id}"
+	},
+
+	{
+		course_id: "#{Course.all[8].id}",
+		student_id: "#{Student.all[17].id}"
+	},
+
+	{
+		course_id: "#{Course.all[8].id}",
+		student_id: "#{Student.all[18].id}"
+	},
+
+	{
+		course_id: "#{Course.all[8].id}",
+		student_id: "#{Student.all[19].id}"
+	},
+
+	{
+		course_id: "#{Course.all[8].id}",
+		student_id: "#{Student.all[20].id}"
+	},
+
+	{
+		course_id: "#{Course.all[8].id}",
+		student_id: "#{Student.all[0].id}"
+	},
+
+	{
+		course_id: "#{Course.all[8].id}",
+		student_id: "#{Student.all[1].id}"
+	},
+
+	{
+		course_id: "#{Course.all[8].id}",
+		student_id: "#{Student.all[2].id}"
+	},
+
+	{
+		course_id: "#{Course.all[8].id}",
+		student_id: "#{Student.all[3].id}"
+	},
+
+	{
+		course_id: "#{Course.all[8].id}",
+		student_id: "#{Student.all[4].id}"
+	},
+
+	{
+		course_id: "#{Course.all[9].id}",
+		student_id: "#{Student.all[5].id}"
+	},
+
+	{
+		course_id: "#{Course.all[9].id}",
+		student_id: "#{Student.all[6].id}"
+	},
+	
+	{
+		course_id: "#{Course.all[9].id}",
+		student_id: "#{Student.all[7].id}"
+	},
+
+	{
+		course_id: "#{Course.all[9].id}",
+		student_id: "#{Student.all[8].id}"
+	},
+
+	{
+		course_id: "#{Course.all[9].id}",
+		student_id: "#{Student.all[9].id}"
+	},
+
+	{
+		course_id: "#{Course.all[9].id}",
+		student_id: "#{Student.all[10].id}"
+	},
+
+	{
+		course_id: "#{Course.all[9].id}",
+		student_id: "#{Student.all[11].id}"
+	},
+
+	{
+		course_id: "#{Course.all[9].id}",
+		student_id: "#{Student.all[12].id}"
+	},
+
+	{
+		course_id: "#{Course.all[9].id}",
+		student_id: "#{Student.all[13].id}"
+	},
+
+	{
+		course_id: "#{Course.all[9].id}",
+		student_id: "#{Student.all[14].id}"
+	},
+
+	{
+		course_id: "#{Course.all[10].id}",
+		student_id: "#{Student.all[15].id}"
+	},
+
+	{
+		course_id: "#{Course.all[10].id}",
+		student_id: "#{Student.all[16].id}"
+	}
+])
+p "Created #{CourseEnrollment.count} news enrollments"

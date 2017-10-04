@@ -43,12 +43,16 @@ div.loggedhome {
 	}
 }
 
-.subhome-header {
-	text-align: center;
-	margin-top: 1em; 
-	hr {
-		width: 80%;
 
+// subhome page
+.subhome-main {
+	.subhome-header {
+		text-align: center;
+		margin-top: 1em; 	
+	}
+	
+	h4 {
+		text-align: center;
 	}
 }
 

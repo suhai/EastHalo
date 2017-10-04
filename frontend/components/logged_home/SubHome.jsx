@@ -11,6 +11,7 @@ class SubHome extends React.Component {
 		this.state = {
 
 		};
+		this.shuffleArray = this.shuffleArray.bind(this);
 	};
 
 	componentDidMount() {
@@ -18,6 +19,10 @@ class SubHome extends React.Component {
 		this.props.fetchPosts();
 		this.props.fetchAllNews();
 	};
+
+	shuffleArray(arr) {
+		return arr.sort(() => (Math.random() - 0.5));
+	}
 
 	render() {
 		let users = values(this.props.users).map((user, idx) => (
@@ -31,14 +36,24 @@ class SubHome extends React.Component {
 		));
 
 		return (
-			<div>
+			<div className='subhome-main'>
 				<h4 className='subhome-header'>BROWSE THROUGH POSTS, NEWS, AND USERS</h4>
 				<hr/>
-				<div className='community-page'>
-					{all_news}
-					{posts}
-					{users}
-				</div>
+					<h4>Avaliable News Links</h4>
+					<div className='community-page'>
+						{this.shuffleArray(all_news)}
+					</div>
+					<hr/>
+					<h4>Sample Posts From Users</h4>
+					<div className='community-page'>
+						{this.shuffleArray(posts)}
+					</div>
+					<hr/>
+
+					<h4>Sample Users</h4>
+					<div className='community-page'>
+						{this.shuffleArray(users)}
+					</div>
 			</div>
 		);
 	}

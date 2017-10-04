@@ -2,13 +2,8 @@ class Api::FriendshipsController < ApplicationController
 	before_action :set_friendship, only: [:show, :destroy]
 
 	def index
-		if current_user.is_admin
-			@friendships = Friendship.all
-			render :index
-		else
-			@friendships = Friendship.where(user_id: current_user.id)
-			render :index
-		end
+		@friendships = Friendship.where(user_id: current_user.id)
+		render :index
 	end
 
 	def create

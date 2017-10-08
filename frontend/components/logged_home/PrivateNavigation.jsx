@@ -6,9 +6,7 @@ class PrivateNavigation extends React.Component {
     super(props);
     this.state = { isActive: ''};
     this.logout = this.logout.bind(this);
-    // this.toggleSettings = this.toggleSettings.bind(this);
     this.showProfile = this.showProfile.bind(this);
-		// this.closeSettings = this.closeSettings.bind(this);
 	}
 	
 
@@ -28,20 +26,6 @@ class PrivateNavigation extends React.Component {
       e.target.value = '';
     }
   }
-
-  // toggleSettings() {
-  //   if (this.state.isActive === '') {
-  //     this.setState({ isActive: 'active' });
-  //   } else {
-  //     this.setState({ isActive: '' });
-  //   }
-  // }
-
-  // closeSettings() {
-  //   setTimeout(() => {
-  //     this.setState({ isActive: '' });
-  //   }, 200);
-  // }
 
   render() {
 		let adminLink = !!(this.props.currentUser.is_admin) ?

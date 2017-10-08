@@ -33,7 +33,8 @@ class UserShow extends React.Component {
 			let targetFriendship = values(this.props.friendships).find(friendship => {
 				return (friendship.friend_id == this.props.match.params.id) 
 			});
-			!!targetFriendship ?
+			
+			targetFriendship ?
 			this.setState({
 				friendship_status: 'unFriend',
 				color: 'delete'

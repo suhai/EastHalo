@@ -6,7 +6,8 @@ import { Route, Switch } from 'react-router-dom';
 class SideBar extends React.Component {
   constructor (props) {
     super(props);
-    this.state = { offset: 0, userIds: [] };
+		this.state = { offset: 0, userIds: [] };
+		this.shuffleArray = this.shuffleArray.bind(this);
   }
 
   componentDidMount() {
@@ -14,23 +15,10 @@ class SideBar extends React.Component {
     this.props.fetchRandomUsers({ query: this.props.currentUser.id })
       .then((action) => sidebar.setState({ userIds: Object.keys(action.users) }));
   }
-
-  chartBox() {
-    return (
-      <div className='chart-box'>
-        <div className="author">
-          <figure className="github">
-            <a href="#"></a>
-            <a className="page" href="#">Github</a>
-          </figure>
-          <figure className="linkedin">
-            <a href="#"></a>
-            <a className="page" href="#">Linkedin</a>
-          </figure>
-        </div>
-      </div>
-    );
-  }
+	
+	shuffleArray(arr) {
+		return arr.sort(() => (Math.random() - 0.5));
+	}
 
   userDescription() {
     let users = this.props.users;
@@ -62,7 +50,7 @@ class SideBar extends React.Component {
     this.state.userIds.forEach( id => {
       users.push(this.props.users[id]);
     });
-    users = users.map( user => (
+    users = this.shuffleArray(users).map( user => (
       <SidebarUserContainer user={user} key={user.id} />
     ));
 

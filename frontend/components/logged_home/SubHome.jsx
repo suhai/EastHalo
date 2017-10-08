@@ -25,13 +25,13 @@ class SubHome extends React.Component {
 	}
 
 	render() {
-		let users = values(this.props.users).map((user, idx) => (
+		let users = this.shuffleArray(values(this.props.users)).map((user, idx) => (
 			<UserSnippet key={idx} user={user} currentUser={this.props.currentUser} />
 		));
-		let posts = values(this.props.posts).map((post, idx) => (
+		let posts = this.shuffleArray(values(this.props.posts)).map((post, idx) => (
 			<PostSnippet key={idx} post={post} currentUser={this.props.currentUser} />
 		));
-		let all_news = values(this.props.news).map((news, idx) => (
+		let all_news = this.shuffleArray(values(this.props.news)).map((news, idx) => (
 			<NewsSnippet key={idx} news={news} currentUser={this.props.currentUser} />
 		));
 
@@ -41,18 +41,18 @@ class SubHome extends React.Component {
 				<hr/>
 					<h4>Avaliable News Links</h4>
 					<div className='community-page'>
-						{this.shuffleArray(all_news)}
+						{all_news}
 					</div>
 					<hr/>
 					<h4>Sample Posts From Users</h4>
 					<div className='community-page'>
-						{this.shuffleArray(posts)}
+						{posts}
 					</div>
 					<hr/>
 
 					<h4>Sample Users</h4>
 					<div className='community-page'>
-						{this.shuffleArray(users)}
+						{users}
 					</div>
 			</div>
 		);

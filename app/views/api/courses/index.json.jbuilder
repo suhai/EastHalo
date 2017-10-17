@@ -11,6 +11,7 @@
 		json.course_description course.course_description
 		json.professor course.professor
 		json.students course.students
+		json.course_enrollments course.course_enrollments
 		json.created_at course.created_at
 		json.updated_at course.updated_at
 	end

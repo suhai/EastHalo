@@ -15,7 +15,7 @@ class Schedule extends React.Component {
 
 	render() {
 		let courses = values(this.props.currentUser.courses).map((course, idx) => (
-			<MyClass key={idx} course={course} />
+			<MyClass key={idx} course={course} fetchCourse={this.props.fetchCourse}/>
 		));
 
 		return (
@@ -27,7 +27,7 @@ class Schedule extends React.Component {
 						<tr>
 							<th scope="col">Code</th>
 							<th scope="col">Course</th>
-							<th scope="col">Starts At</th>
+							<th scope="col">Starts</th>
 							<th scope="col">Ends At</th>
 							<th scope="col">Load</th>
 							<th scope="col">Class Size</th>

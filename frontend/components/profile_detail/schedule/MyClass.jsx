@@ -14,10 +14,6 @@ class MyClass extends React.Component {
 		window.location.hash = `registrar/courses/${this.props.course.id}`;
 	};
 
-	componentDidMount() {
-		console.log(this.props.course);
-	};
-
   render() {
 		const { 
 			course_code, 
@@ -32,13 +28,6 @@ class MyClass extends React.Component {
 		let classSize = 0;
 		let profLName = '';
 		let profFInitial = '';
-		if (this.props.course.length) {
-			classSize = this.props.course.students.length;
-		};
-		if (this.props.course.professor) {
-			profLName = this.props.course.professor.lname;
-			profFInitial = this.props.course.professor.fname.slice(0,1).toUpperCase();
-		};
 
     return (
 			<tr onClick={this.showClass}>

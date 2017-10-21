@@ -10,11 +10,9 @@ class Course extends React.Component {
     this.showCourse = this.showCourse.bind(this);
   }
 
-
   showCourse() {
 		window.location.hash = `registrar/courses/${this.props.course.id}`;
 	};
-
 
   render() {
 		const { 
@@ -24,16 +22,18 @@ class Course extends React.Component {
 			end_time, 
 			course_credit, 
 			course_cap, 
-			course_description
+			course_description,
+			students,
+			professor
 		} = this.props.course;
 	
 		let classSize = 0;
 		let profLName = '';
 		let profFInitial = '';
-		if (this.props.course.length) {
+		if (this.props.course) {
 			classSize = this.props.course.students.length;
 		};
-		if (this.props.course.professor) {
+		if (this.props.course) {
 			profLName = this.props.course.professor.lname;
 			profFInitial = this.props.course.professor.fname.slice(0,1).toUpperCase();
 		};

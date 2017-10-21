@@ -29,10 +29,8 @@ class Course extends React.Component {
 		let classSize = 0;
 		let profLName = '';
 		let profFInitial = '';
-		if (this.props.course.length) {
+		if (this.props.course) {
 			classSize = this.props.course.students.length;
-		};
-		if (this.props.course.professor) {
 			profLName = this.props.course.professor.lname;
 			profFInitial = this.props.course.professor.fname.slice(0,1).toUpperCase();
 		};

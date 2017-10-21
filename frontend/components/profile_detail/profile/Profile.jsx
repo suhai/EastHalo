@@ -8,7 +8,6 @@ class Profile extends React.Component {
 	};
 	
 	renderEditForm() {
-		console.log(this.props.currentUser);
 		window.location.hash = `/${this.props.currentUser.username}/profile/edit`
 	};
 
@@ -29,8 +28,8 @@ class Profile extends React.Component {
 			posts,
 			comments,
 			courses,
-			friends,
 			cash_balance, 
+			friends
 		} = this.props.currentUser;
  
     return (

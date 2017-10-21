@@ -1,6 +1,4 @@
-import { RECEIVE_COURSES,
-	RECEIVE_COURSE,
-	REMOVE_COURSE
+import { RECEIVE_COURSES, RECEIVE_COURSE, REMOVE_COURSE
 } from '../actions/course_actions';
 import merge from 'lodash/merge';
 
@@ -9,8 +7,8 @@ const CourseReducer = (state = {}, action) => {
 	let newState = merge({}, state)
 	switch (action.type) {
 		case RECEIVE_COURSE:
-			newState[action.course.id] = action.course
-			return newState
+			newState[action.course.id] = action.course;
+			return newState;
 
 		case RECEIVE_COURSES:
       for (let key in action.courses) {
